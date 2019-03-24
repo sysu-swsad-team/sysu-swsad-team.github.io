@@ -11,20 +11,15 @@ header: Posts By Tag
         <div id="navigation">
         	<h1>目录</h1>
       		<ul class="nav sidenav">
-							{% capture tags %}
-							{% for tag in site.tags %}
-								{{ tag | downcase | replace:' ','-' }}
-							{% endfor %}
-						{% endcapture %}
-						{% assign sorted_post_tags = tags | split:' ' | sort %}
-						{% for sorted_tag in sorted_post_tags %}
-							{% for tag in site.tags %}
-								{% assign downcase_tag = tag | downcase | replace:' ','-' %}
-								{% if downcase_tag == sorted_tag %}
-								<li><a href="{{ page.url }}#{{ tag[0] }}">{{ tag[0] }}</a></li>
-								{% endif %}
-							{% endfor %}
-						{% endfor %}
+			  	{% if site.tags.first[0] == null %}
+				  	{% for tag in site.tags %} 
+				  	<li><a href="{{ site.JB.tags_path }}#{{ tag }}-ref">{{ tag }} <span >({{ site.tags[tag].size }})</span></a></li>
+				  	{% endfor %}
+				{% else %}
+				  	{% for tag in site.tags %} 
+				  	<li><a href="{{ site.JB.tags_path }}#{{ tag[0] }}-ref">{{ tag[0] }} <span style="color: #999999;" >({{ tag[1].size }})</span></a></li>
+				  	{% endfor %}
+				{% endif %}
           	</ul>
         </div>
       </div>

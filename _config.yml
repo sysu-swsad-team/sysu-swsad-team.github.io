@@ -1,0 +1,26 @@
+# Site settings
+name: Niffler
+email: 12345678@qq.com
+author: sysu-swsad-team
+url: https://sysu-swsad-team.github.io/
+resume_site: https://sysu-swsad-team.github.io/
+github: https://github.com/sysu-swsad-team
+baseurl: ""
+description: 圈多多
+meta_description: Niffler
+motto: Niffler
+banner: Niffler
+
+#permalink: /:categories/:year/:month/:day/:title/
+permalink: /:categories/:title/
+paginate: 10
+
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
+
+github_username: sysu-swsad-team
+
+# Build settings
+markdown: kramdown
+
+baidu_analysis: 94be4b0f9fc5d94cc0d0415ea6761ae9
+

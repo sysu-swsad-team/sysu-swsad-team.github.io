@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <description>圈多多</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 24 Mar 2019 19:51:16 +0800</pubDate>
+    <lastBuildDate>Sun, 24 Mar 2019 19:51:16 +0800</lastBuildDate>
+    <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>项目概况</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#niffler&quot; id=&quot;markdown-toc-niffler&quot;&gt;Niffler&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#description&quot; id=&quot;markdown-toc-description&quot;&gt;Description&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#项目名称&quot; id=&quot;markdown-toc-项目名称&quot;&gt;项目名称&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#项目介绍&quot; id=&quot;markdown-toc-项目介绍&quot;&gt;项目介绍&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#人员组成及分工&quot; id=&quot;markdown-toc-人员组成及分工&quot;&gt;人员组成及分工&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#分支管理介绍&quot; id=&quot;markdown-toc-分支管理介绍&quot;&gt;分支管理介绍&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#开发技术框架说明&quot; id=&quot;markdown-toc-开发技术框架说明&quot;&gt;开发技术（框架）说明&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#部署说明&quot; id=&quot;markdown-toc-部署说明&quot;&gt;部署说明&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#文档&quot; id=&quot;markdown-toc-文档&quot;&gt;文档&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;niffler&quot;&gt;Niffler&lt;/h1&gt;
+
+&lt;h2 id=&quot;description&quot;&gt;Description&lt;/h2&gt;
+&lt;p&gt;The Team Work of Software Analysis &amp;amp; Design Class By Student from SYSU&lt;br /&gt;
+2019年，中山大学系统分析与设计课程项目&lt;/p&gt;
+&lt;h2 id=&quot;项目名称&quot;&gt;项目名称&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;English Name:&lt;/strong&gt; Niffler&lt;br /&gt;
+&lt;strong&gt;中文名：&lt;/strong&gt; 圈多多&lt;/p&gt;
+&lt;h2 id=&quot;项目介绍&quot;&gt;项目介绍&lt;/h2&gt;
+&lt;h2 id=&quot;人员组成及分工&quot;&gt;人员组成及分工&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;学号&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;昵称&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;分工内容&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;个人宣言&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;16340286&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;张吉祺&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;架构师&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;水到渠成&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;16340190&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;chain&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;前端开发&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;客户需求，请对我温柔一点&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;16340246&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;wuzht&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;js工程师，UI/UX 设计师&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;再迭代它一轮&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;16340232&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;王泽浩&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;架构师&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;talk is cheap&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;15352103&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;xuan&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;测试工程师&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Keep on going&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;分支管理介绍&quot;&gt;分支管理介绍&lt;/h2&gt;
+
+&lt;h2 id=&quot;开发技术框架说明&quot;&gt;开发技术（框架）说明&lt;/h2&gt;
+&lt;h2 id=&quot;部署说明&quot;&gt;部署说明&lt;/h2&gt;
+&lt;h2 id=&quot;文档&quot;&gt;文档&lt;/h2&gt;
+</description>
+        <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/01.%E9%A1%B9%E7%9B%AE%E6%A6%82%E5%86%B5/%E9%A1%B9%E7%9B%AE%E6%A6%82%E5%86%B5/</link>
+        <guid isPermaLink="true">http://localhost:4000/01.%E9%A1%B9%E7%9B%AE%E6%A6%82%E5%86%B5/%E9%A1%B9%E7%9B%AE%E6%A6%82%E5%86%B5/</guid>
+        
+        <category>01.01.项目概况</category>
+        
+        
+        <category>01.项目概况</category>
+        
+      </item>
+    
+      <item>
+        <title>团队组建与分工</title>
+        <description>
+</description>
+        <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/02.%E5%9B%A2%E9%98%9F%E7%BB%84%E5%BB%BA%E4%B8%8E%E5%88%86%E5%B7%A5/%E5%9B%A2%E9%98%9F%E7%BB%84%E5%BB%BA%E4%B8%8E%E5%88%86%E5%B7%A5/</link>
+        <guid isPermaLink="true">http://localhost:4000/02.%E5%9B%A2%E9%98%9F%E7%BB%84%E5%BB%BA%E4%B8%8E%E5%88%86%E5%B7%A5/%E5%9B%A2%E9%98%9F%E7%BB%84%E5%BB%BA%E4%B8%8E%E5%88%86%E5%B7%A5/</guid>
+        
+        <category>02.01.团队组建与分工</category>
+        
+        
+        <category>02.团队组建与分工</category>
+        
+      </item>
+    
+  </channel>
+</rss>
