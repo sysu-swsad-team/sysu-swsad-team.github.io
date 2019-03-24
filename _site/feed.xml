@@ -5,8 +5,8 @@
     <description>圈多多</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 24 Mar 2019 19:51:16 +0800</pubDate>
-    <lastBuildDate>Sun, 24 Mar 2019 19:51:16 +0800</lastBuildDate>
+    <pubDate>Sun, 24 Mar 2019 23:55:16 +0800</pubDate>
+    <lastBuildDate>Sun, 24 Mar 2019 23:55:16 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -87,13 +87,63 @@
 &lt;h2 id=&quot;文档&quot;&gt;文档&lt;/h2&gt;
 </description>
         <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/01.%E9%A1%B9%E7%9B%AE%E6%A6%82%E5%86%B5/%E9%A1%B9%E7%9B%AE%E6%A6%82%E5%86%B5/</link>
-        <guid isPermaLink="true">http://localhost:4000/01.%E9%A1%B9%E7%9B%AE%E6%A6%82%E5%86%B5/%E9%A1%B9%E7%9B%AE%E6%A6%82%E5%86%B5/</guid>
-        
-        <category>01.01.项目概况</category>
+        <link>http://localhost:4000/1.%E9%A1%B9%E7%9B%AE%E6%A6%82%E5%86%B5/%E9%A1%B9%E7%9B%AE%E6%A6%82%E5%86%B5/</link>
+        <guid isPermaLink="true">http://localhost:4000/1.%E9%A1%B9%E7%9B%AE%E6%A6%82%E5%86%B5/%E9%A1%B9%E7%9B%AE%E6%A6%82%E5%86%B5/</guid>
         
         
-        <category>01.项目概况</category>
+        <category>1.项目概况</category>
+        
+      </item>
+    
+      <item>
+        <title>项目愿景</title>
+        <description>
+</description>
+        <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/4.%E9%A1%B9%E7%9B%AE%E6%84%BF%E6%99%AF/%E9%A1%B9%E7%9B%AE%E6%84%BF%E6%99%AF/</link>
+        <guid isPermaLink="true">http://localhost:4000/4.%E9%A1%B9%E7%9B%AE%E6%84%BF%E6%99%AF/%E9%A1%B9%E7%9B%AE%E6%84%BF%E6%99%AF/</guid>
+        
+        
+        <category>4.项目愿景</category>
+        
+      </item>
+    
+      <item>
+        <title>项目前期调研+竞品分析</title>
+        <description>
+</description>
+        <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/3.%E9%A1%B9%E7%9B%AE%E5%89%8D%E6%9C%9F%E8%B0%83%E7%A0%94+%E7%AB%9E%E5%93%81%E5%88%86%E6%9E%90/%E9%A1%B9%E7%9B%AE%E5%89%8D%E6%9C%9F%E8%B0%83%E7%A0%94+%E7%AB%9E%E5%93%81%E5%88%86%E6%9E%90/</link>
+        <guid isPermaLink="true">http://localhost:4000/3.%E9%A1%B9%E7%9B%AE%E5%89%8D%E6%9C%9F%E8%B0%83%E7%A0%94+%E7%AB%9E%E5%93%81%E5%88%86%E6%9E%90/%E9%A1%B9%E7%9B%AE%E5%89%8D%E6%9C%9F%E8%B0%83%E7%A0%94+%E7%AB%9E%E5%93%81%E5%88%86%E6%9E%90/</guid>
+        
+        
+        <category>3.项目前期调研+竞品分析</category>
+        
+      </item>
+    
+      <item>
+        <title>6.1 用例图</title>
+        <description>
+</description>
+        <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/%E7%94%A8%E4%BE%8B%E5%9B%BE/</link>
+        <guid isPermaLink="true">http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/%E7%94%A8%E4%BE%8B%E5%9B%BE/</guid>
+        
+        
+        <category>6.需求规格说明书</category>
+        
+      </item>
+    
+      <item>
+        <title>6.2 用例+活动图</title>
+        <description>
+</description>
+        <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/%E7%94%A8%E4%BE%8B+%E6%B4%BB%E5%8A%A8%E5%9B%BE/</link>
+        <guid isPermaLink="true">http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/%E7%94%A8%E4%BE%8B+%E6%B4%BB%E5%8A%A8%E5%9B%BE/</guid>
+        
+        
+        <category>6.需求规格说明书</category>
         
       </item>
     
@@ -102,13 +152,24 @@
         <description>
 </description>
         <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/02.%E5%9B%A2%E9%98%9F%E7%BB%84%E5%BB%BA%E4%B8%8E%E5%88%86%E5%B7%A5/%E5%9B%A2%E9%98%9F%E7%BB%84%E5%BB%BA%E4%B8%8E%E5%88%86%E5%B7%A5/</link>
-        <guid isPermaLink="true">http://localhost:4000/02.%E5%9B%A2%E9%98%9F%E7%BB%84%E5%BB%BA%E4%B8%8E%E5%88%86%E5%B7%A5/%E5%9B%A2%E9%98%9F%E7%BB%84%E5%BB%BA%E4%B8%8E%E5%88%86%E5%B7%A5/</guid>
-        
-        <category>02.01.团队组建与分工</category>
+        <link>http://localhost:4000/2.%E5%9B%A2%E9%98%9F%E7%BB%84%E5%BB%BA%E4%B8%8E%E5%88%86%E5%B7%A5/%E5%9B%A2%E9%98%9F%E7%BB%84%E5%BB%BA%E4%B8%8E%E5%88%86%E5%B7%A5/</link>
+        <guid isPermaLink="true">http://localhost:4000/2.%E5%9B%A2%E9%98%9F%E7%BB%84%E5%BB%BA%E4%B8%8E%E5%88%86%E5%B7%A5/%E5%9B%A2%E9%98%9F%E7%BB%84%E5%BB%BA%E4%B8%8E%E5%88%86%E5%B7%A5/</guid>
         
         
-        <category>02.团队组建与分工</category>
+        <category>2.团队组建与分工</category>
+        
+      </item>
+    
+      <item>
+        <title>产品特性库</title>
+        <description>
+</description>
+        <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/5.%E4%BA%A7%E5%93%81%E7%89%B9%E6%80%A7%E5%BA%93/%E4%BA%A7%E5%93%81%E7%89%B9%E6%80%A7%E5%BA%93/</link>
+        <guid isPermaLink="true">http://localhost:4000/5.%E4%BA%A7%E5%93%81%E7%89%B9%E6%80%A7%E5%BA%93/%E4%BA%A7%E5%93%81%E7%89%B9%E6%80%A7%E5%BA%93/</guid>
+        
+        
+        <category>5.产品特性库</category>
         
       </item>
     

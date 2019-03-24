@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Tags
-header: Posts By Tag
+title: 圈多多
+header: Posts By Category
 ---
 
 <div class="container docs-container">
@@ -11,20 +11,30 @@ header: Posts By Tag
         <div id="navigation">
         	<h1>目录</h1>
       		<ul class="nav sidenav">
-							{% capture tags %}
-							{% for tag in site.tags %}
-								{{ tag | downcase | replace:' ','-' }}
+				<!-- {% if site.categories.first[0] == null %}
+					{% for category in site.categories %} 
+				    	<li><a href="#{{ category }}-ref">
+				    		{{ category | join: "/" }} <span style="color: #999999;" >({{ site.categories[category].size }})</span>
+				    	</a></li>
+			    	{% endfor %}
+			  	{% else %}
+			    	{% for category in site.categories %} 
+				    	<li><a href="#{{ category[0] }}-ref">
+				    		{{ category[0] | join: "/" }} <span style="color: #999999;" >({{ category[1].size }})</span>
+				    	</a></li>
+			    	{% endfor %}
+					{% endif %} -->
+							{% capture categories %}
+								{% for category in site.categories %}
+									{{ category[0] }}
+								{% endfor %}
+							{% endcapture %}
+							{% assign sorted_post_categories = categories | split:' ' | sort %}
+							{% for category in sorted_post_categories %} 
+								<li><a href="#{{ category }}-ref">
+									{{ category | join: "/" }}
+								</a></li>
 							{% endfor %}
-						{% endcapture %}
-						{% assign sorted_post_tags = tags | split:' ' | sort %}
-						{% for sorted_tag in sorted_post_tags %}
-							{% for tag in site.tags %}
-								{% assign downcase_tag = tag | downcase | replace:' ','-' %}
-								{% if downcase_tag == sorted_tag %}
-								<li><a href="{{ page.url }}#{{ tag[0] }}">{{ tag[0] }}</a></li>
-								{% endif %}
-							{% endfor %}
-						{% endfor %}
           	</ul>
         </div>
       </div>
@@ -33,15 +43,17 @@ header: Posts By Tag
       <div class="panel docs-content">
         <div class="wrapper">
           <div class="home">
-
-          	{% for tag in site.tags %} 
-			  <h2 id="{{ tag[0] }}-ref">{{ tag[0] }}</h2>
-			  <ul>
-			    {% assign pages_list = tag[1] %}  
-			    {% include LessOrMore/pages_list %}
-			  </ul>
-			{% endfor %}
-
+							{% for category in sorted_post_categories %}
+							<h2 id="{{ category }}-ref">{{ category | join: "/" }}</h2>
+							<ul>
+								{% for raw in site.categories %}
+									{% if raw[0] == category %}
+										{% assign pages_list = raw[1] %}
+									{% endif %}
+								{% endfor %}
+								{% include LessOrMore/pages_list %}
+							</ul>
+						{% endfor %}
           </div>
         </div>
       </div>
