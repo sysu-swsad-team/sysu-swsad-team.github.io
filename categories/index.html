@@ -43,7 +43,7 @@ header: Posts By Category
       <div class="panel docs-content">
         <div class="wrapper">
           <div class="home">
-							{% for category in sorted_post_categories %}
+						{% for category in sorted_post_categories %}
 							<h2 id="{{ category }}-ref">{{ category | join: "/" }}</h2>
 							<ul>
 								{% for raw in site.categories %}
