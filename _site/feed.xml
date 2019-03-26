@@ -3,10 +3,10 @@
   <channel>
     <title></title>
     <description>圈多多</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 26 Mar 2019 18:13:49 +0800</pubDate>
-    <lastBuildDate>Tue, 26 Mar 2019 18:13:49 +0800</lastBuildDate>
+    <link>https://sysu-swsad-team.github.io//</link>
+    <atom:link href="https://sysu-swsad-team.github.io//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 26 Mar 2019 18:35:54 +0800</pubDate>
+    <lastBuildDate>Tue, 26 Mar 2019 18:35:54 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -14,8 +14,8 @@
         <description>
 </description>
         <pubDate>Mon, 25 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.1.%E7%94%A8%E4%BE%8B%E5%9B%BE/</link>
-        <guid isPermaLink="true">http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.1.%E7%94%A8%E4%BE%8B%E5%9B%BE/</guid>
+        <link>https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.1.%E7%94%A8%E4%BE%8B%E5%9B%BE/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.1.%E7%94%A8%E4%BE%8B%E5%9B%BE/</guid>
         
         
         <category>6.需求规格说明书</category>
@@ -73,8 +73,8 @@ title: &quot;6.1 Usecase Diagram&quot;
 &lt;p&gt;&lt;img src=&quot;/styles/images/X2.01/2.png&quot; alt=&quot;代码2&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.01.16340286-Jekyll%E7%94%9F%E6%88%90%E6%8C%89categories%E5%AD%97%E5%85%B8%E5%BA%8F%E6%8E%92%E5%BA%8F%E7%9A%84%E7%9B%AE%E5%BD%95/</link>
-        <guid isPermaLink="true">http://localhost:4000/x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.01.16340286-Jekyll%E7%94%9F%E6%88%90%E6%8C%89categories%E5%AD%97%E5%85%B8%E5%BA%8F%E6%8E%92%E5%BA%8F%E7%9A%84%E7%9B%AE%E5%BD%95/</guid>
+        <link>https://sysu-swsad-team.github.io//x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.01.16340286-Jekyll%E7%94%9F%E6%88%90%E6%8C%89categories%E5%AD%97%E5%85%B8%E5%BA%8F%E6%8E%92%E5%BA%8F%E7%9A%84%E7%9B%AE%E5%BD%95/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.01.16340286-Jekyll%E7%94%9F%E6%88%90%E6%8C%89categories%E5%AD%97%E5%85%B8%E5%BA%8F%E6%8E%92%E5%BA%8F%E7%9A%84%E7%9B%AE%E5%BD%95/</guid>
         
         
         <category>X2.技术与工作报告</category>
@@ -86,8 +86,8 @@ title: &quot;6.1 Usecase Diagram&quot;
         <description>
 </description>
         <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/x1.%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95/X1.01.Inception/</link>
-        <guid isPermaLink="true">http://localhost:4000/x1.%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95/X1.01.Inception/</guid>
+        <link>https://sysu-swsad-team.github.io//x1.%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95/X1.01.Inception/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//x1.%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95/X1.01.Inception/</guid>
         
         
         <category>X1.会议记录</category>
@@ -99,8 +99,8 @@ title: &quot;6.1 Usecase Diagram&quot;
         <description>
 </description>
         <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.2.%E7%94%A8%E4%BE%8B+%E6%B4%BB%E5%8A%A8%E5%9B%BE/</link>
-        <guid isPermaLink="true">http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.2.%E7%94%A8%E4%BE%8B+%E6%B4%BB%E5%8A%A8%E5%9B%BE/</guid>
+        <link>https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.2.%E7%94%A8%E4%BE%8B+%E6%B4%BB%E5%8A%A8%E5%9B%BE/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.2.%E7%94%A8%E4%BE%8B+%E6%B4%BB%E5%8A%A8%E5%9B%BE/</guid>
         
         
         <category>6.需求规格说明书</category>
@@ -112,8 +112,8 @@ title: &quot;6.1 Usecase Diagram&quot;
         <description>
 </description>
         <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/5.%E4%BA%A7%E5%93%81%E7%89%B9%E6%80%A7%E5%BA%93/5.%E4%BA%A7%E5%93%81%E7%89%B9%E6%80%A7%E5%BA%93/</link>
-        <guid isPermaLink="true">http://localhost:4000/5.%E4%BA%A7%E5%93%81%E7%89%B9%E6%80%A7%E5%BA%93/5.%E4%BA%A7%E5%93%81%E7%89%B9%E6%80%A7%E5%BA%93/</guid>
+        <link>https://sysu-swsad-team.github.io//5.%E4%BA%A7%E5%93%81%E7%89%B9%E6%80%A7%E5%BA%93/5.%E4%BA%A7%E5%93%81%E7%89%B9%E6%80%A7%E5%BA%93/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//5.%E4%BA%A7%E5%93%81%E7%89%B9%E6%80%A7%E5%BA%93/5.%E4%BA%A7%E5%93%81%E7%89%B9%E6%80%A7%E5%BA%93/</guid>
         
         
         <category>5.产品特性库</category>
@@ -125,8 +125,8 @@ title: &quot;6.1 Usecase Diagram&quot;
         <description>
 </description>
         <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/4.%E9%A1%B9%E7%9B%AE%E6%84%BF%E6%99%AF/4.%E9%A1%B9%E7%9B%AE%E6%84%BF%E6%99%AF/</link>
-        <guid isPermaLink="true">http://localhost:4000/4.%E9%A1%B9%E7%9B%AE%E6%84%BF%E6%99%AF/4.%E9%A1%B9%E7%9B%AE%E6%84%BF%E6%99%AF/</guid>
+        <link>https://sysu-swsad-team.github.io//4.%E9%A1%B9%E7%9B%AE%E6%84%BF%E6%99%AF/4.%E9%A1%B9%E7%9B%AE%E6%84%BF%E6%99%AF/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//4.%E9%A1%B9%E7%9B%AE%E6%84%BF%E6%99%AF/4.%E9%A1%B9%E7%9B%AE%E6%84%BF%E6%99%AF/</guid>
         
         
         <category>4.项目愿景</category>
@@ -138,8 +138,8 @@ title: &quot;6.1 Usecase Diagram&quot;
         <description>
 </description>
         <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/3.%E9%A1%B9%E7%9B%AE%E5%89%8D%E6%9C%9F%E8%B0%83%E7%A0%94%E4%B8%8E%E7%AB%9E%E5%93%81%E5%88%86%E6%9E%90/3.%E9%A1%B9%E7%9B%AE%E5%89%8D%E6%9C%9F%E8%B0%83%E7%A0%94%E4%B8%8E%E7%AB%9E%E5%93%81%E5%88%86%E6%9E%90/</link>
-        <guid isPermaLink="true">http://localhost:4000/3.%E9%A1%B9%E7%9B%AE%E5%89%8D%E6%9C%9F%E8%B0%83%E7%A0%94%E4%B8%8E%E7%AB%9E%E5%93%81%E5%88%86%E6%9E%90/3.%E9%A1%B9%E7%9B%AE%E5%89%8D%E6%9C%9F%E8%B0%83%E7%A0%94%E4%B8%8E%E7%AB%9E%E5%93%81%E5%88%86%E6%9E%90/</guid>
+        <link>https://sysu-swsad-team.github.io//3.%E9%A1%B9%E7%9B%AE%E5%89%8D%E6%9C%9F%E8%B0%83%E7%A0%94%E4%B8%8E%E7%AB%9E%E5%93%81%E5%88%86%E6%9E%90/3.%E9%A1%B9%E7%9B%AE%E5%89%8D%E6%9C%9F%E8%B0%83%E7%A0%94%E4%B8%8E%E7%AB%9E%E5%93%81%E5%88%86%E6%9E%90/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//3.%E9%A1%B9%E7%9B%AE%E5%89%8D%E6%9C%9F%E8%B0%83%E7%A0%94%E4%B8%8E%E7%AB%9E%E5%93%81%E5%88%86%E6%9E%90/3.%E9%A1%B9%E7%9B%AE%E5%89%8D%E6%9C%9F%E8%B0%83%E7%A0%94%E4%B8%8E%E7%AB%9E%E5%93%81%E5%88%86%E6%9E%90/</guid>
         
         
         <category>3.项目前期调研与竞品分析</category>
@@ -151,8 +151,8 @@ title: &quot;6.1 Usecase Diagram&quot;
         <description>
 </description>
         <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2.%E5%9B%A2%E9%98%9F%E7%BB%84%E5%BB%BA%E4%B8%8E%E5%88%86%E5%B7%A5/2.%E5%9B%A2%E9%98%9F%E7%BB%84%E5%BB%BA%E4%B8%8E%E5%88%86%E5%B7%A5/</link>
-        <guid isPermaLink="true">http://localhost:4000/2.%E5%9B%A2%E9%98%9F%E7%BB%84%E5%BB%BA%E4%B8%8E%E5%88%86%E5%B7%A5/2.%E5%9B%A2%E9%98%9F%E7%BB%84%E5%BB%BA%E4%B8%8E%E5%88%86%E5%B7%A5/</guid>
+        <link>https://sysu-swsad-team.github.io//2.%E5%9B%A2%E9%98%9F%E7%BB%84%E5%BB%BA%E4%B8%8E%E5%88%86%E5%B7%A5/2.%E5%9B%A2%E9%98%9F%E7%BB%84%E5%BB%BA%E4%B8%8E%E5%88%86%E5%B7%A5/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//2.%E5%9B%A2%E9%98%9F%E7%BB%84%E5%BB%BA%E4%B8%8E%E5%88%86%E5%B7%A5/2.%E5%9B%A2%E9%98%9F%E7%BB%84%E5%BB%BA%E4%B8%8E%E5%88%86%E5%B7%A5/</guid>
         
         
         <category>2.团队组建与分工</category>
@@ -249,8 +249,8 @@ title: &quot;6.1 Usecase Diagram&quot;
 
 </description>
         <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/1.%E9%A1%B9%E7%9B%AE%E6%A6%82%E5%86%B5/1.%E9%A1%B9%E7%9B%AE%E6%A6%82%E5%86%B5/</link>
-        <guid isPermaLink="true">http://localhost:4000/1.%E9%A1%B9%E7%9B%AE%E6%A6%82%E5%86%B5/1.%E9%A1%B9%E7%9B%AE%E6%A6%82%E5%86%B5/</guid>
+        <link>https://sysu-swsad-team.github.io//1.%E9%A1%B9%E7%9B%AE%E6%A6%82%E5%86%B5/1.%E9%A1%B9%E7%9B%AE%E6%A6%82%E5%86%B5/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//1.%E9%A1%B9%E7%9B%AE%E6%A6%82%E5%86%B5/1.%E9%A1%B9%E7%9B%AE%E6%A6%82%E5%86%B5/</guid>
         
         
         <category>1.项目概况</category>
@@ -296,8 +296,8 @@ title: &quot;6.1 Usecase Diagram&quot;
 &lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/qq_30427341/article/details/81003902&quot; target=&quot;_blank&quot;&gt;软件开发项目风险管理的几点体会&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sat, 23 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.02.16340286-%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E5%87%A0%E7%A7%8D%E9%A3%8E%E9%99%A9/</link>
-        <guid isPermaLink="true">http://localhost:4000/x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.02.16340286-%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E5%87%A0%E7%A7%8D%E9%A3%8E%E9%99%A9/</guid>
+        <link>https://sysu-swsad-team.github.io//x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.02.16340286-%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E5%87%A0%E7%A7%8D%E9%A3%8E%E9%99%A9/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.02.16340286-%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E5%87%A0%E7%A7%8D%E9%A3%8E%E9%99%A9/</guid>
         
         
         <category>X2.技术与工作报告</category>
