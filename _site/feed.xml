@@ -5,8 +5,8 @@
     <description>圈多多</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 25 Mar 2019 15:35:01 +0800</pubDate>
-    <lastBuildDate>Mon, 25 Mar 2019 15:35:01 +0800</lastBuildDate>
+    <pubDate>Tue, 26 Mar 2019 18:13:49 +0800</pubDate>
+    <lastBuildDate>Tue, 26 Mar 2019 18:13:49 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -47,7 +47,7 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;为了得到这种目录结构，简单的做法是将手写一个静态页面展示目录，每次写新文章就在这个静态页面上添加条目和超链接，但是这种比较繁琐。更高效的做法是定义目录的生成方法，让Jekyll自动生成。&lt;/p&gt;
+&lt;p&gt;为了得到这种目录结构，简单的做法是将手写一个静态页面展示目录，每次写新文章就在这个静态页面上添加条目和超链接，但是这种比较繁琐。更高效的做法是定义目录的生成方法，让Jekyll自动生成。这种方法还带来了一个额外好处——支持面包屑。&lt;/p&gt;
 
 &lt;h2 id=&quot;方法&quot;&gt;方法&lt;/h2&gt;
 &lt;p&gt;我们利用Jekyll的博客categories属性，每篇文章所属章节的名称作为categories属性的值，比如第一篇文章的categories和title属性定义为&lt;/p&gt;
@@ -254,6 +254,53 @@ title: &quot;6.1 Usecase Diagram&quot;
         
         
         <category>1.项目概况</category>
+        
+      </item>
+    
+      <item>
+        <title>X2.02 16340286-软件项目中的几种风险</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#需求变更风险&quot; id=&quot;markdown-toc-需求变更风险&quot;&gt;需求变更风险&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#进度风险&quot; id=&quot;markdown-toc-进度风险&quot;&gt;进度风险&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#信息安全风险&quot; id=&quot;markdown-toc-信息安全风险&quot;&gt;信息安全风险&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#应用技术风险&quot; id=&quot;markdown-toc-应用技术风险&quot;&gt;应用技术风险&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#质量控制风险&quot; id=&quot;markdown-toc-质量控制风险&quot;&gt;质量控制风险&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#参考资料&quot; id=&quot;markdown-toc-参考资料&quot;&gt;参考资料&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;大型项目存在诸多风险因素，在不同程度上对软件开发过程和软件产品质量造成影响。&lt;/p&gt;
+&lt;h2 id=&quot;需求变更风险&quot;&gt;需求变更风险&lt;/h2&gt;
+&lt;p&gt;需求变更风险是指需求已经成为项目基准，但需求还在继续变化；需求定义欠佳，而进一步的定义会扩展项目范畴；添加额外的需求；产品定义含混的部分比预期需要更多的时间；在做需求中客户参与不够；缺少有效的需求变化管理过程。无限度的需求变更使项目承建方有亏损的风险。&lt;/p&gt;
+
+&lt;p&gt;可以通过让用户参与开发过程、开发用户界面原型、需求讨论会议、强化需求分析与评审等措施减轻需求变更风险。&lt;/p&gt;
+&lt;h2 id=&quot;进度风险&quot;&gt;进度风险&lt;/h2&gt;
+&lt;p&gt;软件项目工期估算是软件项目初期最困难的工作之一。很多情况下，软件用户对软件的需求是出于实际情况的压力，希望项目承担方尽快开发出软件来。在软件招标时，开发方为了尽可能争取到项目，对项目的进度承诺出已远远超出实际能做到的项目进度，使项目在开始时就存在严重的时间问题。软件开发组织在工期的压力下，往往放弃文档的编写与更新，结果在软件项目的晚期大量需要通过文档进行协调时，却拖累软件进度越来越慢。此外，由于用户配合问题、资源调配等问题也可能使软件项目不能在预定的时间内完成任务。软件项目过程中有自身的客观规律性，用户对软件项目的进度要求不能与软件开发过程的时间需要相矛盾。&lt;/p&gt;
+
+&lt;p&gt;减轻进度风险的措施有迭代开发、技术评审、持续集成。&lt;/p&gt;
+&lt;h2 id=&quot;信息安全风险&quot;&gt;信息安全风险&lt;/h2&gt;
+&lt;p&gt;信息安全风险是指在信息化建设中，各类应用系统及其赖以运行的基础网络、处理的数据和信息，由于其可能存在的软硬件缺陷、系统集成缺陷等，以及信息安全管理中潜在的薄弱环节，而导致的不同程度的安全风险。&lt;/p&gt;
+
+&lt;p&gt;为了减轻信息安全风险，需要充分论证系统架构的安全性、加强网络应用和物理设备的防护、设计应急预案、配置冗余备用设备、强化人事和资产管理。&lt;/p&gt;
+&lt;h2 id=&quot;应用技术风险&quot;&gt;应用技术风险&lt;/h2&gt;
+&lt;p&gt;指系统发生技术故障、兼容性问题、性能问题，导致运行不畅或中断，不能保障正常、有序、高效、顺利地运行，带来经济或声誉损失的风险。&lt;/p&gt;
+
+&lt;p&gt;可以通过充分论证、同行交流经验、全面设计、充分测试、配置冗余备用设备减轻应用技术风险。&lt;/p&gt;
+&lt;h2 id=&quot;质量控制风险&quot;&gt;质量控制风险&lt;/h2&gt;
+&lt;p&gt;软件质量问题是软件工程开发的关键问题，也是软件工程生产中的核心问题。软件质量问题是导致软件项目进度延误、预算超支或项目失败、项目终止等软件危机的根本原因。&lt;/p&gt;
+
+&lt;p&gt;提高软件质量，可以降低项目开发的总成本；通过减少并及早检测纠正实际的软件开发过程和软件开发结果与预期不符的情况，降低错误成本。&lt;/p&gt;
+
+&lt;h2 id=&quot;参考资料&quot;&gt;参考资料&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://wenku.baidu.com/view/26be0808a26925c52cc5bf72.html&quot; target=&quot;_blank&quot;&gt;软件开发过程存在的风险&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/qq_30427341/article/details/81003902&quot; target=&quot;_blank&quot;&gt;软件开发项目风险管理的几点体会&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 23 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.02.16340286-%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E5%87%A0%E7%A7%8D%E9%A3%8E%E9%99%A9/</link>
+        <guid isPermaLink="true">http://localhost:4000/x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.02.16340286-%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E5%87%A0%E7%A7%8D%E9%A3%8E%E9%99%A9/</guid>
+        
+        
+        <category>X2.技术与工作报告</category>
         
       </item>
     
