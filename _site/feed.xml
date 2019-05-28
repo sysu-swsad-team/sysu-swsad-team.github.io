@@ -3,19 +3,404 @@
   <channel>
     <title></title>
     <description>圈多多</description>
-    <link>https://sysu-swsad-team.github.io//</link>
-    <atom:link href="https://sysu-swsad-team.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 27 Mar 2019 12:01:48 +0800</pubDate>
-    <lastBuildDate>Wed, 27 Mar 2019 12:01:48 +0800</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 28 May 2019 16:01:40 +0800</pubDate>
+    <lastBuildDate>Tue, 28 May 2019 16:01:40 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>7.2 数据库设计</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#用户及权限系统数据库设计&quot; id=&quot;markdown-toc-用户及权限系统数据库设计&quot;&gt;用户及权限系统数据库设计&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#niffler子系统数据库设计&quot; id=&quot;markdown-toc-niffler子系统数据库设计&quot;&gt;Niffler子系统数据库设计&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;用户及权限系统数据库设计&quot;&gt;用户及权限系统数据库设计&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/styles/images/7.2/auth.png&quot; alt=&quot;用户及权限系统数据库设计&quot; /&gt;
+（仅供设计参考，不代表项目实际情况）&lt;/p&gt;
+&lt;h2 id=&quot;niffler子系统数据库设计&quot;&gt;Niffler子系统数据库设计&lt;/h2&gt;
+</description>
+        <pubDate>Tue, 28 May 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.2.%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/</link>
+        <guid isPermaLink="true">http://localhost:4000/7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.2.%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/</guid>
+        
+        
+        <category>7.设计说明书</category>
+        
+      </item>
+    
+      <item>
+        <title>8.2 REST API设计规范</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#协议&quot; id=&quot;markdown-toc-协议&quot;&gt;协议&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#url&quot; id=&quot;markdown-toc-url&quot;&gt;URL&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#http请求方式&quot; id=&quot;markdown-toc-http请求方式&quot;&gt;http请求方式&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#过滤信息&quot; id=&quot;markdown-toc-过滤信息&quot;&gt;过滤信息&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#数据格式&quot; id=&quot;markdown-toc-数据格式&quot;&gt;数据格式&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#状态码&quot; id=&quot;markdown-toc-状态码&quot;&gt;状态码&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#get&quot; id=&quot;markdown-toc-get&quot;&gt;GET&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#post&quot; id=&quot;markdown-toc-post&quot;&gt;POST&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#put&quot; id=&quot;markdown-toc-put&quot;&gt;PUT&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#delete&quot; id=&quot;markdown-toc-delete&quot;&gt;DELETE&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;协议&quot;&gt;协议&lt;/h2&gt;
+&lt;p&gt;使用https协议。&lt;/p&gt;
+&lt;h2 id=&quot;url&quot;&gt;URL&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;在RESTful架构中，每个路径代表一种资源，所以路径中不能有动词，只能有名词。所用名词尽量参考数据库表的设计。&lt;/li&gt;
+  &lt;li&gt;URL路径名词均为复数。为了保证URL格式的一致性，建议使用复数形式。&lt;/li&gt;
+  &lt;li&gt;应该使用连字符”-“来提高URL的可读性，而不是使用下划线”_“。&lt;/li&gt;
+  &lt;li&gt;URL路径中首选小写字母。&lt;/li&gt;
+  &lt;li&gt;将版本信息放入URL中。
+    &lt;h2 id=&quot;http请求方式&quot;&gt;http请求方式&lt;/h2&gt;
+  &lt;/li&gt;
+  &lt;li&gt;GET: 从服务器取出资源（一项或多项）&lt;/li&gt;
+  &lt;li&gt;POST: 在服务器新建一个资源&lt;/li&gt;
+  &lt;li&gt;PUT: 在服务器更新资源（客户端提供改变后的完整资源）&lt;/li&gt;
+  &lt;li&gt;PATCH: 在服务器更新资源（客户端提供改变的属性）&lt;/li&gt;
+  &lt;li&gt;DELETE: 从服务器删除资源
+    &lt;h2 id=&quot;过滤信息&quot;&gt;过滤信息&lt;/h2&gt;
+    &lt;p&gt;在获取资源的时候，有可能需要获取某些“过滤”后的资源，例如指定前10行数据：
+&lt;code class=&quot;highlighter-rouge&quot;&gt;http://api.user.com/schools/grades/classes/boys?page=1&amp;amp;page-size=10&lt;/code&gt;&lt;/p&gt;
+    &lt;h2 id=&quot;数据格式&quot;&gt;数据格式&lt;/h2&gt;
+    &lt;p&gt;使用json数据格式进行数据传递。&lt;/p&gt;
+    &lt;h2 id=&quot;状态码&quot;&gt;状态码&lt;/h2&gt;
+    &lt;p&gt;RESTful架构应该遵循统一接口原则，统一接口包含了一组受限的预定义的操作，不论什么样的资源，都是通过使用相同的接口进行资源的访问。接口应该使用标准的HTTP方法如GET，PUT和POST，并遵循这些方法的语义。&lt;br /&gt;
+如果按照HTTP方法的语义来暴露资源，那么接口将会拥有安全性和幂等性的特性，例如GET和HEAD请求都是安全的，无论请求多少次，都不会改变服务器状态。而GET、HEAD、PUT和DELETE请求都是幂等的，无论对资源操作多少次，结果总是一样的，后面的请求并不会产生比第一次更多的影响。&lt;br /&gt;
+下面列出了GET，DELETE，PUT和POST的典型用法：&lt;/p&gt;
+    &lt;h3 id=&quot;get&quot;&gt;GET&lt;/h3&gt;
+  &lt;/li&gt;
+  &lt;li&gt;安全且幂等&lt;/li&gt;
+  &lt;li&gt;200（OK） 表示已在响应中发出&lt;/li&gt;
+  &lt;li&gt;204（无内容） 资源为空&lt;/li&gt;
+  &lt;li&gt;301（Moved Permanently） 资源的URL已被更新&lt;/li&gt;
+  &lt;li&gt;303（See Other） 其他（如，负载均衡）&lt;/li&gt;
+  &lt;li&gt;304（not modified）资源未更改（缓存）&lt;/li&gt;
+  &lt;li&gt;400 （bad request）指代坏请求&lt;/li&gt;
+  &lt;li&gt;404 （not found）资源不存在&lt;/li&gt;
+  &lt;li&gt;406 （not acceptable）服务端不支持所需表示&lt;/li&gt;
+  &lt;li&gt;500 （internal server error）通用错误响应&lt;/li&gt;
+  &lt;li&gt;503 （Service Unavailable）服务端当前无法处理请求
+    &lt;h3 id=&quot;post&quot;&gt;POST&lt;/h3&gt;
+  &lt;/li&gt;
+  &lt;li&gt;不安全且不幂等&lt;/li&gt;
+  &lt;li&gt;200（OK）如果现有资源已被更改&lt;/li&gt;
+  &lt;li&gt;201（created）如果新资源被创建&lt;/li&gt;
+  &lt;li&gt;202（accepted）已接受处理请求但尚未完成（异步处理）&lt;/li&gt;
+  &lt;li&gt;301（Moved Permanently）资源的URL被更新&lt;/li&gt;
+  &lt;li&gt;303（See Other）其他（如，负载均衡）&lt;/li&gt;
+  &lt;li&gt;400（bad request）指代坏请求&lt;/li&gt;
+  &lt;li&gt;404 （not found）资源不存在&lt;/li&gt;
+  &lt;li&gt;406 （not acceptable）服务端不支持所需表示&lt;/li&gt;
+  &lt;li&gt;409 （conflict）通用冲突&lt;/li&gt;
+  &lt;li&gt;412 （Precondition Failed）前置条件失败（如执行条件更新时的冲突）&lt;/li&gt;
+  &lt;li&gt;415 （unsupported media type）接受到的表示不受支持&lt;/li&gt;
+  &lt;li&gt;500 （internal server error）通用错误响应&lt;/li&gt;
+  &lt;li&gt;503 （Service Unavailable）服务端当前无法处理请求
+    &lt;h3 id=&quot;put&quot;&gt;PUT&lt;/h3&gt;
+  &lt;/li&gt;
+  &lt;li&gt;不安全但幂等&lt;/li&gt;
+  &lt;li&gt;200 （OK）如果现有资源已被更改&lt;/li&gt;
+  &lt;li&gt;201 （created）如果新资源被创建&lt;/li&gt;
+  &lt;li&gt;301（Moved Permanently）资源的URL已更改&lt;/li&gt;
+  &lt;li&gt;303 （See Other）其他（如，负载均衡）&lt;/li&gt;
+  &lt;li&gt;400 （bad request）指代坏请求&lt;/li&gt;
+  &lt;li&gt;404 （not found）资源不存在&lt;/li&gt;
+  &lt;li&gt;406 （not acceptable）服务端不支持所需表示&lt;/li&gt;
+  &lt;li&gt;409 （conflict）通用冲突&lt;/li&gt;
+  &lt;li&gt;412 （Precondition Failed）前置条件失败（如执行条件更新时的冲突）&lt;/li&gt;
+  &lt;li&gt;415 （unsupported media type）接受到的表示不受支持&lt;/li&gt;
+  &lt;li&gt;500 （internal server error）通用错误响应&lt;/li&gt;
+  &lt;li&gt;503 （Service Unavailable）服务端当前无法处理请求
+    &lt;h3 id=&quot;delete&quot;&gt;DELETE&lt;/h3&gt;
+  &lt;/li&gt;
+  &lt;li&gt;不安全但幂等&lt;/li&gt;
+  &lt;li&gt;200 （OK）资源已被删除&lt;/li&gt;
+  &lt;li&gt;301 （Moved Permanently）资源的URIL已更改&lt;/li&gt;
+  &lt;li&gt;303 （See Other）其他（如，负载均衡）&lt;/li&gt;
+  &lt;li&gt;400 （bad request）指代坏请求&lt;/li&gt;
+  &lt;li&gt;404 （not found）资源不存在&lt;/li&gt;
+  &lt;li&gt;409 （conflict）通用冲突&lt;/li&gt;
+  &lt;li&gt;500 （internal server error）通用错误响应&lt;/li&gt;
+  &lt;li&gt;503 （Service Unavailable）服务端当前无法处理请求&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Created by 15352103&lt;/em&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 27 May 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.2.REST-API-%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/</link>
+        <guid isPermaLink="true">http://localhost:4000/8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.2.REST-API-%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/</guid>
+        
+        
+        <category>8.生产规范与指南</category>
+        
+      </item>
     
       <item>
         <title>6.1 用例图</title>
         <description>
+&lt;p&gt;&lt;img src=&quot;https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/UML/用例图.jpg&quot; alt=&quot;用例图&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Created by 15352103&lt;/em&gt;&lt;/p&gt;
 </description>
-        <pubDate>Mon, 25 Mar 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.1.%E7%94%A8%E4%BE%8B%E5%9B%BE/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.1.%E7%94%A8%E4%BE%8B%E5%9B%BE/</guid>
+        <pubDate>Sun, 12 May 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.1.%E7%94%A8%E4%BE%8B%E5%9B%BE/</link>
+        <guid isPermaLink="true">http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.1.%E7%94%A8%E4%BE%8B%E5%9B%BE/</guid>
+        
+        
+        <category>6.需求规格说明书</category>
+        
+      </item>
+    
+      <item>
+        <title>6.2 用例与活动图</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#详述用例&quot; id=&quot;markdown-toc-详述用例&quot;&gt;详述用例&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#非正式用例&quot; id=&quot;markdown-toc-非正式用例&quot;&gt;非正式用例&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#摘要用例&quot; id=&quot;markdown-toc-摘要用例&quot;&gt;摘要用例&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;详述用例&quot;&gt;详述用例&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;用例UC1：做任务&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;范围&lt;/strong&gt;：圈多多（Niffler）应用&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;级别&lt;/strong&gt;：用户目标&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;主要参与者&lt;/strong&gt;：大学生&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;涉众及其关注点&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;大学生：希望能够准确地筛选感兴趣的任务。希望能够便捷、清晰地查询任务描述和任务薪酬。希望能够在完成任务后，及时、准确地获得相应数额的“闲钱币”。&lt;/li&gt;
+  &lt;li&gt;任务发布者：希望发布的任务能够得到有效的完成。希望能够快速审核已完成任务并进行确认。&lt;/li&gt;
+  &lt;li&gt;圈多多团队：希望能够准确地记录任务完成信息。希望在任务发布者确认任务已完成后，自动、快速、准确地将“闲钱币”放入相应账号的钱包中。希望有一定的容错性和可恢复性。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;前置条件&lt;/strong&gt;：大学生必须登录账号。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;成功保证（或后置条件）&lt;/strong&gt;：记录任务完成相关信息。更新财务信息。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;主成功场景（或基本流程）&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;用户打开圈多多应用，此时已默认登录上一次登录的账号。&lt;/li&gt;
+  &lt;li&gt;系统进入任务类型界面（做任务或发布任务）。&lt;/li&gt;
+  &lt;li&gt;用户选择做任务功能。&lt;/li&gt;
+  &lt;li&gt;系统进入做任务可选项界面（问卷调查任务或跑腿任务）。&lt;/li&gt;
+  &lt;li&gt;用户选择问卷调查任务或跑腿任务。&lt;/li&gt;
+  &lt;li&gt;系统按照账号初始标签显示任务列表。&lt;/li&gt;
+  &lt;li&gt;用户通过标签、薪酬、最新、最热等进一步筛选任务列表。&lt;/li&gt;
+  &lt;li&gt;用户查看自己感兴趣的任务。&lt;/li&gt;
+  &lt;li&gt;系统显示任务详情。任务详情包括任务描述、任务薪酬、任务剩余次数、任务过期时间、是否可重复等。&lt;/li&gt;
+  &lt;li&gt;用户选择接受任务。&lt;/li&gt;
+  &lt;li&gt;系统将任务添加到待完成任务列表。&lt;/li&gt;
+  &lt;li&gt;用户查看待完成任务列表。&lt;/li&gt;
+  &lt;li&gt;用户选择完成任务。&lt;/li&gt;
+  &lt;li&gt;问卷调查任务由系统自动确认已完成任务；跑腿任务由任务发布者确认已完成任务。&lt;/li&gt;
+  &lt;li&gt;系统为相应账号的钱包增加相应数额的“闲钱币”。&lt;/li&gt;
+  &lt;li&gt;系统记录完整的任务完成相关信息，并更新财务信息。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;扩展（或替代流程）&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;*a. 系统在任意时刻失败：
+    &lt;ol&gt;
+      &lt;li&gt;系统保存意外退出时的账号状态。&lt;/li&gt;
+      &lt;li&gt;用户重启系统，请求恢复上次状态。&lt;/li&gt;
+      &lt;li&gt;系统重建上次状态，恢复意外退出时的界面信息。
+        &lt;ul&gt;
+          &lt;li&gt;3a. 系统在恢复过程中检测到异常：
+            &lt;ol&gt;
+              &lt;li&gt;系统向用户提示错误，并记录此错误。&lt;/li&gt;
+              &lt;li&gt;系统进入一个初始状态（即进入任务类型界面）。&lt;/li&gt;
+            &lt;/ol&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;4-9a. 用户需要重新选择问卷调查任务或跑腿任务：
+    &lt;ol&gt;
+      &lt;li&gt;用户选择返回功能。&lt;/li&gt;
+      &lt;li&gt;系统进入做任务可选项界面。&lt;/li&gt;
+      &lt;li&gt;用户重新选择问卷调查任务或跑腿任务。&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;7a. 用户需要重置任务列表：
+    &lt;ol&gt;
+      &lt;li&gt;用户选择重置功能。&lt;/li&gt;
+      &lt;li&gt;系统按照账户初始标签显示任务列表。&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;10-13a. 用户需要放弃任务：
+    &lt;ol&gt;
+      &lt;li&gt;用户选择放弃任务功能。&lt;/li&gt;
+      &lt;li&gt;相应任务更新信息，例如，剩余次数加一。&lt;/li&gt;
+      &lt;li&gt;系统记录放弃任务相关信息。&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;10-13b. 任务超时：
+    &lt;ol&gt;
+      &lt;li&gt;系统提示用户任务超时。&lt;/li&gt;
+      &lt;li&gt;系统将任务从待完成列表移除。&lt;/li&gt;
+      &lt;li&gt;系统记录任务超时相关信息，并更新财务信息。&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;10-13c. 任务发布者提前终止任务：
+    &lt;ol&gt;
+      &lt;li&gt;系统提示用户任务发布者提前终止任务。&lt;/li&gt;
+      &lt;li&gt;系统将任务从待完成列表移除。&lt;/li&gt;
+      &lt;li&gt;系统记录提前终止相关信息，并更新财务信息。&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;14a. 对于跑腿任务，任务发布者未在规定时间内确认用户已完成任务：
+    &lt;ol&gt;
+      &lt;li&gt;系统自动确认用户已完成任务。&lt;/li&gt;
+      &lt;li&gt;系统提示任务发布者已自动确认任务完成。&lt;/li&gt;
+      &lt;li&gt;系统记录自动确认任务完成相关信息。&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;特殊需求&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;由于某些原因，我们希望在访问远程服务（如财务系统）失败的情况下具有比较强的恢复功能。&lt;/li&gt;
+  &lt;li&gt;支持文本显示的语言国际化。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;技术与数据变元表&lt;/strong&gt;：暂无。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;发生频率&lt;/strong&gt;：可能会不断地发生。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;未决问题&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;研究远程服务的恢复问题。&lt;/li&gt;
+  &lt;li&gt;对于跑腿任务，如果任务发布者否认已完成任务，该怎样进行协调。&lt;/li&gt;
+  &lt;li&gt;任务剩余次数为0后，系统将此任务从任务显示列表移除。如果之后存在用户放弃任务的行为发生，此任务将重新出现在任务显示列表。是否应该提升此任务优先级。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;活动图&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/UML/活动图_做任务.jpg&quot; alt=&quot;活动图_做任务&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;非正式用例&quot;&gt;非正式用例&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;用例UC2：发布任务&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;主成功场景&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;p&gt;发布者打开圈多多应用，系统进入任务类型界面（做任务或发布任务）。发布者选择发布任务功能，系统进入发布任务可选项界面（问卷调查任务或跑腿任务）。系统进入任务描述界面。发布者填写任务描述。发布者进一步填写任务最大数量、单价、超时时间等信息。系统自动计算总价。发布者使用“闲钱币”进行支付，系统提示任务发布成功。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;交替场景&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;p&gt;任务发布者选择发布任务功能后，如果希望放弃发布任务，选择放弃发布任务功能，系统记录相关信息并进入发布任务可选项界面。&lt;/p&gt;
+
+&lt;p&gt;任务发布者发布任务成功后，如果希望提前终止任务，选择提前终止任务功能，系统自动计算“闲钱币”返还数额并返还至相应账户的钱包。&lt;/p&gt;
+
+&lt;p&gt;任务发布者发布任务成功后，如果任务过期，系统提示发布者任务已过期。系统自动计算“闲钱币”返还数额并返还至相应账户的钱包。&lt;/p&gt;
+
+&lt;p&gt;任务发布者在支付过程中，如果发现“闲钱币”余额不足，可以选择微信、支付宝等方式进行“闲钱币”充值。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;活动图&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/UML/活动图_发布任务.jpg&quot; alt=&quot;活动图_发布任务&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;摘要用例&quot;&gt;摘要用例&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;用例UC3.1：注册/登录&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;用户打开圈多多应用。如果没有注册，选择注册功能，填写姓名、学号、年龄、性别、年级和专业等信息，并上传学生证正面照片进行验证。验证成功后，可以设置昵称、头像，选择感兴趣的标签，并绑定邮箱或手机号。如果已经注册，选择登录功能，用户通过邮箱或手机号进行登录。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;用例UC3.2：提现“闲钱币”&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;用户选择提现功能，账户得到验证之后，将“闲钱币”可用余额转入到第三方支付系统。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;用例UC3.3：举报任务&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;用户发现不恰当任务，可以选择举报任务功能。任务被举报次数达到阈值后，将交由管理员进行审核。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;用例UC3.4：审核任务&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;管理员定期对被举报次数达到阈值的任务进行审核。如果审核结果为任务不恰当，将下架此任务，并扣除任务发布者一定比例“闲钱币”作为惩罚。否则将被举报次数清零。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;用例UC3.5：评价用户&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;任务发布者可以对完成跑腿任务的用户进行评价。评价结果对其它用户可见。&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Created by 15352103&lt;/em&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 11 May 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.2.%E7%94%A8%E4%BE%8B%E4%B8%8E%E6%B4%BB%E5%8A%A8%E5%9B%BE/</link>
+        <guid isPermaLink="true">http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.2.%E7%94%A8%E4%BE%8B%E4%B8%8E%E6%B4%BB%E5%8A%A8%E5%9B%BE/</guid>
+        
+        
+        <category>6.需求规格说明书</category>
+        
+      </item>
+    
+      <item>
+        <title>6.3 领域模型</title>
+        <description>
+&lt;p&gt;&lt;img src=&quot;https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/UML/类图.jpg&quot; alt=&quot;类图&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Created by 15352103&lt;/em&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 10 May 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.3.%E9%A2%86%E5%9F%9F%E6%A8%A1%E5%9E%8B/</link>
+        <guid isPermaLink="true">http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.3.%E9%A2%86%E5%9F%9F%E6%A8%A1%E5%9E%8B/</guid>
+        
+        
+        <category>6.需求规格说明书</category>
+        
+      </item>
+    
+      <item>
+        <title>6.4 状态模型</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#做任务状态图&quot; id=&quot;markdown-toc-做任务状态图&quot;&gt;做任务状态图&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#发布任务状态图&quot; id=&quot;markdown-toc-发布任务状态图&quot;&gt;发布任务状态图&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;做任务状态图&quot;&gt;做任务状态图&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/UML/状态图_做任务.jpg&quot; alt=&quot;状态图_做任务&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;发布任务状态图&quot;&gt;发布任务状态图&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/UML/状态图_发布任务.jpg&quot; alt=&quot;状态图_发布任务&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Created by 15352103&lt;/em&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 09 May 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.4.%E7%8A%B6%E6%80%81%E6%A8%A1%E5%9E%8B/</link>
+        <guid isPermaLink="true">http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.4.%E7%8A%B6%E6%80%81%E6%A8%A1%E5%9E%8B/</guid>
+        
+        
+        <category>6.需求规格说明书</category>
+        
+      </item>
+    
+      <item>
+        <title>6.5 功能模型</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#处理发布任务15352103&quot; id=&quot;markdown-toc-处理发布任务15352103&quot;&gt;处理发布任务（15352103）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;处理发布任务15352103&quot;&gt;处理发布任务（15352103）&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/UML/系统顺序图_发布任务.jpg&quot; alt=&quot;系统顺序图_发布任务&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 08 May 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.5.%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9E%8B/</link>
+        <guid isPermaLink="true">http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.5.%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9E%8B/</guid>
         
         
         <category>6.需求规格说明书</category>
@@ -73,8 +458,8 @@ title: &quot;6.1 Usecase Diagram&quot;
 &lt;p&gt;&lt;img src=&quot;/styles/images/X2.01/2.png&quot; alt=&quot;代码2&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.01.16340286-Jekyll%E7%94%9F%E6%88%90%E6%8C%89categories%E5%AD%97%E5%85%B8%E5%BA%8F%E6%8E%92%E5%BA%8F%E7%9A%84%E7%9B%AE%E5%BD%95/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.01.16340286-Jekyll%E7%94%9F%E6%88%90%E6%8C%89categories%E5%AD%97%E5%85%B8%E5%BA%8F%E6%8E%92%E5%BA%8F%E7%9A%84%E7%9B%AE%E5%BD%95/</guid>
+        <link>http://localhost:4000/x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.01.16340286-Jekyll%E7%94%9F%E6%88%90%E6%8C%89categories%E5%AD%97%E5%85%B8%E5%BA%8F%E6%8E%92%E5%BA%8F%E7%9A%84%E7%9B%AE%E5%BD%95/</link>
+        <guid isPermaLink="true">http://localhost:4000/x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.01.16340286-Jekyll%E7%94%9F%E6%88%90%E6%8C%89categories%E5%AD%97%E5%85%B8%E5%BA%8F%E6%8E%92%E5%BA%8F%E7%9A%84%E7%9B%AE%E5%BD%95/</guid>
         
         
         <category>X2.技术与工作报告</category>
@@ -85,27 +470,14 @@ title: &quot;6.1 Usecase Diagram&quot;
         <title>X1.01 Inception(2019/03/24)</title>
         <description>
 &lt;p&gt;&lt;img src=&quot;/styles/images/X1.01/Inception.png&quot; alt=&quot;思维导图&quot; /&gt;
-From &lt;a href=&quot;https://github.com/Ernie1&quot; target=&quot;_blank&quot;&gt;Ernie1&lt;/a&gt;&lt;/p&gt;
+From &lt;a href=&quot;https://github.com/Ernie1&quot; target=&quot;_blank&quot;&gt;16340286&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//x1.%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95/X1.01.Inception/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//x1.%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95/X1.01.Inception/</guid>
+        <link>http://localhost:4000/x1.%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95/X1.01.Inception/</link>
+        <guid isPermaLink="true">http://localhost:4000/x1.%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95/X1.01.Inception/</guid>
         
         
         <category>X1.会议记录</category>
-        
-      </item>
-    
-      <item>
-        <title>6.2 用例与活动图</title>
-        <description>
-</description>
-        <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.2.%E7%94%A8%E4%BE%8B+%E6%B4%BB%E5%8A%A8%E5%9B%BE/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.2.%E7%94%A8%E4%BE%8B+%E6%B4%BB%E5%8A%A8%E5%9B%BE/</guid>
-        
-        
-        <category>6.需求规格说明书</category>
         
       </item>
     
@@ -114,195 +486,11 @@ From &lt;a href=&quot;https://github.com/Ernie1&quot; target=&quot;_blank&quot;&
         <description>
 </description>
         <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//5.%E4%BA%A7%E5%93%81%E7%89%B9%E6%80%A7%E5%BA%93/5.%E4%BA%A7%E5%93%81%E7%89%B9%E6%80%A7%E5%BA%93/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//5.%E4%BA%A7%E5%93%81%E7%89%B9%E6%80%A7%E5%BA%93/5.%E4%BA%A7%E5%93%81%E7%89%B9%E6%80%A7%E5%BA%93/</guid>
+        <link>http://localhost:4000/5.%E4%BA%A7%E5%93%81%E7%89%B9%E6%80%A7%E5%BA%93/5.%E4%BA%A7%E5%93%81%E7%89%B9%E6%80%A7%E5%BA%93/</link>
+        <guid isPermaLink="true">http://localhost:4000/5.%E4%BA%A7%E5%93%81%E7%89%B9%E6%80%A7%E5%BA%93/5.%E4%BA%A7%E5%93%81%E7%89%B9%E6%80%A7%E5%BA%93/</guid>
         
         
         <category>5.产品特性库</category>
-        
-      </item>
-    
-      <item>
-        <title>项目愿景</title>
-        <description>
-</description>
-        <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//4.%E9%A1%B9%E7%9B%AE%E6%84%BF%E6%99%AF/4.%E9%A1%B9%E7%9B%AE%E6%84%BF%E6%99%AF/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//4.%E9%A1%B9%E7%9B%AE%E6%84%BF%E6%99%AF/4.%E9%A1%B9%E7%9B%AE%E6%84%BF%E6%99%AF/</guid>
-        
-        
-        <category>4.项目愿景</category>
-        
-      </item>
-    
-      <item>
-        <title>项目前期调研与竞品分析</title>
-        <description>
-</description>
-        <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//3.%E9%A1%B9%E7%9B%AE%E5%89%8D%E6%9C%9F%E8%B0%83%E7%A0%94%E4%B8%8E%E7%AB%9E%E5%93%81%E5%88%86%E6%9E%90/3.%E9%A1%B9%E7%9B%AE%E5%89%8D%E6%9C%9F%E8%B0%83%E7%A0%94%E4%B8%8E%E7%AB%9E%E5%93%81%E5%88%86%E6%9E%90/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//3.%E9%A1%B9%E7%9B%AE%E5%89%8D%E6%9C%9F%E8%B0%83%E7%A0%94%E4%B8%8E%E7%AB%9E%E5%93%81%E5%88%86%E6%9E%90/3.%E9%A1%B9%E7%9B%AE%E5%89%8D%E6%9C%9F%E8%B0%83%E7%A0%94%E4%B8%8E%E7%AB%9E%E5%93%81%E5%88%86%E6%9E%90/</guid>
-        
-        
-        <category>3.项目前期调研与竞品分析</category>
-        
-      </item>
-    
-      <item>
-        <title>团队组建与分工</title>
-        <description>
-</description>
-        <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//2.%E5%9B%A2%E9%98%9F%E7%BB%84%E5%BB%BA%E4%B8%8E%E5%88%86%E5%B7%A5/2.%E5%9B%A2%E9%98%9F%E7%BB%84%E5%BB%BA%E4%B8%8E%E5%88%86%E5%B7%A5/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//2.%E5%9B%A2%E9%98%9F%E7%BB%84%E5%BB%BA%E4%B8%8E%E5%88%86%E5%B7%A5/2.%E5%9B%A2%E9%98%9F%E7%BB%84%E5%BB%BA%E4%B8%8E%E5%88%86%E5%B7%A5/</guid>
-        
-        
-        <category>2.团队组建与分工</category>
-        
-      </item>
-    
-      <item>
-        <title>项目概况</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#1项目简介&quot; id=&quot;markdown-toc-1项目简介&quot;&gt;1、项目简介&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#2重要分析设计文档&quot; id=&quot;markdown-toc-2重要分析设计文档&quot;&gt;2、重要分析设计文档&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#3敏捷开发迭代管理与大事纪&quot; id=&quot;markdown-toc-3敏捷开发迭代管理与大事纪&quot;&gt;3、敏捷开发迭代管理与大事纪&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;1项目简介&quot;&gt;1、项目简介&lt;/h2&gt;
-
-&lt;p&gt;好吃易点是新一代个性化餐厅自助点餐服务云平台。用户只需微信扫码，获取一站式服务；商家…。主要特点包括：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;客户通过做面二维码直接呼唤微信服务小程序点餐、呼叫服务、支付；&lt;/li&gt;
-  &lt;li&gt;每个餐厅拥有自己的微信服务小程序，可以自由定制；&lt;/li&gt;
-  &lt;li&gt;…&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;2重要分析设计文档&quot;&gt;2、重要分析设计文档&lt;/h2&gt;
-
-&lt;p&gt;请在这里给出重要的软件分析与设计文档连接&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;/4.%E9%A1%B9%E7%9B%AE%E6%84%BF%E6%99%AF/4.%E9%A1%B9%E7%9B%AE%E6%84%BF%E6%99%AF/&quot;&gt;需求规格说明书&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/4.%E9%A1%B9%E7%9B%AE%E6%84%BF%E6%99%AF/4.%E9%A1%B9%E7%9B%AE%E6%84%BF%E6%99%AF/&quot;&gt;软件设计说明书&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/4.%E9%A1%B9%E7%9B%AE%E6%84%BF%E6%99%AF/4.%E9%A1%B9%E7%9B%AE%E6%84%BF%E6%99%AF/&quot;&gt;产品演示视频&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;3敏捷开发迭代管理与大事纪&quot;&gt;3、敏捷开发迭代管理与大事纪&lt;/h2&gt;
-
-&lt;p&gt;建议你给出每个迭代的看板任务安排。看板建议使用 &lt;a href=&quot;https://github.com/orgs/rookies-sysu/projects?query=is%3Aclosed&quot;&gt;Git Project&lt;/a&gt; ，看板任务通常包括以下几类：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;需求分析任务，包括业务调查、产品策划、需求文档编写、原型设计&lt;/li&gt;
-  &lt;li&gt;设计与开发任务，包括原型验证、数据库设计、架构设计、框架搭建、模块设计、模块编码&lt;/li&gt;
-  &lt;li&gt;测试与 DevOps 任务，包括各类开发规范组织、开发与测试环境与工具、CI/CD 实施&lt;/li&gt;
-  &lt;li&gt;技术学习或其他任务。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;以下是每个迭代任务规划的模板：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Inceptions
-    &lt;ul&gt;
-      &lt;li&gt;goal: 就产品“产品范围、愿景和核心业务”达成一致&lt;/li&gt;
-      &lt;li&gt;前期工作：
-        &lt;ul&gt;
-          &lt;li&gt;产品调查：xxx&lt;/li&gt;
-          &lt;li&gt;团队组织&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;项目启动会议：所有人&lt;/li&gt;
-      &lt;li&gt;项目愿景等文档： xxx&lt;/li&gt;
-      &lt;li&gt;XX业务故事板设计: xxx&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Iteration 1 (3 weeks from yy.mm.dd to yy.mm.dd)
-    &lt;ul&gt;
-      &lt;li&gt;goals:
-        &lt;ul&gt;
-          &lt;li&gt;makes tech prototype for something&lt;/li&gt;
-          &lt;li&gt;builds a proto system to demostrate core scene&lt;/li&gt;
-          &lt;li&gt;collects 50% requirments scene stories&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;milestones
-        &lt;ul&gt;
-          &lt;li&gt;tick-off meeting 99/1/28&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Iteration 2 (3 weeks from yy.mm.dd to yy.mm.dd)
-    &lt;ul&gt;
-      &lt;li&gt;goals:
-        &lt;ul&gt;
-          &lt;li&gt;…&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;milestones
-        &lt;ul&gt;
-          &lt;li&gt;…&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//1.%E9%A1%B9%E7%9B%AE%E6%A6%82%E5%86%B5/1.%E9%A1%B9%E7%9B%AE%E6%A6%82%E5%86%B5/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//1.%E9%A1%B9%E7%9B%AE%E6%A6%82%E5%86%B5/1.%E9%A1%B9%E7%9B%AE%E6%A6%82%E5%86%B5/</guid>
-        
-        
-        <category>1.项目概况</category>
-        
-      </item>
-    
-      <item>
-        <title>X2.02 16340286-软件项目中的几种风险</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#需求变更风险&quot; id=&quot;markdown-toc-需求变更风险&quot;&gt;需求变更风险&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#进度风险&quot; id=&quot;markdown-toc-进度风险&quot;&gt;进度风险&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#信息安全风险&quot; id=&quot;markdown-toc-信息安全风险&quot;&gt;信息安全风险&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#应用技术风险&quot; id=&quot;markdown-toc-应用技术风险&quot;&gt;应用技术风险&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#质量控制风险&quot; id=&quot;markdown-toc-质量控制风险&quot;&gt;质量控制风险&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#参考资料&quot; id=&quot;markdown-toc-参考资料&quot;&gt;参考资料&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;大型项目存在诸多风险因素，在不同程度上对软件开发过程和软件产品质量造成影响。&lt;/p&gt;
-&lt;h2 id=&quot;需求变更风险&quot;&gt;需求变更风险&lt;/h2&gt;
-&lt;p&gt;需求变更风险是指需求已经成为项目基准，但需求还在继续变化；需求定义欠佳，而进一步的定义会扩展项目范畴；添加额外的需求；产品定义含混的部分比预期需要更多的时间；在做需求中客户参与不够；缺少有效的需求变化管理过程。无限度的需求变更使项目承建方有亏损的风险。&lt;/p&gt;
-
-&lt;p&gt;可以通过让用户参与开发过程、开发用户界面原型、需求讨论会议、强化需求分析与评审等措施减轻需求变更风险。&lt;/p&gt;
-&lt;h2 id=&quot;进度风险&quot;&gt;进度风险&lt;/h2&gt;
-&lt;p&gt;软件项目工期估算是软件项目初期最困难的工作之一。很多情况下，软件用户对软件的需求是出于实际情况的压力，希望项目承担方尽快开发出软件来。在软件招标时，开发方为了尽可能争取到项目，对项目的进度承诺出已远远超出实际能做到的项目进度，使项目在开始时就存在严重的时间问题。软件开发组织在工期的压力下，往往放弃文档的编写与更新，结果在软件项目的晚期大量需要通过文档进行协调时，却拖累软件进度越来越慢。此外，由于用户配合问题、资源调配等问题也可能使软件项目不能在预定的时间内完成任务。软件项目过程中有自身的客观规律性，用户对软件项目的进度要求不能与软件开发过程的时间需要相矛盾。&lt;/p&gt;
-
-&lt;p&gt;减轻进度风险的措施有迭代开发、技术评审、持续集成。&lt;/p&gt;
-&lt;h2 id=&quot;信息安全风险&quot;&gt;信息安全风险&lt;/h2&gt;
-&lt;p&gt;信息安全风险是指在信息化建设中，各类应用系统及其赖以运行的基础网络、处理的数据和信息，由于其可能存在的软硬件缺陷、系统集成缺陷等，以及信息安全管理中潜在的薄弱环节，而导致的不同程度的安全风险。&lt;/p&gt;
-
-&lt;p&gt;为了减轻信息安全风险，需要充分论证系统架构的安全性、加强网络应用和物理设备的防护、设计应急预案、配置冗余备用设备、强化人事和资产管理。&lt;/p&gt;
-&lt;h2 id=&quot;应用技术风险&quot;&gt;应用技术风险&lt;/h2&gt;
-&lt;p&gt;指系统发生技术故障、兼容性问题、性能问题，导致运行不畅或中断，不能保障正常、有序、高效、顺利地运行，带来经济或声誉损失的风险。&lt;/p&gt;
-
-&lt;p&gt;可以通过充分论证、同行交流经验、全面设计、充分测试、配置冗余备用设备减轻应用技术风险。&lt;/p&gt;
-&lt;h2 id=&quot;质量控制风险&quot;&gt;质量控制风险&lt;/h2&gt;
-&lt;p&gt;软件质量问题是软件工程开发的关键问题，也是软件工程生产中的核心问题。软件质量问题是导致软件项目进度延误、预算超支或项目失败、项目终止等软件危机的根本原因。&lt;/p&gt;
-
-&lt;p&gt;提高软件质量，可以降低项目开发的总成本；通过减少并及早检测纠正实际的软件开发过程和软件开发结果与预期不符的情况，降低错误成本。&lt;/p&gt;
-
-&lt;h2 id=&quot;参考资料&quot;&gt;参考资料&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://wenku.baidu.com/view/26be0808a26925c52cc5bf72.html&quot; target=&quot;_blank&quot;&gt;软件开发过程存在的风险&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/qq_30427341/article/details/81003902&quot; target=&quot;_blank&quot;&gt;软件开发项目风险管理的几点体会&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 23 Mar 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.02.16340286-%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E5%87%A0%E7%A7%8D%E9%A3%8E%E9%99%A9/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.02.16340286-%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E5%87%A0%E7%A7%8D%E9%A3%8E%E9%99%A9/</guid>
-        
-        
-        <category>X2.技术与工作报告</category>
         
       </item>
     

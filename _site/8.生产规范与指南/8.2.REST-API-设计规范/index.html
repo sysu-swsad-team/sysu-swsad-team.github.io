@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#22365A">
+	<title>8.2 REST API设计规范 - Niffler</title>
+
+	<link rel="shortcut icon" href="/styles/images/logo.png">
+	<link rel="icon" href="/styles/images/logo.png">
+
+	<link rel="stylesheet" href="/styles/css/index.css">
+	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/styles/css/syntax.css">
+	<link rel="canonical" href="/8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.2.REST-API-%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/">
+	<link rel="alternate" type="application/rss+xml" title="Niffler" href="/feed.xml">
+	
+	<meta name="keywords" content="8.2 REST API设计规范, Niffler, Niffler">
+	<meta name="description" content="Niffler">
+
+	<script src="/styles/js/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  	<![endif]-->
+  	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?94be4b0f9fc5d94cc0d0415ea6761ae9";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+  	<style type="text/css">
+	  	.docs-content{
+	  		margin-bottom: 10px;
+	  	}
+  	</style>
+</head>
+
+  <body class="index">
+
+    <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img src="/styles/images/logo.png">
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">    
+        <li>
+          <a href="/">圈多多</a>
+        </li>
+        <!-- <li>
+          <a href="/categories/">大类分解</a>
+        </li>
+        <li>
+          <a href="/tag">小类内聚</a>
+        </li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/sysu-swsad-team">Github</a></li>
+       
+      </ul>
+    </nav>
+  </div>
+</header>
+    <div class="docs-header" id="content">
+  <div class="container">
+  	
+  		<!--
+		    <h1>8.2 REST API设计规范</h1>
+		    <p>Post on May 27, 2019 by <a href="/about">sysu-swsad-team</a></p>
+		-->
+		    <h1>Niffler</h1>
+    
+  </div>
+</div>
+    
+      
+<div class="banner">
+  <div class="container">
+  	
+    	<a href="/categories/#8.生产规范与指南-ref">8.生产规范与指南</a>	/
+      <!-- <a href="/tag/#-ref"></a> -->
+      <span>8.2 REST API设计规范</span>
+    
+  </div>
+</div>
+
+    
+
+    <div class="container docs-container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar hidden-print" role="complementary">
+        <div id="navigation">
+  <h1>目录</h1>
+  <ul class="nav sidenav">
+  </ul>
+  <!-- <div style="height: 200px;width: 200px;">
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"> 
+    </script>
+  </div> -->
+</div>
+
+ 
+      </div>
+    </div>
+    <div class="col-md-9" role="main">
+      <div class="panel docs-content">
+        <div class="wrapper">
+            <header class="post-header">
+              <h1 class="post-title">8.2 REST API设计规范</h1>
+              <!--
+                <p class="post-meta">May 27, 2019 • sysu-swsad-team</p>
+              -->
+              <!-- <div class="meta">Posted on <span class="postdate">May 27, 2019</span> By <a target="_blank" href="http://localhost:4000">sysu-swsad-team</a></div> -->
+              <div class="meta">Posted By <a target="_blank" href="https://github.com/sysu-swsad-team">sysu-swsad-team</a></div>
+              <br />
+            </header>
+            <article class="post-content">
+              <ul id="markdown-toc">
+  <li><a href="#协议" id="markdown-toc-协议">协议</a></li>
+  <li><a href="#url" id="markdown-toc-url">URL</a></li>
+  <li><a href="#http请求方式" id="markdown-toc-http请求方式">http请求方式</a></li>
+  <li><a href="#过滤信息" id="markdown-toc-过滤信息">过滤信息</a></li>
+  <li><a href="#数据格式" id="markdown-toc-数据格式">数据格式</a></li>
+  <li><a href="#状态码" id="markdown-toc-状态码">状态码</a>    <ul>
+      <li><a href="#get" id="markdown-toc-get">GET</a></li>
+      <li><a href="#post" id="markdown-toc-post">POST</a></li>
+      <li><a href="#put" id="markdown-toc-put">PUT</a></li>
+      <li><a href="#delete" id="markdown-toc-delete">DELETE</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="协议">协议</h2>
+<p>使用https协议。</p>
+<h2 id="url">URL</h2>
+<ul>
+  <li>在RESTful架构中，每个路径代表一种资源，所以路径中不能有动词，只能有名词。所用名词尽量参考数据库表的设计。</li>
+  <li>URL路径名词均为复数。为了保证URL格式的一致性，建议使用复数形式。</li>
+  <li>应该使用连字符”-“来提高URL的可读性，而不是使用下划线”_“。</li>
+  <li>URL路径中首选小写字母。</li>
+  <li>将版本信息放入URL中。
+    <h2 id="http请求方式">http请求方式</h2>
+  </li>
+  <li>GET: 从服务器取出资源（一项或多项）</li>
+  <li>POST: 在服务器新建一个资源</li>
+  <li>PUT: 在服务器更新资源（客户端提供改变后的完整资源）</li>
+  <li>PATCH: 在服务器更新资源（客户端提供改变的属性）</li>
+  <li>DELETE: 从服务器删除资源
+    <h2 id="过滤信息">过滤信息</h2>
+    <p>在获取资源的时候，有可能需要获取某些“过滤”后的资源，例如指定前10行数据：
+<code class="highlighter-rouge">http://api.user.com/schools/grades/classes/boys?page=1&amp;page-size=10</code></p>
+    <h2 id="数据格式">数据格式</h2>
+    <p>使用json数据格式进行数据传递。</p>
+    <h2 id="状态码">状态码</h2>
+    <p>RESTful架构应该遵循统一接口原则，统一接口包含了一组受限的预定义的操作，不论什么样的资源，都是通过使用相同的接口进行资源的访问。接口应该使用标准的HTTP方法如GET，PUT和POST，并遵循这些方法的语义。<br />
+如果按照HTTP方法的语义来暴露资源，那么接口将会拥有安全性和幂等性的特性，例如GET和HEAD请求都是安全的，无论请求多少次，都不会改变服务器状态。而GET、HEAD、PUT和DELETE请求都是幂等的，无论对资源操作多少次，结果总是一样的，后面的请求并不会产生比第一次更多的影响。<br />
+下面列出了GET，DELETE，PUT和POST的典型用法：</p>
+    <h3 id="get">GET</h3>
+  </li>
+  <li>安全且幂等</li>
+  <li>200（OK） 表示已在响应中发出</li>
+  <li>204（无内容） 资源为空</li>
+  <li>301（Moved Permanently） 资源的URL已被更新</li>
+  <li>303（See Other） 其他（如，负载均衡）</li>
+  <li>304（not modified）资源未更改（缓存）</li>
+  <li>400 （bad request）指代坏请求</li>
+  <li>404 （not found）资源不存在</li>
+  <li>406 （not acceptable）服务端不支持所需表示</li>
+  <li>500 （internal server error）通用错误响应</li>
+  <li>503 （Service Unavailable）服务端当前无法处理请求
+    <h3 id="post">POST</h3>
+  </li>
+  <li>不安全且不幂等</li>
+  <li>200（OK）如果现有资源已被更改</li>
+  <li>201（created）如果新资源被创建</li>
+  <li>202（accepted）已接受处理请求但尚未完成（异步处理）</li>
+  <li>301（Moved Permanently）资源的URL被更新</li>
+  <li>303（See Other）其他（如，负载均衡）</li>
+  <li>400（bad request）指代坏请求</li>
+  <li>404 （not found）资源不存在</li>
+  <li>406 （not acceptable）服务端不支持所需表示</li>
+  <li>409 （conflict）通用冲突</li>
+  <li>412 （Precondition Failed）前置条件失败（如执行条件更新时的冲突）</li>
+  <li>415 （unsupported media type）接受到的表示不受支持</li>
+  <li>500 （internal server error）通用错误响应</li>
+  <li>503 （Service Unavailable）服务端当前无法处理请求
+    <h3 id="put">PUT</h3>
+  </li>
+  <li>不安全但幂等</li>
+  <li>200 （OK）如果现有资源已被更改</li>
+  <li>201 （created）如果新资源被创建</li>
+  <li>301（Moved Permanently）资源的URL已更改</li>
+  <li>303 （See Other）其他（如，负载均衡）</li>
+  <li>400 （bad request）指代坏请求</li>
+  <li>404 （not found）资源不存在</li>
+  <li>406 （not acceptable）服务端不支持所需表示</li>
+  <li>409 （conflict）通用冲突</li>
+  <li>412 （Precondition Failed）前置条件失败（如执行条件更新时的冲突）</li>
+  <li>415 （unsupported media type）接受到的表示不受支持</li>
+  <li>500 （internal server error）通用错误响应</li>
+  <li>503 （Service Unavailable）服务端当前无法处理请求
+    <h3 id="delete">DELETE</h3>
+  </li>
+  <li>不安全但幂等</li>
+  <li>200 （OK）资源已被删除</li>
+  <li>301 （Moved Permanently）资源的URIL已更改</li>
+  <li>303 （See Other）其他（如，负载均衡）</li>
+  <li>400 （bad request）指代坏请求</li>
+  <li>404 （not found）资源不存在</li>
+  <li>409 （conflict）通用冲突</li>
+  <li>500 （internal server error）通用错误响应</li>
+  <li>503 （Service Unavailable）服务端当前无法处理请求</li>
+</ul>
+
+<p><em>Created by 15352103</em></p>
+
+            </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer class="footer" role="contentinfo">
+	<div class="container">
+		<p class="copyright">Copyright &copy; 2019-2019 <a href="https://sysu-swsad-team.github.io/"><code>sysu-swsad-team</code></a>.</p>
+		<p>Powered by <a href="http://jekyllrb.com">Jekyll</a>, themed from <a href="http://lesscss.cn/">Less</a>, refactored by <a href="http://www.hifreud.com/">Freud Kang</a></p>
+	</div>
+</footer>
+
+<script src="/styles/js/jquery.min.js"></script>
+<script src="/styles/js/bootstrap.min.js"></script>
+<script src="/styles/js/holder.min.js"></script>
+<script src="/styles/js/lessismore.js"></script>
+<script src="/styles/js/application.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  </body>
+</html>
