@@ -3,11 +3,222 @@
   <channel>
     <title></title>
     <description>圈多多</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 01 Jun 2019 18:35:53 +0800</pubDate>
-    <lastBuildDate>Sat, 01 Jun 2019 18:35:53 +0800</lastBuildDate>
+    <link>https://sysu-swsad-team.github.io//</link>
+    <atom:link href="https://sysu-swsad-team.github.io//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 02 Jun 2019 19:04:15 +0800</pubDate>
+    <lastBuildDate>Sun, 02 Jun 2019 19:04:15 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>8.1 代码规范</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#前端代码规范&quot; id=&quot;markdown-toc-前端代码规范&quot;&gt;前端代码规范&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#命名规范&quot; id=&quot;markdown-toc-命名规范&quot;&gt;命名规范&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#目录和文件采用大驼峰命名法&quot; id=&quot;markdown-toc-目录和文件采用大驼峰命名法&quot;&gt;目录和文件采用“大驼峰命名法”&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#id-采用小驼峰命名法&quot; id=&quot;markdown-toc-id-采用小驼峰命名法&quot;&gt;id: 采用“小驼峰命名法”&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#class-采用中划线命名法&quot; id=&quot;markdown-toc-class-采用中划线命名法&quot;&gt;class: 采用“中划线命名法”&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#命名尽量避免使用中文拼音应该采用简明的英文单词进行组合&quot; id=&quot;markdown-toc-命名尽量避免使用中文拼音应该采用简明的英文单词进行组合&quot;&gt;命名尽量避免使用中文拼音，应该采用简明的英文单词进行组合&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#排版规范&quot; id=&quot;markdown-toc-排版规范&quot;&gt;排版规范&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#风格指南&quot; id=&quot;markdown-toc-风格指南&quot;&gt;风格指南&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#组件名为多个单词&quot; id=&quot;markdown-toc-组件名为多个单词&quot;&gt;组件名为多个单词&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#组件数据&quot; id=&quot;markdown-toc-组件数据&quot;&gt;组件数据&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#prop定义&quot; id=&quot;markdown-toc-prop定义&quot;&gt;Prop定义&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#为v-for设置键值&quot; id=&quot;markdown-toc-为v-for设置键值&quot;&gt;为&lt;code class=&quot;highlighter-rouge&quot;&gt;v-for&lt;/code&gt;设置键值&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#避免v-if和v-for用在一起&quot; id=&quot;markdown-toc-避免v-if和v-for用在一起&quot;&gt;避免&lt;code class=&quot;highlighter-rouge&quot;&gt;v-if&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;v-for&lt;/code&gt;用在一起&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#为组件样式设置作用域&quot; id=&quot;markdown-toc-为组件样式设置作用域&quot;&gt;为组件样式设置作用域&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;前端代码规范&quot;&gt;前端代码规范&lt;/h2&gt;
+&lt;h3 id=&quot;命名规范&quot;&gt;命名规范&lt;/h3&gt;
+&lt;h4 id=&quot;目录和文件采用大驼峰命名法&quot;&gt;目录和文件采用“大驼峰命名法”&lt;/h4&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;例：DataBaseUser：变量DataBaseUser单词首字母大写。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;id-采用小驼峰命名法&quot;&gt;id: 采用“小驼峰命名法”&lt;/h4&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;例：myStudentCount：变量myStudentCount第一个单词全部小写，后面的单词首字母大写。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;class-采用中划线命名法&quot;&gt;class: 采用“中划线命名法”&lt;/h4&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;例：print-employee-paychecks：函数名中的每一个逻辑断点都有一个中划线来标记。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;命名尽量避免使用中文拼音应该采用简明的英文单词进行组合&quot;&gt;命名尽量避免使用中文拼音，应该采用简明的英文单词进行组合&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;命名注意缩写，但是不能盲目缩写；&lt;/li&gt;
+  &lt;li&gt;不允许通过1、2、3等序号进行命名；&lt;/li&gt;
+  &lt;li&gt;避免class与id重名；&lt;/li&gt;
+  &lt;li&gt;id注意用于标识模块或页面的某一个父容器区域，名称必须唯一，不要随意新建id；&lt;/li&gt;
+  &lt;li&gt;class用于标识某一个类型的对象，命名必须言简意赅；&lt;/li&gt;
+  &lt;li&gt;尽可能提高代码模块的复用，样式尽量用组合的方式；&lt;/li&gt;
+  &lt;li&gt;规则名称中不应该包含颜色、定位等与具体显示效果相关的信息，应该用意义命名，而不是结果名称。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;排版规范&quot;&gt;排版规范&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;如果大括号内为空，则简洁写成&lt;code class=&quot;highlighter-rouge&quot;&gt;{}&lt;/code&gt;，不需要换行。如果大括号内非空，则1）左大括号前不换行有空格；2）左大括号后换行；3）右大括号前换行；4）右大括号后还有&lt;code class=&quot;highlighter-rouge&quot;&gt;else&lt;/code&gt;等代码则不换行；5）表示终止的右大括号后必须换行。&lt;br /&gt;
+示例：
+    &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;methods&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;testFunc&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;test function&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;nx&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+           &lt;span class=&quot;nx&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;左右小括号和中间字符之间不出现空格。&lt;br /&gt;
+示例：
+    &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;if/for/while/switch&lt;/code&gt;等保留字与括号之间必须加空格。&lt;br /&gt;
+示例：
+    &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;二目、三目运算符的左右两边必须加一个空格。&lt;br /&gt;
+示例：
+    &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;注释的双斜线与注释内容之间有且只有一个空格。&lt;br /&gt;
+示例：
+    &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 我是注释&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;/** 我是注释 **/&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;多个参数逗号后边必须加空格。&lt;br /&gt;
+示例：
+    &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;methods&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;testFunc&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pra1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pra2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pra3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;test function&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;nx&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+           &lt;span class=&quot;nx&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;风格指南&quot;&gt;风格指南&lt;/h3&gt;
+&lt;h4 id=&quot;组件名为多个单词&quot;&gt;组件名为多个单词&lt;/h4&gt;
+&lt;p&gt;组件名应该始终为多个单词，Vue内置组件除外。这样做可以避免和现有的以及未来的HTML元素发生冲突，因为所有HTML元素的名称都是单个单词。&lt;br /&gt;
+示例：&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'todo-item'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'TodoItem'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;组件数据&quot;&gt;组件数据&lt;/h4&gt;
+&lt;p&gt;当在组件中使用&lt;code class=&quot;highlighter-rouge&quot;&gt;data&lt;/code&gt;属性的时候，它的值必须是返回一个对象的函数。&lt;code class=&quot;highlighter-rouge&quot;&gt;new Vue&lt;/code&gt;除外。&lt;br /&gt;
+示例：&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'some-comp'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'bar'&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;prop定义&quot;&gt;Prop定义&lt;/h4&gt;
+&lt;p&gt;Prop定义应该尽量详细，至少需要指定其类型。&lt;br /&gt;
+示例：&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;required&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;validator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;'syncing'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;'synced'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;'version-conflict'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;'error'&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;indexOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;为v-for设置键值&quot;&gt;为&lt;code class=&quot;highlighter-rouge&quot;&gt;v-for&lt;/code&gt;设置键值&lt;/h4&gt;
+&lt;p&gt;在组件上总是必须用&lt;code class=&quot;highlighter-rouge&quot;&gt;key&lt;/code&gt;配合&lt;code class=&quot;highlighter-rouge&quot;&gt;v-for&lt;/code&gt;，以便维护内部组件及其子树的状态。&lt;br /&gt;
+示例：&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;v-for=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;todo in todos&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;:key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;todo.id&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;避免v-if和v-for用在一起&quot;&gt;避免&lt;code class=&quot;highlighter-rouge&quot;&gt;v-if&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;v-for&lt;/code&gt;用在一起&lt;/h4&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;v-if=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;shouldShowUsers&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;v-for=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;user in users&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;:key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;user.id&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;为组件样式设置作用域&quot;&gt;为组件样式设置作用域&lt;/h4&gt;
+&lt;p&gt;对于应用来说，顶级&lt;code class=&quot;highlighter-rouge&quot;&gt;App&lt;/code&gt;组件和布局组件中的样式可以是全局的，但是其它组件应该是有作用域的。&lt;br /&gt;
+示例：&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;template&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;button button-close&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;X&lt;span class=&quot;nt&quot;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/template&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 使用 `scoped` 特性 --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;style &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;scoped&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.button&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;border-radius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.button-close&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;参考：&lt;br /&gt;
+&lt;a href=&quot;https://cn.vuejs.org/v2/style-guide/index.html&quot;&gt;Vue.js风格指南&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://www.jianshu.com/p/bfc0650f0033&quot;&gt;命名规范和排版规范&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 28 May 2019 00:00:00 +0800</pubDate>
+        <link>https://sysu-swsad-team.github.io//8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.1.%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.1.%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</guid>
+        
+        
+        <category>8.生产规范与指南</category>
+        
+      </item>
     
       <item>
         <title>7.2 数据库设计</title>
@@ -16,8 +227,8 @@
 &lt;img src=&quot;/styles/images/7.2/auth-system.jpg&quot; alt=&quot;数据库设计&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 28 May 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.2.%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/</link>
-        <guid isPermaLink="true">http://localhost:4000/7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.2.%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/</guid>
+        <link>https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.2.%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.2.%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/</guid>
         
         
         <category>7.设计说明书</category>
@@ -126,8 +337,8 @@
 &lt;p&gt;&lt;em&gt;Created by 15352103&lt;/em&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 27 May 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.2.REST-API-%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/</link>
-        <guid isPermaLink="true">http://localhost:4000/8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.2.REST-API-%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/</guid>
+        <link>https://sysu-swsad-team.github.io//8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.2.REST-API-%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.2.REST-API-%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/</guid>
         
         
         <category>8.生产规范与指南</category>
@@ -142,8 +353,8 @@
 &lt;p&gt;&lt;em&gt;Created by 15352103&lt;/em&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 12 May 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.1.%E7%94%A8%E4%BE%8B%E5%9B%BE/</link>
-        <guid isPermaLink="true">http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.1.%E7%94%A8%E4%BE%8B%E5%9B%BE/</guid>
+        <link>https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.1.%E7%94%A8%E4%BE%8B%E5%9B%BE/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.1.%E7%94%A8%E4%BE%8B%E5%9B%BE/</guid>
         
         
         <category>6.需求规格说明书</category>
@@ -333,8 +544,8 @@
 &lt;p&gt;&lt;em&gt;Created by 15352103&lt;/em&gt;&lt;/p&gt;
 </description>
         <pubDate>Sat, 11 May 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.2.%E7%94%A8%E4%BE%8B%E4%B8%8E%E6%B4%BB%E5%8A%A8%E5%9B%BE/</link>
-        <guid isPermaLink="true">http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.2.%E7%94%A8%E4%BE%8B%E4%B8%8E%E6%B4%BB%E5%8A%A8%E5%9B%BE/</guid>
+        <link>https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.2.%E7%94%A8%E4%BE%8B%E4%B8%8E%E6%B4%BB%E5%8A%A8%E5%9B%BE/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.2.%E7%94%A8%E4%BE%8B%E4%B8%8E%E6%B4%BB%E5%8A%A8%E5%9B%BE/</guid>
         
         
         <category>6.需求规格说明书</category>
@@ -349,8 +560,8 @@
 &lt;p&gt;&lt;em&gt;Created by 15352103&lt;/em&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 10 May 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.3.%E9%A2%86%E5%9F%9F%E6%A8%A1%E5%9E%8B/</link>
-        <guid isPermaLink="true">http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.3.%E9%A2%86%E5%9F%9F%E6%A8%A1%E5%9E%8B/</guid>
+        <link>https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.3.%E9%A2%86%E5%9F%9F%E6%A8%A1%E5%9E%8B/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.3.%E9%A2%86%E5%9F%9F%E6%A8%A1%E5%9E%8B/</guid>
         
         
         <category>6.需求规格说明书</category>
@@ -375,8 +586,8 @@
 &lt;p&gt;&lt;em&gt;Created by 15352103&lt;/em&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 09 May 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.4.%E7%8A%B6%E6%80%81%E6%A8%A1%E5%9E%8B/</link>
-        <guid isPermaLink="true">http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.4.%E7%8A%B6%E6%80%81%E6%A8%A1%E5%9E%8B/</guid>
+        <link>https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.4.%E7%8A%B6%E6%80%81%E6%A8%A1%E5%9E%8B/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.4.%E7%8A%B6%E6%80%81%E6%A8%A1%E5%9E%8B/</guid>
         
         
         <category>6.需求规格说明书</category>
@@ -393,8 +604,8 @@
 &lt;p&gt;&lt;img src=&quot;https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/UML/系统顺序图_发布任务.jpg&quot; alt=&quot;系统顺序图_发布任务&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 08 May 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.5.%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9E%8B/</link>
-        <guid isPermaLink="true">http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.5.%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9E%8B/</guid>
+        <link>https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.5.%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9E%8B/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.5.%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9E%8B/</guid>
         
         
         <category>6.需求规格说明书</category>
@@ -452,8 +663,8 @@ title: &quot;6.1 Usecase Diagram&quot;
 &lt;p&gt;&lt;img src=&quot;/styles/images/X2.01/2.png&quot; alt=&quot;代码2&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.01.16340286-Jekyll%E7%94%9F%E6%88%90%E6%8C%89categories%E5%AD%97%E5%85%B8%E5%BA%8F%E6%8E%92%E5%BA%8F%E7%9A%84%E7%9B%AE%E5%BD%95/</link>
-        <guid isPermaLink="true">http://localhost:4000/x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.01.16340286-Jekyll%E7%94%9F%E6%88%90%E6%8C%89categories%E5%AD%97%E5%85%B8%E5%BA%8F%E6%8E%92%E5%BA%8F%E7%9A%84%E7%9B%AE%E5%BD%95/</guid>
+        <link>https://sysu-swsad-team.github.io//x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.01.16340286-Jekyll%E7%94%9F%E6%88%90%E6%8C%89categories%E5%AD%97%E5%85%B8%E5%BA%8F%E6%8E%92%E5%BA%8F%E7%9A%84%E7%9B%AE%E5%BD%95/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.01.16340286-Jekyll%E7%94%9F%E6%88%90%E6%8C%89categories%E5%AD%97%E5%85%B8%E5%BA%8F%E6%8E%92%E5%BA%8F%E7%9A%84%E7%9B%AE%E5%BD%95/</guid>
         
         
         <category>X2.技术与工作报告</category>
@@ -467,24 +678,11 @@ title: &quot;6.1 Usecase Diagram&quot;
 From &lt;a href=&quot;https://github.com/Ernie1&quot; target=&quot;_blank&quot;&gt;16340286&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/x1.%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95/X1.01.Inception/</link>
-        <guid isPermaLink="true">http://localhost:4000/x1.%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95/X1.01.Inception/</guid>
+        <link>https://sysu-swsad-team.github.io//x1.%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95/X1.01.Inception/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//x1.%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95/X1.01.Inception/</guid>
         
         
         <category>X1.会议记录</category>
-        
-      </item>
-    
-      <item>
-        <title>产品特性库</title>
-        <description>
-</description>
-        <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/5.%E4%BA%A7%E5%93%81%E7%89%B9%E6%80%A7%E5%BA%93/5.%E4%BA%A7%E5%93%81%E7%89%B9%E6%80%A7%E5%BA%93/</link>
-        <guid isPermaLink="true">http://localhost:4000/5.%E4%BA%A7%E5%93%81%E7%89%B9%E6%80%A7%E5%BA%93/5.%E4%BA%A7%E5%93%81%E7%89%B9%E6%80%A7%E5%BA%93/</guid>
-        
-        
-        <category>5.产品特性库</category>
         
       </item>
     
