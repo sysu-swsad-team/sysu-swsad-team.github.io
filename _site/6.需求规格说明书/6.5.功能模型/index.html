@@ -123,17 +123,87 @@
               <!--
                 <p class="post-meta">May 8, 2019 • sysu-swsad-team</p>
               -->
-              <!-- <div class="meta">Posted on <span class="postdate">May 08, 2019</span> By <a target="_blank" href="https://sysu-swsad-team.github.io/">sysu-swsad-team</a></div> -->
+              <!-- <div class="meta">Posted on <span class="postdate">May 08, 2019</span> By <a target="_blank" href="http://localhost:4000">sysu-swsad-team</a></div> -->
               <div class="meta">Posted By <a target="_blank" href="https://github.com/sysu-swsad-team">sysu-swsad-team</a></div>
               <br />
             </header>
             <article class="post-content">
               <ul id="markdown-toc">
   <li><a href="#处理发布任务15352103" id="markdown-toc-处理发布任务15352103">处理发布任务（15352103）</a></li>
+  <li><a href="#some-details-16340286" id="markdown-toc-some-details-16340286">Some Details (16340286)</a>    <ul>
+      <li><a href="#rules" id="markdown-toc-rules">Rules</a></li>
+    </ul>
+  </li>
+  <li><a href="#task-statuses" id="markdown-toc-task-statuses">Task Statuses</a></li>
+  <li><a href="#participantship-statuses" id="markdown-toc-participantship-statuses">Participantship Statuses</a></li>
 </ul>
 
 <h2 id="处理发布任务15352103">处理发布任务（15352103）</h2>
 <p><img src="https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/UML/系统顺序图_发布任务.jpg" alt="系统顺序图_发布任务" /></p>
+
+<h2 id="some-details-16340286">Some Details (<a href="https://github.com/Ernie1">16340286</a>)</h2>
+
+<h3 id="rules">Rules</h3>
+<ul>
+  <li>
+    <p>When create task,
+available_balance should be more than fee * participant_quota.</p>
+  </li>
+  <li>
+    <p>When determine task’s fee,
+participant_quota should also be determined but not vice versa.</p>
+  </li>
+  <li>
+    <p>Task’s due_date is only w.r.t. participantship’s participanted_date,
+so participantship’s confirmed_date is unrestricted.</p>
+  </li>
+  <li>
+    <p>When create a participantship,
+task issuer’s balance is deducted 1 * fee.</p>
+  </li>
+  <li>
+    <p>When task cancelled, task issuer will not be refunded
+and affect corresponding participantship,
+participant whose _status == ‘UNDERWAY’ will be paid.</p>
+  </li>
+  <li>
+    <p>Task can be claimed when status == ‘UNDERWAY’ and
+claimer is not issuer.</p>
+  </li>
+  <li>
+    <p>When task invalid, task issuer will not be refunded
+and cause corresponding participantship invalid,
+participant whose _status == ‘UNDERWAY’ will NOT be paid.</p>
+  </li>
+  <li>
+    <p>Only participant has permission to modify _status
+from ‘UNDERWAY’ to ‘CANCELLED’ and task issuer is refunded 1 * fee.</p>
+  </li>
+  <li>
+    <p>Only task issuer has permission to modify _status
+from ‘UNDERWAY’ to ‘CONFIRMED’ and participant is paid 1 * fee.</p>
+  </li>
+  <li>
+    <p>Only task issuer has permission to comment
+when _status == ‘CONFIRMED’.</p>
+  </li>
+</ul>
+
+<h2 id="task-statuses">Task Statuses</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        INVALID : Has certain number of claimers
+      CANCELLED : Cancelled by issuer
+         CLOSED : due_date expires
+     QUOTA FULL : Attain to participant_quota
+       UNDERWAY : In progress
+</code></pre></div></div>
+<h2 id="participantship-statuses">Participantship Statuses</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      CANCELLED : Cancelled by participant
+      COMMENTED : Has been commented by its task issuer
+      CONFIRMED : Has been confirmed by its task issuer
+   TASK INVALID : Its task has certain number of claimers
+ TASK CANCELLED : Its task has been cancelled
+       UNDERWAY : In progress
+</code></pre></div></div>
 
             </article>
         </div>
