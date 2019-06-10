@@ -3,10 +3,10 @@
   <channel>
     <title></title>
     <description>圈多多</description>
-    <link>https://sysu-swsad-team.github.io//</link>
-    <atom:link href="https://sysu-swsad-team.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 04 Jun 2019 10:07:04 +0800</pubDate>
-    <lastBuildDate>Tue, 04 Jun 2019 10:07:04 +0800</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 10 Jun 2019 19:36:42 +0800</pubDate>
+    <lastBuildDate>Mon, 10 Jun 2019 19:36:42 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -212,8 +212,8 @@
 &lt;a href=&quot;https://www.jianshu.com/p/bfc0650f0033&quot;&gt;命名规范和排版规范&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 28 May 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.1.%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.1.%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</guid>
+        <link>http://localhost:4000/8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.1.%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</link>
+        <guid isPermaLink="true">http://localhost:4000/8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.1.%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</guid>
         
         
         <category>8.生产规范与指南</category>
@@ -227,8 +227,8 @@
 &lt;img src=&quot;/styles/images/7.2/auth-system.jpg&quot; alt=&quot;数据库设计&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 28 May 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.2.%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.2.%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/</guid>
+        <link>http://localhost:4000/7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.2.%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/</link>
+        <guid isPermaLink="true">http://localhost:4000/7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.2.%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/</guid>
         
         
         <category>7.设计说明书</category>
@@ -337,8 +337,8 @@
 &lt;p&gt;&lt;em&gt;Created by 15352103&lt;/em&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 27 May 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.2.REST-API-%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.2.REST-API-%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/</guid>
+        <link>http://localhost:4000/8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.2.REST-API-%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/</link>
+        <guid isPermaLink="true">http://localhost:4000/8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.2.REST-API-%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/</guid>
         
         
         <category>8.生产规范与指南</category>
@@ -353,8 +353,8 @@
 &lt;p&gt;&lt;em&gt;Created by 15352103&lt;/em&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 12 May 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.1.%E7%94%A8%E4%BE%8B%E5%9B%BE/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.1.%E7%94%A8%E4%BE%8B%E5%9B%BE/</guid>
+        <link>http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.1.%E7%94%A8%E4%BE%8B%E5%9B%BE/</link>
+        <guid isPermaLink="true">http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.1.%E7%94%A8%E4%BE%8B%E5%9B%BE/</guid>
         
         
         <category>6.需求规格说明书</category>
@@ -544,8 +544,8 @@
 &lt;p&gt;&lt;em&gt;Created by 15352103&lt;/em&gt;&lt;/p&gt;
 </description>
         <pubDate>Sat, 11 May 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.2.%E7%94%A8%E4%BE%8B%E4%B8%8E%E6%B4%BB%E5%8A%A8%E5%9B%BE/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.2.%E7%94%A8%E4%BE%8B%E4%B8%8E%E6%B4%BB%E5%8A%A8%E5%9B%BE/</guid>
+        <link>http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.2.%E7%94%A8%E4%BE%8B%E4%B8%8E%E6%B4%BB%E5%8A%A8%E5%9B%BE/</link>
+        <guid isPermaLink="true">http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.2.%E7%94%A8%E4%BE%8B%E4%B8%8E%E6%B4%BB%E5%8A%A8%E5%9B%BE/</guid>
         
         
         <category>6.需求规格说明书</category>
@@ -560,8 +560,8 @@
 &lt;p&gt;&lt;em&gt;Created by 15352103&lt;/em&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 10 May 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.3.%E9%A2%86%E5%9F%9F%E6%A8%A1%E5%9E%8B/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.3.%E9%A2%86%E5%9F%9F%E6%A8%A1%E5%9E%8B/</guid>
+        <link>http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.3.%E9%A2%86%E5%9F%9F%E6%A8%A1%E5%9E%8B/</link>
+        <guid isPermaLink="true">http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.3.%E9%A2%86%E5%9F%9F%E6%A8%A1%E5%9E%8B/</guid>
         
         
         <category>6.需求规格说明书</category>
@@ -586,8 +586,8 @@
 &lt;p&gt;&lt;em&gt;Created by 15352103&lt;/em&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 09 May 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.4.%E7%8A%B6%E6%80%81%E6%A8%A1%E5%9E%8B/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.4.%E7%8A%B6%E6%80%81%E6%A8%A1%E5%9E%8B/</guid>
+        <link>http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.4.%E7%8A%B6%E6%80%81%E6%A8%A1%E5%9E%8B/</link>
+        <guid isPermaLink="true">http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.4.%E7%8A%B6%E6%80%81%E6%A8%A1%E5%9E%8B/</guid>
         
         
         <category>6.需求规格说明书</category>
@@ -598,84 +598,18 @@
         <title>6.5 功能模型</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#处理发布任务15352103&quot; id=&quot;markdown-toc-处理发布任务15352103&quot;&gt;处理发布任务（15352103）&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#some-details-16340286&quot; id=&quot;markdown-toc-some-details-16340286&quot;&gt;Some Details (16340286)&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#rules&quot; id=&quot;markdown-toc-rules&quot;&gt;Rules&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#task-statuses&quot; id=&quot;markdown-toc-task-statuses&quot;&gt;Task Statuses&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#participantship-statuses&quot; id=&quot;markdown-toc-participantship-statuses&quot;&gt;Participantship Statuses&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#participate-task-16340286&quot; id=&quot;markdown-toc-participate-task-16340286&quot;&gt;Participate Task (16340286)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;处理发布任务15352103&quot;&gt;处理发布任务（15352103）&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&quot;https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/UML/系统顺序图_发布任务.jpg&quot; alt=&quot;系统顺序图_发布任务&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;some-details-16340286&quot;&gt;Some Details (&lt;a href=&quot;https://github.com/Ernie1&quot;&gt;16340286&lt;/a&gt;)&lt;/h2&gt;
-
-&lt;h3 id=&quot;rules&quot;&gt;Rules&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;When create task,
-available_balance should be more than fee * participant_quota.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;When determine task’s fee,
-participant_quota should also be determined but not vice versa.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Task’s due_date is only w.r.t. participantship’s participanted_date,
-so participantship’s confirmed_date is unrestricted.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;When create a participantship,
-task issuer’s balance is deducted 1 * fee.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;When task cancelled, task issuer will not be refunded
-and affect corresponding participantship,
-participant whose _status == ‘UNDERWAY’ will be paid.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Task can be claimed when status == ‘UNDERWAY’ and
-claimer is not issuer.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;When task invalid, task issuer will not be refunded
-and cause corresponding participantship invalid,
-participant whose _status == ‘UNDERWAY’ will NOT be paid.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Only participant has permission to modify _status
-from ‘UNDERWAY’ to ‘CANCELLED’ and task issuer is refunded 1 * fee.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Only task issuer has permission to modify _status
-from ‘UNDERWAY’ to ‘CONFIRMED’ and participant is paid 1 * fee.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Only task issuer has permission to comment
-when _status == ‘CONFIRMED’.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;task-statuses&quot;&gt;Task Statuses&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;        INVALID : Has certain number of claimers
-      CANCELLED : Cancelled by issuer
-         CLOSED : due_date expires
-     QUOTA FULL : Attain to participant_quota
-       UNDERWAY : In progress
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h3 id=&quot;participantship-statuses&quot;&gt;Participantship Statuses&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;      CANCELLED : Cancelled by participant
-      COMMENTED : Has been commented by its task issuer
-      CONFIRMED : Has been confirmed by its task issuer
-   TASK INVALID : Its task has certain number of claimers
- TASK CANCELLED : Its task has been cancelled
-       UNDERWAY : In progress
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;participate-task-16340286&quot;&gt;Participate Task (&lt;a href=&quot;https://github.com/Ernie1&quot;&gt;16340286&lt;/a&gt;)&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/styles/images/6.5/Participate_Task.jpg&quot; alt=&quot;Participate_Task&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 08 May 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.5.%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9E%8B/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.5.%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9E%8B/</guid>
+        <link>http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.5.%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9E%8B/</link>
+        <guid isPermaLink="true">http://localhost:4000/6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.5.%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9E%8B/</guid>
         
         
         <category>6.需求规格说明书</category>
@@ -733,8 +667,8 @@ title: &quot;6.1 Usecase Diagram&quot;
 &lt;p&gt;&lt;img src=&quot;/styles/images/X2.01/2.png&quot; alt=&quot;代码2&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.01.16340286-Jekyll%E7%94%9F%E6%88%90%E6%8C%89categories%E5%AD%97%E5%85%B8%E5%BA%8F%E6%8E%92%E5%BA%8F%E7%9A%84%E7%9B%AE%E5%BD%95/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.01.16340286-Jekyll%E7%94%9F%E6%88%90%E6%8C%89categories%E5%AD%97%E5%85%B8%E5%BA%8F%E6%8E%92%E5%BA%8F%E7%9A%84%E7%9B%AE%E5%BD%95/</guid>
+        <link>http://localhost:4000/x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.01.16340286-Jekyll%E7%94%9F%E6%88%90%E6%8C%89categories%E5%AD%97%E5%85%B8%E5%BA%8F%E6%8E%92%E5%BA%8F%E7%9A%84%E7%9B%AE%E5%BD%95/</link>
+        <guid isPermaLink="true">http://localhost:4000/x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.01.16340286-Jekyll%E7%94%9F%E6%88%90%E6%8C%89categories%E5%AD%97%E5%85%B8%E5%BA%8F%E6%8E%92%E5%BA%8F%E7%9A%84%E7%9B%AE%E5%BD%95/</guid>
         
         
         <category>X2.技术与工作报告</category>
@@ -748,8 +682,8 @@ title: &quot;6.1 Usecase Diagram&quot;
 From &lt;a href=&quot;https://github.com/Ernie1&quot; target=&quot;_blank&quot;&gt;16340286&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//x1.%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95/X1.01.Inception/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//x1.%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95/X1.01.Inception/</guid>
+        <link>http://localhost:4000/x1.%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95/X1.01.Inception/</link>
+        <guid isPermaLink="true">http://localhost:4000/x1.%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95/X1.01.Inception/</guid>
         
         
         <category>X1.会议记录</category>
