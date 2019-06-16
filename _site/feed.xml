@@ -5,9 +5,33 @@
     <description>圈多多</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 16 Jun 2019 16:25:10 +0800</pubDate>
-    <lastBuildDate>Sun, 16 Jun 2019 16:25:10 +0800</lastBuildDate>
+    <pubDate>Sun, 16 Jun 2019 21:32:08 +0800</pubDate>
+    <lastBuildDate>Sun, 16 Jun 2019 21:32:08 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>7.1 界面设计</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#主页&quot; id=&quot;markdown-toc-主页&quot;&gt;主页&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#发布任务&quot; id=&quot;markdown-toc-发布任务&quot;&gt;发布任务&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#钱包充值&quot; id=&quot;markdown-toc-钱包充值&quot;&gt;钱包充值&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;主页&quot;&gt;主页&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/styles/images/7.1/home.jpg&quot; alt=&quot;主页&quot; height=&quot;50%&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;发布任务&quot;&gt;发布任务&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/styles/images/7.1/task.jpg&quot; alt=&quot;发布任务&quot; height=&quot;50%&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;钱包充值&quot;&gt;钱包充值&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/styles/images/7.1/wallet.jpg&quot; alt=&quot;钱包充值&quot; height=&quot;50%&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 16 Jun 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.1.%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/</link>
+        <guid isPermaLink="true">http://localhost:4000/7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.1.%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/</guid>
+        
+        
+        <category>7.设计说明书</category>
+        
+      </item>
     
       <item>
         <title>8.1 代码规范</title>
@@ -672,21 +696,6 @@ title: &quot;6.1 Usecase Diagram&quot;
         
         
         <category>X2.技术与工作报告</category>
-        
-      </item>
-    
-      <item>
-        <title>X1.01 Inception (2019/03/24)</title>
-        <description>
-&lt;p&gt;&lt;img src=&quot;/styles/images/X1.01/Inception.png&quot; alt=&quot;思维导图&quot; /&gt;
-From &lt;a href=&quot;https://github.com/Ernie1&quot; target=&quot;_blank&quot;&gt;16340286&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/x1.%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95/X1.01.Inception/</link>
-        <guid isPermaLink="true">http://localhost:4000/x1.%E4%BC%9A%E8%AE%AE%E8%AE%B0%E5%BD%95/X1.01.Inception/</guid>
-        
-        
-        <category>X1.会议记录</category>
         
       </item>
     
