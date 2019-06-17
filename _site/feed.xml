@@ -5,33 +5,9 @@
     <description>圈多多</description>
     <link>https://sysu-swsad-team.github.io//</link>
     <atom:link href="https://sysu-swsad-team.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 16 Jun 2019 21:34:56 +0800</pubDate>
-    <lastBuildDate>Sun, 16 Jun 2019 21:34:56 +0800</lastBuildDate>
+    <pubDate>Mon, 17 Jun 2019 01:46:53 +0800</pubDate>
+    <lastBuildDate>Mon, 17 Jun 2019 01:46:53 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
-    
-      <item>
-        <title>7.1 界面设计</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#主页&quot; id=&quot;markdown-toc-主页&quot;&gt;主页&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#发布任务&quot; id=&quot;markdown-toc-发布任务&quot;&gt;发布任务&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#钱包充值&quot; id=&quot;markdown-toc-钱包充值&quot;&gt;钱包充值&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;主页&quot;&gt;主页&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;/styles/images/7.1/home.jpg&quot; alt=&quot;主页&quot; height=&quot;50%&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;发布任务&quot;&gt;发布任务&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;/styles/images/7.1/task.jpg&quot; alt=&quot;发布任务&quot; height=&quot;50%&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;钱包充值&quot;&gt;钱包充值&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;/styles/images/7.1/wallet.jpg&quot; alt=&quot;钱包充值&quot; height=&quot;50%&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 16 Jun 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.1.%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.1.%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/</guid>
-        
-        
-        <category>7.设计说明书</category>
-        
-      </item>
     
       <item>
         <title>8.1 代码规范</title>
@@ -245,14 +221,23 @@
       </item>
     
       <item>
-        <title>7.2 数据库设计</title>
-        <description>
-&lt;p&gt;蓝框部分为&lt;strong&gt;用户及权限系统数据库设计&lt;/strong&gt;，其余为&lt;strong&gt;子系统数据库设计&lt;/strong&gt;。
-&lt;img src=&quot;/styles/images/7.2/auth-system.jpg&quot; alt=&quot;数据库设计&quot; /&gt;&lt;/p&gt;
+        <title>7.1 界面设计</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#主页&quot; id=&quot;markdown-toc-主页&quot;&gt;主页&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#发布任务&quot; id=&quot;markdown-toc-发布任务&quot;&gt;发布任务&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#钱包充值&quot; id=&quot;markdown-toc-钱包充值&quot;&gt;钱包充值&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;主页&quot;&gt;主页&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/styles/images/7.1/home.jpg&quot; alt=&quot;主页&quot; height=&quot;50%&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;发布任务&quot;&gt;发布任务&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/styles/images/7.1/task.jpg&quot; alt=&quot;发布任务&quot; height=&quot;50%&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;钱包充值&quot;&gt;钱包充值&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/styles/images/7.1/wallet.jpg&quot; alt=&quot;钱包充值&quot; height=&quot;50%&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 28 May 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.2.%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.2.%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/</guid>
+        <link>https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.1.%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.1.%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/</guid>
         
         
         <category>7.设计说明书</category>
@@ -366,6 +351,81 @@
         
         
         <category>8.生产规范与指南</category>
+        
+      </item>
+    
+      <item>
+        <title>7.2 数据库设计</title>
+        <description>
+&lt;p&gt;蓝框部分为&lt;strong&gt;用户及权限系统数据库设计&lt;/strong&gt;，其余为&lt;strong&gt;子系统数据库设计&lt;/strong&gt;。
+&lt;img src=&quot;/styles/images/7.2/auth-system.jpg&quot; alt=&quot;数据库设计&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 27 May 2019 00:00:00 +0800</pubDate>
+        <link>https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.2.%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.2.%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/</guid>
+        
+        
+        <category>7.设计说明书</category>
+        
+      </item>
+    
+      <item>
+        <title>7.3 接口 API 设计</title>
+        <description></description>
+        <pubDate>Sun, 26 May 2019 00:00:00 +0800</pubDate>
+        <link>https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.3.%E6%8E%A5%E5%8F%A3API%E8%AE%BE%E8%AE%A1/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.3.%E6%8E%A5%E5%8F%A3API%E8%AE%BE%E8%AE%A1/</guid>
+        
+        
+        <category>7.设计说明书</category>
+        
+      </item>
+    
+      <item>
+        <title>7.4 架构设计</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#架构问题&quot; id=&quot;markdown-toc-架构问题&quot;&gt;架构问题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#解决方案说明&quot; id=&quot;markdown-toc-解决方案说明&quot;&gt;解决方案说明&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#逻辑视图&quot; id=&quot;markdown-toc-逻辑视图&quot;&gt;逻辑视图&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#物理视图&quot; id=&quot;markdown-toc-物理视图&quot;&gt;物理视图&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;架构问题&quot;&gt;架构问题&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;服务外部用户&lt;/li&gt;
+  &lt;li&gt;需求变动快&lt;/li&gt;
+  &lt;li&gt;运用规模变化大&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;解决方案说明&quot;&gt;解决方案说明&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;按照不同服务功能拆分微服务&lt;br /&gt;
+  一个服务完成一个独立的功能，独立维护，按需扩展&lt;/li&gt;
+  &lt;li&gt;前后端分离&lt;br /&gt;
+  优化用户体验，接口简洁易维护，实现前端多渠道集成&lt;/li&gt;
+  &lt;li&gt;无状态服务&lt;br /&gt;
+  把数据迁移到分布式缓存中存储，让业务服务变成一个无状态的计算节点，实现服务按需动态伸缩&lt;/li&gt;
+  &lt;li&gt;Restful通信风格&lt;br /&gt;
+  无状态协议HTTP扩展能力强，JSON 报文序列化轻量简单，语言无关&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;逻辑视图&quot;&gt;逻辑视图&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/styles/images/7.4/logicView.jpg&quot; alt=&quot;逻辑视图&quot; height=&quot;60%&quot; width=&quot;60%&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;物理视图&quot;&gt;物理视图&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/styles/images/7.4/physicalView.jpg&quot; alt=&quot;物理视图&quot; height=&quot;90%&quot; width=&quot;90%&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;参考&lt;br /&gt;
+&lt;a href=&quot;https://juejin.im/entry/59bf30876fb9a00a583176a1&quot;&gt;微服务的4大设计原则和19个解决方案&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Sat, 25 May 2019 00:00:00 +0800</pubDate>
+        <link>https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.4.%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.4.%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/</guid>
+        
+        
+        <category>7.设计说明书</category>
         
       </item>
     
@@ -615,87 +675,6 @@
         
         
         <category>6.需求规格说明书</category>
-        
-      </item>
-    
-      <item>
-        <title>6.5 功能模型</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#处理发布任务15352103&quot; id=&quot;markdown-toc-处理发布任务15352103&quot;&gt;处理发布任务（15352103）&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#participate-task-16340286&quot; id=&quot;markdown-toc-participate-task-16340286&quot;&gt;Participate Task (16340286)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;处理发布任务15352103&quot;&gt;处理发布任务（15352103）&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/UML/系统顺序图_发布任务.jpg&quot; alt=&quot;系统顺序图_发布任务&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;participate-task-16340286&quot;&gt;Participate Task (&lt;a href=&quot;https://github.com/Ernie1&quot;&gt;16340286&lt;/a&gt;)&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;/styles/images/6.5/Participate_Task.jpg&quot; alt=&quot;Participate_Task&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 08 May 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.5.%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9E%8B/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.5.%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9E%8B/</guid>
-        
-        
-        <category>6.需求规格说明书</category>
-        
-      </item>
-    
-      <item>
-        <title>X2.01 16340286-Jekyll生成按categories字典序排序的目录</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#背景&quot; id=&quot;markdown-toc-背景&quot;&gt;背景&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#方法&quot; id=&quot;markdown-toc-方法&quot;&gt;方法&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;背景&quot;&gt;背景&lt;/h2&gt;
-&lt;p&gt;一般的Jekyll博客都是以时间为线索，博客主页对文章从上到下的目录展示是依据时间时间从晚到早排列的。而我们这里使用Jekyll来罗列项目文档，目录结构就不是根据时间来排序了，而是根据文章所属的章节的序号来排序，例如：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;1、About（项目概况）&lt;/li&gt;
-  &lt;li&gt;2、Team profile（团队组建与分工）&lt;/li&gt;
-  &lt;li&gt;3、Investigation（项目前期调研/竞品分析）&lt;/li&gt;
-  &lt;li&gt;4、Vision（项目愿景）&lt;/li&gt;
-  &lt;li&gt;5、Product Backlog（产品特性库）&lt;/li&gt;
-  &lt;li&gt;6、Requirement specification（需求规格说明书）
-    &lt;ul&gt;
-      &lt;li&gt;6.1 Usecase Diagram（用例图）&lt;/li&gt;
-      &lt;li&gt;6.2 Use Cases（用例+活动图）&lt;/li&gt;
-      &lt;li&gt;6.3 Domian Models（领域模型）&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;为了得到这种目录结构，简单的做法是将手写一个静态页面展示目录，每次写新文章就在这个静态页面上添加条目和超链接，但是这种比较繁琐。更高效的做法是定义目录的生成方法，让Jekyll自动生成。这种方法还带来了一个额外好处——支持面包屑。&lt;/p&gt;
-
-&lt;h2 id=&quot;方法&quot;&gt;方法&lt;/h2&gt;
-&lt;p&gt;我们利用Jekyll的博客categories属性，每篇文章所属章节的名称作为categories属性的值，比如第一篇文章的categories和title属性定义为&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;categories: 1、About
-title: &quot;About&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;而如果同一章节有多篇文章，就需要像这样定义：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;categories: 6、Requirement specification
-title: &quot;6.1 Usecase Diagram&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;不过，我们的方法目前只实现了目录根据博客categories属性的字典序排序，并没有实现属于同个categories的博客根据title的字典序排序。为了使目录展示顺序符合设想，对于这种同categories的博客，通过调整博客文件名时间前缀&lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD&lt;/code&gt;，使title字典序更大的时间反而更早（我们的博客页面上不会显示博客时间，所以可以容忍改动时间），利用Jekyll更早的博客显示越靠下的规则，就可以达到按title字典序排列的效果。虽然我们的方法没有完全解决问题，但是将需要人工控制的范围缩小到同个categories下，还是有现实意义的。&lt;/p&gt;
-
-&lt;p&gt;我们的方法是遍历&lt;code class=&quot;highlighter-rouge&quot;&gt;site.categories&lt;/code&gt;，用&lt;code class=&quot;highlighter-rouge&quot;&gt;categories&lt;/code&gt;变量保存每个categories，再对它利用了Liquid模版的sort Filters排序，再根据排序后的&lt;code class=&quot;highlighter-rouge&quot;&gt;sorted_post_categories&lt;/code&gt;进行显示。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/styles/images/X2.01/1.png&quot; alt=&quot;代码1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;上面只是显示了categories目录，还需要显示每个categories下的博客title。对categories的展示用到&lt;code class=&quot;highlighter-rouge&quot;&gt;site.categories&lt;/code&gt;每个元素的第0项，对title的展示用到&lt;code class=&quot;highlighter-rouge&quot;&gt;site.categories&lt;/code&gt;每个元素的第1项，这里对categories的展示依然用到上面排序后的&lt;code class=&quot;highlighter-rouge&quot;&gt;sorted_post_categories&lt;/code&gt;，再用每个categories在&lt;code class=&quot;highlighter-rouge&quot;&gt;site.categories&lt;/code&gt;中匹配元素的第0项，获取该元素的第1项，赋值给&lt;code class=&quot;highlighter-rouge&quot;&gt;pages_list&lt;/code&gt;变量，再将它显示。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/styles/images/X2.01/2.png&quot; alt=&quot;代码2&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 24 Mar 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.01.16340286-Jekyll%E7%94%9F%E6%88%90%E6%8C%89categories%E5%AD%97%E5%85%B8%E5%BA%8F%E6%8E%92%E5%BA%8F%E7%9A%84%E7%9B%AE%E5%BD%95/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.01.16340286-Jekyll%E7%94%9F%E6%88%90%E6%8C%89categories%E5%AD%97%E5%85%B8%E5%BA%8F%E6%8E%92%E5%BA%8F%E7%9A%84%E7%9B%AE%E5%BD%95/</guid>
-        
-        
-        <category>X2.技术与工作报告</category>
         
       </item>
     
