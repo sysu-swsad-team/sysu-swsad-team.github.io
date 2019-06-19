@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#22365A">
+	<title>X2.07 16340190-Axios简介 - Niffler</title>
+
+	<link rel="shortcut icon" href="/styles/images/logo.png">
+	<link rel="icon" href="/styles/images/logo.png">
+
+	<link rel="stylesheet" href="/styles/css/index.css">
+	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/styles/css/syntax.css">
+	<link rel="canonical" href="/x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.07.16340190-Axios%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D/">
+	<link rel="alternate" type="application/rss+xml" title="Niffler" href="/feed.xml">
+	
+	<meta name="keywords" content="X2.07 16340190-Axios简介, Niffler, Niffler">
+	<meta name="description" content="Niffler">
+
+	<script src="/styles/js/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  	<![endif]-->
+  	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?94be4b0f9fc5d94cc0d0415ea6761ae9";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+  	<style type="text/css">
+	  	.docs-content{
+	  		margin-bottom: 10px;
+	  	}
+  	</style>
+</head>
+
+  <body class="index">
+
+    <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img src="/styles/images/logo-header.png">
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">    
+        <li>
+          <a href="/">圈多多</a>
+        </li>
+        <!-- <li>
+          <a href="/categories/">大类分解</a>
+        </li>
+        <li>
+          <a href="/tag">小类内聚</a>
+        </li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/sysu-swsad-team">Github</a></li>
+       
+      </ul>
+    </nav>
+  </div>
+</header>
+    <div class="docs-header" id="content">
+  <div class="container">
+  	
+  		<!--
+		    <h1>X2.07 16340190-Axios简介</h1>
+		    <p>Post on Jun 19, 2019 by <a href="/about">sysu-swsad-team</a></p>
+		-->
+		    <h1>Niffler</h1>
+    
+  </div>
+</div>
+    
+      
+<div class="banner">
+  <div class="container">
+  	
+    	<a href="/categories/#X2.技术与工作报告-ref">X2.技术与工作报告</a>	/
+      <!-- <a href="/tag/#-ref"></a> -->
+      <span>X2.07 16340190-Axios简介</span>
+    
+  </div>
+</div>
+
+    
+
+    <div class="container docs-container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar hidden-print" role="complementary">
+        <div id="navigation">
+  <h1>目录</h1>
+  <ul class="nav sidenav">
+  </ul>
+  <!-- <div style="height: 200px;width: 200px;">
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"> 
+    </script>
+  </div> -->
+</div>
+
+ 
+      </div>
+    </div>
+    <div class="col-md-9" role="main">
+      <div class="panel docs-content">
+        <div class="wrapper">
+            <header class="post-header">
+              <h1 class="post-title">X2.07 16340190-Axios简介</h1>
+              <!--
+                <p class="post-meta">Jun 19, 2019 • 16340190</p>
+              -->
+              <!-- <div class="meta">Posted on <span class="postdate">Jun 19, 2019</span> By <a target="_blank" href="http://localhost:4000">sysu-swsad-team</a></div> -->
+              <div class="meta">Posted By <a target="_blank" href="https://github.com/freesdw">16340190</a></div>
+              <br />
+            </header>
+            <article class="post-content">
+              <p>[TOC]</p>
+
+<h2 id="axios">Axios</h2>
+<p><strong>基于promise用于浏览器和node.js的http客户端</strong>
+其特点为：</p>
+<ul>
+  <li>支持浏览器和node.js</li>
+  <li>支持promise</li>
+  <li>能拦截请求和响应</li>
+  <li>能转换请求和响应数据</li>
+  <li>能取消请求</li>
+  <li>自动转换JSON数据</li>
+  <li>浏览器端支持防止CSRF（跨站请求伪造）
+    <h3 id="安装">安装</h3>
+  </li>
+  <li>使用npm</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ npm install axios
+</code></pre></div></div>
+<ul>
+  <li>使用bower</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bower install axios
+</code></pre></div></div>
+<ul>
+  <li>使用cdn</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script src="https://unpkg.com/axios/dist/axios.min.js"&gt;&lt;/script&gt;
+</code></pre></div></div>
+<h3 id="基本使用说明">基本使用说明</h3>
+<ul>
+  <li>执行 GET 请求</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>axios.get('/user', {
+    params: {
+      ID: 12345
+    }
+  }).then(function (response) {
+    console.log(response);
+  }).catch(function (error) {
+    console.log(error);
+  })
+</code></pre></div></div>
+<ul>
+  <li>执行 POST 请求</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>axios.post('/user', {
+    firstName: 'Fred',
+    lastName: 'Flintstone'
+  }).then(function (response) {
+    console.log(response);
+  }).catch(function (error) {
+    console.log(error);
+  })
+</code></pre></div></div>
+<ul>
+  <li>执行多个并发请求</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function getUserAccount() {
+  return axios.get('/user/12345');
+}
+function getUserPermissions() {
+  return axios.get('/user/12345/permissions');
+}
+axios.all([getUserAccount(), getUserPermissions()])
+  .then(axios.spread(function (acct, perms) {
+    // 两个请求现在都执行完成
+  }));
+</code></pre></div></div>
+<h3 id="通过向-axios-传递相关配置来创建请求">通过向 axios 传递相关配置来创建请求</h3>
+<ul>
+  <li><strong>axios(config)</strong></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 发送 POST 请求
+axios({
+  method: 'post',
+  url: '/user/12345',
+  data: {
+    firstName: 'Fred',
+    lastName: 'Flintstone'
+  }
+})
+</code></pre></div></div>
+<ul>
+  <li><strong>axios(url[, config])</strong></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 发送 GET 请求（默认的方法）
+axios('/user/12345');
+</code></pre></div></div>
+<ul>
+  <li><strong>方法别名</strong>
+```
+// 在使用别名方法时， url、method、data 这些属性都不必在配置中指定。
+axios.request(config)
+axios.get(url[, config])
+axios.delete(url[, config])
+axios.head(url[, config])
+axios.options(url[, config])
+axios.post(url[, data[, config]])
+axios.put(url[, data[, config]])
+axios.patch(url[, data[, config]])</li>
+</ul>
+
+<p>// 处理并发请求的助手函数
+axios.all(iterable)
+axios.spread(callback)</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>### 实例创建
+- **axios.create([config])**
+
+</code></pre></div></div>
+<p>const instance = axios.create({
+  baseURL: ‘https://some-domain.com/api/’,
+  timeout: 1000,
+  headers: {‘X-Custom-Header’: ‘foobar’}
+})
+// 可用的实例方法
+axios#request(config)
+axios#get(url[, config])
+axios#delete(url[, config])
+axios#head(url[, config])
+axios#options(url[, config])
+axios#post(url[, data[, config]])
+axios#put(url[, data[, config]])
+axios#patch(url[, data[, config]])</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>### 请求配置
+
+</code></pre></div></div>
+<p>{
+// url 必须的，用于请求的服务器URL
+url: ‘/user’,</p>
+
+<p>// 创建请求时使用的方法，如果没有指定，将默认使用get
+method: ‘post’,</p>
+
+<p>// baseURL将自动加载url前，除非‘url’是一个绝对url
+// 可以通过设置一个‘baseURL’便于为axios实例的方法传递相对url
+baseURL: ‘https://baseurl.com/api/’,</p>
+
+<p>// transformRequest允许在向服务器发送前，修改请求数据，只能用‘PUT’，‘POST’和
+// ‘PATCH’这几个请求方法。后面数组中的函数必须返回一个字符串或ArrayBuffer或Steam
+transformRequest: [function (data, headers) {
+  // 对data进行任意转换处理
+  return data
+}],</p>
+
+<p>// transformResponse在传递给then/catch前，允许修改响应数据
+transformResponse: [function (data) {
+  // 对data进行任意转换处理
+  return data
+}],</p>
+
+<p>// 即将被发送的自定义请求头
+headers: {‘X-Requested-With’: ‘XMLHttpRequest’},</p>
+
+<p>// 即将与请求一起发送的URL参数，必须是一个无格式对象或URLSearchParams对象
+params: {
+  ID: 12345
+},</p>
+
+<p>// 负责 <code class="highlighter-rouge">params</code> 序列化的函数
+  paramsSerializer: function(params) {
+    return Qs.stringify(params, {arrayFormat: ‘brackets’})
+  },</p>
+
+<p>// 作为请求主体被发送的数据,只适用于 ‘PUT’, ‘POST’, 和 ‘PATCH’
+// 在没有设置 <code class="highlighter-rouge">transformRequest</code> 时，必须是以下类型之一：
+// - string, plain object, ArrayBuffer, ArrayBufferView, URLSearchParams
+// - 浏览器专属：FormData, File, Blob
+// - Node 专属： Stream
+data: {
+  firstName: ‘Fred’
+},</p>
+
+<p>// 指定请求超时的毫秒数(0 表示无超时时间), 如果请求话费了超过 <code class="highlighter-rouge">timeout</code> 的时间，请求将被中断
+timeout: 1000,</p>
+
+<p>// 跨域请求时是否需要使用凭证,默认为false
+withCredentials: false,</p>
+
+<p>// <code class="highlighter-rouge">adapter</code> 允许自定义处理请求，以使测试更轻松，返回一个 promise 并应用一个有效的响应 (查阅 <a href="#response-api">response docs</a>).
+adapter: function (config) {
+    /* … */
+},</p>
+
+<p>// <code class="highlighter-rouge">auth</code> 表示应该使用 HTTP 基础验证，并提供凭据
+// 将设置一个 <code class="highlighter-rouge">Authorization</code> 头，覆写掉现有的任意使用 <code class="highlighter-rouge">headers</code> 设置的自定义 <code class="highlighter-rouge">Authorization</code>头
+auth: {
+  username: ‘axios’,
+  password: ‘a1234t’
+},</p>
+
+<p>// 服务器响应的数据类型，可以是 ‘arraybuffer’, ‘blob’, ‘document’, ‘json’, ‘text’, ‘stream’
+responseType: ‘json’, // default</p>
+
+<p>responseEncoding: ‘utf8’, // default</p>
+
+<p>// <code class="highlighter-rouge">xsrfCookieName</code> 是用作 xsrf token 的值的cookie的名称
+xsrfCookieName: ‘XSRF-TOKEN’, // default</p>
+
+<p>// 带有xsrf的http头部的token值
+xsrfHeaderName: ‘X-XSRF-TOKEN’, // default</p>
+
+<p>// 为上传处理进度事件
+onUploadProgress: function (progressEvent) {
+    // Do whatever you want with the native progress event
+},</p>
+
+<p>// 为下载处理进度事件
+onDownloadProgress: function (progressEvent) {
+  // 对原生进度事件的处理
+},</p>
+
+<p>// 允许的响应内容的最大尺寸
+maxContentLength: 2000,</p>
+
+<p>// 定义对于给定的HTTP 响应状态码是 resolve 或 reject  promise 。如果 <code class="highlighter-rouge">validateStatus</code> 返回 <code class="highlighter-rouge">true</code> (或者设置为 <code class="highlighter-rouge">null</code> 或 <code class="highlighter-rouge">undefined</code>)，promise 将被 resolve; 否则，promise 将被 rejecte
+validateStatus: function (status) {
+  return status &gt;= 200 &amp;&amp; status &lt; 300; // default
+},</p>
+
+<p>// 在 node.js 中 follow 的最大重定向数目,如果设置为0，将不会 follow 任何重定向
+  maxRedirects: 5, // default</p>
+
+<p>// <code class="highlighter-rouge">socketPath</code> 定义了在node.js中使用的一个UNIX Socket. socketPath和proxy只能同时定义一个，同时定义时，优先使用socketPath
+socketPath: null, // default</p>
+
+<p>// <code class="highlighter-rouge">httpAgent</code> 和 <code class="highlighter-rouge">httpsAgent</code> 分别在 node.js 中用于定义在执行 http 和 https 时使用的自定义代理。
+httpAgent: new http.Agent({ keepAlive: true }),
+httpsAgent: new https.Agent({ keepAlive: true }),</p>
+
+<p>// ‘proxy’ 定义代理服务器的主机名称和端口
+// <code class="highlighter-rouge">auth</code> 表示 HTTP 基础验证应当用于连接代理，并提供凭据
+proxy: {
+  host: ‘127.0.0.1’,
+  port: 8080,
+  auth: {
+    username: ‘niffler’
+    password: ‘1234l’
+  }
+},</p>
+
+<p>// 指定用于取消请求的 cancel token
+cancelToken: new CancelToken(function (cancel) { })
+}</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>### 响应结构
+
+</code></pre></div></div>
+<p>{
+// 由服务器提供的响应
+data: { },</p>
+
+<p>// 来自服务器响应的 HTTP 状态码
+status: 200,</p>
+
+<p>// 来自服务器响应的 HTTP 状态信息
+statusText: ‘OK’,</p>
+
+<p>// 服务器响应的头
+headers: { },</p>
+
+<p>// 为请求提供的配置信息
+config: { },</p>
+
+<p>request: { }
+}</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>接收样例：
+
+</code></pre></div></div>
+<p>axios.get(‘/Niffler/12345’)
+  .then(function(response) {
+    console.log(response.data);
+    console.log(response.status);
+    console.log(response.statusText);
+    console.log(response.headers);
+    console.log(response.config);
+  })</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>### 配置默认值
+- 全局的 axios 默认值
+
+</code></pre></div></div>
+<p>axios.defaults.baseURL = ‘https://api.example.com’;
+axios.defaults.headers.common[‘Authorization’] = AUTH_TOKEN;</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 自定义实例默认值
+
+</code></pre></div></div>
+<p>const instance = axios.create({
+  baseURL: ‘https://api.example.com’
+});</p>
+
+<p>instance.defaults.headers.common[‘Authorization’] = AUTH_TOKEN;</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+## Vue-axios基本用法
+### 安装
+
+</code></pre></div></div>
+<p>$ npm install –save axios vue-axios</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>在main.js页面引用：
+
+</code></pre></div></div>
+<p>import Vue from ‘vue’
+import axios from ‘axios’
+import VueAxios from ‘vue-axios’</p>
+
+<p>Vue.use(VueAxios, axios)</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>使用：
+
+</code></pre></div></div>
+<p>Vue.axios.get(api).then((response) =&gt; {
+  console.log(response.data)
+})</p>
+
+<p>this.axios.get(api).then((response) =&gt; {
+  console.log(response.data)
+})</p>
+
+<p>this.$http.get(api).then((response) =&gt; {
+  console.log(response.data)
+})</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+## 带cookie请求问题
+ axios默认是请求的时候不会带上cookie的，需要通过设置withCredentials: true来解决。
+
+## vue-axios-plugin
+### 导入
+- 使用Script
+
+</code></pre></div></div>
+<!-- 在 vue.js 之后引入 -->
+<script src="https://unpkg.com/vue"></script>
+
+<script src="https://unpkg.com/vue-axios-plugin"></script>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- npm 模块引入
+
+</code></pre></div></div>
+<p>npm install –save vue-axios-plugin</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>然后在入口文件配置如下:
+
+</code></pre></div></div>
+<p>import Vue from ‘Vue’
+import VueAxiosPlugin from ‘vue-axios-plugin’</p>
+
+<p>Vue.use(VueAxiosPlugin, {
+  // 请求拦截处理
+  reqHandleFunc: config =&gt; config,
+  reqErrorFunc: error =&gt; Promise.reject(error),
+  // 响应拦截处理
+  resHandleFunc: response =&gt; response,
+  resErrorFunc: error =&gt; Promise.reject(error)
+})</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>在 Vue 组件上添加了 $http 属性, 它默认提供 get 和 post 方法
+
+</code></pre></div></div>
+<p>this.$http.get(url, data, options).then((response) =&gt; {
+  console.log(response)
+})
+this.$http.post(url, data, options).then((response) =&gt; {
+  console.log(response)
+})</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>也可以通过 this.$axios 来使用 axios 所有的 api 方法
+
+</code></pre></div></div>
+<p>this.$axios.get(url, data, options).then((response) =&gt; {
+  console.log(response)
+})</p>
+
+<p>this.$axios.post(url, data, options).then((response) =&gt; {
+  console.log(response)
+})</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## 拦截器
+可以截取请求或响应在被 then 或者 catch 处理之前
+
+</code></pre></div></div>
+<p>//添加请求拦截器
+axios.interceptors.request.use(config =&gt; {
+  //在发送请求之前做某事，比如说 设置loading动画显示
+  return config
+}, error =&gt; {
+  //请求错误时做些事
+  return Promise.reject(error)
+})</p>
+
+<p>//添加响应拦截器
+axios.interceptors.response.use(response =&gt; {
+  //对响应数据做些事，比如说把loading动画关掉
+  return response
+}, error =&gt; {
+  //请求错误时做些事
+  return Promise.reject(error)
+})</p>
+
+<p>//如果不想要这个拦截器也简单，可以删除拦截器
+var myInterceptor = axios.interceptors.request.use(function () {/<em>…</em>/})
+axios.interceptors.request.eject(myInterceptor)
+```</p>
+
+            </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer class="footer" role="contentinfo">
+	<div class="container">
+		<p class="copyright">Copyright &copy; 2019-2019 <a href="https://sysu-swsad-team.github.io/"><code>sysu-swsad-team</code></a>.</p>
+		<p>Powered by <a href="http://jekyllrb.com">Jekyll</a>, themed from <a href="http://lesscss.cn/">Less</a>, refactored by <a href="http://www.hifreud.com/">Freud Kang</a></p>
+	</div>
+</footer>
+
+<script src="/styles/js/jquery.min.js"></script>
+<script src="/styles/js/bootstrap.min.js"></script>
+<script src="/styles/js/holder.min.js"></script>
+<script src="/styles/js/lessismore.js"></script>
+<script src="/styles/js/application.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  </body>
+</html>
