@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#22365A">
+	<title>X2.08 16340232-使用 Django session 实现用户登录 - Niffler</title>
+
+	<link rel="shortcut icon" href="/styles/images/logo.png">
+	<link rel="icon" href="/styles/images/logo.png">
+
+	<link rel="stylesheet" href="/styles/css/index.css">
+	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/styles/css/syntax.css">
+	<link rel="canonical" href="/x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.08.16340232-Django_session%E4%BB%8B%E7%BB%8D/">
+	<link rel="alternate" type="application/rss+xml" title="Niffler" href="/feed.xml">
+	
+	<meta name="keywords" content="X2.08 16340232-使用 Django session 实现用户登录, Niffler, Niffler">
+	<meta name="description" content="Niffler">
+
+	<script src="/styles/js/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  	<![endif]-->
+  	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?94be4b0f9fc5d94cc0d0415ea6761ae9";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+  	<style type="text/css">
+	  	.docs-content{
+	  		margin-bottom: 10px;
+	  	}
+  	</style>
+</head>
+
+  <body class="index">
+
+    <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img src="/styles/images/logo-header.png">
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">    
+        <li>
+          <a href="/">圈多多</a>
+        </li>
+        <!-- <li>
+          <a href="/categories/">大类分解</a>
+        </li>
+        <li>
+          <a href="/tag">小类内聚</a>
+        </li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/sysu-swsad-team">Github</a></li>
+       
+      </ul>
+    </nav>
+  </div>
+</header>
+    <div class="docs-header" id="content">
+  <div class="container">
+  	
+  		<!--
+		    <h1>X2.08 16340232-使用 Django session 实现用户登录</h1>
+		    <p>Post on Jun 20, 2019 by <a href="/about">sysu-swsad-team</a></p>
+		-->
+		    <h1>Niffler</h1>
+    
+  </div>
+</div>
+    
+      
+<div class="banner">
+  <div class="container">
+  	
+    	<a href="/categories/#X2.技术与工作报告-ref">X2.技术与工作报告</a>	/
+      <!-- <a href="/tag/#-ref"></a> -->
+      <span>X2.08 16340232-使用 Django session 实现用户登录</span>
+    
+  </div>
+</div>
+
+    
+
+    <div class="container docs-container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar hidden-print" role="complementary">
+        <div id="navigation">
+  <h1>目录</h1>
+  <ul class="nav sidenav">
+  </ul>
+  <!-- <div style="height: 200px;width: 200px;">
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"> 
+    </script>
+  </div> -->
+</div>
+
+ 
+      </div>
+    </div>
+    <div class="col-md-9" role="main">
+      <div class="panel docs-content">
+        <div class="wrapper">
+            <header class="post-header">
+              <h1 class="post-title">X2.08 16340232-使用 Django session 实现用户登录</h1>
+              <!--
+                <p class="post-meta">Jun 20, 2019 • 16340232</p>
+              -->
+              <!-- <div class="meta">Posted on <span class="postdate">Jun 20, 2019</span> By <a target="_blank" href="https://sysu-swsad-team.github.io/">sysu-swsad-team</a></div> -->
+              <div class="meta">Posted By <a target="_blank" href="https://github.com/hansenbeast">16340232</a></div>
+              <br />
+            </header>
+            <article class="post-content">
+              <h1 id="django-的-session-框架">Django 的 Session 框架</h1>
+
+<p>session 可以存储和获取访问者的数据信息，这些信息保存在服务器上（默认是数据库中），以 cookies 的方式发送和获取一个包含  session ID 的值，并不是用 cookies 传递数据本身，从而避免了大部分的常见 cookie 问题。</p>
+
+<hr />
+
+<h2 id="启用-session">启用 session</h2>
+
+<p><strong>编辑 settings.py 中的一些配置</strong></p>
+
+<p><strong>MIDDLEWARE_CLASSES</strong> 确保其中包含以下内容</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'django.contrib.sessions.middleware.SessionMiddleware',
+</code></pre></div></div>
+
+<p><strong>INSTALLED_APPS</strong> 是包含</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'django.contrib.sessions',
+</code></pre></div></div>
+
+<p><strong>这些是默认启用的。如果不用的话，也可以关掉这个以节省一点服务器的开销。</strong></p>
+
+<hr />
+
+<h2 id="在视图中使用-session">在视图中使用 session</h2>
+
+<p><strong>request.session</strong> 可以在视图中任何地方使用，它类似于 python 中的字典</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 创建或修改 session：
+</span><span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+<span class="c1"># 获取 session：
+</span><span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="n">default</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+<span class="c1"># 删除 session
+</span><span class="n">delrequest</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="c1"># 不存在时报错`
+</span></code></pre></div></div>
+
+<p><strong>一个简化的登陆认证：</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#  用户登录
+</span><span class="o">@</span><span class="n">csrf_exempt</span> 
+<span class="k">def</span> <span class="nf">user_login</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">'POST'</span><span class="p">:</span>
+        <span class="c1"># If we didn't post, send the test cookie along with the login form.
+</span>        <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">set_test_cookie</span><span class="p">()</span>
+
+        <span class="c1"># Check that the test cookie worked (we set it below):
+</span>        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">test_cookie_worked</span><span class="p">():</span>
+
+            <span class="c1"># The test cookie worked, so delete it.
+</span>            <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">delete_test_cookie</span><span class="p">()</span>
+
+            <span class="c1"># logic to check username/password
+</span>            <span class="n">username</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">[</span><span class="s">'username'</span><span class="p">]</span>
+            <span class="n">password</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">[</span><span class="s">'password'</span><span class="p">]</span>
+
+            <span class="n">user</span> <span class="o">=</span> <span class="n">authenticate</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">)</span>  <span class="c1">#用户验证
+</span>            <span class="k">if</span> <span class="n">user</span><span class="p">:</span>
+                <span class="n">login</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">user</span><span class="p">)</span>  <span class="c1">#用户登录
+</span>                <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s">'user_id'</span><span class="p">]</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="nb">id</span>
+                <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">"You're logged in."</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">"Invalid login details given"</span><span class="p">)</span>
+        
+        <span class="c1"># The test cookie failed, so display an error message. If this
+</span>        <span class="c1"># were a real site, we'd want to display a friendlier message.
+</span>        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">"Please enable cookies and try again."</span><span class="p">)</span>
+        
+        
+<span class="c1">#  用户登出
+</span><span class="o">@</span><span class="n">csrf_exempt</span> 
+<span class="o">@</span><span class="n">login_required</span>
+<span class="k">def</span> <span class="nf">user_logout</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">del</span> <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s">'user_id'</span><span class="p">]</span>
+    <span class="k">except</span> <span class="nb">KeyError</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">"You're logged out."</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>当登陆时验证用户名和密码，并保存用户 id 在 session 中，这样就可以在视图中用 request.session[‘member_id’] 来检查用户是否登陆，当退出的时候，删除掉它。</p>
+
+<h2 id="重写-authenticate-实现邮箱和用户名登录">重写 authenticate 实现邮箱和用户名登录</h2>
+
+<p>1、在 setting.py 中进行配置：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">AUTHENTICATION_BACKENDS</span> <span class="o">=</span> <span class="p">(</span>
+<span class="s">'questionnaire.custom.EmailOrUsernameModelBackend'</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>使用的认证后台通过 AUTHENTICATION_BACKENDS 设置指定。它应该是一个包含 Python 路径名称的元组，它们指向的 Python 类知道如何进行验证。这些类可以位于 Python 路径上任何地方。</p>
+
+<p>2、在 custom.py 中重新定制 authenticate() 方法</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">EmailOrUsernameModelBackend</span><span class="p">(</span><span class="n">ModelBackend</span><span class="p">):</span>
+    <span class="s">"""
+    This is a ModelBacked that allows authentication with either a username or an email address.
+
+    """</span>
+    <span class="k">def</span> <span class="nf">authenticate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># n.b. Django &lt;2.1 does not pass the `request`
+</span>
+        <span class="n">user_model</span> <span class="o">=</span> <span class="n">get_user_model</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">username</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">username</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">user_model</span><span class="o">.</span><span class="n">USERNAME_FIELD</span><span class="p">)</span>
+
+        <span class="c1"># The `username` field is allows to contain `@` characters so
+</span>        <span class="c1"># technically a given email address could be present in either field,
+</span>        <span class="c1"># possibly even for different users, so we'll query for all matching
+</span>        <span class="c1"># records and test each one.
+</span>        <span class="n">users</span> <span class="o">=</span> <span class="n">user_model</span><span class="o">.</span><span class="n">_default_manager</span><span class="o">.</span><span class="nb">filter</span><span class="p">(</span>
+            <span class="n">Q</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="n">user_model</span><span class="o">.</span><span class="n">USERNAME_FIELD</span><span class="p">:</span> <span class="n">username</span><span class="p">})</span> <span class="o">|</span> <span class="n">Q</span><span class="p">(</span><span class="n">email__iexact</span><span class="o">=</span><span class="n">username</span><span class="p">)</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Test whether any matched user has the provided password:
+</span>        <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">user</span><span class="o">.</span><span class="n">check_password</span><span class="p">(</span><span class="n">password</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">user</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">users</span><span class="p">:</span>
+            <span class="c1"># Run the default password hasher once to reduce the timing
+</span>            <span class="c1"># difference between an existing and a non-existing user (see
+</span>            <span class="c1"># https://code.djangoproject.com/ticket/20760)
+</span>            <span class="n">user_model</span><span class="p">()</span><span class="o">.</span><span class="n">set_password</span><span class="p">(</span><span class="n">password</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>在 django 中对数据库中的内容进行查询时，有时需要包含多个查询条件，此时采用 Q() 方法就很方便了。Q对象 (django.db.models.Q) 可以对关键字参数进行封装，从而更好地应用多个查询。可以组合使用 &amp;（and）,</td>
+          <td>（or），~（not）操作符，当一个操作符是用于两个 Q 的对象,它产生一个新的Q对象。</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>因为在 django 中用户的密码存储在数据库中是经过加密的，如果直接用 password==password 来进行验证是不对的。通过 user.check_password(password) 方法来进行验证密码是否正确。</li>
+</ul>
+
+<hr />
+
+<h2 id="使用-postman-进行测试">使用 Postman 进行测试</h2>
+
+<p><img src="/styles/images/X2.08/test_login1.jpg" alt="postman_test" /></p>
+
+<p><img src="/styles/images/X2.08/test_login2.jpg" alt="postman_test" /></p>
+
+
+            </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer class="footer" role="contentinfo">
+	<div class="container">
+		<p class="copyright">Copyright &copy; 2019-2019 <a href="https://sysu-swsad-team.github.io/"><code>sysu-swsad-team</code></a>.</p>
+		<p>Powered by <a href="http://jekyllrb.com">Jekyll</a>, themed from <a href="http://lesscss.cn/">Less</a>, refactored by <a href="http://www.hifreud.com/">Freud Kang</a></p>
+	</div>
+</footer>
+
+<script src="/styles/js/jquery.min.js"></script>
+<script src="/styles/js/bootstrap.min.js"></script>
+<script src="/styles/js/holder.min.js"></script>
+<script src="/styles/js/lessismore.js"></script>
+<script src="/styles/js/application.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  </body>
+</html>
