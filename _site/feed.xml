@@ -5,8 +5,8 @@
     <description>圈多多</description>
     <link>https://sysu-swsad-team.github.io//</link>
     <atom:link href="https://sysu-swsad-team.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 22 Jun 2019 01:29:47 +0800</pubDate>
-    <lastBuildDate>Sat, 22 Jun 2019 01:29:47 +0800</lastBuildDate>
+    <pubDate>Sat, 22 Jun 2019 01:36:54 +0800</pubDate>
+    <lastBuildDate>Sat, 22 Jun 2019 01:36:54 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -229,10 +229,16 @@
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;主页&quot;&gt;主页&lt;/h2&gt;
+&lt;p&gt;主页界面最上方是板块分区，各个板块中包含对应类别的调差问卷。主页界面底部为功能按钮，仿照微博app的设计。&lt;/p&gt;
+
 &lt;p&gt;&lt;img src=&quot;/styles/images/7.1/home.jpg&quot; alt=&quot;主页&quot; height=&quot;50%&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;发布任务&quot;&gt;发布任务&lt;/h2&gt;
+&lt;p&gt;发布任务时可以设置问卷的参数，点击最下方按钮提交。&lt;/p&gt;
+
 &lt;p&gt;&lt;img src=&quot;/styles/images/7.1/task.jpg&quot; alt=&quot;发布任务&quot; height=&quot;50%&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;钱包充值&quot;&gt;钱包充值&lt;/h2&gt;
+&lt;p&gt;钱包充值只能支持特定数额的充值，支持三种支付方式。&lt;/p&gt;
+
 &lt;p&gt;&lt;img src=&quot;/styles/images/7.1/wallet.jpg&quot; alt=&quot;钱包充值&quot; height=&quot;50%&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 28 May 2019 00:00:00 +0800</pubDate>
