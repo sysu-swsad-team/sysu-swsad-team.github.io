@@ -5,9 +5,265 @@
     <description>圈多多</description>
     <link>https://sysu-swsad-team.github.io//</link>
     <atom:link href="https://sysu-swsad-team.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 20 Jun 2019 15:35:36 +0800</pubDate>
-    <lastBuildDate>Thu, 20 Jun 2019 15:35:36 +0800</lastBuildDate>
+    <pubDate>Sat, 22 Jun 2019 00:57:31 +0800</pubDate>
+    <lastBuildDate>Sat, 22 Jun 2019 00:57:31 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>X2.09 16340246-Vue.js 2.x + Element-UI + webpack 项目构建指南</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#写在前面&quot; id=&quot;markdown-toc-写在前面&quot;&gt;写在前面&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#项目构建&quot; id=&quot;markdown-toc-项目构建&quot;&gt;项目构建&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#引入并使用-element-ui&quot; id=&quot;markdown-toc-引入并使用-element-ui&quot;&gt;引入并使用 Element-UI&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;写在前面&quot;&gt;写在前面&lt;/h2&gt;
+
+&lt;p&gt;在本文中，我们将用到下面几个框架与工具：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cn.vuejs.org/&quot;&gt;Vue.js&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://element.eleme.cn&quot;&gt;Element-UI&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://webpack.js.org/&quot;&gt;webpack&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;什么是 Vue ?&lt;/p&gt;
+
+&lt;p&gt;Vue.js 是一套构建用户界面的渐进式框架，它只关注视图层，采用自底向上增量开发的设计，目标是通过尽可能简单的 API 实现响应的数据绑定和组合的试图组件，并且 Vue 学习起来非常简单。&lt;/p&gt;
+
+&lt;p&gt;什么是 Element-UI ?&lt;/p&gt;
+
+&lt;p&gt;Element-UI 是一套基于 Vue 2.x 的组件库， 它提供了构建常见网站的的各种组件，如页面布局、按钮、表单、数据表格、导航菜单、对话框等。使用 Element-UI 能够快速构建一个单页面应用网站。&lt;/p&gt;
+
+&lt;p&gt;什么是 webpack ?&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;本质上，webpack 是一个现代 JavaScript 应用程序的静态模块打包器 (module bundler)。当 webpack 处理应用程序时，它会递归地构建一个依赖关系图 (dependency graph)，其中包含应用程序需要的每个模块，然后将所有这些模块打包成一个或多个 bundle。&lt;/p&gt;
+
+  &lt;p&gt;—— webpack 官方文档&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;通常，我们在构建网页应用时，会有繁杂的 JavaScript 代码和一大堆依赖包。简单来说，webpack 可以看做是模块打包机，它帮助分析您的项目结构，把你的项目的所有依赖文件打包成一个或多个浏览器可以识别的 JavaScript 文件。&lt;/p&gt;
+
+&lt;p&gt;在使用 Vue 构建应用程序时，按照官方文档的介绍，我们有多种引入方法。当我们要构建较大型的项目时，推荐使用 npm 安装 Vue，并且配合打包工具 webpack 一起使用，下面将详细介绍如何使用这些工具创建一个 Vue.js 2.x + Webpack + Element-UI  单页面网页应用项目。&lt;/p&gt;
+
+&lt;h2 id=&quot;项目构建&quot;&gt;项目构建&lt;/h2&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 安装vue&lt;/span&gt;
+npm &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;vue
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;安装 vue-cli&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://cn.vuejs.org/v2/guide/installation.html#%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7-CLI&quot;&gt;vue-cli&lt;/a&gt;，这是一个 Vue 官方提供的命令行工具：&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 全局安装 vue-cli&lt;/span&gt;
+npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--global&lt;/span&gt; vue-cli
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;安装成功后可以输入vue查看相关命令的使用，输入 vue list 可以查看 vue 可以用的模板:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/styles/images/X2.09/vue-cli.png&quot; alt=&quot;vue-cli&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;创建一个基于 webpack 模板的新项目&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 创建一个基于 webpack 模板的新项目 vue-project&lt;/span&gt;
+vue init webpack vue-project
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;根据提示设置你的项目，可以一直按回车键选择默认配置&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/styles/images/X2.09/webpack.png&quot; alt=&quot;webpack&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;注意上面自动帮你运行了 &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install&lt;/code&gt; 来安装所有所需依赖，等待安装依赖完成后，如下所示：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/styles/images/X2.09/webpackfinish.png&quot; alt=&quot;webpackfinish&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;从上面可以看到它已经告诉你怎样 &lt;code class=&quot;highlighter-rouge&quot;&gt;To get started&lt;/code&gt;：&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 进入项目目录&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;vue-project
+&lt;span class=&quot;c&quot;&gt;# 运行项目&lt;/span&gt;
+npm run dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;然后它会提示你编译成功并在 &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:8080&lt;/code&gt; 运行：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/styles/images/X2.09/start.png&quot; alt=&quot;start&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;打开浏览器，进入 &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:8080&lt;/code&gt;，看到以下界面就说明项目搭建成功了！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/styles/images/X2.09/vue_demo.png&quot; alt=&quot;vue_demo&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在 &lt;code class=&quot;highlighter-rouge&quot;&gt;vue-project&lt;/code&gt; 文件夹里，可以看到 &lt;code class=&quot;highlighter-rouge&quot;&gt;src&lt;/code&gt; 文件夹，你的要写的源代码都放在这里，当前目录结构如下，可以看到已经有一些页面。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/styles/images/X2.09/src_dir.png&quot; alt=&quot;src_dir&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;assets&lt;/code&gt; 文件夹存放你的资源文件&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;components&lt;/code&gt; 存放你定义的 Vue 组件&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;router/index.js&lt;/code&gt; 是配置路由的 js 文件&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;App.vue&lt;/code&gt; 是项目页面的主入口&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;main.js&lt;/code&gt; 中将会 &lt;code class=&quot;highlighter-rouge&quot;&gt;import&lt;/code&gt; 一些重要的代码与组件，以及创建一个 Vue 对象&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;引入并使用-element-ui&quot;&gt;引入并使用 Element-UI&lt;/h2&gt;
+
+&lt;p&gt;在 &lt;code class=&quot;highlighter-rouge&quot;&gt;vue-project&lt;/code&gt; 项目文件夹路径下安装&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;element-ui &lt;span class=&quot;nt&quot;&gt;--save&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;根据 &lt;a href=&quot;https://element.eleme.cn/#/zh-CN/component/quickstart&quot;&gt;官方文档&lt;/a&gt;，引入 Element-UI&lt;/p&gt;
+
+&lt;p&gt;在 &lt;code class=&quot;highlighter-rouge&quot;&gt;src/main.js&lt;/code&gt; 中添加&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ElementUI&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;element-ui&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;element-ui/lib/theme-chalk/index.css&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ElementUI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;最后 &lt;code class=&quot;highlighter-rouge&quot;&gt;main.js&lt;/code&gt; 的内容如下：&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;vue&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;App&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;./App&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;router&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;./router&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ElementUI&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;element-ui&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;element-ui/lib/theme-chalk/index.css&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ElementUI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;productionTip&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;el&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;#app&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;components&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;App&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;lt;App/&amp;gt;&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;修改 &lt;code class=&quot;highlighter-rouge&quot;&gt;App.vue&lt;/code&gt; 内容如下：&lt;/p&gt;
+
+&lt;div class=&quot;language-vue highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;app&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;router-view/&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nf&quot;&gt;#app&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;'Avenir'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Helvetica&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Arial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sans-serif&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;-webkit-font-smoothing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;antialiased&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;-moz-osx-font-smoothing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grayscale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;text-align&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;center&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#2c3e50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;margin-top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;60px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;在这里我们创建一个示例页面，在 &lt;code class=&quot;highlighter-rouge&quot;&gt;components&lt;/code&gt; 文件夹下创建 vue 文件 &lt;code class=&quot;highlighter-rouge&quot;&gt;Home.vue&lt;/code&gt; ，它的内容如下：&lt;/p&gt;
+
+&lt;div class=&quot;language-vue highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;el-row&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;el-col&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;:span=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;24&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 头部导航 --&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;header&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;header&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;el-row&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;lt;el-col&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;:span=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;24&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;el-menu&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;default-active=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;2&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;el-menu-demo&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;mode=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;horizontal&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+              &lt;span class=&quot;nt&quot;&gt;&amp;lt;el-menu-item&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;index=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;菜单1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/el-menu-item&amp;gt;&lt;/span&gt;
+              &lt;span class=&quot;nt&quot;&gt;&amp;lt;el-menu-item&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;index=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;2&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;菜单2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/el-menu-item&amp;gt;&lt;/span&gt;
+              &lt;span class=&quot;nt&quot;&gt;&amp;lt;el-menu-item&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;index=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;3&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;菜单3&lt;span class=&quot;nt&quot;&gt;&amp;lt;/el-menu-item&amp;gt;&lt;/span&gt;
+              &lt;span class=&quot;nt&quot;&gt;&amp;lt;el-menu-item&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;index=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;菜单4&lt;span class=&quot;nt&quot;&gt;&amp;lt;/el-menu-item&amp;gt;&lt;/span&gt;
+              &lt;span class=&quot;nt&quot;&gt;&amp;lt;el-menu-item&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;index=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;5&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;菜单5&lt;span class=&quot;nt&quot;&gt;&amp;lt;/el-menu-item&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/el-menu&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;lt;/el-col&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/el-row&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/header&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;main&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 侧栏导航 --&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;main-left&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;lt;el-menu&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;default-active=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;el-menu-vertical-demo&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;el-menu-item&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;index=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;侧栏1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/el-menu-item&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;el-menu-item&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;index=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;2&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;侧栏2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/el-menu-item&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;lt;/el-menu&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 主内容区 --&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/main&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/el-col&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/el-row&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nf&quot;&gt;#app&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;header&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;padding-left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;250px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;main&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;min-height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;800px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;40px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#e9ecf1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;main&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.main-left&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;text-align&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;center&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;200px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;最后要修改路由 &lt;code class=&quot;highlighter-rouge&quot;&gt;router/index.js&lt;/code&gt;：&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;vue&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Router&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;vue-router&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Home&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;@/components/Home&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Router&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Router&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;routes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Home&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Home&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;运行项目&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm run dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;可以看见如下页面，至此项目搭建完成！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/styles/images/X2.09/elementDemo.png&quot; alt=&quot;elementDemo&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 22 Jun 2019 00:00:00 +0800</pubDate>
+        <link>https://sysu-swsad-team.github.io//x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.09.16340246-Vue.js2.x+Element-UI+webpack%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E6%8C%87%E5%8D%97/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.09.16340246-Vue.js2.x+Element-UI+webpack%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E6%8C%87%E5%8D%97/</guid>
+        
+        
+        <category>X2.技术与工作报告</category>
+        
+      </item>
     
       <item>
         <title>X2.08 16340232-使用 Django session 实现用户登录</title>
@@ -1016,197 +1272,6 @@ axios.interceptors.request.eject(myInterceptor)
         <pubDate>Sun, 12 May 2019 00:00:00 +0800</pubDate>
         <link>https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.1.%E7%94%A8%E4%BE%8B%E5%9B%BE/</link>
         <guid isPermaLink="true">https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.1.%E7%94%A8%E4%BE%8B%E5%9B%BE/</guid>
-        
-        
-        <category>6.需求规格说明书</category>
-        
-      </item>
-    
-      <item>
-        <title>6.2 用例与活动图</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#详述用例&quot; id=&quot;markdown-toc-详述用例&quot;&gt;详述用例&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#非正式用例&quot; id=&quot;markdown-toc-非正式用例&quot;&gt;非正式用例&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#摘要用例&quot; id=&quot;markdown-toc-摘要用例&quot;&gt;摘要用例&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;详述用例&quot;&gt;详述用例&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;用例UC1：做任务&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;范围&lt;/strong&gt;：圈多多（Niffler）应用&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;级别&lt;/strong&gt;：用户目标&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;主要参与者&lt;/strong&gt;：大学生&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;涉众及其关注点&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;大学生：希望能够准确地筛选感兴趣的任务。希望能够便捷、清晰地查询任务描述和任务薪酬。希望能够在完成任务后，及时、准确地获得相应数额的“闲钱币”。&lt;/li&gt;
-  &lt;li&gt;任务发布者：希望发布的任务能够得到有效的完成。希望能够快速审核已完成任务并进行确认。&lt;/li&gt;
-  &lt;li&gt;圈多多团队：希望能够准确地记录任务完成信息。希望在任务发布者确认任务已完成后，自动、快速、准确地将“闲钱币”放入相应账号的钱包中。希望有一定的容错性和可恢复性。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;前置条件&lt;/strong&gt;：大学生必须登录账号。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;成功保证（或后置条件）&lt;/strong&gt;：记录任务完成相关信息。更新财务信息。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;主成功场景（或基本流程）&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;用户打开圈多多应用，此时已默认登录上一次登录的账号。&lt;/li&gt;
-  &lt;li&gt;系统进入任务类型界面（做任务或发布任务）。&lt;/li&gt;
-  &lt;li&gt;用户选择做任务功能。&lt;/li&gt;
-  &lt;li&gt;系统进入做任务可选项界面（问卷调查任务或跑腿任务）。&lt;/li&gt;
-  &lt;li&gt;用户选择问卷调查任务或跑腿任务。&lt;/li&gt;
-  &lt;li&gt;系统按照账号初始标签显示任务列表。&lt;/li&gt;
-  &lt;li&gt;用户通过标签、薪酬、最新、最热等进一步筛选任务列表。&lt;/li&gt;
-  &lt;li&gt;用户查看自己感兴趣的任务。&lt;/li&gt;
-  &lt;li&gt;系统显示任务详情。任务详情包括任务描述、任务薪酬、任务剩余次数、任务过期时间、是否可重复等。&lt;/li&gt;
-  &lt;li&gt;用户选择接受任务。&lt;/li&gt;
-  &lt;li&gt;系统将任务添加到待完成任务列表。&lt;/li&gt;
-  &lt;li&gt;用户查看待完成任务列表。&lt;/li&gt;
-  &lt;li&gt;用户选择完成任务。&lt;/li&gt;
-  &lt;li&gt;问卷调查任务由系统自动确认已完成任务；跑腿任务由任务发布者确认已完成任务。&lt;/li&gt;
-  &lt;li&gt;系统为相应账号的钱包增加相应数额的“闲钱币”。&lt;/li&gt;
-  &lt;li&gt;系统记录完整的任务完成相关信息，并更新财务信息。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;扩展（或替代流程）&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;*a. 系统在任意时刻失败：
-    &lt;ol&gt;
-      &lt;li&gt;系统保存意外退出时的账号状态。&lt;/li&gt;
-      &lt;li&gt;用户重启系统，请求恢复上次状态。&lt;/li&gt;
-      &lt;li&gt;系统重建上次状态，恢复意外退出时的界面信息。
-        &lt;ul&gt;
-          &lt;li&gt;3a. 系统在恢复过程中检测到异常：
-            &lt;ol&gt;
-              &lt;li&gt;系统向用户提示错误，并记录此错误。&lt;/li&gt;
-              &lt;li&gt;系统进入一个初始状态（即进入任务类型界面）。&lt;/li&gt;
-            &lt;/ol&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;4-9a. 用户需要重新选择问卷调查任务或跑腿任务：
-    &lt;ol&gt;
-      &lt;li&gt;用户选择返回功能。&lt;/li&gt;
-      &lt;li&gt;系统进入做任务可选项界面。&lt;/li&gt;
-      &lt;li&gt;用户重新选择问卷调查任务或跑腿任务。&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;7a. 用户需要重置任务列表：
-    &lt;ol&gt;
-      &lt;li&gt;用户选择重置功能。&lt;/li&gt;
-      &lt;li&gt;系统按照账户初始标签显示任务列表。&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;10-13a. 用户需要放弃任务：
-    &lt;ol&gt;
-      &lt;li&gt;用户选择放弃任务功能。&lt;/li&gt;
-      &lt;li&gt;相应任务更新信息，例如，剩余次数加一。&lt;/li&gt;
-      &lt;li&gt;系统记录放弃任务相关信息。&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;10-13b. 任务超时：
-    &lt;ol&gt;
-      &lt;li&gt;系统提示用户任务超时。&lt;/li&gt;
-      &lt;li&gt;系统将任务从待完成列表移除。&lt;/li&gt;
-      &lt;li&gt;系统记录任务超时相关信息，并更新财务信息。&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;10-13c. 任务发布者提前终止任务：
-    &lt;ol&gt;
-      &lt;li&gt;系统提示用户任务发布者提前终止任务。&lt;/li&gt;
-      &lt;li&gt;系统将任务从待完成列表移除。&lt;/li&gt;
-      &lt;li&gt;系统记录提前终止相关信息，并更新财务信息。&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;14a. 对于跑腿任务，任务发布者未在规定时间内确认用户已完成任务：
-    &lt;ol&gt;
-      &lt;li&gt;系统自动确认用户已完成任务。&lt;/li&gt;
-      &lt;li&gt;系统提示任务发布者已自动确认任务完成。&lt;/li&gt;
-      &lt;li&gt;系统记录自动确认任务完成相关信息。&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;特殊需求&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;由于某些原因，我们希望在访问远程服务（如财务系统）失败的情况下具有比较强的恢复功能。&lt;/li&gt;
-  &lt;li&gt;支持文本显示的语言国际化。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;技术与数据变元表&lt;/strong&gt;：暂无。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;发生频率&lt;/strong&gt;：可能会不断地发生。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;未决问题&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;研究远程服务的恢复问题。&lt;/li&gt;
-  &lt;li&gt;对于跑腿任务，如果任务发布者否认已完成任务，该怎样进行协调。&lt;/li&gt;
-  &lt;li&gt;任务剩余次数为0后，系统将此任务从任务显示列表移除。如果之后存在用户放弃任务的行为发生，此任务将重新出现在任务显示列表。是否应该提升此任务优先级。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;活动图&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/UML/活动图_做任务.jpg&quot; alt=&quot;活动图_做任务&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;非正式用例&quot;&gt;非正式用例&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;用例UC2：发布任务&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;主成功场景&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;p&gt;发布者打开圈多多应用，系统进入任务类型界面（做任务或发布任务）。发布者选择发布任务功能，系统进入发布任务可选项界面（问卷调查任务或跑腿任务）。系统进入任务描述界面。发布者填写任务描述。发布者进一步填写任务最大数量、单价、超时时间等信息。系统自动计算总价。发布者使用“闲钱币”进行支付，系统提示任务发布成功。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;交替场景&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;p&gt;任务发布者选择发布任务功能后，如果希望放弃发布任务，选择放弃发布任务功能，系统记录相关信息并进入发布任务可选项界面。&lt;/p&gt;
-
-&lt;p&gt;任务发布者发布任务成功后，如果希望提前终止任务，选择提前终止任务功能，系统自动计算“闲钱币”返还数额并返还至相应账户的钱包。&lt;/p&gt;
-
-&lt;p&gt;任务发布者发布任务成功后，如果任务过期，系统提示发布者任务已过期。系统自动计算“闲钱币”返还数额并返还至相应账户的钱包。&lt;/p&gt;
-
-&lt;p&gt;任务发布者在支付过程中，如果发现“闲钱币”余额不足，可以选择微信、支付宝等方式进行“闲钱币”充值。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;活动图&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/UML/活动图_发布任务.jpg&quot; alt=&quot;活动图_发布任务&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;摘要用例&quot;&gt;摘要用例&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;用例UC3.1：注册/登录&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;用户打开圈多多应用。如果没有注册，选择注册功能，填写姓名、学号、年龄、性别、年级和专业等信息，并上传学生证正面照片进行验证。验证成功后，可以设置昵称、头像，选择感兴趣的标签，并绑定邮箱或手机号。如果已经注册，选择登录功能，用户通过邮箱或手机号进行登录。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;用例UC3.2：提现“闲钱币”&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;用户选择提现功能，账户得到验证之后，将“闲钱币”可用余额转入到第三方支付系统。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;用例UC3.3：举报任务&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;用户发现不恰当任务，可以选择举报任务功能。任务被举报次数达到阈值后，将交由管理员进行审核。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;用例UC3.4：审核任务&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;管理员定期对被举报次数达到阈值的任务进行审核。如果审核结果为任务不恰当，将下架此任务，并扣除任务发布者一定比例“闲钱币”作为惩罚。否则将被举报次数清零。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;用例UC3.5：评价用户&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;任务发布者可以对完成跑腿任务的用户进行评价。评价结果对其它用户可见。&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Created by 15352103&lt;/em&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 11 May 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.2.%E7%94%A8%E4%BE%8B%E4%B8%8E%E6%B4%BB%E5%8A%A8%E5%9B%BE/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.2.%E7%94%A8%E4%BE%8B%E4%B8%8E%E6%B4%BB%E5%8A%A8%E5%9B%BE/</guid>
         
         
         <category>6.需求规格说明书</category>
