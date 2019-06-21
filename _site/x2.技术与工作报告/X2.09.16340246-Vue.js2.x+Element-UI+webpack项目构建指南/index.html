@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#22365A">
+	<title>X2.09 16340246-Vue.js 2.x + Element-UI + webpack 项目构建指南 - Niffler</title>
+
+	<link rel="shortcut icon" href="/styles/images/logo.png">
+	<link rel="icon" href="/styles/images/logo.png">
+
+	<link rel="stylesheet" href="/styles/css/index.css">
+	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/styles/css/syntax.css">
+	<link rel="canonical" href="/x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.09.16340246-Vue.js2.x+Element-UI+webpack%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E6%8C%87%E5%8D%97/">
+	<link rel="alternate" type="application/rss+xml" title="Niffler" href="/feed.xml">
+	
+	<meta name="keywords" content="X2.09 16340246-Vue.js 2.x + Element-UI + webpack 项目构建指南, Niffler, Niffler">
+	<meta name="description" content="Niffler">
+
+	<script src="/styles/js/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  	<![endif]-->
+  	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?94be4b0f9fc5d94cc0d0415ea6761ae9";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+  	<style type="text/css">
+	  	.docs-content{
+	  		margin-bottom: 10px;
+	  	}
+  	</style>
+</head>
+
+  <body class="index">
+
+    <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img src="/styles/images/logo-header.png">
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">    
+        <li>
+          <a href="/">圈多多</a>
+        </li>
+        <!-- <li>
+          <a href="/categories/">大类分解</a>
+        </li>
+        <li>
+          <a href="/tag">小类内聚</a>
+        </li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/sysu-swsad-team">Github</a></li>
+       
+      </ul>
+    </nav>
+  </div>
+</header>
+    <div class="docs-header" id="content">
+  <div class="container">
+  	
+  		<!--
+		    <h1>X2.09 16340246-Vue.js 2.x + Element-UI + webpack 项目构建指南</h1>
+		    <p>Post on Jun 22, 2019 by <a href="/about">sysu-swsad-team</a></p>
+		-->
+		    <h1>Niffler</h1>
+    
+  </div>
+</div>
+    
+      
+<div class="banner">
+  <div class="container">
+  	
+    	<a href="/categories/#X2.技术与工作报告-ref">X2.技术与工作报告</a>	/
+      <!-- <a href="/tag/#-ref"></a> -->
+      <span>X2.09 16340246-Vue.js 2.x + Element-UI + webpack 项目构建指南</span>
+    
+  </div>
+</div>
+
+    
+
+    <div class="container docs-container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar hidden-print" role="complementary">
+        <div id="navigation">
+  <h1>目录</h1>
+  <ul class="nav sidenav">
+  </ul>
+  <!-- <div style="height: 200px;width: 200px;">
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"> 
+    </script>
+  </div> -->
+</div>
+
+ 
+      </div>
+    </div>
+    <div class="col-md-9" role="main">
+      <div class="panel docs-content">
+        <div class="wrapper">
+            <header class="post-header">
+              <h1 class="post-title">X2.09 16340246-Vue.js 2.x + Element-UI + webpack 项目构建指南</h1>
+              <!--
+                <p class="post-meta">Jun 22, 2019 • 16340246</p>
+              -->
+              <!-- <div class="meta">Posted on <span class="postdate">Jun 22, 2019</span> By <a target="_blank" href="https://sysu-swsad-team.github.io/">sysu-swsad-team</a></div> -->
+              <div class="meta">Posted By <a target="_blank" href="https://github.com/wuzht">16340246</a></div>
+              <br />
+            </header>
+            <article class="post-content">
+              <ul id="markdown-toc">
+  <li><a href="#写在前面" id="markdown-toc-写在前面">写在前面</a></li>
+  <li><a href="#项目构建" id="markdown-toc-项目构建">项目构建</a></li>
+  <li><a href="#引入并使用-element-ui" id="markdown-toc-引入并使用-element-ui">引入并使用 Element-UI</a></li>
+</ul>
+
+<h2 id="写在前面">写在前面</h2>
+
+<p>在本文中，我们将用到下面几个框架与工具：</p>
+
+<ul>
+  <li><a href="https://cn.vuejs.org/">Vue.js</a></li>
+  <li><a href="https://element.eleme.cn">Element-UI</a></li>
+  <li><a href="https://webpack.js.org/">webpack</a></li>
+</ul>
+
+<p>什么是 Vue ?</p>
+
+<p>Vue.js 是一套构建用户界面的渐进式框架，它只关注视图层，采用自底向上增量开发的设计，目标是通过尽可能简单的 API 实现响应的数据绑定和组合的试图组件，并且 Vue 学习起来非常简单。</p>
+
+<p>什么是 Element-UI ?</p>
+
+<p>Element-UI 是一套基于 Vue 2.x 的组件库， 它提供了构建常见网站的的各种组件，如页面布局、按钮、表单、数据表格、导航菜单、对话框等。使用 Element-UI 能够快速构建一个单页面应用网站。</p>
+
+<p>什么是 webpack ?</p>
+
+<blockquote>
+  <p>本质上，webpack 是一个现代 JavaScript 应用程序的静态模块打包器 (module bundler)。当 webpack 处理应用程序时，它会递归地构建一个依赖关系图 (dependency graph)，其中包含应用程序需要的每个模块，然后将所有这些模块打包成一个或多个 bundle。</p>
+
+  <p>—— webpack 官方文档</p>
+</blockquote>
+
+<p>通常，我们在构建网页应用时，会有繁杂的 JavaScript 代码和一大堆依赖包。简单来说，webpack 可以看做是模块打包机，它帮助分析您的项目结构，把你的项目的所有依赖文件打包成一个或多个浏览器可以识别的 JavaScript 文件。</p>
+
+<p>在使用 Vue 构建应用程序时，按照官方文档的介绍，我们有多种引入方法。当我们要构建较大型的项目时，推荐使用 npm 安装 Vue，并且配合打包工具 webpack 一起使用，下面将详细介绍如何使用这些工具创建一个 Vue.js 2.x + Webpack + Element-UI  单页面网页应用项目。</p>
+
+<h2 id="项目构建">项目构建</h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 安装vue</span>
+npm <span class="nb">install </span>vue
+</code></pre></div></div>
+<p><strong>安装 vue-cli</strong></p>
+
+<p><a href="https://cn.vuejs.org/v2/guide/installation.html#%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7-CLI">vue-cli</a>，这是一个 Vue 官方提供的命令行工具：</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 全局安装 vue-cli</span>
+npm <span class="nb">install</span> <span class="nt">--global</span> vue-cli
+</code></pre></div></div>
+
+<p>安装成功后可以输入vue查看相关命令的使用，输入 vue list 可以查看 vue 可以用的模板:</p>
+
+<p><img src="/styles/images/X2.09/vue-cli.png" alt="vue-cli" /></p>
+
+<p><strong>创建一个基于 webpack 模板的新项目</strong></p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 创建一个基于 webpack 模板的新项目 vue-project</span>
+vue init webpack vue-project
+</code></pre></div></div>
+
+<p>根据提示设置你的项目，可以一直按回车键选择默认配置</p>
+
+<p><img src="/styles/images/X2.09/webpack.png" alt="webpack" /></p>
+
+<p>注意上面自动帮你运行了 <code class="highlighter-rouge">npm install</code> 来安装所有所需依赖，等待安装依赖完成后，如下所示：</p>
+
+<p><img src="/styles/images/X2.09/webpackfinish.png" alt="webpackfinish" /></p>
+
+<p>从上面可以看到它已经告诉你怎样 <code class="highlighter-rouge">To get started</code>：</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 进入项目目录</span>
+<span class="nb">cd </span>vue-project
+<span class="c"># 运行项目</span>
+npm run dev
+</code></pre></div></div>
+
+<p>然后它会提示你编译成功并在 <code class="highlighter-rouge">http://localhost:8080</code> 运行：</p>
+
+<p><img src="/styles/images/X2.09/start.png" alt="start" /></p>
+
+<p>打开浏览器，进入 <code class="highlighter-rouge">http://localhost:8080</code>，看到以下界面就说明项目搭建成功了！</p>
+
+<p><img src="/styles/images/X2.09/vue_demo.png" alt="vue_demo" /></p>
+
+<p>在 <code class="highlighter-rouge">vue-project</code> 文件夹里，可以看到 <code class="highlighter-rouge">src</code> 文件夹，你的要写的源代码都放在这里，当前目录结构如下，可以看到已经有一些页面。</p>
+
+<p><img src="/styles/images/X2.09/src_dir.png" alt="src_dir" /></p>
+
+<ul>
+  <li><code class="highlighter-rouge">assets</code> 文件夹存放你的资源文件</li>
+  <li><code class="highlighter-rouge">components</code> 存放你定义的 Vue 组件</li>
+  <li><code class="highlighter-rouge">router/index.js</code> 是配置路由的 js 文件</li>
+  <li><code class="highlighter-rouge">App.vue</code> 是项目页面的主入口</li>
+  <li><code class="highlighter-rouge">main.js</code> 中将会 <code class="highlighter-rouge">import</code> 一些重要的代码与组件，以及创建一个 Vue 对象</li>
+</ul>
+
+<h2 id="引入并使用-element-ui">引入并使用 Element-UI</h2>
+
+<p>在 <code class="highlighter-rouge">vue-project</code> 项目文件夹路径下安装</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install </span>element-ui <span class="nt">--save</span>
+</code></pre></div></div>
+
+<p>根据 <a href="https://element.eleme.cn/#/zh-CN/component/quickstart">官方文档</a>，引入 Element-UI</p>
+
+<p>在 <code class="highlighter-rouge">src/main.js</code> 中添加</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">ElementUI</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">element-ui</span><span class="dl">'</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">element-ui/lib/theme-chalk/index.css</span><span class="dl">'</span>
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">ElementUI</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>最后 <code class="highlighter-rouge">main.js</code> 的内容如下：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">App</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./App</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">router</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./router</span><span class="dl">'</span>
+
+<span class="k">import</span> <span class="nx">ElementUI</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">element-ui</span><span class="dl">'</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">element-ui/lib/theme-chalk/index.css</span><span class="dl">'</span>
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">ElementUI</span><span class="p">)</span>
+
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">productionTip</span> <span class="o">=</span> <span class="kc">false</span>
+
+<span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+  <span class="na">el</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#app</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">router</span><span class="p">,</span>
+  <span class="na">components</span><span class="p">:</span> <span class="p">{</span> <span class="nx">App</span> <span class="p">},</span>
+  <span class="na">template</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;App/&gt;</span><span class="dl">'</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>修改 <code class="highlighter-rouge">App.vue</code> 内容如下：</p>
+
+<div class="language-vue highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;</span><span class="k">template</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;router-view/&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/</span><span class="k">template</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;</span><span class="k">script</span><span class="nt">&gt;</span>
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">App</span><span class="dl">'</span>
+<span class="p">}</span>
+<span class="nt">&lt;/</span><span class="k">script</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;</span><span class="k">style</span><span class="nt">&gt;</span>
+<span class="nf">#app</span> <span class="p">{</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="s2">'Avenir'</span><span class="p">,</span> <span class="n">Helvetica</span><span class="p">,</span> <span class="n">Arial</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+  <span class="nl">-webkit-font-smoothing</span><span class="p">:</span> <span class="n">antialiased</span><span class="p">;</span>
+  <span class="nl">-moz-osx-font-smoothing</span><span class="p">:</span> <span class="n">grayscale</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="m">#2c3e50</span><span class="p">;</span>
+  <span class="nl">margin-top</span><span class="p">:</span> <span class="m">60px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">&lt;/</span><span class="k">style</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>在这里我们创建一个示例页面，在 <code class="highlighter-rouge">components</code> 文件夹下创建 vue 文件 <code class="highlighter-rouge">Home.vue</code> ，它的内容如下：</p>
+
+<div class="language-vue highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;</span><span class="k">template</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;el-row&gt;</span>
+    <span class="nt">&lt;el-col</span> <span class="na">:span=</span><span class="s">"24"</span><span class="nt">&gt;</span>
+      <span class="c">&lt;!-- 头部导航 --&gt;</span>
+      <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"header"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;el-row&gt;</span>
+          <span class="nt">&lt;el-col</span> <span class="na">:span=</span><span class="s">"24"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;el-menu</span> <span class="na">default-active=</span><span class="s">"2"</span> <span class="na">class=</span><span class="s">"el-menu-demo"</span> <span class="na">mode=</span><span class="s">"horizontal"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;el-menu-item</span> <span class="na">index=</span><span class="s">"1"</span><span class="nt">&gt;</span>菜单1<span class="nt">&lt;/el-menu-item&gt;</span>
+              <span class="nt">&lt;el-menu-item</span> <span class="na">index=</span><span class="s">"2"</span><span class="nt">&gt;</span>菜单2<span class="nt">&lt;/el-menu-item&gt;</span>
+              <span class="nt">&lt;el-menu-item</span> <span class="na">index=</span><span class="s">"3"</span><span class="nt">&gt;</span>菜单3<span class="nt">&lt;/el-menu-item&gt;</span>
+              <span class="nt">&lt;el-menu-item</span> <span class="na">index=</span><span class="s">"4"</span><span class="nt">&gt;</span>菜单4<span class="nt">&lt;/el-menu-item&gt;</span>
+              <span class="nt">&lt;el-menu-item</span> <span class="na">index=</span><span class="s">"5"</span><span class="nt">&gt;</span>菜单5<span class="nt">&lt;/el-menu-item&gt;</span>
+            <span class="nt">&lt;/el-menu&gt;</span>
+          <span class="nt">&lt;/el-col&gt;</span>
+        <span class="nt">&lt;/el-row&gt;</span>
+      <span class="nt">&lt;/header&gt;</span>
+      <span class="nt">&lt;main&gt;</span>
+        <span class="c">&lt;!-- 侧栏导航 --&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"main-left"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;el-menu</span> <span class="na">default-active=</span><span class="s">"1"</span> <span class="na">class=</span><span class="s">"el-menu-vertical-demo"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;el-menu-item</span> <span class="na">index=</span><span class="s">"1"</span><span class="nt">&gt;</span>侧栏1<span class="nt">&lt;/el-menu-item&gt;</span>
+            <span class="nt">&lt;el-menu-item</span> <span class="na">index=</span><span class="s">"2"</span><span class="nt">&gt;</span>侧栏2<span class="nt">&lt;/el-menu-item&gt;</span>
+          <span class="nt">&lt;/el-menu&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="c">&lt;!-- 主内容区 --&gt;</span>
+        <span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+      <span class="nt">&lt;/main&gt;</span>
+    <span class="nt">&lt;/el-col&gt;</span>
+  <span class="nt">&lt;/el-row&gt;</span>
+<span class="nt">&lt;/</span><span class="k">template</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;</span><span class="k">script</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/</span><span class="k">script</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;</span><span class="k">style</span><span class="nt">&gt;</span>
+<span class="nt">body</span> <span class="p">{</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nf">#app</span> <span class="p">{</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="nb">auto</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">header</span> <span class="p">{</span>
+  <span class="nl">padding-left</span><span class="p">:</span> <span class="m">250px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">main</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+  <span class="nl">min-height</span><span class="p">:</span> <span class="m">800px</span><span class="p">;</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="nb">solid</span> <span class="m">40px</span> <span class="m">#e9ecf1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">main</span> <span class="nc">.main-left</span> <span class="p">{</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+  <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">&lt;/</span><span class="k">style</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>最后要修改路由 <code class="highlighter-rouge">router/index.js</code>：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">Router</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue-router</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">Home</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@/components/Home</span><span class="dl">'</span>
+
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">Router</span><span class="p">)</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="k">new</span> <span class="nx">Router</span><span class="p">({</span>
+  <span class="na">routes</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Home</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">component</span><span class="p">:</span> <span class="nx">Home</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>运行项目</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run dev
+</code></pre></div></div>
+
+<p>可以看见如下页面，至此项目搭建完成！</p>
+
+<p><img src="/styles/images/X2.09/elementDemo.png" alt="elementDemo" /></p>
+
+            </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer class="footer" role="contentinfo">
+	<div class="container">
+		<p class="copyright">Copyright &copy; 2019-2019 <a href="https://sysu-swsad-team.github.io/"><code>sysu-swsad-team</code></a>.</p>
+		<p>Powered by <a href="http://jekyllrb.com">Jekyll</a>, themed from <a href="http://lesscss.cn/">Less</a>, refactored by <a href="http://www.hifreud.com/">Freud Kang</a></p>
+	</div>
+</footer>
+
+<script src="/styles/js/jquery.min.js"></script>
+<script src="/styles/js/bootstrap.min.js"></script>
+<script src="/styles/js/holder.min.js"></script>
+<script src="/styles/js/lessismore.js"></script>
+<script src="/styles/js/application.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  </body>
+</html>
