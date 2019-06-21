@@ -5,8 +5,8 @@
     <description>圈多多</description>
     <link>https://sysu-swsad-team.github.io//</link>
     <atom:link href="https://sysu-swsad-team.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 22 Jun 2019 00:57:31 +0800</pubDate>
-    <lastBuildDate>Sat, 22 Jun 2019 00:57:31 +0800</lastBuildDate>
+    <pubDate>Sat, 22 Jun 2019 01:24:52 +0800</pubDate>
+    <lastBuildDate>Sat, 22 Jun 2019 01:24:52 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -247,7 +247,7 @@ npm run dev
 &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;运行项目&lt;/p&gt;
+&lt;p&gt;运行项目:&lt;/p&gt;
 
 &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm run dev
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
