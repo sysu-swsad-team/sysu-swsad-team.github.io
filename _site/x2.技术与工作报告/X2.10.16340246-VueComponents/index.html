@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#22365A">
+	<title>X2.10 16340246-Vue父子组件之间的参数传递 - Niffler</title>
+
+	<link rel="shortcut icon" href="/styles/images/logo.png">
+	<link rel="icon" href="/styles/images/logo.png">
+
+	<link rel="stylesheet" href="/styles/css/index.css">
+	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/styles/css/syntax.css">
+	<link rel="canonical" href="/x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.10.16340246-VueComponents/">
+	<link rel="alternate" type="application/rss+xml" title="Niffler" href="/feed.xml">
+	
+	<meta name="keywords" content="X2.10 16340246-Vue父子组件之间的参数传递, Niffler, Niffler">
+	<meta name="description" content="Niffler">
+
+	<script src="/styles/js/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  	<![endif]-->
+  	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?94be4b0f9fc5d94cc0d0415ea6761ae9";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+  	<style type="text/css">
+	  	.docs-content{
+	  		margin-bottom: 10px;
+	  	}
+  	</style>
+</head>
+
+  <body class="index">
+
+    <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img src="/styles/images/logo-header.png">
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">    
+        <li>
+          <a href="/">圈多多</a>
+        </li>
+        <!-- <li>
+          <a href="/categories/">大类分解</a>
+        </li>
+        <li>
+          <a href="/tag">小类内聚</a>
+        </li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/sysu-swsad-team">Github</a></li>
+       
+      </ul>
+    </nav>
+  </div>
+</header>
+    <div class="docs-header" id="content">
+  <div class="container">
+  	
+  		<!--
+		    <h1>X2.10 16340246-Vue父子组件之间的参数传递</h1>
+		    <p>Post on Mar 15, 2019 by <a href="/about">sysu-swsad-team</a></p>
+		-->
+		    <h1>Niffler</h1>
+    
+  </div>
+</div>
+    
+      
+<div class="banner">
+  <div class="container">
+  	
+    	<a href="/categories/#X2.技术与工作报告-ref">X2.技术与工作报告</a>	/
+      <!-- <a href="/tag/#-ref"></a> -->
+      <span>X2.10 16340246-Vue父子组件之间的参数传递</span>
+    
+  </div>
+</div>
+
+    
+
+    <div class="container docs-container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar hidden-print" role="complementary">
+        <div id="navigation">
+  <h1>目录</h1>
+  <ul class="nav sidenav">
+  </ul>
+  <!-- <div style="height: 200px;width: 200px;">
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"> 
+    </script>
+  </div> -->
+</div>
+
+ 
+      </div>
+    </div>
+    <div class="col-md-9" role="main">
+      <div class="panel docs-content">
+        <div class="wrapper">
+            <header class="post-header">
+              <h1 class="post-title">X2.10 16340246-Vue父子组件之间的参数传递</h1>
+              <!--
+                <p class="post-meta">Mar 15, 2019 • 16340246</p>
+              -->
+              <!-- <div class="meta">Posted on <span class="postdate">Mar 15, 2019</span> By <a target="_blank" href="https://sysu-swsad-team.github.io/">sysu-swsad-team</a></div> -->
+              <div class="meta">Posted By <a target="_blank" href="https://github.com/wuzht">16340246</a></div>
+              <br />
+            </header>
+            <article class="post-content">
+              <ul id="markdown-toc">
+  <li><a href="#父组件向子组件传递参数" id="markdown-toc-父组件向子组件传递参数">父组件向子组件传递参数</a></li>
+  <li><a href="#子组件向父组件传递参数" id="markdown-toc-子组件向父组件传递参数">子组件向父组件传递参数</a></li>
+</ul>
+
+<p>在构建 Vue 应用时，我们会定义多个组件，而组件之间常常需要传递参数，下面介绍一些父子组件之间的传递参数方法和示例。</p>
+
+<h2 id="父组件向子组件传递参数">父组件向子组件传递参数</h2>
+
+<p>在下面的示例中，子组件将接收父组件传来的 <code class="highlighter-rouge">message</code>, <code class="highlighter-rouge">color</code>, <code class="highlighter-rouge">fontSize</code> 这 3 个参数，设定子组件的内容、字体大小和字体颜色，我们要把这些参数写到 <code class="highlighter-rouge">props</code> 里面。</p>
+
+<p>我们可以以字符串数组的形式列出 <code class="highlighter-rouge">props</code>：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">props</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">message</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">color</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">fontSize</span><span class="dl">'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>但是，通常你希望每个 <code class="highlighter-rouge">prop</code> 都有指定的值类型。这时，你可以以对象形式列出 <code class="highlighter-rouge">prop</code>，这些属性的名称和值分别是 <code class="highlighter-rouge">prop</code> 各自的名称和类型：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">props</span><span class="p">:</span> <span class="p">{</span>
+  <span class="nl">message</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+  <span class="nx">color</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+  <span class="nx">fontSize</span><span class="p">:</span> <span class="nb">Number</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>创建一个子组件 <code class="highlighter-rouge">Child.vue</code>，放在 <code class="highlighter-rouge">src/components/</code> 文件夹，在子组件创建它的定义如下：</p>
+
+<div class="language-vue highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;</span><span class="k">template</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">:style=</span><span class="s">"`color: $</span>{color}; font-size: ${fontSize}px;`"&gt;子组件内容：<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/</span><span class="k">template</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;</span><span class="k">script</span><span class="nt">&gt;</span>
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="c1">// 要接收的参数</span>
+  <span class="na">props</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">message</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="na">color</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="na">fontSize</span><span class="p">:</span> <span class="nb">Number</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nt">&lt;/</span><span class="k">script</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>父组件是 <code class="highlighter-rouge">App.vue</code>，在这里向子组件传递了多个参数组合，内容如下：</p>
+
+<div class="language-vue highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;</span><span class="k">template</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;Child</span> <span class="na">:message=</span><span class="s">"'A message from parent'"</span> <span class="na">:fontSize=</span><span class="s">"10"</span> <span class="na">:color=</span><span class="s">"'#f00'"</span><span class="nt">&gt;&lt;/Child&gt;</span>
+    <span class="nt">&lt;Child</span> <span class="na">:message=</span><span class="s">"'A message from parent'"</span> <span class="na">:fontSize=</span><span class="s">"12"</span> <span class="na">:color=</span><span class="s">"'#f30'"</span><span class="nt">&gt;&lt;/Child&gt;</span>
+    <span class="nt">&lt;Child</span> <span class="na">:message=</span><span class="s">"'A message from parent'"</span> <span class="na">:fontSize=</span><span class="s">"14"</span> <span class="na">:color=</span><span class="s">"'#f60'"</span><span class="nt">&gt;&lt;/Child&gt;</span>
+    <span class="nt">&lt;Child</span> <span class="na">:message=</span><span class="s">"'A message from parent'"</span> <span class="na">:fontSize=</span><span class="s">"16"</span> <span class="na">:color=</span><span class="s">"'#f90'"</span><span class="nt">&gt;&lt;/Child&gt;</span>
+    <span class="nt">&lt;Child</span> <span class="na">:message=</span><span class="s">"'A message from parent'"</span> <span class="na">:fontSize=</span><span class="s">"18"</span> <span class="na">:color=</span><span class="s">"'#fc0'"</span><span class="nt">&gt;&lt;/Child&gt;</span>
+    <span class="nt">&lt;Child</span> <span class="na">:message=</span><span class="s">"'A message from parent'"</span> <span class="na">:fontSize=</span><span class="s">"20"</span> <span class="na">:color=</span><span class="s">"'#ff0'"</span><span class="nt">&gt;&lt;/Child&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/</span><span class="k">template</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;</span><span class="k">script</span><span class="nt">&gt;</span>
+<span class="c1">// 引入子组件 Child</span>
+<span class="k">import</span> <span class="nx">Child</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./components/Child</span><span class="dl">'</span>
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">App</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">components</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nx">Child</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nt">&lt;/</span><span class="k">script</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;</span><span class="k">style</span><span class="nt">&gt;</span>
+<span class="nf">#app</span> <span class="p">{</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="s2">'Avenir'</span><span class="p">,</span> <span class="n">Helvetica</span><span class="p">,</span> <span class="n">Arial</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+  <span class="nl">-webkit-font-smoothing</span><span class="p">:</span> <span class="n">antialiased</span><span class="p">;</span>
+  <span class="nl">-moz-osx-font-smoothing</span><span class="p">:</span> <span class="n">grayscale</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="m">#2c3e50</span><span class="p">;</span>
+  <span class="nl">margin-top</span><span class="p">:</span> <span class="m">60px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">&lt;/</span><span class="k">style</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>最后结果：</p>
+
+<p><img src="/styles/images/X2.10/parent-child.png" alt="parent-child" /></p>
+
+<h2 id="子组件向父组件传递参数">子组件向父组件传递参数</h2>
+
+<p>在本示例中，子组件有一个按钮，点击这个按钮后，子组件将向父组件传递一个数字 <code class="highlighter-rouge">num</code>，父组件中的 <code class="highlighter-rouge">count</code> 会增加 <code class="highlighter-rouge">num</code></p>
+
+<p><img src="/styles/images/X2.10/child-parent.png" alt="child-parent" /></p>
+
+<p>父组件通过定义事件 <code class="highlighter-rouge">@change="addCount"</code> 接收子组件传来的数据，调用 <code class="highlighter-rouge">addCount</code> 来处理：</p>
+
+<div class="language-vue highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;</span><span class="k">template</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>父组件：8<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;Child</span> <span class="err">@</span><span class="na">change=</span><span class="s">"addCount"</span><span class="nt">&gt;&lt;/Child&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/</span><span class="k">template</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;</span><span class="k">script</span><span class="nt">&gt;</span>
+<span class="c1">// 引入子组件 Child</span>
+<span class="k">import</span> <span class="nx">Child</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./components/Child</span><span class="dl">'</span>
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">App</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">components</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nx">Child</span>
+  <span class="p">},</span>
+  <span class="nx">data</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">count</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nx">addCount</span> <span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">count</span> <span class="o">+=</span> <span class="nx">num</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nt">&lt;/</span><span class="k">script</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;</span><span class="k">style</span><span class="nt">&gt;</span>
+<span class="nf">#app</span> <span class="p">{</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="s2">'Avenir'</span><span class="p">,</span> <span class="n">Helvetica</span><span class="p">,</span> <span class="n">Arial</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+  <span class="nl">-webkit-font-smoothing</span><span class="p">:</span> <span class="n">antialiased</span><span class="p">;</span>
+  <span class="nl">-moz-osx-font-smoothing</span><span class="p">:</span> <span class="n">grayscale</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="m">#2c3e50</span><span class="p">;</span>
+  <span class="nl">margin-top</span><span class="p">:</span> <span class="m">60px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">&lt;/</span><span class="k">style</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>在子组件中，点击按钮会触发 <code class="highlighter-rouge">toParent</code> 方法，使用 <code class="highlighter-rouge">this.$emit('change', 2)</code> 来触发父组件的 <code class="highlighter-rouge">change</code> 事件并传递一个数字 2：</p>
+
+<div class="language-vue highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;</span><span class="k">template</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;el-button</span> <span class="na">type=</span><span class="s">"primary"</span> <span class="err">@</span><span class="na">click=</span><span class="s">"toParent()"</span><span class="nt">&gt;</span>子组件按钮<span class="nt">&lt;/el-button&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/</span><span class="k">template</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;</span><span class="k">script</span><span class="nt">&gt;</span>
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nx">toParent</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="dl">'</span><span class="s1">change</span><span class="dl">'</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nt">&lt;/</span><span class="k">script</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>刷新页面，现在点击一次按钮就可以看到数字增加 2 了。显然，我们也用 <code class="highlighter-rouge">this.$emit</code> 来调用父组件的方法.</p>
+
+            </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer class="footer" role="contentinfo">
+	<div class="container">
+		<p class="copyright">Copyright &copy; 2019-2019 <a href="https://sysu-swsad-team.github.io/"><code>sysu-swsad-team</code></a>.</p>
+		<p>Powered by <a href="http://jekyllrb.com">Jekyll</a>, themed from <a href="http://lesscss.cn/">Less</a>, refactored by <a href="http://www.hifreud.com/">Freud Kang</a></p>
+	</div>
+</footer>
+
+<script src="/styles/js/jquery.min.js"></script>
+<script src="/styles/js/bootstrap.min.js"></script>
+<script src="/styles/js/holder.min.js"></script>
+<script src="/styles/js/lessismore.js"></script>
+<script src="/styles/js/application.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  </body>
+</html>
