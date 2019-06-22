@@ -157,7 +157,7 @@
 
 <div class="language-vue highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;</span><span class="k">template</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div&gt;</span>
-    <span class="nt">&lt;p</span> <span class="na">:style=</span><span class="s">"`color: $</span>{color}; font-size: ${fontSize}px;`"&gt;子组件内容：<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">:style=</span><span class="s">"`color: $</span>{color}; font-size: ${fontSize}px;`"&gt;子组件内容：<span class="si">{{</span> <span class="nx">message</span> <span class="si">}}</span><span class="nt">&lt;/p&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/</span><span class="k">template</span><span class="nt">&gt;</span>
 
@@ -223,7 +223,7 @@
 
 <div class="language-vue highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;</span><span class="k">template</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;p&gt;</span>父组件：8<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>父组件：<span class="si">{{</span> <span class="nx">count</span> <span class="si">}}</span><span class="nt">&lt;/p&gt;</span>
     <span class="nt">&lt;Child</span> <span class="err">@</span><span class="na">change=</span><span class="s">"addCount"</span><span class="nt">&gt;&lt;/Child&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/</span><span class="k">template</span><span class="nt">&gt;</span>
