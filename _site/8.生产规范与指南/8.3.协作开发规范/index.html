@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#22365A">
+	<title>8.3 协作开发规范 - Niffler</title>
+
+	<link rel="shortcut icon" href="/styles/images/logo.png">
+	<link rel="icon" href="/styles/images/logo.png">
+
+	<link rel="stylesheet" href="/styles/css/index.css">
+	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/styles/css/syntax.css">
+	<link rel="canonical" href="/8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.3.%E5%8D%8F%E4%BD%9C%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/">
+	<link rel="alternate" type="application/rss+xml" title="Niffler" href="/feed.xml">
+	
+	<meta name="keywords" content="8.3 协作开发规范, Niffler, Niffler">
+	<meta name="description" content="Niffler">
+
+	<script src="/styles/js/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  	<![endif]-->
+  	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?94be4b0f9fc5d94cc0d0415ea6761ae9";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+  	<style type="text/css">
+	  	.docs-content{
+	  		margin-bottom: 10px;
+	  	}
+  	</style>
+</head>
+
+  <body class="index">
+
+    <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img src="/styles/images/logo-header.png">
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">    
+        <li>
+          <a href="/">圈多多</a>
+        </li>
+        <!-- <li>
+          <a href="/categories/">大类分解</a>
+        </li>
+        <li>
+          <a href="/tag">小类内聚</a>
+        </li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/sysu-swsad-team">Github</a></li>
+       
+      </ul>
+    </nav>
+  </div>
+</header>
+    <div class="docs-header" id="content">
+  <div class="container">
+  	
+  		<!--
+		    <h1>8.3 协作开发规范</h1>
+		    <p>Post on May 26, 2019 by <a href="/about">sysu-swsad-team</a></p>
+		-->
+		    <h1>Niffler</h1>
+    
+  </div>
+</div>
+    
+      
+<div class="banner">
+  <div class="container">
+  	
+    	<a href="/categories/#8.生产规范与指南-ref">8.生产规范与指南</a>	/
+      <!-- <a href="/tag/#-ref"></a> -->
+      <span>8.3 协作开发规范</span>
+    
+  </div>
+</div>
+
+    
+
+    <div class="container docs-container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar hidden-print" role="complementary">
+        <div id="navigation">
+  <h1>目录</h1>
+  <ul class="nav sidenav">
+  </ul>
+  <!-- <div style="height: 200px;width: 200px;">
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"> 
+    </script>
+  </div> -->
+</div>
+
+ 
+      </div>
+    </div>
+    <div class="col-md-9" role="main">
+      <div class="panel docs-content">
+        <div class="wrapper">
+            <header class="post-header">
+              <h1 class="post-title">8.3 协作开发规范</h1>
+              <!--
+                <p class="post-meta">May 26, 2019 • sysu-swsad-team</p>
+              -->
+              <!-- <div class="meta">Posted on <span class="postdate">May 26, 2019</span> By <a target="_blank" href="https://sysu-swsad-team.github.io/">sysu-swsad-team</a></div> -->
+              <div class="meta">Posted By <a target="_blank" href="https://github.com/sysu-swsad-team">sysu-swsad-team</a></div>
+              <br />
+            </header>
+            <article class="post-content">
+              <ul id="markdown-toc">
+  <li><a href="#1-准备工作" id="markdown-toc-1-准备工作">1 准备工作</a></li>
+  <li><a href="#21-协作方式-1" id="markdown-toc-21-协作方式-1">2.1 协作方式-1</a></li>
+  <li><a href="#22-协作方式-2" id="markdown-toc-22-协作方式-2">2.2 协作方式-2</a></li>
+  <li><a href="#3-备注" id="markdown-toc-3-备注">3 备注</a></li>
+</ul>
+
+<p>参考：https://github.com/SYSUMonkeyEye/MonkeyEye-FE</p>
+
+<p>每个仓库一般仓库有2个分支，master和dev。主要在 dev 分支上进行开发和测试，功能完善之后再合并到master。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>├─master
+└─dev
+</code></pre></div></div>
+
+<h2 id="1-准备工作">1 准备工作</h2>
+
+<p>在 github 上 fork 仓库到你自己的 github，将你 fork 之后的远程仓库克隆到本地，并在你的本地仓库上添加上游仓库，即源仓库。fork 一般是 fork 了仓库的 master 分支，所以可能还需要自己去切出 dev 分支然后拉取源仓库dev 分支上的内容。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/{你的github}/{仓库名称}
+# 上游的源仓库地址只需添加一次
+git remote add upstream https://github.com/sysu-swsad-team/{仓库名称.git}
+# 切出dev分支并拉取源仓库dev分支上的内容
+git checkout -b dev
+git pull upstream dev
+</code></pre></div></div>
+
+<h2 id="21-协作方式-1">2.1 协作方式-1</h2>
+
+<p>要开发某个模块的时候，在你的本地仓库创建一个分支，例如 mydev。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout -b mydev
+</code></pre></div></div>
+
+<p>切换之后你的本地仓库上就有3个分支了，如下所示。checkout 之后会自动切换到 mydev 分支。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>├─master
+├─dev
+└─mydev
+</code></pre></div></div>
+
+<p>在 mydev 分支上进行开发和测试，完成相应的功能或者模块，完成之后再切回到 dev 分支将 mydev 的内容合并到 dev。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># mydev分支上提交你的更新
+git add *
+git commit -m "add something"
+# 切换到dev分支
+git checkout dev
+</code></pre></div></div>
+
+<p>由于在你开发过程中，我也可能在开发并且更新了仓库，为了避免冲突，在合并分支之前你还需要更新你本地仓库的 dev 分支。先在本地仓库上添加上游仓库 upstream，上游仓库即我的仓库，然后使用 pull 命令从上游仓库拉取更新。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 拉取上游的源仓库dev分支上的更新
+git pull upstream dev
+</code></pre></div></div>
+
+<p>更新完 dev 之后，将 mydev 分支合并到 dev 分支并提交到你自己的远程仓库。完成之后，mydev 分支就可以删除了，你也可以继续留着。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 将mydev分支合并到dev，可能会有冲突需要自行解决
+git merge mydev
+# 推送到你自己的远程仓库，注意这里是push到origin dev，不是upstream dev
+git push origin dev
+# 删除mydev分支
+git branch -d mydev
+</code></pre></div></div>
+
+<p>推送到自己的远程仓库后，就可以到 github 上面给我发 Pull Request 了，然后等待我合并你的代码。</p>
+
+<h2 id="22-协作方式-2">2.2 协作方式-2</h2>
+
+<p>嫌上面太麻烦？你也可以直接在 fork 之后的的 dev 分支上面进行开发，然后在发送 PR 之前先从源仓库拉取更新。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 提交你的代码
+git add *
+git commit -m "add something"
+# 拉取上游的源仓库dev分支上的更新，可能会有冲突需要自行解决
+git pull upstream dev
+# 推送到你自己的远程仓库，注意这里是push到origin dev，不是upstream dev
+git push origin dev
+</code></pre></div></div>
+
+<h2 id="3-备注">3 备注</h2>
+
+<p>所有拉取远程仓库的更新的操作请在本地仓库上使用命令行完成。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 拉取上游的源仓库dev分支上的更新
+git pull upstream dev
+</code></pre></div></div>
+
+<p>严禁通过其他做法拉取更新（例如在GitHub网站上通过网页操作进行更新然后在本地pull origin dev），以免造成不必要的合并冲突以及多余的commit。</p>
+
+            </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer class="footer" role="contentinfo">
+	<div class="container">
+		<p class="copyright">Copyright &copy; 2019-2019 <a href="https://sysu-swsad-team.github.io/"><code>sysu-swsad-team</code></a>.</p>
+		<p>Powered by <a href="http://jekyllrb.com">Jekyll</a>, themed from <a href="http://lesscss.cn/">Less</a>, refactored by <a href="http://www.hifreud.com/">Freud Kang</a></p>
+	</div>
+</footer>
+
+<script src="/styles/js/jquery.min.js"></script>
+<script src="/styles/js/bootstrap.min.js"></script>
+<script src="/styles/js/holder.min.js"></script>
+<script src="/styles/js/lessismore.js"></script>
+<script src="/styles/js/application.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  </body>
+</html>
