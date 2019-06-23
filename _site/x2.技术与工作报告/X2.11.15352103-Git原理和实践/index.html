@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#22365A">
+	<title>X2.11 15352103-Git原理和实践 - Niffler</title>
+
+	<link rel="shortcut icon" href="/styles/images/logo.png">
+	<link rel="icon" href="/styles/images/logo.png">
+
+	<link rel="stylesheet" href="/styles/css/index.css">
+	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/styles/css/syntax.css">
+	<link rel="canonical" href="/x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.11.15352103-Git%E5%8E%9F%E7%90%86%E5%92%8C%E5%AE%9E%E8%B7%B5/">
+	<link rel="alternate" type="application/rss+xml" title="Niffler" href="/feed.xml">
+	
+	<meta name="keywords" content="X2.11 15352103-Git原理和实践, Niffler, Niffler">
+	<meta name="description" content="Niffler">
+
+	<script src="/styles/js/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  	<![endif]-->
+  	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?94be4b0f9fc5d94cc0d0415ea6761ae9";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+  	<style type="text/css">
+	  	.docs-content{
+	  		margin-bottom: 10px;
+	  	}
+  	</style>
+</head>
+
+  <body class="index">
+
+    <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img src="/styles/images/logo-header.png">
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">    
+        <li>
+          <a href="/">圈多多</a>
+        </li>
+        <!-- <li>
+          <a href="/categories/">大类分解</a>
+        </li>
+        <li>
+          <a href="/tag">小类内聚</a>
+        </li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/sysu-swsad-team">Github</a></li>
+       
+      </ul>
+    </nav>
+  </div>
+</header>
+    <div class="docs-header" id="content">
+  <div class="container">
+  	
+  		<!--
+		    <h1>X2.11 15352103-Git原理和实践</h1>
+		    <p>Post on Mar 14, 2019 by <a href="/about">sysu-swsad-team</a></p>
+		-->
+		    <h1>Niffler</h1>
+    
+  </div>
+</div>
+    
+      
+<div class="banner">
+  <div class="container">
+  	
+    	<a href="/categories/#X2.技术与工作报告-ref">X2.技术与工作报告</a>	/
+      <!-- <a href="/tag/#-ref"></a> -->
+      <span>X2.11 15352103-Git原理和实践</span>
+    
+  </div>
+</div>
+
+    
+
+    <div class="container docs-container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar hidden-print" role="complementary">
+        <div id="navigation">
+  <h1>目录</h1>
+  <ul class="nav sidenav">
+  </ul>
+  <!-- <div style="height: 200px;width: 200px;">
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"> 
+    </script>
+  </div> -->
+</div>
+
+ 
+      </div>
+    </div>
+    <div class="col-md-9" role="main">
+      <div class="panel docs-content">
+        <div class="wrapper">
+            <header class="post-header">
+              <h1 class="post-title">X2.11 15352103-Git原理和实践</h1>
+              <!--
+                <p class="post-meta">Mar 14, 2019 • 15352103</p>
+              -->
+              <!-- <div class="meta">Posted on <span class="postdate">Mar 14, 2019</span> By <a target="_blank" href="https://sysu-swsad-team.github.io/">sysu-swsad-team</a></div> -->
+              <div class="meta">Posted By <a target="_blank" href="https://github.com/Jingxuan-He">15352103</a></div>
+              <br />
+            </header>
+            <article class="post-content">
+              <ul id="markdown-toc">
+  <li><a href="#基本概念" id="markdown-toc-基本概念">基本概念</a></li>
+  <li><a href="#提交代码基本命令" id="markdown-toc-提交代码基本命令">提交代码基本命令</a></li>
+  <li><a href="#关联远程仓库" id="markdown-toc-关联远程仓库">关联远程仓库</a>    <ul>
+      <li><a href="#远程仓库为空" id="markdown-toc-远程仓库为空">远程仓库为空</a></li>
+      <li><a href="#远程仓库非空" id="markdown-toc-远程仓库非空">远程仓库非空</a></li>
+    </ul>
+  </li>
+  <li><a href="#分支管理" id="markdown-toc-分支管理">分支管理</a></li>
+</ul>
+
+<h2 id="基本概念">基本概念</h2>
+
+<p>参考<a href="https://mp.weixin.qq.com/s?src=11&amp;timestamp=1561257887&amp;ver=1685&amp;signature=eeIjFLROhocJBDyoQmuoV-9lRZEd5TO0fIVOuiaHADqZzcA04G-OxAjHpEO3i0Hdd-8boqzU*TxdcOwJNu7l77GPjDNp4j6zbV3qu78tKt4BBVZJbPyr13Y0K*Q0k7bg&amp;new=1">基本概念</a></p>
+
+<ul>
+  <li>工作区：项目所在目录</li>
+  <li>暂存区：工作区中有一个隐藏目录 .git，暂存区位于.git目录下的index文件中，英文名为index或stage</li>
+  <li>版本库：隐藏目录.git</li>
+</ul>
+
+<p>下图展示了工作区、版本库中的暂存区和版本库之间的关系：</p>
+
+<p><img src="/styles/images/X2.11/基本概念.jpg" alt="基本概念" /></p>
+
+<p>图中左侧为工作区，右侧为版本库，在版本库中标记为”index”的区域为暂存区，标记为”master”的区域为master分支所代表的的目录树。此时”HEAD”指向master分支，所以图示命令中HEAD可以用master替换。图中”objects”为对象库，实际位于.git目录下的objects文件中，里面包含了创建的各种对象和内容。</p>
+
+<p>当对工作区修改或新增的文件执行<code class="highlighter-rouge">git add</code>命令时，暂存区的目录树被更新，同时工作区修改或新增的文件内容被写入到对象库一个新的对象中，该对象的ID被记录在暂存区的文件索引中。</p>
+
+<p>当执行<code class="highlighter-rouge">git commit</code>命令时，暂存区的目录树写入版本库，master分支会做相应的更新，即master分支指向的目录树就是提交时暂存区的目录树。</p>
+
+<p>当执行<code class="highlighter-rouge">git reset HEAD</code>命令时，master分支指向的目录树将替换暂存区的目录树，工作区不受影响。</p>
+
+<p>当执行<code class="highlighter-rouge">git checkout .</code>或<code class="highlighter-rouge">git checkout &lt;file&gt;</code>命令时，暂存区中全部或指定文件将替换工作区中的文件。这个操作很危险，它会清除工作区中未添加到暂存区的改动。</p>
+
+<p>当执行<code class="highlighter-rouge">git checkout HEAD .</code>或<code class="highlighter-rouge">git checkout HEAD &lt;file&gt;</code>命令时，HEAD指向的master分支中的全部或指定文件将替换暂存区和工作区中的文件。注意这个操作很危险，它不但会清除工作区中未提交的改动，而且会清除暂存区中未提交的改动。</p>
+
+<h2 id="提交代码基本命令">提交代码基本命令</h2>
+
+<p>参考<a href="https://www.cnblogs.com/panchanggui/p/9843711.html">提交代码基本命令</a></p>
+
+<ul>
+  <li><code class="highlighter-rouge">git add</code>命令</li>
+</ul>
+
+<p>将我们需要提交的代码从工作区添加到暂存区</p>
+
+<p><code class="highlighter-rouge">git add .</code>：不加参数默认将修改和未跟踪新增加的文件添加到暂存区，注意不包括删除</p>
+
+<p><code class="highlighter-rouge">git add -u .</code>：-u表示将已跟踪文件中修改和删除的文件添加到暂存区，不包括新增加的文件。注意被删除的文件被添加到暂存区再被提交并推送到服务器的版本库之后就消失了</p>
+
+<p><code class="highlighter-rouge">git add -A .</code>：-A表示将所有已跟踪文件中修改和删除的文件以及未跟踪新增加的文件添加到暂存区</p>
+
+<ul>
+  <li><code class="highlighter-rouge">git commit</code>命令</li>
+</ul>
+
+<p>将暂存区的改动提交到本地版本库。每次使用此命令时，本地版本库会生成一个40位的哈希值，这个哈希值也被称为commit-id，commit-id在版本回退的时候是非常有用的，它相当于一个快照，可以在未来的任何时候通过与<code class="highlighter-rouge">git reset</code>命令组合进行回退。</p>
+
+<p><code class="highlighter-rouge">git commit -m "注释"</code>：-m参数表示可以直接输入后面的注释内容，如果不加-m参数，会调用一个编辑器一般是vim来让你输入注释。</p>
+
+<p><code class="highlighter-rouge">git commit -am "注释"</code>：-am相当于-a -m。-a参数将所有已跟踪文件中修改或删除的文件提交到本地版本库，即使它们没有经过<code class="highlighter-rouge">git add</code>命令添加到暂存区。注意不包括新增加的文件</p>
+
+<ul>
+  <li><code class="highlighter-rouge">git push</code>命令</li>
+</ul>
+
+<p><code class="highlighter-rouge">git push</code>命令的一般形式为<code class="highlighter-rouge">git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;</code>，用于将本地版本库的分支推送到远程服务器上对应的分支</p>
+
+<p><code class="highlighter-rouge">git push origin master</code>：如果省略远程分支名，表示将本地分支推送到与之存在追踪关系的远程分支（通常两者同名），如果该远程分支不存在，则会被创建</p>
+
+<p><code class="highlighter-rouge">git push origin :master</code>：如果省略本地分支名，表示删除指定的远程分支，等同于<code class="highlighter-rouge">git push origin --delete master</code></p>
+
+<p><code class="highlighter-rouge">git push origin</code>：如果当前分支与远程分支存在追踪关系，那么可以省略本地分支名和远程分支名</p>
+
+<p><code class="highlighter-rouge">git push</code>：如果当前分支只有一个追踪分支，那么可以省略主机名</p>
+
+<p><code class="highlighter-rouge">git push -u origin master</code>：如果当前分支与多个主机存在追踪关系，可以使用-u指定一个默认主机，之后就可以不加任何参数直接使用<code class="highlighter-rouge">git push</code></p>
+
+<h2 id="关联远程仓库">关联远程仓库</h2>
+
+<p>参考<a href="https://blog.csdn.net/vi_error/article/details/80608793">关联远程仓库</a></p>
+
+<h6 id="远程仓库为空">远程仓库为空</h6>
+
+<p>打开项目所在的本地仓库，右键<code class="highlighter-rouge">Git Bash Here</code>，执行以下命令：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init
+git remote add origin 远程仓库地址
+git add .
+git commit -m "注释"
+git push -u origin master
+</code></pre></div></div>
+
+<p><img src="/styles/images/X2.11/远程仓库为空.jpg" alt="远程仓库为空" /></p>
+
+<h6 id="远程仓库非空">远程仓库非空</h6>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init
+git remote add origin 远程仓库地址
+// 获取远程仓库master分支上的内容
+git pull origin master
+// 将当前分支设置为远程仓库的master分支
+git branch --set-upstream-to=origin/master master
+git add .
+git commit -m "注释"
+git push
+</code></pre></div></div>
+
+<p><img src="/styles/images/X2.11/远程仓库非空.jpg" alt="远程仓库非空" /></p>
+
+<h2 id="分支管理">分支管理</h2>
+
+<p>参考<a href="https://mp.weixin.qq.com/s?src=11&amp;timestamp=1561255932&amp;ver=1685&amp;signature=hx*v3SsoM-2hr*VUTPwk0rv-JjGZVyW5hA2V3A-y1h7WKIatQfwwLa90oW0thfp4qy9SUBNX1UjJ8dJlZQQllDlfrSNtkPtcuG2GIDikK5SrpJRwAAfVkXr6T5gmGX3M&amp;new=1">分支管理</a></p>
+
+<ul>
+  <li>查看分支</li>
+</ul>
+
+<p>我们可以通过<code class="highlighter-rouge">git branch</code>命令来查看当前仓库有哪些分支，并且可以查看我们处于哪个分支中，如下：</p>
+
+<p><img src="/styles/images/X2.11/查看分支.jpg" alt="查看分支" /></p>
+
+<p>这里显示当前仓库只有一个master分支，master前面的*表示我们当前处于这个分支。</p>
+
+<ul>
+  <li>创建和切换分支</li>
+</ul>
+
+<p>我们可以利用<code class="highlighter-rouge">git branch &lt;分支名&gt;</code>命令来创建一个分支，然后利用<code class="highlighter-rouge">git checkout &lt;分支名&gt;</code>来切换分支，如下：</p>
+
+<p><img src="/styles/images/X2.11/b1分支.jpg" alt="b1分支" /></p>
+
+<p>可以通过<code class="highlighter-rouge">git checkout -b &lt;分支名&gt;</code>创建并切换分支，如下：</p>
+
+<p><img src="/styles/images/X2.11/b2分支.jpg" alt="b2分支" /></p>
+
+<p>可以通过<code class="highlighter-rouge">git checkout -</code>命令切换回上一分支，如下：</p>
+
+<p><img src="/styles/images/X2.11/切换回上一分支.jpg" alt="切换回上一分支" /></p>
+
+<ul>
+  <li>合并分支</li>
+</ul>
+
+<p>通过命令<code class="highlighter-rouge">git merge &lt;分支名&gt;</code>合并分支。</p>
+
+<ul>
+  <li>衍合分支</li>
+</ul>
+
+<p>衍合是合并的一种方式。现在假设从master分支创建branch分支，如下：</p>
+
+<p><img src="/styles/images/X2.11/分支1.png" alt="分支1" /></p>
+
+<p>现在向branch分支和master分支分别执行一次提交，如下：</p>
+
+<p><img src="/styles/images/X2.11/分支2.png" alt="分支2" /></p>
+
+<p>执行以下两条命令进行分支合并：</p>
+
+<p><code class="highlighter-rouge">git checkout branch</code></p>
+
+<p><code class="highlighter-rouge">git rebase master</code></p>
+
+<p>rebase命令在执行的过程中首先将branch分支中的每个commit取消，将这些commit保存为临时patch，然后将branch分支更新为master分支，之后将临时patch应用到branch分支上，此时branch分支将指向新创建的commit，旧的commit将被丢弃，那些将被丢弃的commit在执行<code class="highlighter-rouge">git gc</code>命令时被删除。合并后的分支如下图所示：</p>
+
+<p><img src="/styles/images/X2.11/分支3.png" alt="分支3" /></p>
+
+<p>在执行<code class="highlighter-rouge">git rebase master</code>命令时可能发生冲突。发生冲突有两种解决方案，一种为直接回退到之前的状态，一种为解决冲突后通过<code class="highlighter-rouge">git rebase --continue</code>继续提交。</p>
+
+            </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer class="footer" role="contentinfo">
+	<div class="container">
+		<p class="copyright">Copyright &copy; 2019-2019 <a href="https://sysu-swsad-team.github.io/"><code>sysu-swsad-team</code></a>.</p>
+		<p>Powered by <a href="http://jekyllrb.com">Jekyll</a>, themed from <a href="http://lesscss.cn/">Less</a>, refactored by <a href="http://www.hifreud.com/">Freud Kang</a></p>
+	</div>
+</footer>
+
+<script src="/styles/js/jquery.min.js"></script>
+<script src="/styles/js/bootstrap.min.js"></script>
+<script src="/styles/js/holder.min.js"></script>
+<script src="/styles/js/lessismore.js"></script>
+<script src="/styles/js/application.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  </body>
+</html>
