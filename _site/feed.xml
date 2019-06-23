@@ -5,8 +5,8 @@
     <description>圈多多</description>
     <link>https://sysu-swsad-team.github.io//</link>
     <atom:link href="https://sysu-swsad-team.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 23 Jun 2019 16:59:15 +0800</pubDate>
-    <lastBuildDate>Sun, 23 Jun 2019 16:59:15 +0800</lastBuildDate>
+    <pubDate>Sun, 23 Jun 2019 17:17:08 +0800</pubDate>
+    <lastBuildDate>Sun, 23 Jun 2019 17:17:08 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -221,7 +221,7 @@
       </item>
     
       <item>
-        <title>7.1 界面设计</title>
+        <title>7.1 UI design（界面设计）</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#主页&quot; id=&quot;markdown-toc-主页&quot;&gt;主页&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#发布任务&quot; id=&quot;markdown-toc-发布任务&quot;&gt;发布任务&lt;/a&gt;&lt;/li&gt;
@@ -229,10 +229,16 @@
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;主页&quot;&gt;主页&lt;/h2&gt;
+&lt;p&gt;主页界面最上方是板块分区，各个板块中包含对应类别的调差问卷。主页界面底部为功能按钮，仿照微博app的设计。&lt;/p&gt;
+
 &lt;p&gt;&lt;img src=&quot;/styles/images/7.1/home.jpg&quot; alt=&quot;主页&quot; height=&quot;50%&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;发布任务&quot;&gt;发布任务&lt;/h2&gt;
+&lt;p&gt;发布任务时可以设置问卷的参数，点击最下方按钮提交。&lt;/p&gt;
+
 &lt;p&gt;&lt;img src=&quot;/styles/images/7.1/task.jpg&quot; alt=&quot;发布任务&quot; height=&quot;50%&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;钱包充值&quot;&gt;钱包充值&lt;/h2&gt;
+&lt;p&gt;钱包充值只能支持特定数额的充值，支持三种支付方式。&lt;/p&gt;
+
 &lt;p&gt;&lt;img src=&quot;/styles/images/7.1/wallet.jpg&quot; alt=&quot;钱包充值&quot; height=&quot;50%&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 28 May 2019 00:00:00 +0800</pubDate>
@@ -342,8 +348,6 @@
   &lt;li&gt;500 （internal server error）通用错误响应&lt;/li&gt;
   &lt;li&gt;503 （Service Unavailable）服务端当前无法处理请求&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;&lt;em&gt;Created by 15352103&lt;/em&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 27 May 2019 00:00:00 +0800</pubDate>
         <link>https://sysu-swsad-team.github.io//8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.2.REST-API-%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/</link>
@@ -355,7 +359,7 @@
       </item>
     
       <item>
-        <title>7.2 数据库设计</title>
+        <title>7.2 Database design（数据库设计）</title>
         <description>
 &lt;p&gt;蓝框部分为&lt;strong&gt;用户及权限系统数据库设计&lt;/strong&gt;，其余为&lt;strong&gt;子系统数据库设计&lt;/strong&gt;。
 &lt;img src=&quot;/styles/images/7.2/auth-system.jpg&quot; alt=&quot;数据库设计&quot; /&gt;&lt;/p&gt;
@@ -370,7 +374,109 @@
       </item>
     
       <item>
-        <title>7.3 接口 API 设计</title>
+        <title>8.3 协作开发规范</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-准备工作&quot; id=&quot;markdown-toc-1-准备工作&quot;&gt;1 准备工作&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#21-协作方式-1&quot; id=&quot;markdown-toc-21-协作方式-1&quot;&gt;2.1 协作方式-1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#22-协作方式-2&quot; id=&quot;markdown-toc-22-协作方式-2&quot;&gt;2.2 协作方式-2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-备注&quot; id=&quot;markdown-toc-3-备注&quot;&gt;3 备注&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;参考：https://github.com/SYSUMonkeyEye/MonkeyEye-FE&lt;/p&gt;
+
+&lt;p&gt;每个仓库一般仓库有2个分支，master和dev。主要在 dev 分支上进行开发和测试，功能完善之后再合并到master。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;├─master
+└─dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;1-准备工作&quot;&gt;1 准备工作&lt;/h2&gt;
+
+&lt;p&gt;在 github 上 fork 仓库到你自己的 github，将你 fork 之后的远程仓库克隆到本地，并在你的本地仓库上添加上游仓库，即源仓库。fork 一般是 fork 了仓库的 master 分支，所以可能还需要自己去切出 dev 分支然后拉取源仓库dev 分支上的内容。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/{你的github}/{仓库名称}
+# 上游的源仓库地址只需添加一次
+git remote add upstream https://github.com/sysu-swsad-team/{仓库名称.git}
+# 切出dev分支并拉取源仓库dev分支上的内容
+git checkout -b dev
+git pull upstream dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;21-协作方式-1&quot;&gt;2.1 协作方式-1&lt;/h2&gt;
+
+&lt;p&gt;要开发某个模块的时候，在你的本地仓库创建一个分支，例如 mydev。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git checkout -b mydev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;切换之后你的本地仓库上就有3个分支了，如下所示。checkout 之后会自动切换到 mydev 分支。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;├─master
+├─dev
+└─mydev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;在 mydev 分支上进行开发和测试，完成相应的功能或者模块，完成之后再切回到 dev 分支将 mydev 的内容合并到 dev。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# mydev分支上提交你的更新
+git add *
+git commit -m &quot;add something&quot;
+# 切换到dev分支
+git checkout dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;由于在你开发过程中，我也可能在开发并且更新了仓库，为了避免冲突，在合并分支之前你还需要更新你本地仓库的 dev 分支。先在本地仓库上添加上游仓库 upstream，上游仓库即我的仓库，然后使用 pull 命令从上游仓库拉取更新。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# 拉取上游的源仓库dev分支上的更新
+git pull upstream dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;更新完 dev 之后，将 mydev 分支合并到 dev 分支并提交到你自己的远程仓库。完成之后，mydev 分支就可以删除了，你也可以继续留着。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# 将mydev分支合并到dev，可能会有冲突需要自行解决
+git merge mydev
+# 推送到你自己的远程仓库，注意这里是push到origin dev，不是upstream dev
+git push origin dev
+# 删除mydev分支
+git branch -d mydev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;推送到自己的远程仓库后，就可以到 github 上面给我发 Pull Request 了，然后等待我合并你的代码。&lt;/p&gt;
+
+&lt;h2 id=&quot;22-协作方式-2&quot;&gt;2.2 协作方式-2&lt;/h2&gt;
+
+&lt;p&gt;嫌上面太麻烦？你也可以直接在 fork 之后的的 dev 分支上面进行开发，然后在发送 PR 之前先从源仓库拉取更新。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# 提交你的代码
+git add *
+git commit -m &quot;add something&quot;
+# 拉取上游的源仓库dev分支上的更新，可能会有冲突需要自行解决
+git pull upstream dev
+# 推送到你自己的远程仓库，注意这里是push到origin dev，不是upstream dev
+git push origin dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;3-备注&quot;&gt;3 备注&lt;/h2&gt;
+
+&lt;p&gt;所有拉取远程仓库的更新的操作请在本地仓库上使用命令行完成。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# 拉取上游的源仓库dev分支上的更新
+git pull upstream dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;严禁通过其他做法拉取更新（例如在GitHub网站上通过网页操作进行更新然后在本地pull origin dev），以免造成不必要的合并冲突以及多余的commit。&lt;/p&gt;
+</description>
+        <pubDate>Sun, 26 May 2019 00:00:00 +0800</pubDate>
+        <link>https://sysu-swsad-team.github.io//8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.3.%E5%8D%8F%E4%BD%9C%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.3.%E5%8D%8F%E4%BD%9C%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/</guid>
+        
+        
+        <category>8.生产规范与指南</category>
+        
+      </item>
+    
+      <item>
+        <title>7.3 Interface API design（接口 API 设计）</title>
         <description></description>
         <pubDate>Sun, 26 May 2019 00:00:00 +0800</pubDate>
         <link>https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.3.%E6%8E%A5%E5%8F%A3API%E8%AE%BE%E8%AE%A1/</link>
@@ -382,7 +488,7 @@
       </item>
     
       <item>
-        <title>7.4 架构设计</title>
+        <title>7.4 Architecture design（架构设计）</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#架构问题&quot; id=&quot;markdown-toc-架构问题&quot;&gt;架构问题&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#解决方案说明&quot; id=&quot;markdown-toc-解决方案说明&quot;&gt;解决方案说明&lt;/a&gt;&lt;/li&gt;
@@ -430,7 +536,21 @@
       </item>
     
       <item>
-        <title>6.1 用例图</title>
+        <title>7.5 Usecase design（用例设计）</title>
+        <description>
+&lt;p&gt;&lt;a href=&quot;https://sysu-swsad.github.io/swad-guide/12-usecase-realization&quot;&gt;详细设计 - 使用交互图和设计类图实现用例&lt;/a&gt; 团队作业&lt;/p&gt;
+</description>
+        <pubDate>Fri, 24 May 2019 00:00:00 +0800</pubDate>
+        <link>https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.5.%E7%94%A8%E4%BE%8B%E8%AE%BE%E8%AE%A1/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.5.%E7%94%A8%E4%BE%8B%E8%AE%BE%E8%AE%A1/</guid>
+        
+        
+        <category>7.设计说明书</category>
+        
+      </item>
+    
+      <item>
+        <title>6.1 Usecase Diagram（用例图）</title>
         <description>
 &lt;p&gt;&lt;img src=&quot;https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/UML/用例图.jpg&quot; alt=&quot;用例图&quot; /&gt;&lt;/p&gt;
 </description>
@@ -444,7 +564,7 @@
       </item>
     
       <item>
-        <title>6.2 用例与活动图</title>
+        <title>6.2 Use Cases（用例与活动图）</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#详述用例&quot; id=&quot;markdown-toc-详述用例&quot;&gt;详述用例&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#非正式用例&quot; id=&quot;markdown-toc-非正式用例&quot;&gt;非正式用例&lt;/a&gt;&lt;/li&gt;
@@ -626,44 +746,6 @@
         <pubDate>Sat, 11 May 2019 00:00:00 +0800</pubDate>
         <link>https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.2.%E7%94%A8%E4%BE%8B%E4%B8%8E%E6%B4%BB%E5%8A%A8%E5%9B%BE/</link>
         <guid isPermaLink="true">https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.2.%E7%94%A8%E4%BE%8B%E4%B8%8E%E6%B4%BB%E5%8A%A8%E5%9B%BE/</guid>
-        
-        
-        <category>6.需求规格说明书</category>
-        
-      </item>
-    
-      <item>
-        <title>6.3 领域模型</title>
-        <description>
-&lt;p&gt;&lt;img src=&quot;https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/UML/类图.jpg&quot; alt=&quot;类图&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 10 May 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.3.%E9%A2%86%E5%9F%9F%E6%A8%A1%E5%9E%8B/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.3.%E9%A2%86%E5%9F%9F%E6%A8%A1%E5%9E%8B/</guid>
-        
-        
-        <category>6.需求规格说明书</category>
-        
-      </item>
-    
-      <item>
-        <title>6.4 状态模型</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#做任务状态图&quot; id=&quot;markdown-toc-做任务状态图&quot;&gt;做任务状态图&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#发布任务状态图&quot; id=&quot;markdown-toc-发布任务状态图&quot;&gt;发布任务状态图&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;做任务状态图&quot;&gt;做任务状态图&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/UML/状态图_做任务.jpg&quot; alt=&quot;状态图_做任务&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;发布任务状态图&quot;&gt;发布任务状态图&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/UML/状态图_发布任务.jpg&quot; alt=&quot;状态图_发布任务&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 09 May 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.4.%E7%8A%B6%E6%80%81%E6%A8%A1%E5%9E%8B/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.4.%E7%8A%B6%E6%80%81%E6%A8%A1%E5%9E%8B/</guid>
         
         
         <category>6.需求规格说明书</category>
