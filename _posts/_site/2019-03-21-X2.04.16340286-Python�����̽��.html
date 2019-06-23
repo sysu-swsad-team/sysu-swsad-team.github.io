@@ -1,0 +1,173 @@
+
+<p>Python的<code class="highlighter-rouge">multiprocessing.Pool</code>可以方便地创建进程池，提高程序并行性，可以用不同的进程来运行不同的服务程序。</p>
+
+<p>处理日志是Web服务器的一个重要功能，Python的原生<a href="https://docs.python.org/3/library/logging.html">logging</a>模块提供了多种日志处理方式（<a href="https://docs.python.org/3/library/logging.handlers.html#module-logging.handlers">logging.handlers</a>），其中
+<a href="https://docs.python.org/3/library/logging.handlers.html#logging.handlers.QueueHandler">QueueHandler</a>与<a href="https://docs.python.org/3/library/logging.handlers.html#logging.handlers.QueueListener">QueueListener</a>结合使用，可以让日志处理和写日志在不同的线程上运行，这对于Web应用非常重要，可以使服务客户端的线程尽可能快地响应，避免被日志处理这种比较慢的任务拖累。</p>
+
+<p>但多个进程写日志容易出问题。</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Thread</span>
+<span class="kn">from</span> <span class="nn">queue</span> <span class="kn">import</span> <span class="n">Queue</span>
+<span class="kn">from</span> <span class="nn">logging.handlers</span> <span class="kn">import</span> <span class="n">QueueListener</span><span class="p">,</span> <span class="n">QueueHandler</span>
+<span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Pool</span>
+
+<span class="k">def</span> <span class="nf">setup_logging</span><span class="p">():</span>
+    <span class="c1"># 日志写在队列上，一个线程从队列中读取并写到文件中
+</span>    <span class="n">_log_queue</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
+    <span class="n">QueueListener</span><span class="p">(</span>
+        <span class="n">_log_queue</span><span class="p">,</span> <span class="n">logging</span><span class="o">.</span><span class="n">FileHandler</span><span class="p">(</span><span class="s">"out.log"</span><span class="p">))</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">QueueHandler</span><span class="p">(</span><span class="n">_log_queue</span><span class="p">))</span>
+
+    <span class="c1"># 父进程有一个线程在不断写日志
+</span>    <span class="k">def</span> <span class="nf">write_logs</span><span class="p">():</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">"hello, I just did something"</span><span class="p">)</span>
+    <span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">write_logs</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">runs_in_subprocess</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"About to log..."</span><span class="p">)</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">"hello, I did something"</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"...logged"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">setup_logging</span><span class="p">()</span>
+
+    <span class="c1"># 同时启动一个进程池写日志
+</span>    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">Pool</span><span class="p">()</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
+            <span class="n">pool</span><span class="o">.</span><span class="nb">apply</span><span class="p">(</span><span class="n">runs_in_subprocess</span><span class="p">)</span>
+</code></pre></div></div>
+<p>这段程序的输出结果是</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>About to log...
+...logged
+About to log...
+...logged
+About to log...
+（阻塞）
+</code></pre></div></div>
+<p>这里需要明白系统启动子进程的过程</p>
+<ol>
+  <li>用<code class="highlighter-rouge">fork()</code>系统调用复制进程</li>
+  <li>子进程通过<code class="highlighter-rouge">execve()</code>（<code class="highlighter-rouge">execl()</code>）系统调用启动新程序</li>
+</ol>
+
+<p>但我们可以只调用<code class="highlighter-rouge">fork()</code>，比如：</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">fork</span><span class="p">,</span> <span class="n">getpid</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"I am parent process"</span><span class="p">,</span> <span class="n">getpid</span><span class="p">())</span>
+<span class="k">if</span> <span class="n">fork</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"I am the parent process, with PID"</span><span class="p">,</span> <span class="n">getpid</span><span class="p">())</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"I am the child process, with PID"</span><span class="p">,</span> <span class="n">getpid</span><span class="p">())</span>
+</code></pre></div></div>
+<p>输出为：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I am parent process 666
+I am the parent process, with PID 666
+I am the child process, with PID 681
+</code></pre></div></div>
+<p>我们可以看到父进程和子进程运行了同样的Python代码。</p>
+
+<p>而Python创建进程池默认只是调用了<code class="highlighter-rouge">fork()</code>，于是子进程可以访问到父进程内存的拷贝，包括import的模块的对象。</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Pool</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">getpid</span>
+
+<span class="k">def</span> <span class="nf">runs_in_subprocess</span><span class="p">():</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+        <span class="s">"I am the child, with PID {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">getpid</span><span class="p">()))</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span>
+        <span class="nb">format</span><span class="o">=</span><span class="s">'Niffler </span><span class="si">%(message)</span><span class="s">s'</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+        <span class="s">"I am the parent, with PID {}"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">getpid</span><span class="p">()))</span>
+
+    <span class="k">with</span> <span class="n">Pool</span><span class="p">()</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
+        <span class="n">pool</span><span class="o">.</span><span class="nb">apply</span><span class="p">(</span><span class="n">runs_in_subprocess</span><span class="p">)</span>
+</code></pre></div></div>
+<p>输出为：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Niffler I am the parent, with PID 1730
+Niffler I am the child, with PID 1931
+</code></pre></div></div>
+<p>我们可以看到进程池中的子进程继承了父进程<code class="highlighter-rouge">logging</code>模块的设置。</p>
+
+<p>但是<code class="highlighter-rouge">fork()</code>并不会复制父进程的线程。</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Thread</span><span class="p">,</span> <span class="nb">enumerate</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">fork</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="c1"># Start a thread:
+</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="n">sleep</span><span class="p">(</span><span class="mi">60</span><span class="p">))</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">fork</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"The parent process has {} threads"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span>
+        <span class="nb">len</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">())))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"The child process has {} threads"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span>
+        <span class="nb">len</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">())))</span>
+</code></pre></div></div>
+<p>输出为：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The parent process has 2 threads
+The child process has 1 threads
+</code></pre></div></div>
+<p>让我们回到第一个程序：</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Thread</span>
+<span class="kn">from</span> <span class="nn">queue</span> <span class="kn">import</span> <span class="n">Queue</span>
+<span class="kn">from</span> <span class="nn">logging.handlers</span> <span class="kn">import</span> <span class="n">QueueListener</span><span class="p">,</span> <span class="n">QueueHandler</span>
+<span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Pool</span>
+
+<span class="k">def</span> <span class="nf">setup_logging</span><span class="p">():</span>
+    <span class="c1"># 日志写在队列上，一个线程从队列中读取并写到文件中
+</span>    <span class="n">_log_queue</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
+    <span class="n">QueueListener</span><span class="p">(</span>
+        <span class="n">_log_queue</span><span class="p">,</span> <span class="n">logging</span><span class="o">.</span><span class="n">FileHandler</span><span class="p">(</span><span class="s">"out.log"</span><span class="p">))</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">QueueHandler</span><span class="p">(</span><span class="n">_log_queue</span><span class="p">))</span>
+
+    <span class="c1"># 父进程有一个线程在不断写日志
+</span>    <span class="k">def</span> <span class="nf">write_logs</span><span class="p">():</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">"hello, I just did something"</span><span class="p">)</span>
+    <span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">write_logs</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">runs_in_subprocess</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"About to log..."</span><span class="p">)</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s">"hello, I did something"</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"...logged"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">setup_logging</span><span class="p">()</span>
+
+    <span class="c1"># 同时启动一个进程池写日志
+</span>    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">Pool</span><span class="p">()</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
+            <span class="n">pool</span><span class="o">.</span><span class="nb">apply</span><span class="p">(</span><span class="n">runs_in_subprocess</span><span class="p">)</span>
+</code></pre></div></div>
+<p>父进程的<code class="highlighter-rouge">write_logs</code>线程每次写日志都会添加消息到队列<code class="highlighter-rouge">_log_queue</code>，需要获得锁，而<code class="highlighter-rouge">pool.apply</code>创建子进程调用<code class="highlighter-rouge">fork()</code>会把锁变量复制过来，可能会复制到状态为<code class="highlighter-rouge">acquired</code>的锁，而<code class="highlighter-rouge">runs_in_subprocess</code>写日志也要添加消息到队列<code class="highlighter-rouge">_log_queue</code>，需要等待锁的释放，但是父进程的<code class="highlighter-rouge">write_logs</code>线程并没有复制过来，子进程的锁永远不会被释放，造成永久阻塞。</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">fork</span>
+<span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Lock</span>
+
+<span class="n">lock</span> <span class="o">=</span> <span class="n">Lock</span><span class="p">()</span>
+<span class="c1"># 父进程获得锁
+</span><span class="n">lock</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">fork</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Acquiring lock..."</span><span class="p">)</span>
+    <span class="n">lock</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
+    <span class="c1"># 子进程不会获得锁
+</span>    <span class="k">print</span><span class="p">(</span><span class="s">"Lock acquired! (This code will never run)"</span><span class="p">)</span>
+</code></pre></div></div>
+<p>输出为：</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Acquiring lock...
+</code></pre></div></div>
+<p>有折衷方法可以解决这个问题。<code class="highlighter-rouge">logging</code>模块支持创建子进程时重置<code class="highlighter-rouge">logging</code>模块的设置；Python支持调用<code class="highlighter-rouge">fork()</code>时将锁设回<code class="highlighter-rouge">released</code>状态，但不支持C库创建的锁。</p>
+
+<p>还有一个更好的方法，Python3 <code class="highlighter-rouge">multiprocessing</code>模块添加了一些创建子进程的新方法，其中一个在<code class="highlighter-rouge">fork()</code>之后加上<code class="highlighter-rouge">execve()</code>，这样子进程就会创建新程序，父进程的模块的状态就不会被继承，只需要在创建进程池之前简单设置一下。</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">multiprocessing</span>
+<span class="n">multiprocessing</span><span class="o">.</span><span class="n">set_start_method</span><span class="p">(</span><span class="s">'spawn'</span><span class="p">)</span>
+</code></pre></div></div>
+<blockquote>
+  <p><a href="https://yifeikong.github.io/posts/tu-cao-yi-xia-python-hun-luan-de-threading-he-multiprocessing.html">
+吐槽一下 Python 混乱的 threading 和 multiprocessing</a></p>
+</blockquote>
