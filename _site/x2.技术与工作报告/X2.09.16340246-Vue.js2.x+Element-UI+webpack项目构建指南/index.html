@@ -123,7 +123,7 @@
               <!--
                 <p class="post-meta">Mar 16, 2019 • 16340246</p>
               -->
-              <!-- <div class="meta">Posted on <span class="postdate">Mar 16, 2019</span> By <a target="_blank" href="http://localhost:4000">sysu-swsad-team</a></div> -->
+              <!-- <div class="meta">Posted on <span class="postdate">Mar 16, 2019</span> By <a target="_blank" href="https://sysu-swsad-team.github.io/">sysu-swsad-team</a></div> -->
               <div class="meta">Posted By <a target="_blank" href="https://github.com/wuzht">16340246</a></div>
               <br />
             </header>
@@ -234,28 +234,28 @@ npm run dev
 
 <p>在 <code class="highlighter-rouge">src/main.js</code> 中添加</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">ElementUI</span> <span class="k">from</span> <span class="s1">'element-ui'</span>
-<span class="k">import</span> <span class="s1">'element-ui/lib/theme-chalk/index.css'</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">ElementUI</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">element-ui</span><span class="dl">'</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">element-ui/lib/theme-chalk/index.css</span><span class="dl">'</span>
 <span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">ElementUI</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>最后 <code class="highlighter-rouge">main.js</code> 的内容如下：</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="s1">'vue'</span>
-<span class="k">import</span> <span class="nx">App</span> <span class="k">from</span> <span class="s1">'./App'</span>
-<span class="k">import</span> <span class="nx">router</span> <span class="k">from</span> <span class="s1">'./router'</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">App</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./App</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">router</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./router</span><span class="dl">'</span>
 
-<span class="k">import</span> <span class="nx">ElementUI</span> <span class="k">from</span> <span class="s1">'element-ui'</span>
-<span class="k">import</span> <span class="s1">'element-ui/lib/theme-chalk/index.css'</span>
+<span class="k">import</span> <span class="nx">ElementUI</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">element-ui</span><span class="dl">'</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">element-ui/lib/theme-chalk/index.css</span><span class="dl">'</span>
 <span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">ElementUI</span><span class="p">)</span>
 
 <span class="nx">Vue</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">productionTip</span> <span class="o">=</span> <span class="kc">false</span>
 
 <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
-  <span class="na">el</span><span class="p">:</span> <span class="s1">'#app'</span><span class="p">,</span>
+  <span class="na">el</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#app</span><span class="dl">'</span><span class="p">,</span>
   <span class="nx">router</span><span class="p">,</span>
   <span class="na">components</span><span class="p">:</span> <span class="p">{</span> <span class="nx">App</span> <span class="p">},</span>
-  <span class="na">template</span><span class="p">:</span> <span class="s1">'&lt;App/&gt;'</span>
+  <span class="na">template</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;App/&gt;</span><span class="dl">'</span>
 <span class="p">})</span>
 </code></pre></div></div>
 
@@ -269,7 +269,7 @@ npm run dev
 
 <span class="nt">&lt;</span><span class="k">script</span><span class="nt">&gt;</span>
 <span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
-  <span class="na">name</span><span class="p">:</span> <span class="s1">'App'</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">App</span><span class="dl">'</span>
 <span class="p">}</span>
 <span class="nt">&lt;/</span><span class="k">script</span><span class="nt">&gt;</span>
 
@@ -347,17 +347,17 @@ npm run dev
 
 <p>最后要修改路由 <code class="highlighter-rouge">router/index.js</code>：</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="s1">'vue'</span>
-<span class="k">import</span> <span class="nx">Router</span> <span class="k">from</span> <span class="s1">'vue-router'</span>
-<span class="k">import</span> <span class="nx">Home</span> <span class="k">from</span> <span class="s1">'@/components/Home'</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">Router</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue-router</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">Home</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@/components/Home</span><span class="dl">'</span>
 
 <span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">Router</span><span class="p">)</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="k">new</span> <span class="nx">Router</span><span class="p">({</span>
   <span class="na">routes</span><span class="p">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="na">path</span><span class="p">:</span> <span class="s1">'/'</span><span class="p">,</span>
-      <span class="na">name</span><span class="p">:</span> <span class="s1">'Home'</span><span class="p">,</span>
+      <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Home</span><span class="dl">'</span><span class="p">,</span>
       <span class="na">component</span><span class="p">:</span> <span class="nx">Home</span>
     <span class="p">}</span>
   <span class="p">]</span>
