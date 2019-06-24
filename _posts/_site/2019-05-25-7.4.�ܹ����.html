@@ -1,0 +1,36 @@
+<ul id="markdown-toc">
+  <li><a href="#架构问题" id="markdown-toc-架构问题">架构问题</a></li>
+  <li><a href="#解决方案说明" id="markdown-toc-解决方案说明">解决方案说明</a></li>
+  <li><a href="#逻辑视图" id="markdown-toc-逻辑视图">逻辑视图</a></li>
+  <li><a href="#物理视图" id="markdown-toc-物理视图">物理视图</a></li>
+</ul>
+
+<h2 id="架构问题">架构问题</h2>
+<ul>
+  <li>服务外部用户</li>
+  <li>需求变动快</li>
+  <li>运用规模变化大</li>
+</ul>
+
+<h2 id="解决方案说明">解决方案说明</h2>
+<ul>
+  <li>按照不同服务功能拆分微服务<br />
+  一个服务完成一个独立的功能，独立维护，按需扩展</li>
+  <li>前后端分离<br />
+  优化用户体验，接口简洁易维护，实现前端多渠道集成</li>
+  <li>无状态服务<br />
+  把数据迁移到分布式缓存中存储，让业务服务变成一个无状态的计算节点，实现服务按需动态伸缩</li>
+  <li>Restful通信风格<br />
+  无状态协议HTTP扩展能力强，JSON 报文序列化轻量简单，语言无关</li>
+</ul>
+
+<h2 id="逻辑视图">逻辑视图</h2>
+<p><img src="/styles/images/7.4/logicView.jpg" alt="逻辑视图" height="60%" width="60%" /></p>
+
+<h2 id="物理视图">物理视图</h2>
+<p><img src="/styles/images/7.4/physicalView.jpg" alt="物理视图" height="90%" width="90%" /></p>
+
+<blockquote>
+  <p>参考<br />
+<a href="https://juejin.im/entry/59bf30876fb9a00a583176a1">微服务的4大设计原则和19个解决方案</a></p>
+</blockquote>

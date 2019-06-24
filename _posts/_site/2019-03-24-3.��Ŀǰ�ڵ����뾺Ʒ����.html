@@ -1,0 +1,177 @@
+<ul id="markdown-toc">
+  <li><a href="#背景" id="markdown-toc-背景">背景</a></li>
+  <li><a href="#交互设计与技术分析" id="markdown-toc-交互设计与技术分析">交互设计与技术分析</a>    <ul>
+      <li><a href="#功能框架" id="markdown-toc-功能框架">功能框架</a></li>
+      <li><a href="#交互体验与视觉风格" id="markdown-toc-交互体验与视觉风格">交互体验与视觉风格</a></li>
+      <li><a href="#亮点特点借鉴" id="markdown-toc-亮点特点借鉴">亮点特点借鉴</a></li>
+    </ul>
+  </li>
+  <li><a href="#总结" id="markdown-toc-总结">总结</a></li>
+  <li><a href="#附录" id="markdown-toc-附录">附录</a></li>
+</ul>
+
+<h2 id="背景">背景</h2>
+
+<p>大学生活中，我们时常需要取快递、拿外卖，社团需要发布调查问卷，协会需要征集简历等。而有时我们会因为时间冲突、懒惰等原因不能够及时取快递、拿外卖，社团发布的调查问卷无人问津或随意填写，协会征集的简历寥寥无几等。为了解决上述问题，通过有偿的方式激励大学生认真完成任务不失为一种有效的途径。一方面，提供任务一方的需求能够得到高质量的满足，另一方面，完成任务一方能够利用课余时间挣得闲钱。为此，我们推出了挣闲钱app——Niffler。</p>
+
+<h2 id="交互设计与技术分析">交互设计与技术分析</h2>
+
+<p>针对做任务挣闲钱的核心业务，我们对龙猫众包、零钱兼职、LifePoints三款竞品在交互过程与功能架构设计方面做了详细的分析。</p>
+
+<h3 id="功能框架">功能框架</h3>
+
+<p><img src="https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/investigation/龙猫众包.jpg" alt="龙猫众包" /></p>
+
+<p>分析：</p>
+
+<ul>
+  <li>龙猫众包是一个互联网众包（兼职）平台，市场定位为微商、学生党、全职妈妈、兼职人士、赚客等</li>
+  <li>任务投放没有持续性。打开</li>
+  <li>后发现<code class="highlighter-rouge">写文本</code>和<code class="highlighter-rouge">拍视频</code>中没有已发布的任务</li>
+  <li>审核周期时间长达1周，容易导致用户失去耐心而放弃使用该软件产品</li>
+  <li><code class="highlighter-rouge">拍照片</code>任务中未申明照片用途，造成隐私泄露风险</li>
+</ul>
+
+<p><img src="https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/investigation/零钱兼职.jpg" alt="零钱兼职" /></p>
+
+<p>分析：</p>
+
+<ul>
+  <li>市场定位为在校大学生和空闲上班族</li>
+  <li>注册/登录界面非常不友好。点击<code class="highlighter-rouge">我的-&gt;注册/登录</code>只能进入到注册页面，无法跳转到登录页面；未登录情况下点击<code class="highlighter-rouge">微任务</code>只能进入到登录页面，无法跳转到注册页面</li>
+  <li>微任务类型丰富，划分合理</li>
+  <li>任务详情页面标明了<code class="highlighter-rouge">截至日期</code>、<code class="highlighter-rouge">重复执行</code>、<code class="highlighter-rouge">审核</code>、<code class="highlighter-rouge">剩余</code>以及<code class="highlighter-rouge">任务步骤</code>，清晰明了</li>
+</ul>
+
+<p><img src="https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/investigation/LifePoints.jpg" alt="LifePoints" /></p>
+
+<p>分析：</p>
+
+<ul>
+  <li>市场定位为希望被聆听心声和分享意见的人</li>
+  <li>注册时需要绑定并验证邮箱，确保了用户信息的真实性</li>
+  <li>明确列出了隐私政策、会员条款、社区条款与条件以及奖励政策，流程规范</li>
+</ul>
+
+<h3 id="交互体验与视觉风格">交互体验与视觉风格</h3>
+
+<p><em>核心流程的页面截图贴在附录</em></p>
+
+<p><strong>龙猫众包：</strong></p>
+
+<ul>
+  <li>以橙色为主色调，以白色为背景，整体界面有种淘宝直视感</li>
+  <li>架构清晰合理，交互上比较符合用户习惯</li>
+</ul>
+
+<p><strong>零钱兼职：</strong></p>
+
+<ul>
+  <li>以红色为主色调，以白色为背景</li>
+  <li>广告滚动太快，影响视觉效果</li>
+  <li>字体偏大，界面不够美观</li>
+  <li>注册/登录界面不够友好，无法灵活切换</li>
+</ul>
+
+<p><strong>LifePoints：</strong></p>
+
+<ul>
+  <li>界面简洁大方，文字语言优美，背景图片充满生活气息</li>
+  <li>交互友好，例如点击<code class="highlighter-rouge">开始调查</code>后提示需要设置浏览器允许弹出窗口和重定向，并给出了不同浏览器的设置步骤</li>
+</ul>
+
+<h3 id="亮点特点借鉴">亮点特点借鉴</h3>
+
+<p><strong>龙猫众包：</strong></p>
+
+<ul>
+  <li>任务详情页面提供了剩余次数、截止时间、审核时间和完成时间</li>
+  <li>每个任务的赚钱方式分为了<code class="highlighter-rouge">分享任务</code>和<code class="highlighter-rouge">做任务</code></li>
+</ul>
+
+<p><strong>零钱兼职：</strong></p>
+
+<ul>
+  <li>提供了定位功能</li>
+  <li>提供了搜索功能</li>
+</ul>
+
+<p><strong>LifePoints：</strong></p>
+
+<ul>
+  <li>“通过参与调查，直接为世界上最大的公司和品牌做出贡献”，使得填写问卷调查这件事情变得高大上，有利于开拓市场，吸引人群</li>
+  <li>奖励可以用于兑换天猫超市电子卡、京东电子卡、亚马逊电子证书等</li>
+  <li>建立了LifePoints全球社区，增加了互动性</li>
+</ul>
+
+<h2 id="总结">总结</h2>
+
+<p>在任务投放方面，我们小组可以借鉴龙猫众包和零钱兼职的模式，设置任务截止日期、是否可以重复执行、审核时间和剩余次数（也就是单个账户可以领取任务的次数）。</p>
+
+<p>在交互界面方面，我们小组可以借鉴LifePoints，设计出流畅、赏心悦目的界面。</p>
+
+<p>我们应当注重保护用户的隐私：一方面，我们应当严格把控已发布任务的质量，例如龙猫众包中的拍照片任务，由于没有明确申明照片的用途，很多用户都会产生戒备心理，从而不愿意做这些任务，也就是说，如果已发布任务的质量不能够得到保证，会很容易丢失用户资源；另一方面，由于用户填写的都是真实有效的个人信息，我们应当明确保证不对外泄露用户的个人信息，同时在技术层面增强数据库的安全性。</p>
+
+<h2 id="附录">附录</h2>
+
+<p><strong>龙猫众包：</strong></p>
+
+<p>主界面：</p>
+
+<p><img src="https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/investigation/龙猫众包/1.jpg" width="350" height="600" /></p>
+
+<p>拍照片任务：</p>
+
+<p><img src="https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/investigation/龙猫众包/2.jpg" width="350" height="600" /></p>
+
+<p><img src="https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/investigation/龙猫众包/3.jpg" width="350" height="600" /></p>
+
+<p>我的-&gt;余额-&gt;立即提现：</p>
+
+<p><img src="https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/investigation/龙猫众包/4.jpg" width="350" height="600" /></p>
+
+<p><img src="https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/investigation/龙猫众包/5.jpg" width="350" height="600" /></p>
+
+<p><strong>零钱兼职：</strong></p>
+
+<p>开始界面：</p>
+
+<p><img src="https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/investigation/零钱兼职/1.jpg" width="350" height="600" /></p>
+
+<p>任务详情界面：</p>
+
+<p><img src="https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/investigation/零钱兼职/2.jpg" width="350" height="600" /></p>
+
+<p>我的界面：</p>
+
+<p><img src="https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/investigation/零钱兼职/3.jpg" width="350" height="600" /></p>
+
+<p><strong>LifePoints：</strong></p>
+
+<p>开始界面：</p>
+
+<p><img src="https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/investigation/LifePoints/1.jpg" /></p>
+
+<p>注册界面：</p>
+
+<p><img src="https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/investigation/LifePoints/2.jpg" /></p>
+
+<p><img src="https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/investigation/LifePoints/3.jpg" /></p>
+
+<p>登录后主界面：</p>
+
+<p><img src="https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/investigation/LifePoints/4.jpg" /></p>
+
+<p><img src="https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/investigation/LifePoints/5.jpg" /></p>
+
+<p>调查问卷界面：</p>
+
+<p><img src="https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/investigation/LifePoints/6.jpg" /></p>
+
+<p>奖励界面：</p>
+
+<p><img src="https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/investigation/LifePoints/7.jpg" /></p>
+
+<p><img src="https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/investigation/LifePoints/8.jpg" /></p>
+
+<p><img src="https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/investigation/LifePoints/9.jpg" /></p>
