@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#22365A">
+	<title>X2.12 16340246-Vuex 使用详解 - Niffler</title>
+
+	<link rel="shortcut icon" href="/styles/images/logo.png">
+	<link rel="icon" href="/styles/images/logo.png">
+
+	<link rel="stylesheet" href="/styles/css/index.css">
+	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/styles/css/syntax.css">
+	<link rel="canonical" href="/x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.12.16340246-Vuex%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/">
+	<link rel="alternate" type="application/rss+xml" title="Niffler" href="/feed.xml">
+	
+	<meta name="keywords" content="X2.12 16340246-Vuex 使用详解, Niffler, Niffler">
+	<meta name="description" content="Niffler">
+
+	<script src="/styles/js/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  	<![endif]-->
+  	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?94be4b0f9fc5d94cc0d0415ea6761ae9";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+  	<style type="text/css">
+	  	.docs-content{
+	  		margin-bottom: 10px;
+	  	}
+  	</style>
+</head>
+
+  <body class="index">
+
+    <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img src="/styles/images/logo-header.png">
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">    
+        <li>
+          <a href="/">圈多多</a>
+        </li>
+        <!-- <li>
+          <a href="/categories/">大类分解</a>
+        </li>
+        <li>
+          <a href="/tag">小类内聚</a>
+        </li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/sysu-swsad-team">Github</a></li>
+       
+      </ul>
+    </nav>
+  </div>
+</header>
+    <div class="docs-header" id="content">
+  <div class="container">
+  	
+  		<!--
+		    <h1>X2.12 16340246-Vuex 使用详解</h1>
+		    <p>Post on Mar 13, 2019 by <a href="/about">sysu-swsad-team</a></p>
+		-->
+		    <h1>Niffler</h1>
+    
+  </div>
+</div>
+    
+      
+<div class="banner">
+  <div class="container">
+  	
+    	<a href="/categories/#X2.技术与工作报告-ref">X2.技术与工作报告</a>	/
+      <!-- <a href="/tag/#-ref"></a> -->
+      <span>X2.12 16340246-Vuex 使用详解</span>
+    
+  </div>
+</div>
+
+    
+
+    <div class="container docs-container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar hidden-print" role="complementary">
+        <div id="navigation">
+  <h1>目录</h1>
+  <ul class="nav sidenav">
+  </ul>
+  <!-- <div style="height: 200px;width: 200px;">
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"> 
+    </script>
+  </div> -->
+</div>
+
+ 
+      </div>
+    </div>
+    <div class="col-md-9" role="main">
+      <div class="panel docs-content">
+        <div class="wrapper">
+            <header class="post-header">
+              <h1 class="post-title">X2.12 16340246-Vuex 使用详解</h1>
+              <!--
+                <p class="post-meta">Mar 13, 2019 • 16340246</p>
+              -->
+              <!-- <div class="meta">Posted on <span class="postdate">Mar 13, 2019</span> By <a target="_blank" href="https://sysu-swsad-team.github.io/">sysu-swsad-team</a></div> -->
+              <div class="meta">Posted By <a target="_blank" href="https://github.com/wuzht">16340246</a></div>
+              <br />
+            </header>
+            <article class="post-content">
+              <ul id="markdown-toc">
+  <li><a href="#vuex" id="markdown-toc-vuex">Vuex</a></li>
+  <li><a href="#安装和引入" id="markdown-toc-安装和引入">安装和引入</a></li>
+  <li><a href="#开始" id="markdown-toc-开始">开始</a>    <ul>
+      <li><a href="#state" id="markdown-toc-state">state</a></li>
+      <li><a href="#getters" id="markdown-toc-getters">getters</a></li>
+      <li><a href="#mutations" id="markdown-toc-mutations">mutations</a></li>
+      <li><a href="#actions" id="markdown-toc-actions">actions</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="vuex">Vuex</h2>
+
+<p>Vuex 是什么？</p>
+
+<blockquote>
+  <p>Vuex 是一个专为 Vue.js 应用程序开发的<strong>状态管理模式</strong>。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。Vuex 也集成到 Vue 的官方调试工具 <a href="https://github.com/vuejs/vue-devtools">devtools extension</a>，提供了诸如零配置的 time-travel 调试、状态快照导入导出等高级调试功能。</p>
+
+  <p>—— <a href="https://vuex.vuejs.org/zh/">Vuex 官方文档</a></p>
+</blockquote>
+
+<p>在构建 Vue 单页面应用时，Vuex 为我们提供了全局状态管理。在 state 中定义的数据后，你可以在项目中任一个组件中进行获取或修改，并且你的修改可以得到全局的相应变更。当我们想要在项目中定义和使用全局变量时，使用 Vuex 是一个很好的解决方法。</p>
+
+<ul>
+  <li>state：对数据的全局存储</li>
+  <li>getter：和 Vue计算属性 computed 一样，来实时监听 state 值的变化 (最新状态)</li>
+  <li>mutations：对数据的同步更改</li>
+  <li>actions：对数据的异步更改</li>
+</ul>
+
+<h2 id="安装和引入">安装和引入</h2>
+
+<p>在你的 Vue 项目中安装 Vuex</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install </span>vuex <span class="nt">--save</span>
+</code></pre></div></div>
+
+<p>在 <code class="highlighter-rouge">src</code> 文件夹下创建一个 <code class="highlighter-rouge">vuex</code> 文件夹，并在 <code class="highlighter-rouge">src/vuex</code> 文件夹里新建一个 <code class="highlighter-rouge">store.js</code>，内容如下：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">Vuex</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vuex</span><span class="dl">'</span>
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">Vuex</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vuex</span><span class="p">.</span><span class="nx">Store</span><span class="p">()</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">store</span>
+</code></pre></div></div>
+
+<p>在 <code class="highlighter-rouge">main.js</code> 中，通过在根实例中注册 <code class="highlighter-rouge">store</code> 选项，该 store 实例会注入到根组件下的所有子组件中，且子组件能通过 <code class="highlighter-rouge">this.$store</code> 访问到。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">store</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./vuex/store</span><span class="dl">'</span>
+
+<span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+  <span class="na">el</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#app</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">router</span><span class="p">,</span>
+  <span class="nx">store</span><span class="p">,</span>	<span class="c1">// 使用store</span>
+  <span class="na">render</span><span class="p">:</span> <span class="nx">h</span> <span class="o">=&gt;</span> <span class="nx">h</span><span class="p">(</span><span class="nx">App</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<h2 id="开始">开始</h2>
+
+<p>在本示例中，我们要在 Vuex 中定义一个全局变量 <code class="highlighter-rouge">isCollapse</code>。在任一组件中，点击 展开/收起 按钮，将会将 <code class="highlighter-rouge">isCollapse</code> 变量取反，在项目中各个组件都根据这个变量来判断侧栏 (Side bar) 是否收起。为了说明参数传递的方法，下面还添加了 <code class="highlighter-rouge">name</code> 和 <code class="highlighter-rouge">num</code> 两个全局变量。</p>
+
+<h3 id="state">state</h3>
+
+<p>设置一个全局访问的 <code class="highlighter-rouge">state</code> 对象，并把它放到 <code class="highlighter-rouge">store</code> 里面</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">Vuex</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vuex</span><span class="dl">'</span>
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">Vuex</span><span class="p">)</span>
+
+<span class="c1">// 储存全局变量</span>
+<span class="kd">const</span> <span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="c1">// 要使用的全局变量初始值</span>
+  <span class="na">isCollapse</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">no one</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">num</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vuex</span><span class="p">.</span><span class="nx">Store</span><span class="p">({</span>
+  <span class="nx">state</span>
+<span class="p">})</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">store</span>
+</code></pre></div></div>
+
+<p>现在，在任一个组件中，通过 <code class="highlighter-rouge">this.$store.state.isCollapse</code>，<code class="highlighter-rouge">this.$store.state.name</code> 等，已经可以获取到这些全局变量了，但这并不是理想的方式，Vuex 提供了 getters，Vuex 允许我们在 store 中定义 “getter”（可以认为是 store 的计算属性）。就像计算属性一样，getter 的返回值会根据它的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算。</p>
+
+<h3 id="getters">getters</h3>
+
+<p>定义 <code class="highlighter-rouge">getters</code>，并把它放到 <code class="highlighter-rouge">store</code> 里面</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">Vuex</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vuex</span><span class="dl">'</span>
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">Vuex</span><span class="p">)</span>
+
+<span class="c1">// 储存全局变量</span>
+<span class="kd">const</span> <span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="c1">// 要使用的全局变量初始值</span>
+  <span class="na">isCollapse</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">no one</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">num</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="c1">// 获取state中实时更新的值</span>
+<span class="kd">const</span> <span class="nx">getters</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">getIsCollapse</span> <span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">isCollapse</span>
+  <span class="p">},</span>
+  <span class="nx">getName</span> <span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">name</span>
+  <span class="p">},</span>
+  <span class="nx">getNum</span> <span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">num</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vuex</span><span class="p">.</span><span class="nx">Store</span><span class="p">({</span>
+  <span class="nx">state</span><span class="p">,</span>
+  <span class="nx">getters</span>
+<span class="p">})</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">store</span>
+</code></pre></div></div>
+
+<p>现在，在任一组件中，使用如 <code class="highlighter-rouge">this.$store.getters.getIsCollapse</code> 就可以获取到这些变量。但是，我们通常还需要对全局变量进行更改，这就要用到 mutations 对象。</p>
+
+<h3 id="mutations">mutations</h3>
+
+<p>更改 Vuex 的 <code class="highlighter-rouge">store</code> 中的状态的唯一方法是提交 mutation。如下定义好 <code class="highlighter-rouge">mutations</code>，并把它放进 <code class="highlighter-rouge">store</code> 里面。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">Vuex</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vuex</span><span class="dl">'</span>
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">Vuex</span><span class="p">)</span>
+
+<span class="c1">// 储存全局变量</span>
+<span class="kd">const</span> <span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="c1">// 要使用的全局变量初始值</span>
+  <span class="na">isCollapse</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">no one</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">num</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="c1">// 获取state中实时更新的值</span>
+<span class="kd">const</span> <span class="nx">getters</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">getIsCollapse</span> <span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">isCollapse</span>
+  <span class="p">},</span>
+  <span class="nx">getName</span> <span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">name</span>
+  <span class="p">},</span>
+  <span class="nx">getNum</span> <span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">num</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// mutations: 对数据的同步更改</span>
+<span class="kd">const</span> <span class="nx">mutations</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">mutationsIsCollapse</span> <span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">state</span><span class="p">.</span><span class="nx">isCollapse</span> <span class="o">=</span> <span class="o">!</span><span class="nx">state</span><span class="p">.</span><span class="nx">isCollapse</span>
+  <span class="p">},</span>
+  <span class="nx">mutationsName</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">payload</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">state</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">payload</span><span class="p">.</span><span class="nx">value</span>
+  <span class="p">},</span>
+  <span class="nx">mutationsNum</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">payload</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">state</span><span class="p">.</span><span class="nx">num</span> <span class="o">+=</span> <span class="nx">payload</span><span class="p">.</span><span class="nx">value</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vuex</span><span class="p">.</span><span class="nx">Store</span><span class="p">({</span>
+  <span class="nx">state</span><span class="p">,</span>
+  <span class="nx">getters</span><span class="p">,</span>
+  <span class="nx">mutations</span>
+<span class="p">})</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">store</span>
+</code></pre></div></div>
+
+<p>现在你可以使用 <code class="highlighter-rouge">this.$store.commit</code> 方法来修改 store 的数据：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">commit</span><span class="p">(</span><span class="dl">'</span><span class="s1">mutationsIsCollapse</span><span class="dl">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>注意到你可以向 <code class="highlighter-rouge">store.commit</code> 传入额外的参数，即 mutation 的 <strong>载荷（payload）</strong>。比如你要修改 <code class="highlighter-rouge">num</code>，你可以直接传递一个数字，但我们通常不会这么做，大多数情况下，<code class="highlighter-rouge">payload</code> 应该是一个对象：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">commit</span><span class="p">(</span><span class="dl">'</span><span class="s1">mutationsIsCollapse</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">key</span><span class="p">:</span> <span class="dl">'</span><span class="s1">num</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">value</span><span class="p">:</span> <span class="mi">5</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>注意：对于 <code class="highlighter-rouge">mutations</code> 以及接下来的 <code class="highlighter-rouge">action</code>，你向他们传递的额外参数只能有一个，如果传递两个或多个额外参数，那么除了第一个参数，其他都将变成 <code class="highlighter-rouge">undefined</code>。因此，如果你要传递对个参数，请把他们放进 <code class="highlighter-rouge">payload</code> 里。</p>
+
+<p>现在我们可以通过 <code class="highlighter-rouge">mutations</code> 来修改数据了，但要记住 <code class="highlighter-rouge">mutations</code> 里面的函数都是同步函数。按照官方文档对这里的解释是：</p>
+
+<blockquote>
+  <p>现在想象，我们正在 debug 一个 app 并且观察 devtool 中的 mutation 日志。每一条 mutation 被记录，devtools 都需要捕捉到前一状态和后一状态的快照。然而，在上面的例子中 mutation 中的异步函数中的回调让这不可能完成：因为当 mutation 触发的时候，回调函数还没有被调用，devtools 不知道什么时候回调函数实际上被调用——实质上任何在回调函数中进行的状态的改变都是不可追踪的。</p>
+</blockquote>
+
+<p>因此这不是理想的改变数据的方法，我们要使用 <code class="highlighter-rouge">actions</code> 对数据进行异步修改</p>
+
+<h3 id="actions">actions</h3>
+
+<p>Action 类似于 mutation，不同在于：</p>
+
+<ul>
+  <li>Action 提交的是 mutation，而不是直接变更状态。</li>
+  <li>Action 可以包含任意异步操作。</li>
+</ul>
+
+<p>让我们定义 <code class="highlighter-rouge">actions</code> 对象并把它放进 <code class="highlighter-rouge">store</code> 里：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">Vuex</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vuex</span><span class="dl">'</span>
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">Vuex</span><span class="p">)</span>
+
+<span class="c1">// 储存全局变量</span>
+<span class="kd">const</span> <span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="c1">// 要使用的全局变量初始值</span>
+  <span class="na">isCollapse</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">no one</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">num</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="c1">// 获取state中实时更新的值</span>
+<span class="kd">const</span> <span class="nx">getters</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">getIsCollapse</span> <span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">isCollapse</span>
+  <span class="p">},</span>
+  <span class="nx">getName</span> <span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">name</span>
+  <span class="p">},</span>
+  <span class="nx">getNum</span> <span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">num</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// mutations: 对数据的同步更改</span>
+<span class="kd">const</span> <span class="nx">mutations</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">mutationsIsCollapse</span> <span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">state</span><span class="p">.</span><span class="nx">isCollapse</span> <span class="o">=</span> <span class="o">!</span><span class="nx">state</span><span class="p">.</span><span class="nx">isCollapse</span>
+  <span class="p">},</span>
+  <span class="nx">mutationsName</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">payload</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">state</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">payload</span><span class="p">.</span><span class="nx">value</span>
+  <span class="p">},</span>
+  <span class="nx">mutationsNum</span> <span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">payload</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">state</span><span class="p">.</span><span class="nx">num</span> <span class="o">+=</span> <span class="nx">payload</span><span class="p">.</span><span class="nx">value</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// actions: 对数据的异步更改</span>
+<span class="kd">const</span> <span class="nx">actions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">changeIsCollapse</span> <span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">context</span><span class="p">.</span><span class="nx">commit</span><span class="p">(</span><span class="dl">'</span><span class="s1">mutationsIsCollapse</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">},</span>
+  <span class="nx">setName</span> <span class="p">(</span><span class="nx">context</span><span class="p">,</span> <span class="nx">payload</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">context</span><span class="p">.</span><span class="nx">commit</span><span class="p">(</span><span class="dl">'</span><span class="s1">mutationsName</span><span class="dl">'</span><span class="p">,</span> <span class="nx">payload</span><span class="p">)</span>
+  <span class="p">},</span>
+  <span class="nx">setNum</span> <span class="p">(</span><span class="nx">context</span><span class="p">,</span> <span class="nx">payload</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">context</span><span class="p">.</span><span class="nx">commit</span><span class="p">(</span><span class="dl">'</span><span class="s1">mutationsNum</span><span class="dl">'</span><span class="p">,</span> <span class="nx">payload</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vuex</span><span class="p">.</span><span class="nx">Store</span><span class="p">({</span>
+  <span class="nx">state</span><span class="p">,</span>
+  <span class="nx">getters</span><span class="p">,</span>
+  <span class="nx">mutations</span><span class="p">,</span>
+  <span class="nx">actions</span>
+<span class="p">})</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">store</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">actions</code> 通过<code class="highlighter-rouge">this.$store.dispatch</code> 方法触发：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="dl">'</span><span class="s1">changeIsCollapse</span><span class="dl">'</span><span class="p">)</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="dl">'</span><span class="s1">setName</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">key</span><span class="p">:</span> <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">value</span><span class="p">:</span> <span class="dl">'</span><span class="s1">someone</span><span class="dl">'</span>
+<span class="p">})</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="dl">'</span><span class="s1">setNum</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">key</span><span class="p">:</span> <span class="dl">'</span><span class="s1">num</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">value</span><span class="p">:</span> <span class="mi">5</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>这样就可以对全局数据进行更改了。记住，我们不要使用 <code class="highlighter-rouge">mutations</code> 对数据进行更改，而是要使用 <code class="highlighter-rouge">actions</code>。这样一来，修改全局数据后，在项目的任意组件中都可以使用 <code class="highlighter-rouge">getters</code> 来获取全局数据最新的值。</p>
+
+            </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer class="footer" role="contentinfo">
+	<div class="container">
+		<p class="copyright">Copyright &copy; 2019-2019 <a href="https://sysu-swsad-team.github.io/"><code>sysu-swsad-team</code></a>.</p>
+		<p>Powered by <a href="http://jekyllrb.com">Jekyll</a>, themed from <a href="http://lesscss.cn/">Less</a>, refactored by <a href="http://www.hifreud.com/">Freud Kang</a></p>
+	</div>
+</footer>
+
+<script src="/styles/js/jquery.min.js"></script>
+<script src="/styles/js/bootstrap.min.js"></script>
+<script src="/styles/js/holder.min.js"></script>
+<script src="/styles/js/lessismore.js"></script>
+<script src="/styles/js/application.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  </body>
+</html>
