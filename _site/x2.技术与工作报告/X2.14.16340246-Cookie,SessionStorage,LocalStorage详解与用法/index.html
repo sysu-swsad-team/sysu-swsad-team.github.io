@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#22365A">
+	<title>X2.14 16340246-Cookie, SessionStorage, LocalStorage详解与用法 - Niffler</title>
+
+	<link rel="shortcut icon" href="/styles/images/logo.png">
+	<link rel="icon" href="/styles/images/logo.png">
+
+	<link rel="stylesheet" href="/styles/css/index.css">
+	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/styles/css/syntax.css">
+	<link rel="canonical" href="/x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.14.16340246-Cookie,SessionStorage,LocalStorage%E8%AF%A6%E8%A7%A3%E4%B8%8E%E7%94%A8%E6%B3%95/">
+	<link rel="alternate" type="application/rss+xml" title="Niffler" href="/feed.xml">
+	
+	<meta name="keywords" content="X2.14 16340246-Cookie, SessionStorage, LocalStorage详解与用法, Niffler, Niffler">
+	<meta name="description" content="Niffler">
+
+	<script src="/styles/js/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  	<![endif]-->
+  	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?94be4b0f9fc5d94cc0d0415ea6761ae9";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+  	<style type="text/css">
+	  	.docs-content{
+	  		margin-bottom: 10px;
+	  	}
+  	</style>
+</head>
+
+  <body class="index">
+
+    <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img src="/styles/images/logo-header.png">
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">    
+        <li>
+          <a href="/">圈多多</a>
+        </li>
+        <!-- <li>
+          <a href="/categories/">大类分解</a>
+        </li>
+        <li>
+          <a href="/tag">小类内聚</a>
+        </li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/sysu-swsad-team">Github</a></li>
+       
+      </ul>
+    </nav>
+  </div>
+</header>
+    <div class="docs-header" id="content">
+  <div class="container">
+  	
+  		<!--
+		    <h1>X2.14 16340246-Cookie, SessionStorage, LocalStorage详解与用法</h1>
+		    <p>Post on Mar 11, 2019 by <a href="/about">sysu-swsad-team</a></p>
+		-->
+		    <h1>Niffler</h1>
+    
+  </div>
+</div>
+    
+      
+<div class="banner">
+  <div class="container">
+  	
+    	<a href="/categories/#X2.技术与工作报告-ref">X2.技术与工作报告</a>	/
+      <!-- <a href="/tag/#-ref"></a> -->
+      <span>X2.14 16340246-Cookie, SessionStorage, LocalStorage详解与用法</span>
+    
+  </div>
+</div>
+
+    
+
+    <div class="container docs-container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar hidden-print" role="complementary">
+        <div id="navigation">
+  <h1>目录</h1>
+  <ul class="nav sidenav">
+  </ul>
+  <!-- <div style="height: 200px;width: 200px;">
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"> 
+    </script>
+  </div> -->
+</div>
+
+ 
+      </div>
+    </div>
+    <div class="col-md-9" role="main">
+      <div class="panel docs-content">
+        <div class="wrapper">
+            <header class="post-header">
+              <h1 class="post-title">X2.14 16340246-Cookie, SessionStorage, LocalStorage详解与用法</h1>
+              <!--
+                <p class="post-meta">Mar 11, 2019 • 16340246</p>
+              -->
+              <!-- <div class="meta">Posted on <span class="postdate">Mar 11, 2019</span> By <a target="_blank" href="https://sysu-swsad-team.github.io/">sysu-swsad-team</a></div> -->
+              <div class="meta">Posted By <a target="_blank" href="https://github.com/wuzht">16340246</a></div>
+              <br />
+            </header>
+            <article class="post-content">
+              <ul id="markdown-toc">
+  <li><a href="#基本概念" id="markdown-toc-基本概念">基本概念</a>    <ul>
+      <li><a href="#cookie" id="markdown-toc-cookie">Cookie</a></li>
+      <li><a href="#sessionstorage--localstorage" id="markdown-toc-sessionstorage--localstorage">SessionStorage &amp; LocalStorage</a></li>
+    </ul>
+  </li>
+  <li><a href="#三者比较" id="markdown-toc-三者比较">三者比较</a></li>
+  <li><a href="#使用" id="markdown-toc-使用">使用</a>    <ul>
+      <li><a href="#cookie-1" id="markdown-toc-cookie-1">Cookie</a></li>
+      <li><a href="#sessionstorage--localstorage-1" id="markdown-toc-sessionstorage--localstorage-1">SessionStorage &amp; LocalStorage</a>        <ul>
+          <li><a href="#保存" id="markdown-toc-保存">保存</a></li>
+          <li><a href="#获取" id="markdown-toc-获取">获取</a></li>
+          <li><a href="#删除" id="markdown-toc-删除">删除</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="基本概念">基本概念</h2>
+
+<h3 id="cookie">Cookie</h3>
+
+<p>HTTP 协议是无状态的协议，它对于事务处理没有记忆能力，一旦数据交换完毕，客户端与服务器端的连接就会关闭，再次交换数据需要建立新的连接，这就意味着服务器无法从连接上跟踪会话。当 web 服务器向浏览器发送 web 页面时，在连接关闭后，服务端不会记录用户的信息。</p>
+
+<p>Cookie 是在 HTTP 协议下，服务器或脚本可以维护客户工作站上信息的一种方式。Cookie 是一些数据, 存储于你电脑上的文本文件中。</p>
+
+<p>Cookie是通过客户端保持状态的解决方案。从定义上来说，Cookie就是由服务器发给客户端的特殊信息，而这些信息以文本文件的方式存放在客户端，然后客户端每次向服务器发送请求的时候都会带上这些特殊的信息。Cookie 的作用就是用于解决 HTTP 协议是无状态协议的问题：</p>
+
+<ul>
+  <li>当用户访问 web 页面时，他的信息可以记录在 cookie 中。</li>
+  <li>在用户下一次访问该页面时，可以在 cookie 中读取用户访问记录。</li>
+</ul>
+
+<h3 id="sessionstorage--localstorage">SessionStorage &amp; LocalStorage</h3>
+
+<p>Web Storage 的目的是克服由 cookie 所带来的一些限制，当数据需要被严格控制在客户端时，不需要持续的将数据发回服务器。</p>
+
+<p>Web Storage 两个主要目标：</p>
+
+<ul>
+  <li>提供一种在 cookie 之外存储会话数据的路径。</li>
+  <li>提供一种存储大量可以跨会话存在的数据的机制。</li>
+</ul>
+
+<p>使用 Web Storage 可以存储  key/value 对的数据，比存储 Cookie 方式更直观。HTML5 的 Web Storage 提供了两种API：sessionStorage（会话存储）和 localStorage（本地存储）。</p>
+
+<ul>
+  <li>sessionStorage：用于临时保存同一窗口 (或标签页) 的数据，当你刷新当前窗口 (或标签页) 时，保存的数据仍然存在，但是在关闭窗口或标签页之后将会删除这些数据。</li>
+  <li>localStorage：与 sessionStorage 一样，但是浏览器关闭后，数据依然会一直存在</li>
+</ul>
+
+<h2 id="三者比较">三者比较</h2>
+
+<p>数据生命周期</p>
+
+<ul>
+  <li>Cookie：如果不在浏览器中设置过期时间，cookie 被保存在内存中，生命周期随浏览器的关闭而结束，这种 cookie 简称会话 cookie。如果在浏览器中设置了 cookie 的过期时间，cookie 被保存在硬盘中，关闭浏览器后，cookie数据仍然存在，直到过期时间结束才消失。</li>
+  <li>sessionStorage：仅在当前会话下有效。只要这个浏览器窗口没有关闭，即使刷新页面或者进入同源另一个页面，数据依然存在。但是 sessionStorage 在关闭了浏览器窗口后就会被销毁。</li>
+  <li>localStorage：数据生命周期是永久的，关闭页面或浏览器之后 localStorage 中的数据也不会消失，除非主动删除数据</li>
+</ul>
+
+<p>储存大小：</p>
+
+<ul>
+  <li>Cookie：4KB 左右</li>
+  <li>sessionStorage &amp; localStorage：一般为 5MB</li>
+</ul>
+
+<p>与服务器端通信：</p>
+
+<ul>
+  <li>Cookie：每次都会携带在 HTTP 头中，如果使用 cookie 保存过多数据会带来性能问题</li>
+  <li>sessionStorage &amp; localStorage：仅在客户端（即浏览器）中保存，不参与和服务器的通信</li>
+</ul>
+
+<p>易用性：</p>
+
+<ul>
+  <li>Cookie：需要自己封装 setCookie 和 getCookie</li>
+  <li>sessionStorage &amp; localStorage：可以使用 Web Storage 的原生 API，也可以再次封装来对 Object 和 Array 有更好的支持</li>
+</ul>
+
+<p>共同点：都是保存在浏览器端，而服务端是使用 session 机制</p>
+
+<h2 id="使用">使用</h2>
+
+<p>如果你想查看 Cookie, sessionStorage 或 localStorage，可以打开浏览器调试窗口，在 Application -&gt; Storage 中就可以看见。</p>
+
+<h3 id="cookie-1">Cookie</h3>
+
+<p>可以使用以下方式来获取 cookie：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span>
+</code></pre></div></div>
+
+<p>如果你想获得某个键的 cookie，你需要写一段代码来获得，示例代码如下：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* get cookie value by key */</span>
+<span class="nx">getCookie</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">cookieValue</span> <span class="o">=</span> <span class="kc">null</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span> <span class="o">&amp;&amp;</span> <span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span> <span class="o">!==</span> <span class="dl">''</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">cookies</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">;</span><span class="dl">'</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">cookies</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">cookie</span> <span class="o">=</span> <span class="nx">cookies</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">trim</span><span class="p">()</span>
+      <span class="c1">// Does this cookie string begin with the name we want?</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">name</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">===</span> <span class="p">(</span><span class="nx">name</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">=</span><span class="dl">'</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nx">cookieValue</span> <span class="o">=</span> <span class="nb">decodeURIComponent</span><span class="p">(</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="nx">name</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">cookieValue</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="sessionstorage--localstorage-1">SessionStorage &amp; LocalStorage</h3>
+
+<p>sessionStorage 和 localStorage 的用法基本一致，API 基本一样，下面只列举 sessionStorage 的用法示例</p>
+
+<h4 id="保存">保存</h4>
+
+<p>比如你要储存用户的信息，你可以这样做：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 用户信息的Object</span>
+<span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">username</span><span class="p">:</span> <span class="dl">'</span><span class="s1">user1</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Tom</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">birth</span><span class="p">:</span> <span class="mi">1990</span>
+<span class="p">}</span>
+
+<span class="c1">// 通过键值对保存Object</span>
+<span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="dl">'</span><span class="s1">user</span><span class="dl">'</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">user</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>在保存 <code class="highlighter-rouge">Object</code> 时，你需要使用 <code class="highlighter-rouge">JSON.stringify</code> 将它变成字符串。当然你也可以直接保存一个字符串：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 要保存的String</span>
+<span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span>
+
+<span class="c1">// 通过键值对保存String</span>
+<span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span><span class="p">,</span> <span class="nx">str</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="获取">获取</h4>
+
+<p>通过保存时的键来获取</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 获取刚才存的user</span>
+<span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="dl">'</span><span class="s1">user</span><span class="dl">'</span><span class="p">));</span>
+
+<span class="c1">// 获取刚才存的bar</span>
+<span class="kd">var</span> <span class="nx">bar</span> <span class="o">=</span> <span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="删除">删除</h4>
+
+<p>可以通过键来删除某个 <code class="highlighter-rouge">item</code>：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">removeItem</span><span class="p">(</span><span class="dl">'</span><span class="s1">user</span><span class="dl">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>也可以使用 <code class="highlighter-rouge">clear</code> 来将所有 sessionStorage 删除：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">localStorage</span><span class="p">.</span><span class="nx">clear</span><span class="p">()</span>
+</code></pre></div></div>
+
+
+            </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer class="footer" role="contentinfo">
+	<div class="container">
+		<p class="copyright">Copyright &copy; 2019-2019 <a href="https://sysu-swsad-team.github.io/"><code>sysu-swsad-team</code></a>.</p>
+		<p>Powered by <a href="http://jekyllrb.com">Jekyll</a>, themed from <a href="http://lesscss.cn/">Less</a>, refactored by <a href="http://www.hifreud.com/">Freud Kang</a></p>
+	</div>
+</footer>
+
+<script src="/styles/js/jquery.min.js"></script>
+<script src="/styles/js/bootstrap.min.js"></script>
+<script src="/styles/js/holder.min.js"></script>
+<script src="/styles/js/lessismore.js"></script>
+<script src="/styles/js/application.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  </body>
+</html>
