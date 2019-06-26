@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#22365A">
+	<title>X2.16.16340232-在 Django 中实现 HTTP CORS - Niffler</title>
+
+	<link rel="shortcut icon" href="/styles/images/logo.png">
+	<link rel="icon" href="/styles/images/logo.png">
+
+	<link rel="stylesheet" href="/styles/css/index.css">
+	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/styles/css/syntax.css">
+	<link rel="canonical" href="/x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.16.16340232-%E5%9C%A8-Django-%E4%B8%AD%E5%AE%9E%E7%8E%B0-HTTP-CORS/">
+	<link rel="alternate" type="application/rss+xml" title="Niffler" href="/feed.xml">
+	
+	<meta name="keywords" content="X2.16.16340232-在 Django 中实现 HTTP CORS, Niffler, Niffler">
+	<meta name="description" content="Niffler">
+
+	<script src="/styles/js/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  	<![endif]-->
+  	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?94be4b0f9fc5d94cc0d0415ea6761ae9";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+  	<style type="text/css">
+	  	.docs-content{
+	  		margin-bottom: 10px;
+	  	}
+  	</style>
+</head>
+
+  <body class="index">
+
+    <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img src="/styles/images/logo-header.png">
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">    
+        <li>
+          <a href="/">圈多多</a>
+        </li>
+        <!-- <li>
+          <a href="/categories/">大类分解</a>
+        </li>
+        <li>
+          <a href="/tag">小类内聚</a>
+        </li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/sysu-swsad-team">Github</a></li>
+       
+      </ul>
+    </nav>
+  </div>
+</header>
+    <div class="docs-header" id="content">
+  <div class="container">
+  	
+  		<!--
+		    <h1>X2.16.16340232-在 Django 中实现 HTTP CORS</h1>
+		    <p>Post on Mar 09, 2019 by <a href="/about">sysu-swsad-team</a></p>
+		-->
+		    <h1>Niffler</h1>
+    
+  </div>
+</div>
+    
+      
+<div class="banner">
+  <div class="container">
+  	
+    	<a href="/categories/#X2.技术与工作报告-ref">X2.技术与工作报告</a>	/
+      <!-- <a href="/tag/#-ref"></a> -->
+      <span>X2.16.16340232-在 Django 中实现 HTTP CORS</span>
+    
+  </div>
+</div>
+
+    
+
+    <div class="container docs-container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar hidden-print" role="complementary">
+        <div id="navigation">
+  <h1>目录</h1>
+  <ul class="nav sidenav">
+  </ul>
+  <!-- <div style="height: 200px;width: 200px;">
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"> 
+    </script>
+  </div> -->
+</div>
+
+ 
+      </div>
+    </div>
+    <div class="col-md-9" role="main">
+      <div class="panel docs-content">
+        <div class="wrapper">
+            <header class="post-header">
+              <h1 class="post-title">X2.16.16340232-在 Django 中实现 HTTP CORS</h1>
+              <!--
+                <p class="post-meta">Mar 9, 2019 • 16340232</p>
+              -->
+              <!-- <div class="meta">Posted on <span class="postdate">Mar 09, 2019</span> By <a target="_blank" href="http://localhost:4000">sysu-swsad-team</a></div> -->
+              <div class="meta">Posted By <a target="_blank" href="https://github.com/hansenbeast">16340232</a></div>
+              <br />
+            </header>
+            <article class="post-content">
+              <ul id="markdown-toc">
+  <li><a href="#什么是-cors" id="markdown-toc-什么是-cors">什么是 CORS</a></li>
+  <li><a href="#两种请求" id="markdown-toc-两种请求">两种请求</a></li>
+  <li><a href="#非简单请求" id="markdown-toc-非简单请求">非简单请求</a>    <ul>
+      <li><a href="#预检请求preflight" id="markdown-toc-预检请求preflight">“预检”请求（preflight）</a></li>
+      <li><a href="#预检请求的回应" id="markdown-toc-预检请求的回应">预检请求的回应</a></li>
+      <li><a href="#浏览器的正常请求和回应" id="markdown-toc-浏览器的正常请求和回应">浏览器的正常请求和回应</a></li>
+    </ul>
+  </li>
+  <li><a href="#使用-django-cors-headers-实现-django-中的-cors" id="markdown-toc-使用-django-cors-headers-实现-django-中的-cors">使用 django-cors-headers 实现 Django 中的 CORS</a>    <ul>
+      <li><a href="#1-使用-pip-安装" id="markdown-toc-1-使用-pip-安装">1. 使用 pip 安装</a></li>
+      <li><a href="#2-添加到-setting-的-app-中" id="markdown-toc-2-添加到-setting-的-app-中">2. 添加到 setting 的 app 中</a></li>
+      <li><a href="#3-添加中间件" id="markdown-toc-3-添加中间件">3. 添加中间件</a></li>
+      <li><a href="#4-setting-下面添加下面的配置" id="markdown-toc-4-setting-下面添加下面的配置">4. setting 下面添加下面的配置</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="什么是-cors">什么是 CORS</h2>
+
+<p>跨域资源共享(<a href="https://developer.mozilla.org/en-US/docs/Glossary/CORS">CORS</a>) 是一种机制，它使用额外的 <a href="https://developer.mozilla.org/en-US/docs/Glossary/HTTP">HTTP</a> 头来告诉浏览器：让运行在一个 origin (domain) 上的Web 应用被准许访问来自不同源服务器上的指定的资源。当一个资源从与该资源本身所在的服务器<strong>不同的域、协议或端口</strong>请求一个资源时，资源会发起一个<strong>跨域 HTTP 请求</strong>。</p>
+
+<p>比如，站点 http://domain-a.com 的某 HTML 页面通过 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Img#Attributes"> <img /> 的 src </a>请求 http://domain-b.com/image.jpg。网络上的许多页面都会加载来自不同域的 CSS 样式表，图像和脚本等资源。</p>
+
+<p>整个 CORS 通信过程，都是浏览器自动完成，不需要用户参与。浏览器一旦发现请求跨源，就会自动添加一些附加的头信息，有时还会多出一次附加的请求，但用户不会有感觉。</p>
+
+<hr />
+
+<h2 id="两种请求">两种请求</h2>
+
+<p>浏览器将 CORS 请求分成两类：简单请求（simple request）和非简单请求（not-so-simple request）。</p>
+
+<p>只要同时满足以下两大条件，就属于简单请求。</p>
+
+<blockquote>
+  <p>（1) 请求方法是以下三种方法之一：</p>
+
+  <ul>
+    <li>HEAD</li>
+    <li>GET</li>
+    <li>POST</li>
+  </ul>
+
+  <p>（2）HTTP的头信息不超出以下几种字段：</p>
+
+  <ul>
+    <li>Accept</li>
+    <li>Accept-Language</li>
+    <li>Content-Language</li>
+    <li>Last-Event-ID</li>
+    <li>Content-Type：只限于三个值<code class="highlighter-rouge">application/x-www-form-urlencoded</code>、<code class="highlighter-rouge">multipart/form-data</code>、<code class="highlighter-rouge">text/plain</code></li>
+  </ul>
+</blockquote>
+
+<p>凡是不同时满足上面两个条件，就属于非简单请求。浏览器对这两种请求的处理，是不一样的。</p>
+
+<hr />
+
+<h2 id="非简单请求">非简单请求</h2>
+
+<h3 id="预检请求preflight">“预检”请求（preflight）</h3>
+
+<p>本次项目在前端发送的 HTTP 请求 header 中加入了 x-csrftoken 字段，所以属于非简单请求。</p>
+
+<p>对于非简单请求，浏览器会在正式通信之前，增加一次HTTP查询请求，称为”预检”请求（preflight）。</p>
+
+<p>浏览器先询问服务器，当前网页所在的域名是否在服务器的许可名单之中，以及可以使用哪些 HTTP 动词和头信息字段。只有得到肯定答复，浏览器才会发出正式的<code class="highlighter-rouge">XMLHttpRequest</code>请求，否则就报错。如下所示的请求头部：</p>
+
+<p><img src="/styles/images/X2.16/preflight.jpg" alt="prefligt" /></p>
+
+<hr />
+
+<h3 id="预检请求的回应">预检请求的回应</h3>
+
+<p>服务器收到”预检”请求以后，检查了<code class="highlighter-rouge">Origin</code>、<code class="highlighter-rouge">Access-Control-Request-Method</code>和<code class="highlighter-rouge">Access-Control-Request-Headers</code>字段以后，确认允许跨源请求，就可以做出回应。</p>
+
+<p><img src="/styles/images/X2.16/response.jpg" alt="response" /></p>
+
+<p>如果浏览器否定了”预检”请求，会返回一个正常的HTTP回应，但是没有任何CORS相关的头信息字段。这时，浏览器就会认定，服务器不同意预检请求，因此触发一个错误，被<code class="highlighter-rouge">XMLHttpRequest</code>对象的<code class="highlighter-rouge">onerror</code>回调函数捕获。</p>
+
+<hr />
+
+<h3 id="浏览器的正常请求和回应">浏览器的正常请求和回应</h3>
+
+<p>一旦服务器通过了”预检”请求，以后每次浏览器正常的 CORS 请求，就都跟简单请求一样，会有一个<code class="highlighter-rouge">Origin</code>头信息字段。服务器的回应，也都会有一个<code class="highlighter-rouge">Access-Control-Allow-Origin</code>头信息字段。</p>
+
+<p><img src="/styles/images/X2.16/request.jpg" alt="request" /></p>
+
+<hr />
+
+<h2 id="使用-django-cors-headers-实现-django-中的-cors">使用 django-cors-headers 实现 Django 中的 CORS</h2>
+
+<p>具体效果就是在 server 返回的 header 中每次加入一个<code class="highlighter-rouge">Access-Control-Allow-Origin</code>和 <code class="highlighter-rouge">Access-Control-Allow-Credentials</code> 头信息字段，使得 client 可以发送跨源请求并在 header 中加入 cookie，从而使得 server 可以维护与登录用户之间的 session，从而获得当前用户的 profile 等信息。</p>
+
+<h3 id="1-使用-pip-安装">1. 使用 pip 安装</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>django-cors-headers
+</code></pre></div></div>
+
+<h3 id="2-添加到-setting-的-app-中">2. 添加到 setting 的 app 中</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="o">...</span>
+    <span class="s">'corsheaders'</span><span class="p">,</span>
+    <span class="o">...</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="3-添加中间件">3. 添加中间件</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">MIDDLEWARE</span> <span class="o">=</span> <span class="p">[</span>  <span class="c1"># Or MIDDLEWARE_CLASSES on Django &lt; 1.10
+</span>    <span class="o">...</span>
+    <span class="s">'corsheaders.middleware.CorsMiddleware'</span><span class="p">,</span>
+    <span class="s">'django.middleware.common.CommonMiddleware'</span><span class="p">,</span><span class="c1"># 注意顺序
+</span>    <span class="o">...</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<h3 id="4-setting-下面添加下面的配置">4. setting 下面添加下面的配置</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 增加跨域忽略
+</span><span class="n">CORS_ALLOW_CREDENTIALS</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">CORS_ORIGIN_ALLOW_ALL</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">CORS_ORIGIN_WHITELIST</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s">'http://localhost:3000'</span><span class="p">,</span>
+    <span class="s">'http://localhost:8000'</span><span class="p">,</span>
+    <span class="s">'http://localhost:8080'</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">CORS_ALLOW_METHODS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s">'DELETE'</span><span class="p">,</span>
+    <span class="s">'GET'</span><span class="p">,</span>
+    <span class="s">'OPTIONS'</span><span class="p">,</span>
+    <span class="s">'PATCH'</span><span class="p">,</span>
+    <span class="s">'POST'</span><span class="p">,</span>
+    <span class="s">'PUT'</span><span class="p">,</span>
+    <span class="s">'VIEW'</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">CORS_ALLOW_HEADERS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s">'XMLHttpRequest'</span><span class="p">,</span>
+    <span class="s">'X_FILENAME'</span><span class="p">,</span>
+    <span class="s">'accept-encoding'</span><span class="p">,</span>
+    <span class="s">'authorization'</span><span class="p">,</span>
+    <span class="s">'content-type'</span><span class="p">,</span>
+    <span class="s">'dnt'</span><span class="p">,</span>
+    <span class="s">'origin'</span><span class="p">,</span>
+    <span class="s">'user-agent'</span><span class="p">,</span>
+    <span class="s">'x-csrftoken'</span><span class="p">,</span>
+    <span class="s">'x-requested-with'</span><span class="p">,</span>
+    <span class="s">'Pragma'</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+            </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer class="footer" role="contentinfo">
+	<div class="container">
+		<p class="copyright">Copyright &copy; 2019-2019 <a href="https://sysu-swsad-team.github.io/"><code>sysu-swsad-team</code></a>.</p>
+		<p>Powered by <a href="http://jekyllrb.com">Jekyll</a>, themed from <a href="http://lesscss.cn/">Less</a>, refactored by <a href="http://www.hifreud.com/">Freud Kang</a></p>
+	</div>
+</footer>
+
+<script src="/styles/js/jquery.min.js"></script>
+<script src="/styles/js/bootstrap.min.js"></script>
+<script src="/styles/js/holder.min.js"></script>
+<script src="/styles/js/lessismore.js"></script>
+<script src="/styles/js/application.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  </body>
+</html>

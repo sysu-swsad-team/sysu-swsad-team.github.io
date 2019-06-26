@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#22365A">
+	<title>X2.17.16340232-解决 Django 的 CSRF 保护引起的 403 FORBIDDEN - Niffler</title>
+
+	<link rel="shortcut icon" href="/styles/images/logo.png">
+	<link rel="icon" href="/styles/images/logo.png">
+
+	<link rel="stylesheet" href="/styles/css/index.css">
+	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/styles/css/syntax.css">
+	<link rel="canonical" href="/x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.17.16340232-Django-%E7%9A%84-CSRF-%E4%BF%9D%E6%8A%A4%E5%BC%95%E8%B5%B7%E7%9A%84-403-FORBIDDEN/">
+	<link rel="alternate" type="application/rss+xml" title="Niffler" href="/feed.xml">
+	
+	<meta name="keywords" content="X2.17.16340232-解决 Django 的 CSRF 保护引起的 403 FORBIDDEN, Niffler, Niffler">
+	<meta name="description" content="Niffler">
+
+	<script src="/styles/js/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  	<![endif]-->
+  	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?94be4b0f9fc5d94cc0d0415ea6761ae9";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+  	<style type="text/css">
+	  	.docs-content{
+	  		margin-bottom: 10px;
+	  	}
+  	</style>
+</head>
+
+  <body class="index">
+
+    <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img src="/styles/images/logo-header.png">
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">    
+        <li>
+          <a href="/">圈多多</a>
+        </li>
+        <!-- <li>
+          <a href="/categories/">大类分解</a>
+        </li>
+        <li>
+          <a href="/tag">小类内聚</a>
+        </li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/sysu-swsad-team">Github</a></li>
+       
+      </ul>
+    </nav>
+  </div>
+</header>
+    <div class="docs-header" id="content">
+  <div class="container">
+  	
+  		<!--
+		    <h1>X2.17.16340232-解决 Django 的 CSRF 保护引起的 403 FORBIDDEN</h1>
+		    <p>Post on Mar 08, 2019 by <a href="/about">sysu-swsad-team</a></p>
+		-->
+		    <h1>Niffler</h1>
+    
+  </div>
+</div>
+    
+      
+<div class="banner">
+  <div class="container">
+  	
+    	<a href="/categories/#X2.技术与工作报告-ref">X2.技术与工作报告</a>	/
+      <!-- <a href="/tag/#-ref"></a> -->
+      <span>X2.17.16340232-解决 Django 的 CSRF 保护引起的 403 FORBIDDEN</span>
+    
+  </div>
+</div>
+
+    
+
+    <div class="container docs-container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar hidden-print" role="complementary">
+        <div id="navigation">
+  <h1>目录</h1>
+  <ul class="nav sidenav">
+  </ul>
+  <!-- <div style="height: 200px;width: 200px;">
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"> 
+    </script>
+  </div> -->
+</div>
+
+ 
+      </div>
+    </div>
+    <div class="col-md-9" role="main">
+      <div class="panel docs-content">
+        <div class="wrapper">
+            <header class="post-header">
+              <h1 class="post-title">X2.17.16340232-解决 Django 的 CSRF 保护引起的 403 FORBIDDEN</h1>
+              <!--
+                <p class="post-meta">Mar 8, 2019 • 16340232</p>
+              -->
+              <!-- <div class="meta">Posted on <span class="postdate">Mar 08, 2019</span> By <a target="_blank" href="http://localhost:4000">sysu-swsad-team</a></div> -->
+              <div class="meta">Posted By <a target="_blank" href="https://github.com/hansenbeast">16340232</a></div>
+              <br />
+            </header>
+            <article class="post-content">
+              <ul id="markdown-toc">
+  <li><a href="#什么是-csrf" id="markdown-toc-什么是-csrf">什么是 CSRF</a></li>
+  <li><a href="#django-的-csrf-保护机制" id="markdown-toc-django-的-csrf-保护机制">Django 的 CSRF 保护机制</a></li>
+  <li><a href="#解决-403-forbidden" id="markdown-toc-解决-403-forbidden">解决 403 FORBIDDEN</a></li>
+</ul>
+
+<h2 id="什么是-csrf">什么是 CSRF</h2>
+
+<p>CSRF，(Cross-site request forgery)，跨站请求伪造，指通过伪装来自受信任用户的请求来进行对受信任的网站一些操作。</p>
+
+<p><img src="/styles/images/X2.17/csrf.png" alt="csrf" /></p>
+
+<p>从上图可以看出，要完成一次 CSRF 攻击，受害者必须依次完成两个步骤：</p>
+
+<p>1.登录受信任<strong>网银网站</strong>，并在本地生成 Cookie。
+2.在不登出<strong>网银网站</strong>的情况下，访问危险网站<strong>钓鱼网站</strong>。
+这时候受害者就中招了。</p>
+
+<ul>
+  <li>CSRF 攻击之所以能够成功，是因为黑客可以完全伪造用户的请求，该请求中所有的用户验证信息都是存在于cookie 中，因此黑客可以在不知道这些验证信息的情况下直接利用用户自己的 cookie 来通过安全验证。要抵御 CSRF，关键在于在请求中放入黑客所不能伪造的信息，并且该信息不存在于 cookie 之中。可以随机产生一个 token 放到 HTTP 头中自定义的属性里。并在服务器端建立一个拦截器来验证这个 token，如果请求中没有 token 或者 token 内容不正确，则认为可能是 CSRF 攻击而拒绝该请求。</li>
+  <li>token 可以在用户登陆后产生并放于 session 之中，然后通过 XMLHttpRequest 这个类，可以一次性给所有该类请求加上 csrftoken 这个 HTTP 头属性，并把 server 产生的 token 值放入其中。然后在每次请求时把 token 从 session 中拿出，与请求中的 token 进行比对。</li>
+</ul>
+
+<hr />
+
+<h2 id="django-的-csrf-保护机制">Django 的 CSRF 保护机制</h2>
+
+<p>一种防范方法是在 HTTP 头中自定义属性并验证：</p>
+
+<p>HTTP 请求，一般分为两类：“安全请求”和“不安全请求”。GET 是“安全请求”， POST, PUT, DELETE 是“不安全请求”。</p>
+
+<p>对于“不安全请求”，Django 设计了 CSRF 验证，简单来说这个机制是这样的：</p>
+
+<p>(1) 客户端访问 Django 站点，Django 服务器向客户端发送名为 ”csrftoken” 的 cookie</p>
+
+<p>(2) 客户端对 Django 服务器发送不安全请求时，必须在 HTTP 头部加入 ”X-CSRFToken”字段，并将这个 cookie 的值作为该字段的值</p>
+
+<p>(3) Django 服务器端会对 HTTP 头部 X-CSRFToken 的值进行验证，依次来判断这个请求是不是来自合法用户</p>
+
+<hr />
+
+<h2 id="解决-403-forbidden">解决 403 FORBIDDEN</h2>
+
+<p>在使用 postman 测试 API 时候，对于 POST 请求，返回如下错误：</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="s2">"detail"</span><span class="p">:</span><span class="s2">"CSRF Failed: CSRF token missing or incorrect."</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>原则上，只要在 POST 的 HTTP 头部加入 ”X-CSRFToken” 字段就可以。但实际测试发现，即便加了，也会得到 403 错误，而且，cookie 中的 “csrftoken” 有时候能获取到，有时候获取不到。</p>
+
+<p>在浏览器的 Network 中查看报文发现，client 在登录后，server response header 中无 ”Set-Cookie” 字段，导致再次访问时 server 无法根据 cookie 判断当前用户，只能得到匿名用户。</p>
+
+<p>原因应该又是跨源访问造成的，client 和 server 不同源（CORS 可以见 X2.16 报告），所以服务器发送的 HTTP 响应，是不能设置浏览器 cookie 的。</p>
+
+<p>所以安装 django-cors-header，并在 setting 中加入</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">CORS_ALLOW_CREDENTIALS</span> <span class="o">=</span> <span class="bp">True</span>
+</code></pre></div></div>
+
+<p>这样会让服务器同意客户端发送 Cookie</p>
+
+<p><img src="/styles/images/X2.17/request.jpg" alt="csrf" /></p>
+
+<p>但有时候因为 domain 的问题 cookie 还是获取不到，所以一种强制的方法是继承重写 Django 的 <em>SessionAuthentication</em> 类，使其跳过 csrf 检测：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CsrfExemptSessionAuthentication</span><span class="p">(</span><span class="n">SessionAuthentication</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">enforce_csrf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="k">return</span>  <span class="c1"># To not perform the csrf check previously happening
+</span></code></pre></div></div>
+
+<p>然后在 <em>APIView</em> 类中使用</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">authentication_classes</span> <span class="o">=</span> <span class="p">(</span><span class="n">CsrfExemptSessionAuthentication</span><span class="p">,)</span>
+</code></pre></div></div>
+
+<hr />
+
+
+            </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer class="footer" role="contentinfo">
+	<div class="container">
+		<p class="copyright">Copyright &copy; 2019-2019 <a href="https://sysu-swsad-team.github.io/"><code>sysu-swsad-team</code></a>.</p>
+		<p>Powered by <a href="http://jekyllrb.com">Jekyll</a>, themed from <a href="http://lesscss.cn/">Less</a>, refactored by <a href="http://www.hifreud.com/">Freud Kang</a></p>
+	</div>
+</footer>
+
+<script src="/styles/js/jquery.min.js"></script>
+<script src="/styles/js/bootstrap.min.js"></script>
+<script src="/styles/js/holder.min.js"></script>
+<script src="/styles/js/lessismore.js"></script>
+<script src="/styles/js/application.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  </body>
+</html>
