@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#22365A">
+	<title>X2.15 16340286-Django REST Swagger如何指定api参数 - Niffler</title>
+
+	<link rel="shortcut icon" href="/styles/images/logo.png">
+	<link rel="icon" href="/styles/images/logo.png">
+
+	<link rel="stylesheet" href="/styles/css/index.css">
+	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/styles/css/syntax.css">
+	<link rel="canonical" href="/x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.15.16340286-Django-REST-Swagger%E5%A6%82%E4%BD%95%E6%8C%87%E5%AE%9Aapi%E5%8F%82%E6%95%B0/">
+	<link rel="alternate" type="application/rss+xml" title="Niffler" href="/feed.xml">
+	
+	<meta name="keywords" content="X2.15 16340286-Django REST Swagger如何指定api参数, Niffler, Niffler">
+	<meta name="description" content="Niffler">
+
+	<script src="/styles/js/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  	<![endif]-->
+  	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?94be4b0f9fc5d94cc0d0415ea6761ae9";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+  	<style type="text/css">
+	  	.docs-content{
+	  		margin-bottom: 10px;
+	  	}
+  	</style>
+</head>
+
+  <body class="index">
+
+    <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img src="/styles/images/logo-header.png">
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">    
+        <li>
+          <a href="/">圈多多</a>
+        </li>
+        <!-- <li>
+          <a href="/categories/">大类分解</a>
+        </li>
+        <li>
+          <a href="/tag">小类内聚</a>
+        </li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/sysu-swsad-team">Github</a></li>
+       
+      </ul>
+    </nav>
+  </div>
+</header>
+    <div class="docs-header" id="content">
+  <div class="container">
+  	
+  		<!--
+		    <h1>X2.15 16340286-Django REST Swagger如何指定api参数</h1>
+		    <p>Post on Mar 10, 2019 by <a href="/about">sysu-swsad-team</a></p>
+		-->
+		    <h1>Niffler</h1>
+    
+  </div>
+</div>
+    
+      
+<div class="banner">
+  <div class="container">
+  	
+    	<a href="/categories/#X2.技术与工作报告-ref">X2.技术与工作报告</a>	/
+      <!-- <a href="/tag/#-ref"></a> -->
+      <span>X2.15 16340286-Django REST Swagger如何指定api参数</span>
+    
+  </div>
+</div>
+
+    
+
+    <div class="container docs-container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar hidden-print" role="complementary">
+        <div id="navigation">
+  <h1>目录</h1>
+  <ul class="nav sidenav">
+  </ul>
+  <!-- <div style="height: 200px;width: 200px;">
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"> 
+    </script>
+  </div> -->
+</div>
+
+ 
+      </div>
+    </div>
+    <div class="col-md-9" role="main">
+      <div class="panel docs-content">
+        <div class="wrapper">
+            <header class="post-header">
+              <h1 class="post-title">X2.15 16340286-Django REST Swagger如何指定api参数</h1>
+              <!--
+                <p class="post-meta">Mar 10, 2019 • 16340286</p>
+              -->
+              <!-- <div class="meta">Posted on <span class="postdate">Mar 10, 2019</span> By <a target="_blank" href="https://sysu-swsad-team.github.io/">sysu-swsad-team</a></div> -->
+              <div class="meta">Posted By <a target="_blank" href="https://github.com/Ernie1">16340286</a></div>
+              <br />
+            </header>
+            <article class="post-content">
+              <ul id="markdown-toc">
+  <li><a href="#为什么要指定swagger的api参数" id="markdown-toc-为什么要指定swagger的api参数">为什么要指定swagger的api参数</a></li>
+  <li><a href="#难点" id="markdown-toc-难点">难点</a></li>
+  <li><a href="#一种解决方案" id="markdown-toc-一种解决方案">一种解决方案</a></li>
+  <li><a href="#启发" id="markdown-toc-启发">启发</a></li>
+  <li><a href="#更好的解决方法" id="markdown-toc-更好的解决方法">更好的解决方法</a></li>
+</ul>
+
+<h2 id="为什么要指定swagger的api参数">为什么要指定swagger的api参数</h2>
+<p>api的参数有多种类型：</p>
+
+<ul>
+  <li>query 参数，如 <code class="highlighter-rouge">/users?role=admin</code></li>
+  <li>path 参数，如 <code class="highlighter-rouge">/users/{id}</code></li>
+  <li>header 参数，如 <code class="highlighter-rouge">X-MyHeader: Value</code></li>
+  <li>body 参数，描述POST，PUT，PATCH请求的body</li>
+  <li>form 参数，描述 Content-Type of application/x-www-form-urlencoded 和 multipart/form-data 的请求报文body的参数</li>
+</ul>
+
+<p>swagger指定api参数就可以在文档相应的api条目中显示出api的描述、正常输出、异常输出、参数的名称、描述、是否必填、值类型、参数类型对不同的参数类型有不同的显示效果。swagger是可交互的api文档，可以直接填入文档显示的参数的值并发送请求，返回的结果就会在文档中显示。</p>
+
+<p><img src="/styles/images/X2.15/swagger_view.jpg" alt="效果" /></p>
+
+<h2 id="难点">难点</h2>
+
+<p>对 <strong>Django REST Swagger &lt; 2</strong> 的版本，要指定swagger的api参数非常容易，只要将相关说明以特定格式和yaml格式写在相应api的视图函数的文档字符串（DocStrings）里，swagger就会自动渲染到文档中。比如这样的格式：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">cancel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+    <span class="s">"""
+    desc: 取消任务，进行中的参与者得到报酬
+    ret: msg
+    err: 404页面/msg
+    input:
+    - name: id
+        desc: 任务id
+        type: string
+        required: true
+        location: path
+    """</span>
+</code></pre></div></div>
+
+<p>但是在2.0版本之后，Django REST Swagger废弃了对yaml文档字符串的支持，不会渲染出任何内容。</p>
+
+<h2 id="一种解决方案">一种解决方案</h2>
+<p>在Django REST framework基于类的api视图中定义<code class="highlighter-rouge">filter_class</code>过滤出模型（models）的特定字段，swagger会根据这些字段来渲染。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django_filters.rest_framework.filterset</span> <span class="kn">import</span> <span class="n">FilterSet</span>
+
+<span class="k">class</span> <span class="nc">ProductFilter</span><span class="p">(</span><span class="n">FilterSet</span><span class="p">):</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+        <span class="n">models</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Product</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s">'name'</span><span class="p">,</span> <span class="s">'category'</span><span class="p">,</span> <span class="s">'id'</span><span class="p">,</span> <span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">PurchasedProductsList</span><span class="p">(</span><span class="n">generics</span><span class="o">.</span><span class="n">ListAPIView</span><span class="p">):</span>
+    <span class="s">"""
+    Return a list of all the products that the authenticated
+    user has ever purchased, with optional filtering.
+    """</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Product</span>
+    <span class="n">serializer_class</span> <span class="o">=</span> <span class="n">ProductSerializer</span>
+    <span class="n">filter_class</span> <span class="o">=</span> <span class="n">ProductFilter</span>
+
+    <span class="k">def</span> <span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span>
+        <span class="k">return</span> <span class="n">user</span><span class="o">.</span><span class="n">purchase_set</span><span class="o">.</span><span class="nb">all</span><span class="p">()</span>
+</code></pre></div></div>
+<p>这个解决方法只解决了一半问题，只能用在面向模型的api，只能过滤模型的一些字段，而且api参数名与模型字段名不一致时还要额外处理。</p>
+
+<h2 id="启发">启发</h2>
+<p>查阅Django REST Swagger的文档，<a href="https://django-rest-swagger.readthedocs.io/en/stable/schema/#advanced-usage">Advanced Usage</a>提到，基于类的文档api视图是这样的：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">rest_framework.response</span> <span class="kn">import</span> <span class="n">Response</span>
+<span class="kn">from</span> <span class="nn">rest_framework.schemas</span> <span class="kn">import</span> <span class="n">SchemaGenerator</span>
+<span class="kn">from</span> <span class="nn">rest_framework.views</span> <span class="kn">import</span> <span class="n">APIView</span>
+<span class="kn">from</span> <span class="nn">rest_framework_swagger</span> <span class="kn">import</span> <span class="n">renderers</span>
+
+
+<span class="k">class</span> <span class="nc">SwaggerSchemaView</span><span class="p">(</span><span class="n">APIView</span><span class="p">):</span>
+    <span class="n">permission_classes</span> <span class="o">=</span> <span class="p">[</span><span class="n">AllowAny</span><span class="p">]</span>
+    <span class="n">renderer_classes</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">renderers</span><span class="o">.</span><span class="n">OpenAPIRenderer</span><span class="p">,</span>
+        <span class="n">renderers</span><span class="o">.</span><span class="n">SwaggerUIRenderer</span>
+    <span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="n">generator</span> <span class="o">=</span> <span class="n">SchemaGenerator</span><span class="p">()</span>
+        <span class="n">schema</span> <span class="o">=</span> <span class="n">generator</span><span class="o">.</span><span class="n">get_schema</span><span class="p">(</span><span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">schema</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>说明文档是根据<code class="highlighter-rouge">schema</code>变量来渲染的，所以可以通过重载<code class="highlighter-rouge">schema</code>变量，利用yaml包解析出api视图函数的文档字符串中的参数定义赋值给<code class="highlighter-rouge">schema</code>变量。</p>
+
+<h2 id="更好的解决方法">更好的解决方法</h2>
+
+<p>创建schema_view.py：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.utils.six.moves.urllib</span> <span class="kn">import</span> <span class="n">parse</span> <span class="k">as</span> <span class="n">urlparse</span>
+<span class="kn">from</span> <span class="nn">rest_framework.schemas</span> <span class="kn">import</span> <span class="n">AutoSchema</span>
+<span class="kn">import</span> <span class="nn">yaml</span>
+<span class="kn">import</span> <span class="nn">coreapi</span>
+<span class="kn">from</span> <span class="nn">rest_framework_swagger.views</span> <span class="kn">import</span> <span class="n">get_swagger_view</span>
+
+
+<span class="k">class</span> <span class="nc">CustomSchema</span><span class="p">(</span><span class="n">AutoSchema</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_link</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">base_url</span><span class="p">):</span>
+
+        <span class="n">view</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">view</span>
+        <span class="n">method_name</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="s">'action'</span><span class="p">,</span> <span class="n">method</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+        <span class="n">method_docstring</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">method_name</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span><span class="o">.</span><span class="n">__doc__</span>
+        <span class="n">_method_desc</span> <span class="o">=</span> <span class="s">''</span>
+
+        <span class="n">fields</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_path_fields</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">method_docstring</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">'---'</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">fields</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_serializer_fields</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">yaml_doc</span> <span class="o">=</span> <span class="bp">None</span>
+            <span class="k">if</span> <span class="n">method_docstring</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">yaml_doc</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="n">yaml_doc</span> <span class="o">=</span> <span class="bp">None</span>
+
+            <span class="c1"># Extract schema information from yaml
+</span>
+            <span class="k">if</span> <span class="n">yaml_doc</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">yaml_doc</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">str</span><span class="p">:</span>
+                <span class="n">_desc</span> <span class="o">=</span> <span class="n">yaml_doc</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'desc'</span><span class="p">,</span> <span class="s">''</span><span class="p">)</span>
+                <span class="n">_ret</span> <span class="o">=</span> <span class="n">yaml_doc</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'ret'</span><span class="p">,</span> <span class="s">''</span><span class="p">)</span>
+                <span class="n">_err</span> <span class="o">=</span> <span class="n">yaml_doc</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'err'</span><span class="p">,</span> <span class="s">''</span><span class="p">)</span>
+                <span class="n">_method_desc</span> <span class="o">=</span> <span class="n">_desc</span> <span class="o">+</span> <span class="s">'</span><span class="se">\n</span><span class="s">&lt;br/&gt;'</span> <span class="o">+</span> <span class="s">'return: '</span> <span class="o">+</span> <span class="n">_ret</span> <span class="o">+</span> <span class="s">'&lt;br/&gt;'</span> <span class="o">+</span> <span class="s">'error: '</span> <span class="o">+</span> <span class="n">_err</span>
+                <span class="n">params</span> <span class="o">=</span> <span class="n">yaml_doc</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'input'</span><span class="p">,</span> <span class="p">[])</span>
+
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+                    <span class="n">_name</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'name'</span><span class="p">)</span>
+                    <span class="n">_desc</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'desc'</span><span class="p">)</span>
+                    <span class="n">_required</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'required'</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+                    <span class="n">_type</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'type'</span><span class="p">,</span> <span class="s">'string'</span><span class="p">)</span>
+                    <span class="n">_location</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'location'</span><span class="p">,</span> <span class="s">'form'</span><span class="p">)</span>
+                    <span class="n">field</span> <span class="o">=</span> <span class="n">coreapi</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span>
+                        <span class="n">name</span><span class="o">=</span><span class="n">_name</span><span class="p">,</span>
+                        <span class="n">location</span><span class="o">=</span><span class="n">_location</span><span class="p">,</span>
+                        <span class="n">required</span><span class="o">=</span><span class="n">_required</span><span class="p">,</span>
+                        <span class="n">description</span><span class="o">=</span><span class="n">_desc</span><span class="p">,</span>
+                        <span class="nb">type</span><span class="o">=</span><span class="n">_type</span>
+                    <span class="p">)</span>
+                    <span class="n">fields</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">field</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">_method_desc</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">fields</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_serializer_fields</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
+
+        <span class="n">fields</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_pagination_fields</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
+        <span class="n">fields</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_filter_fields</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
+
+        <span class="n">manual_fields</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_manual_fields</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_fields</span><span class="p">(</span><span class="n">fields</span><span class="p">,</span> <span class="n">manual_fields</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">fields</span> <span class="ow">and</span> <span class="nb">any</span><span class="p">([</span><span class="n">field</span><span class="o">.</span><span class="n">location</span> <span class="ow">in</span> <span class="p">(</span><span class="s">'form'</span><span class="p">,</span> <span class="s">'body'</span><span class="p">)</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">]):</span>
+            <span class="n">encoding</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_encoding</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">encoding</span> <span class="o">=</span> <span class="bp">None</span>
+
+        <span class="k">if</span> <span class="n">base_url</span> <span class="ow">and</span> <span class="n">path</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'/'</span><span class="p">):</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">path</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+
+        <span class="k">return</span> <span class="n">coreapi</span><span class="o">.</span><span class="n">Link</span><span class="p">(</span>
+            <span class="n">url</span><span class="o">=</span><span class="n">urlparse</span><span class="o">.</span><span class="n">urljoin</span><span class="p">(</span><span class="n">base_url</span><span class="p">,</span> <span class="n">path</span><span class="p">),</span>
+            <span class="n">action</span><span class="o">=</span><span class="n">method</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span>
+            <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+            <span class="n">fields</span><span class="o">=</span><span class="n">fields</span><span class="p">,</span>
+            <span class="n">description</span><span class="o">=</span><span class="n">_method_desc</span>
+        <span class="p">)</span>
+
+
+<span class="n">schema_view</span> <span class="o">=</span> <span class="n">get_swagger_view</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">'API'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>urls.py中指向<code class="highlighter-rouge">schema_view</code>：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">.schema_view</span> <span class="kn">import</span> <span class="n">schema_view</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">url</span><span class="p">(</span><span class="s">r'^v1/api/'</span><span class="p">,</span> <span class="n">include</span><span class="p">([</span>
+        <span class="n">url</span><span class="p">(</span><span class="s">r'^doc/'</span><span class="p">,</span> <span class="n">schema_view</span><span class="p">),</span>
+    <span class="p">])),</span>
+</code></pre></div></div>
+
+<p>然后在需要指定api参数的视图类（如<code class="highlighter-rouge">APIView</code>或<code class="highlighter-rouge">ModelViewSet</code>）中重载<code class="highlighter-rouge">schema</code>：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">schema</span> <span class="o">=</span> <span class="n">CustomSchema</span><span class="p">()</span>
+</code></pre></div></div>
+
+            </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer class="footer" role="contentinfo">
+	<div class="container">
+		<p class="copyright">Copyright &copy; 2019-2019 <a href="https://sysu-swsad-team.github.io/"><code>sysu-swsad-team</code></a>.</p>
+		<p>Powered by <a href="http://jekyllrb.com">Jekyll</a>, themed from <a href="http://lesscss.cn/">Less</a>, refactored by <a href="http://www.hifreud.com/">Freud Kang</a></p>
+	</div>
+</footer>
+
+<script src="/styles/js/jquery.min.js"></script>
+<script src="/styles/js/bootstrap.min.js"></script>
+<script src="/styles/js/holder.min.js"></script>
+<script src="/styles/js/lessismore.js"></script>
+<script src="/styles/js/application.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  </body>
+</html>
