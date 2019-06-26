@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#22365A">
+	<title>X2.16 16340286-ORM进阶指南 - Niffler</title>
+
+	<link rel="shortcut icon" href="/styles/images/logo.png">
+	<link rel="icon" href="/styles/images/logo.png">
+
+	<link rel="stylesheet" href="/styles/css/index.css">
+	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/styles/css/syntax.css">
+	<link rel="canonical" href="/x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.16.16340286-ORM%E8%BF%9B%E9%98%B6%E6%8C%87%E5%8D%97/">
+	<link rel="alternate" type="application/rss+xml" title="Niffler" href="/feed.xml">
+	
+	<meta name="keywords" content="X2.16 16340286-ORM进阶指南, Niffler, Niffler">
+	<meta name="description" content="Niffler">
+
+	<script src="/styles/js/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  	<![endif]-->
+  	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?94be4b0f9fc5d94cc0d0415ea6761ae9";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+  	<style type="text/css">
+	  	.docs-content{
+	  		margin-bottom: 10px;
+	  	}
+  	</style>
+</head>
+
+  <body class="index">
+
+    <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img src="/styles/images/logo-header.png">
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">    
+        <li>
+          <a href="/">圈多多</a>
+        </li>
+        <!-- <li>
+          <a href="/categories/">大类分解</a>
+        </li>
+        <li>
+          <a href="/tag">小类内聚</a>
+        </li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/sysu-swsad-team">Github</a></li>
+       
+      </ul>
+    </nav>
+  </div>
+</header>
+    <div class="docs-header" id="content">
+  <div class="container">
+  	
+  		<!--
+		    <h1>X2.16 16340286-ORM进阶指南</h1>
+		    <p>Post on Mar 09, 2019 by <a href="/about">sysu-swsad-team</a></p>
+		-->
+		    <h1>Niffler</h1>
+    
+  </div>
+</div>
+    
+      
+<div class="banner">
+  <div class="container">
+  	
+    	<a href="/categories/#X2.技术与工作报告-ref">X2.技术与工作报告</a>	/
+      <!-- <a href="/tag/#-ref"></a> -->
+      <span>X2.16 16340286-ORM进阶指南</span>
+    
+  </div>
+</div>
+
+    
+
+    <div class="container docs-container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar hidden-print" role="complementary">
+        <div id="navigation">
+  <h1>目录</h1>
+  <ul class="nav sidenav">
+  </ul>
+  <!-- <div style="height: 200px;width: 200px;">
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"> 
+    </script>
+  </div> -->
+</div>
+
+ 
+      </div>
+    </div>
+    <div class="col-md-9" role="main">
+      <div class="panel docs-content">
+        <div class="wrapper">
+            <header class="post-header">
+              <h1 class="post-title">X2.16 16340286-ORM进阶指南</h1>
+              <!--
+                <p class="post-meta">Mar 9, 2019 • 16340286</p>
+              -->
+              <!-- <div class="meta">Posted on <span class="postdate">Mar 09, 2019</span> By <a target="_blank" href="https://sysu-swsad-team.github.io/">sysu-swsad-team</a></div> -->
+              <div class="meta">Posted By <a target="_blank" href="https://github.com/Ernie1">16340286</a></div>
+              <br />
+            </header>
+            <article class="post-content">
+              <ul id="markdown-toc">
+  <li><a href="#查询集queryset缓存" id="markdown-toc-查询集queryset缓存">查询集（QuerySet）缓存</a></li>
+  <li><a href="#外键关系对象和逆关系对象的提前查询和缓存" id="markdown-toc-外键关系对象和逆关系对象的提前查询和缓存">外键关系对象和逆关系对象的提前查询和缓存</a></li>
+  <li><a href="#避免在循环中进行数据库查询" id="markdown-toc-避免在循环中进行数据库查询">避免在循环中进行数据库查询</a></li>
+  <li><a href="#用iterator遍历减少缓存" id="markdown-toc-用iterator遍历减少缓存">用<code class="highlighter-rouge">iterator()</code>遍历减少缓存</a></li>
+  <li><a href="#尽量使用数据库操作提高效率" id="markdown-toc-尽量使用数据库操作提高效率">尽量使用数据库操作提高效率</a></li>
+  <li><a href="#使用f直接操作模型字段的值" id="markdown-toc-使用f直接操作模型字段的值">使用<code class="highlighter-rouge">F()</code>直接操作模型字段的值</a></li>
+  <li><a href="#使用数据库聚合" id="markdown-toc-使用数据库聚合">使用数据库聚合</a></li>
+  <li><a href="#使用values或values_list获取只包含特定字段的列表字典或元组" id="markdown-toc-使用values或values_list获取只包含特定字段的列表字典或元组">使用<code class="highlighter-rouge">values()</code>或<code class="highlighter-rouge">values_list()</code>获取只包含特定字段的列表、字典或元组</a></li>
+  <li><a href="#使用defer或only获取只包含特定字段的查询集" id="markdown-toc-使用defer或only获取只包含特定字段的查询集">使用<code class="highlighter-rouge">defer()</code>或<code class="highlighter-rouge">only()</code>获取只包含特定字段的查询集</a></li>
+  <li><a href="#当不需要查询集的内容时使用count或exists" id="markdown-toc-当不需要查询集的内容时使用count或exists">当不需要查询集的内容时使用<code class="highlighter-rouge">count()</code>或<code class="highlighter-rouge">exists()</code></a></li>
+  <li><a href="#使用deleteupdate或bulk_create进行批量操作" id="markdown-toc-使用deleteupdate或bulk_create进行批量操作">使用<code class="highlighter-rouge">delete()</code>、<code class="highlighter-rouge">update()</code>或<code class="highlighter-rouge">bulk_create()</code>进行批量操作</a></li>
+  <li><a href="#直接使用外键" id="markdown-toc-直接使用外键">直接使用外键</a></li>
+</ul>
+
+<p>ORM全称是Object Relational Mapping（对象关系映射)，它在编程中把面向对象的概念跟数据库中表的概念对应起来，定义一个对象，就对应着一张表，这个对象的实例，就对应着表中的一条记录。ORM封装了底层的数据库操作，降低了编程难度，提高了代码的可读性和易维护性。</p>
+
+<p>虽然ORM可以带来极大的便利，但使用不当会带来运行效率的问题。下面以Django ORM为例，给出一些性能优化要点。</p>
+
+<h2 id="查询集queryset缓存">查询集（QuerySet）缓存</h2>
+
+<p>Django的查询集是惰性求值的，重复调用时可能会重复计算，利用缓存可以避免不必要的重复计算。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">all</span><span class="p">()])</span>  <span class="c1"># 查询集计算并缓存
+</span><span class="k">print</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">all</span><span class="p">()])</span>  <span class="c1"># 查询集再次计算并缓存
+</span>
+<span class="n">queryset</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">all</span><span class="p">()</span>
+<span class="k">print</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">queryset</span><span class="p">])</span>  <span class="c1"># 查询集计算并缓存
+</span><span class="k">print</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">queryset</span><span class="p">])</span>  <span class="c1"># 使用缓存的值
+</span>
+<span class="n">queryset</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">all</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">queryset</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># 查询数据库
+</span><span class="k">print</span><span class="p">(</span><span class="n">queryset</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># 再次查询数据库
+</span>
+<span class="n">queryset</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">all</span><span class="p">()</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">queryset</span><span class="p">)</span>  <span class="c1"># 查询集计算并缓存
+</span><span class="k">print</span><span class="p">(</span><span class="n">queryset</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># 使用缓存的值
+</span><span class="k">print</span><span class="p">(</span><span class="n">queryset</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># 使用缓存的值
+</span></code></pre></div></div>
+
+<h2 id="外键关系对象和逆关系对象的提前查询和缓存">外键关系对象和逆关系对象的提前查询和缓存</h2>
+
+<p>Django计算查询集时不包括外键关系和逆关系，所以不会包含在缓存中。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">person</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">person</span><span class="o">.</span><span class="n">father</span>  <span class="c1"># 获得外键对象并缓存
+</span><span class="n">person</span><span class="o">.</span><span class="n">father</span>  <span class="c1"># 使用缓存的值
+</span>
+<span class="n">person</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">person</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="nb">all</span><span class="p">()</span>  <span class="c1"># 数据库查询
+</span><span class="n">person</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="nb">all</span><span class="p">()</span>  <span class="c1"># 数据库再次查询
+</span></code></pre></div></div>
+
+<p>使用<code class="highlighter-rouge">select_related()</code>和<code class="highlighter-rouge">prefetch_related()</code>指定需要的对象，Django会提前查询并缓存。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 忌
+</span><span class="n">queryset</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">all</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">queryset</span><span class="p">:</span>
+    <span class="n">person</span><span class="o">.</span><span class="n">father</span>  <span class="c1"># 每个迭代的外键对象都要在数据库查询
+</span>
+<span class="c1"># 宜
+</span><span class="n">queryset</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">all</span><span class="p">()</span><span class="o">.</span><span class="n">select_related</span><span class="p">(</span><span class="s">'father'</span><span class="p">)</span>  <span class="c1"># 指定外键对象并缓存
+</span><span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">queryset</span><span class="p">:</span>
+    <span class="n">person</span><span class="o">.</span><span class="n">father</span>  <span class="c1"># 使用缓存的值
+</span></code></pre></div></div>
+
+<h2 id="避免在循环中进行数据库查询">避免在循环中进行数据库查询</h2>
+
+<p>这是非常低效的做法，应该在循环之前先进行数据库查询。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 忌
+</span><span class="n">filtered</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">first_name</span><span class="o">=</span><span class="s">'Shallan'</span><span class="p">,</span> <span class="n">last_name</span><span class="o">=</span><span class="s">'Davar'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">age</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">18</span><span class="p">):</span>
+    <span class="n">person</span> <span class="o">=</span> <span class="n">filtered</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="n">age</span><span class="p">)</span>  <span class="c1"># 每个迭代都要在数据库查询
+</span>
+<span class="c1"># 宜
+</span><span class="n">filtered</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">filter</span><span class="p">(</span>
+    <span class="n">first_name</span><span class="o">=</span><span class="s">'Shallan'</span><span class="p">,</span>
+    <span class="n">last_name</span><span class="o">=</span><span class="s">'Davar'</span><span class="p">,</span>
+    <span class="n">age_gte</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">age_lte</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">lookup</span> <span class="o">=</span> <span class="p">{</span><span class="n">person</span><span class="o">.</span><span class="n">age</span><span class="p">:</span> <span class="n">person</span> <span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">filtered</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">age</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">18</span><span class="p">):</span>
+    <span class="n">person</span> <span class="o">=</span> <span class="n">lookup</span><span class="p">[</span><span class="n">age</span><span class="p">]</span>  <span class="c1"># 没有数据库查询
+</span></code></pre></div></div>
+
+<h2 id="用iterator遍历减少缓存">用<code class="highlighter-rouge">iterator()</code>遍历减少缓存</h2>
+
+<p>查询集非常大而且只要遍历一次可以用这种方法。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 不会缓存
+</span><span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">iterator</span><span class="p">():</span>
+    <span class="c1"># 一些操作
+</span></code></pre></div></div>
+
+<h2 id="尽量使用数据库操作提高效率">尽量使用数据库操作提高效率</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 忌
+</span><span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">all</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">person</span><span class="o">.</span><span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+        <span class="c1"># 一些操作
+</span>
+<span class="c1"># 宜
+</span><span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">age__gte</span><span class="o">=</span><span class="mi">18</span><span class="p">):</span>
+    <span class="c1"># 一些操作
+</span></code></pre></div></div>
+
+<h2 id="使用f直接操作模型字段的值">使用<code class="highlighter-rouge">F()</code>直接操作模型字段的值</h2>
+
+<p>这种方法不需要缓存。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 忌
+</span><span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">all</span><span class="p">():</span>
+    <span class="n">person</span><span class="o">.</span><span class="n">age</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">person</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+<span class="c1"># 宜
+</span><span class="kn">from</span> <span class="nn">django.db.models</span> <span class="kn">import</span> <span class="n">F</span>
+<span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="n">F</span><span class="p">(</span><span class="s">'age'</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="使用数据库聚合">使用数据库聚合</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 忌
+</span><span class="n">max_age</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">all</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">person</span><span class="o">.</span><span class="n">age</span> <span class="o">&gt;</span> <span class="n">max_age</span><span class="p">:</span>
+        <span class="n">max_age</span> <span class="o">=</span> <span class="n">person</span><span class="o">.</span><span class="n">age</span>
+<span class="c1"># 宜
+</span><span class="n">max_age</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">all</span><span class="p">()</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">Max</span><span class="p">(</span><span class="s">'age'</span><span class="p">))[</span><span class="s">'age__max'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h2 id="使用values或values_list获取只包含特定字段的列表字典或元组">使用<code class="highlighter-rouge">values()</code>或<code class="highlighter-rouge">values_list()</code>获取只包含特定字段的列表、字典或元组</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 忌
+</span><span class="n">age_lookup</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">person</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">person</span><span class="o">.</span><span class="n">age</span>
+    <span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">all</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="c1"># 宜
+</span><span class="n">age_lookup</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">person</span><span class="p">[</span><span class="s">'name'</span><span class="p">]:</span> <span class="n">person</span><span class="p">[</span><span class="s">'age'</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s">'name'</span><span class="p">,</span> <span class="s">'age'</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 忌
+</span><span class="n">person_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">person</span><span class="o">.</span><span class="nb">id</span> <span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">all</span><span class="p">()]</span>
+
+<span class="c1"># 宜
+</span><span class="n">person_ids</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values_list</span><span class="p">(</span><span class="s">'id'</span><span class="p">,</span> <span class="n">flat</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="使用defer或only获取只包含特定字段的查询集">使用<code class="highlighter-rouge">defer()</code>或<code class="highlighter-rouge">only()</code>获取只包含特定字段的查询集</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">queryset</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">defer</span><span class="p">(</span><span class="s">'age'</span><span class="p">)</span>  <span class="c1"># 假设age计算开销大
+</span><span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">queryset</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="nb">id</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">queryset</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">only</span><span class="p">(</span><span class="s">'name'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">queryset</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">person</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="当不需要查询集的内容时使用count或exists">当不需要查询集的内容时使用<code class="highlighter-rouge">count()</code>或<code class="highlighter-rouge">exists()</code></h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 忌
+</span><span class="n">count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">all</span><span class="p">())</span>
+
+<span class="c1"># 宜
+</span><span class="n">count</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 忌
+</span><span class="n">count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">all</span><span class="p">())</span>
+
+<span class="c1"># 宜
+</span><span class="n">count</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="使用deleteupdate或bulk_create进行批量操作">使用<code class="highlighter-rouge">delete()</code>、<code class="highlighter-rouge">update()</code>或<code class="highlighter-rouge">bulk_create()</code>进行批量操作</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 忌
+</span><span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">all</span><span class="p">():</span>
+    <span class="n">person</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+
+<span class="c1"># 宜
+</span><span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">all</span><span class="p">()</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 忌
+</span><span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">all</span><span class="p">():</span>
+    <span class="n">person</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">person</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+<span class="c1"># 宜
+</span><span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Jeff'</span><span class="p">,</span> <span class="s">'Beth'</span><span class="p">,</span> <span class="s">'Tim'</span><span class="p">]</span>
+<span class="n">creates</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+    <span class="n">creates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+        <span class="n">Person</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="p">)</span>
+<span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">bulk_create</span><span class="p">(</span><span class="n">creates</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="直接使用外键">直接使用外键</h2>
+
+<p>Django ORM 自动获取和缓存外键，不需要额外不必要的查询。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 忌
+</span><span class="n">father_id</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">father</span><span class="o">.</span><span class="nb">id</span>
+
+<span class="c1"># 宜
+</span><span class="n">father_id</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">father_id</span>
+</code></pre></div></div>
+
+            </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer class="footer" role="contentinfo">
+	<div class="container">
+		<p class="copyright">Copyright &copy; 2019-2019 <a href="https://sysu-swsad-team.github.io/"><code>sysu-swsad-team</code></a>.</p>
+		<p>Powered by <a href="http://jekyllrb.com">Jekyll</a>, themed from <a href="http://lesscss.cn/">Less</a>, refactored by <a href="http://www.hifreud.com/">Freud Kang</a></p>
+	</div>
+</footer>
+
+<script src="/styles/js/jquery.min.js"></script>
+<script src="/styles/js/bootstrap.min.js"></script>
+<script src="/styles/js/holder.min.js"></script>
+<script src="/styles/js/lessismore.js"></script>
+<script src="/styles/js/application.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  </body>
+</html>
