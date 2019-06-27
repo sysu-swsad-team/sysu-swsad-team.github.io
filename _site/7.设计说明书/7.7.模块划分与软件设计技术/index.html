@@ -128,7 +128,119 @@
               <br />
             </header>
             <article class="post-content">
-              
+              <ul id="markdown-toc">
+  <li><a href="#前端技术应用" id="markdown-toc-前端技术应用">前端技术应用</a>    <ul>
+      <li><a href="#vuejs-组件化应用构建" id="markdown-toc-vuejs-组件化应用构建">Vue.js 组件化应用构建</a></li>
+      <li><a href="#vuex-状态管理" id="markdown-toc-vuex-状态管理">Vuex 状态管理</a></li>
+      <li><a href="#element-ui-组件库" id="markdown-toc-element-ui-组件库">Element-UI 组件库</a></li>
+      <li><a href="#webpack" id="markdown-toc-webpack">webpack</a></li>
+      <li><a href="#前端文件结构" id="markdown-toc-前端文件结构">前端文件结构</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="前端技术应用">前端技术应用</h2>
+
+<p>在前端我们使用了我们将用到下面几个框架与工具：</p>
+
+<ul>
+  <li><a href="https://cn.vuejs.org/">Vue.js</a></li>
+  <li><a href="https://vuex.vuejs.org/zh/">Vuex</a></li>
+  <li><a href="https://element.eleme.cn/">Element-UI</a></li>
+  <li><a href="https://webpack.js.org/">webpack</a></li>
+</ul>
+
+<h3 id="vuejs-组件化应用构建">Vue.js 组件化应用构建</h3>
+
+<p>我们选择 Vue.js 作为我们前端开发的主要框架。Vue.js 是一套构建用户界面的渐进式框架，它只关注视图层，采用自底向上增量开发的设计，目标是通过尽可能简单的 API 实现响应的数据绑定和组合的试图组件，并且 Vue 学习起来非常简单。</p>
+
+<p>组件系统是 Vue 的一个重要概念，因为它是一种抽象，允许我们使用小型、独立和通常可复用的组件构建大型应用。跟大多数应用界面一样，在我们的前端应用界面系统可以抽象成下面的一个组件树，Vue 的组件化特性非常适合我们的应用构建。</p>
+
+<p><img src="/styles/images/7.7/components.png" alt="components" /></p>
+
+<p>我们利用 Vue 的组件化特性，将前端界面划分为组件，比如登录/注册界面是一个组件，它又包含登录/注册的子组件。每个组件分文件管理，组件化构建应用可以让我们方便地复用组件。</p>
+
+<h3 id="vuex-状态管理">Vuex 状态管理</h3>
+
+<p>在构建 Vue 单页面应用时，Vuex 为我们提供了全局状态管理。在 state 中定义的数据后，我们可以在项目中任一个组件中进行获取或修改，并且你的修改可以得到全局的相应变更。当我们想要在项目中定义和使用全局变量时，使用 Vuex 是一个很好的解决方法。</p>
+
+<ul>
+  <li>state：对数据的全局存储</li>
+  <li>getter：和 Vue计算属性 computed 一样，来实时监听 state 值的变化 (最新状态)</li>
+  <li>mutations：对数据的同步更改</li>
+  <li>actions：对数据的异步更改</li>
+</ul>
+
+<p>Vuex:</p>
+
+<p><img src="/styles/images/7.7/vuex.png" alt="vuex" /></p>
+
+<h3 id="element-ui-组件库">Element-UI 组件库</h3>
+
+<p>Element-UI 是一套基于 Vue 2.x 的组件库， 它提供了构建常见网站的的各种组件，如页面布局、按钮、表单、数据表格、导航菜单、对话框等。使用 Element-UI 能够快速构建一个单页面应用网站。</p>
+
+<h3 id="webpack">webpack</h3>
+
+<p>通常，我们在构建网页应用时，会有繁杂的 JavaScript 代码和一大堆依赖包。简单来说，webpack 可以看做是模块打包机，它帮助分析项目结构，把项目的所有依赖文件打包成一个或多个浏览器可以识别的 JavaScript 文件。选择 webpack 来构建我们的应用能够方便管理、开发与部署。</p>
+
+<h3 id="前端文件结构">前端文件结构</h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>src
+│   App.vue			<span class="c"># 程序入口</span>
+│   main.js			<span class="c"># main</span>
+│   utils.js
+│
+├───api				<span class="c"># REST api接口</span>
+│       api.js 			
+│       index.js
+│
+├───assets			<span class="c"># 资源文件</span>
+│
+├───mock 			<span class="c"># mock桩测试代码</span>
+│
+├───page			<span class="c"># 组件</span>
+│   │   404.vue
+│   │   Root.vue 
+│   │
+│   ├───Balance		<span class="c"># 充值与提现界面</span>
+│   │       Balance.vue
+│   │
+│   ├───components	<span class="c"># 应用组件</span>
+│   │       EditQuestionair.vue		<span class="c"># 编辑问卷组件</span>
+│   │       ModuleCards.vue			<span class="c"># 模块卡组件</span>
+│   │       PageHead.vue			<span class="c"># 页头组件</span>
+│   │       ShowQuestionnaire.vue	<span class="c"># 显示问卷组件</span>
+│   │
+│   ├───Errand		<span class="c"># 跑腿办事页面</span>
+│   │       Errand.vue				<span class="c"># 跑腿办事主页主组件</span>
+│   │       Create.vue				<span class="c"># 创建任务组件子组件</span>
+│   │       Mine.vue				<span class="c"># 我的任务组件子组件</span>
+│   │
+│   ├───Home		<span class="c"># 主页面</span>
+│   │       Home.vue				<span class="c"># 主页面主组件</span>
+│   │       Message.vue				<span class="c"># 我的信息子组件</span>
+│   │       PersonInfo.vue			<span class="c"># 个人信息子组件</span>
+│   │
+│   ├───Login		<span class="c"># 登录/注册页面</span>
+│   │       Login.vue				<span class="c"># 登录/主页页面主组件</span>
+│   │       LoginForm.vue			<span class="c"># 登录表单子组件</span>
+│   │       RegisterForm.vue		<span class="c"># 注册表单子组件</span>
+│   │
+│   └───Questionnaire	<span class="c"># 问卷系统页面</span>
+│           Questionnaire.vue		<span class="c"># 问卷系统主组件</span>
+│           Create.vue				<span class="c"># 创建问卷子组件</span>
+│           Mine.vue				<span class="c"># 我的问卷子组件</span>
+│
+├───router			<span class="c"># 路由</span>
+│       index.js
+│
+├───styles			<span class="c"># 组件用到的样式（可复用）</span>
+│       pages.scss
+│       vars.scss
+│
+└───vuex			<span class="c"># vuex状态管理模式</span>
+        store.js
+</code></pre></div></div>
 
             </article>
         </div>
