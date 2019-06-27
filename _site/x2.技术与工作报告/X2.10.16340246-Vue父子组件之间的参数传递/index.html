@@ -123,7 +123,7 @@
               <!--
                 <p class="post-meta">Mar 15, 2019 • 16340246</p>
               -->
-              <!-- <div class="meta">Posted on <span class="postdate">Mar 15, 2019</span> By <a target="_blank" href="http://localhost:4000">sysu-swsad-team</a></div> -->
+              <!-- <div class="meta">Posted on <span class="postdate">Mar 15, 2019</span> By <a target="_blank" href="https://sysu-swsad-team.github.io/">sysu-swsad-team</a></div> -->
               <div class="meta">Posted By <a target="_blank" href="https://github.com/wuzht">16340246</a></div>
               <br />
             </header>
@@ -141,7 +141,7 @@
 
 <p>我们可以以字符串数组的形式列出 <code class="highlighter-rouge">props</code>：</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">props</span><span class="p">:</span> <span class="p">[</span><span class="s1">'message'</span><span class="p">,</span> <span class="s1">'color'</span><span class="p">,</span> <span class="s1">'fontSize'</span><span class="p">]</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">props</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">message</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">color</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">fontSize</span><span class="dl">'</span><span class="p">]</span>
 </code></pre></div></div>
 
 <p>但是，通常你希望每个 <code class="highlighter-rouge">prop</code> 都有指定的值类型。这时，你可以以对象形式列出 <code class="highlighter-rouge">prop</code>，这些属性的名称和值分别是 <code class="highlighter-rouge">prop</code> 各自的名称和类型：</p>
@@ -188,9 +188,9 @@
 
 <span class="nt">&lt;</span><span class="k">script</span><span class="nt">&gt;</span>
 <span class="c1">// 引入子组件 Child</span>
-<span class="k">import</span> <span class="nx">Child</span> <span class="k">from</span> <span class="s1">'./components/Child'</span>
+<span class="k">import</span> <span class="nx">Child</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./components/Child</span><span class="dl">'</span>
 <span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
-  <span class="na">name</span><span class="p">:</span> <span class="s1">'App'</span><span class="p">,</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">App</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">components</span><span class="p">:</span> <span class="p">{</span>
     <span class="nx">Child</span>
   <span class="p">}</span>
@@ -230,9 +230,9 @@
 
 <span class="nt">&lt;</span><span class="k">script</span><span class="nt">&gt;</span>
 <span class="c1">// 引入子组件 Child</span>
-<span class="k">import</span> <span class="nx">Child</span> <span class="k">from</span> <span class="s1">'./components/Child'</span>
+<span class="k">import</span> <span class="nx">Child</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./components/Child</span><span class="dl">'</span>
 <span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
-  <span class="na">name</span><span class="p">:</span> <span class="s1">'App'</span><span class="p">,</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">App</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">components</span><span class="p">:</span> <span class="p">{</span>
     <span class="nx">Child</span>
   <span class="p">},</span>
@@ -273,7 +273,7 @@
 <span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
   <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
     <span class="nx">toParent</span> <span class="p">()</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="s1">'change'</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="dl">'</span><span class="s1">change</span><span class="dl">'</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>
