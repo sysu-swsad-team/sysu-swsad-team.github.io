@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#22365A">
+	<title>X2.19 16340286-Django缓存使用初探 - Niffler</title>
+
+	<link rel="shortcut icon" href="/styles/images/logo.png">
+	<link rel="icon" href="/styles/images/logo.png">
+
+	<link rel="stylesheet" href="/styles/css/index.css">
+	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/styles/css/syntax.css">
+	<link rel="canonical" href="/x2.%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%B7%A5%E4%BD%9C%E6%8A%A5%E5%91%8A/X2.19.16340286-Django%E7%BC%93%E5%AD%98%E4%BD%BF%E7%94%A8%E5%88%9D%E6%8E%A2/">
+	<link rel="alternate" type="application/rss+xml" title="Niffler" href="/feed.xml">
+	
+	<meta name="keywords" content="X2.19 16340286-Django缓存使用初探, Niffler, Niffler">
+	<meta name="description" content="Niffler">
+
+	<script src="/styles/js/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  	<![endif]-->
+  	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?94be4b0f9fc5d94cc0d0415ea6761ae9";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+  	<style type="text/css">
+	  	.docs-content{
+	  		margin-bottom: 10px;
+	  	}
+  	</style>
+</head>
+
+  <body class="index">
+
+    <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img src="/styles/images/logo-header.png">
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">    
+        <li>
+          <a href="/">圈多多</a>
+        </li>
+        <!-- <li>
+          <a href="/categories/">大类分解</a>
+        </li>
+        <li>
+          <a href="/tag">小类内聚</a>
+        </li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/sysu-swsad-team">Github</a></li>
+       
+      </ul>
+    </nav>
+  </div>
+</header>
+    <div class="docs-header" id="content">
+  <div class="container">
+  	
+  		<!--
+		    <h1>X2.19 16340286-Django缓存使用初探</h1>
+		    <p>Post on Mar 06, 2019 by <a href="/about">sysu-swsad-team</a></p>
+		-->
+		    <h1>Niffler</h1>
+    
+  </div>
+</div>
+    
+      
+<div class="banner">
+  <div class="container">
+  	
+    	<a href="/categories/#X2.技术与工作报告-ref">X2.技术与工作报告</a>	/
+      <!-- <a href="/tag/#-ref"></a> -->
+      <span>X2.19 16340286-Django缓存使用初探</span>
+    
+  </div>
+</div>
+
+    
+
+    <div class="container docs-container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar hidden-print" role="complementary">
+        <div id="navigation">
+  <h1>目录</h1>
+  <ul class="nav sidenav">
+  </ul>
+  <!-- <div style="height: 200px;width: 200px;">
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"> 
+    </script>
+  </div> -->
+</div>
+
+ 
+      </div>
+    </div>
+    <div class="col-md-9" role="main">
+      <div class="panel docs-content">
+        <div class="wrapper">
+            <header class="post-header">
+              <h1 class="post-title">X2.19 16340286-Django缓存使用初探</h1>
+              <!--
+                <p class="post-meta">Mar 6, 2019 • 16340286</p>
+              -->
+              <!-- <div class="meta">Posted on <span class="postdate">Mar 06, 2019</span> By <a target="_blank" href="https://sysu-swsad-team.github.io/">sysu-swsad-team</a></div> -->
+              <div class="meta">Posted By <a target="_blank" href="https://github.com/Ernie1">16340286</a></div>
+              <br />
+            </header>
+            <article class="post-content">
+              <ul id="markdown-toc">
+  <li><a href="#缓存位置" id="markdown-toc-缓存位置">缓存位置</a></li>
+  <li><a href="#缓存粒度" id="markdown-toc-缓存粒度">缓存粒度</a>    <ul>
+      <li><a href="#视图缓存" id="markdown-toc-视图缓存">视图缓存</a></li>
+      <li><a href="#任意级别粒度" id="markdown-toc-任意级别粒度">任意级别粒度</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>对于Web服务来说，对客户端发来的每个请求都需要计算，如果在短时间内有多个相同的请求，就要进行多次不必要的重复计算，使用缓存能有效地解决这个问题，如果请求的值存在缓存中，就直接返回缓存的值而不需要计算，能够减少计算和时延。</p>
+
+<h2 id="缓存位置">缓存位置</h2>
+
+<p>缓存数据可以存放在数据库，文件系统或内存中，使用缓存服务器还能实现多个服务器共享缓存，参考<a href="https://docs.djangoproject.com/en/2.2/topics/cache/">官方文档</a>在settings.py中配置缓存。</p>
+
+<p>Django默认配置了本地缓存，该缓存是多进程的，且线程安全。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">CACHES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'default'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">'BACKEND'</span><span class="p">:</span> <span class="s">'django.core.cache.backends.locmem.LocMemCache'</span><span class="p">,</span>
+        <span class="s">'LOCATION'</span><span class="p">:</span> <span class="s">'unique-snowflake'</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>如果只有一本地内存缓存，可以省略<code class="highlighter-rouge">LOCTION</code>配置，如果有多个，则至少要给其中一个配置<code class="highlighter-rouge">LOCATION</code>以区分。</p>
+
+<p>需要注意的是，Django是多进程部署时，每个进程都有自己私有的缓存实例，意味着跨缓存是不可能发生的，这样降低了命中率，而且如果其中一个进程修改了数据，其他进程的缓存没有更新之前就会返回错误的数据。</p>
+
+<h2 id="缓存粒度">缓存粒度</h2>
+
+<p>Django提供了不同级别的缓存粒度，可以缓存整个站点、特定视图或部分难生成的内容，参考<a href="https://docs.djangoproject.com/en/2.2/topics/cache/#the-per-site-cache">官方文档</a>。</p>
+
+<h3 id="视图缓存">视图缓存</h3>
+
+<p><code class="highlighter-rouge">django.views.decorators.cache</code>定义了一个<code class="highlighter-rouge">cache_page</code>装饰器，用于自动缓存视图的响应。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.views.decorators.cache</span> <span class="kn">import</span> <span class="n">cache_page</span>
+
+<span class="o">@</span><span class="n">cache_page</span><span class="p">(</span><span class="mi">60</span> <span class="o">*</span> <span class="mi">15</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">my_view</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="o">...</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">cache_page</code>的参数指定了缓存过期时间，以秒为单位。</p>
+
+<p>如果多个URL指向相同的视图，每个URL将被单独缓存，如果URLconf是这样的：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s">'foo/&lt;int:code&gt;/'</span><span class="p">,</span> <span class="n">my_view</span><span class="p">),</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<p>那么<code class="highlighter-rouge">/foo/1/</code>和<code class="highlighter-rouge">/foo/23/</code>的请求将被分别缓存。</p>
+
+<p>但这种给<code class="highlighter-rouge">my_view</code>函数加装饰器的方法改变了函数，使<code class="highlighter-rouge">my_view</code>函数难以复用，可以改成在URLconf中再加<code class="highlighter-rouge">cache_page</code>装饰器。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.views.decorators.cache</span> <span class="kn">import</span> <span class="n">cache_page</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s">'foo/&lt;int:code&gt;/'</span><span class="p">,</span> <span class="n">cache_page</span><span class="p">(</span><span class="mi">60</span> <span class="o">*</span> <span class="mi">15</span><span class="p">)(</span><span class="n">my_view</span><span class="p">)),</span>
+<span class="p">]</span>
+</code></pre></div></div>
+
+<h3 id="任意级别粒度">任意级别粒度</h3>
+
+<p>Django提供了底层的缓存API，用于缓存任意级别粒度的对象，可以缓存任何可以安全的 pickle的Python对象：字符串、字典、列表，或者其他。</p>
+
+<p>使用<code class="highlighter-rouge">django.core.cache.cache</code>引用缓存，基本用法：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.core.cache</span> <span class="kn">import</span> <span class="n">cache</span>
+
+<span class="c1"># cache.set(key, value, timeout=DEFAULT_TIMEOUT, version=None)
+</span><span class="n">cache</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="s">'my_key'</span><span class="p">,</span> <span class="s">'hello, world!'</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+
+<span class="c1"># cache.get(key, default=None, version=None)
+</span><span class="n">cache</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'my_key'</span><span class="p">)</span>
+<span class="c1"># 'hello, world!'
+</span>
+<span class="c1"># 30秒后'my_key'过期
+</span><span class="n">cache</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'my_key'</span><span class="p">)</span>
+<span class="c1"># None
+</span></code></pre></div></div>
+
+<p><code class="highlighter-rouge">cache.get()</code>可以带一个默认参数。如果对象不在缓存中，将返回指定的值。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cache</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'my_key'</span><span class="p">,</span> <span class="s">'has expired'</span><span class="p">)</span>
+<span class="c1"># 'has expired'
+</span></code></pre></div></div>
+
+<p>在键不存在的时候，使用<code class="highlighter-rouge">add()</code>方法可以添加键。它与<code class="highlighter-rouge">set()</code>带有相同的参数，但如果指定的键已经存在，将不会尝试更新缓存。</p>
+
+<p>如想知道通过<code class="highlighter-rouge">add()</code>存储的值是否在缓存中，可以检查返回值。如果值已保存，将返回 <code class="highlighter-rouge">True</code>，否则返回<code class="highlighter-rouge">False</code>。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># cache.add(key, value, timeout=DEFAULT_TIMEOUT, version=None)
+</span><span class="n">cache</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="s">'add_key'</span><span class="p">,</span> <span class="s">'Initial value'</span><span class="p">)</span>
+<span class="n">cache</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">'add_key'</span><span class="p">,</span> <span class="s">'New value'</span><span class="p">)</span>
+<span class="n">cache</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'add_key'</span><span class="p">)</span>
+<span class="c1"># 'Initial value'
+</span></code></pre></div></div>
+
+<p>如果想得到键值或者如果键不在缓存中时设置一个值，可以使用<code class="highlighter-rouge">get_or_set()</code>方法。它带有和<code class="highlighter-rouge">get()</code>一样的参数，但默认是为那个键设置一个新缓存值，而不是简单返回：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># cache.get_or_set(key, default, timeout=DEFAULT_TIMEOUT, version=None)
+</span>
+<span class="n">cache</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'my_new_key'</span><span class="p">)</span>  <span class="c1"># returns None
+</span><span class="n">cache</span><span class="o">.</span><span class="n">get_or_set</span><span class="p">(</span><span class="s">'my_new_key'</span><span class="p">,</span> <span class="s">'my new value'</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="c1"># 'my new value'
+</span>
+<span class="c1"># 可以传递任何可调用的值作为默认值：
+</span><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="n">cache</span><span class="o">.</span><span class="n">get_or_set</span><span class="p">(</span><span class="s">'some-timestamp-key'</span><span class="p">,</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">)</span>
+<span class="c1"># datetime.datetime(2014, 12, 11, 0, 15, 49, 457920)
+</span></code></pre></div></div>
+
+<p><code class="highlighter-rouge">get_many()</code>接口，对多个值返回一个字典。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># cache.get_many(keys, version=None)
+</span><span class="n">cache</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="s">'a'</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">cache</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="s">'b'</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">cache</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="s">'c'</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">cache</span><span class="o">.</span><span class="n">get_many</span><span class="p">([</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">])</span>
+<span class="c1"># {'a': 1, 'b': 2, 'c': 3}
+</span></code></pre></div></div>
+
+<p><code class="highlighter-rouge">set_many()</code>传递键值对的字典，可以设置多个值。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># cache.set_many(dict, timeout)¶
+</span><span class="n">cache</span><span class="o">.</span><span class="n">set_many</span><span class="p">({</span><span class="s">'a'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'b'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'c'</span><span class="p">:</span> <span class="mi">3</span><span class="p">})</span>
+<span class="n">cache</span><span class="o">.</span><span class="n">get_many</span><span class="p">([</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">])</span>
+<span class="c1"># {'a': 1, 'b': 2, 'c': 3}
+</span></code></pre></div></div>
+
+<p><code class="highlighter-rouge">delete()</code>清除特定对象缓存。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># cache.delete(key, version=None)
+</span><span class="n">cache</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s">'a'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">delete_many()</code>一次性清除多个键。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># cache.delete_many(keys, version=None)
+</span><span class="n">cache</span><span class="o">.</span><span class="n">delete_many</span><span class="p">([</span><span class="s">'a'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>使用<code class="highlighter-rouge">cache.clear()</code>可以删除缓存里的所有键。</p>
+
+<p><code class="highlighter-rouge">cache.touch()</code>为键设置一个新的过期时间。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># cache.touch(key, timeout=DEFAULT_TIMEOUT, version=None)
+</span><span class="n">cache</span><span class="o">.</span><span class="n">touch</span><span class="p">(</span><span class="s">'a'</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="c1"># True
+</span></code></pre></div></div>
+
+<p>分别使用<code class="highlighter-rouge">incr()</code>或<code class="highlighter-rouge">decr()</code>可以递增或递减一个已经存在的键的值。是否为原子方法依赖于后端支持。</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># cache.incr(key, delta=1, version=None)
+# cache.decr(key, delta=1, version=None)
+</span><span class="n">cache</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="s">'num'</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">cache</span><span class="o">.</span><span class="n">incr</span><span class="p">(</span><span class="s">'num'</span><span class="p">)</span>
+<span class="c1"># 2
+</span><span class="n">cache</span><span class="o">.</span><span class="n">incr</span><span class="p">(</span><span class="s">'num'</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="c1"># 12
+</span><span class="n">cache</span><span class="o">.</span><span class="n">decr</span><span class="p">(</span><span class="s">'num'</span><span class="p">)</span>
+<span class="c1"># 11
+</span><span class="n">cache</span><span class="o">.</span><span class="n">decr</span><span class="p">(</span><span class="s">'num'</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="c1"># 6
+</span></code></pre></div></div>
+
+<p>如果缓存后端已经实现了<code class="highlighter-rouge">close()</code>方法，可以用<code class="highlighter-rouge">cache.close()</code>关闭和缓存的连接。</p>
+
+            </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer class="footer" role="contentinfo">
+	<div class="container">
+		<p class="copyright">Copyright &copy; 2019-2019 <a href="https://sysu-swsad-team.github.io/"><code>sysu-swsad-team</code></a>.</p>
+		<p>Powered by <a href="http://jekyllrb.com">Jekyll</a>, themed from <a href="http://lesscss.cn/">Less</a>, refactored by <a href="http://www.hifreud.com/">Freud Kang</a></p>
+	</div>
+</footer>
+
+<script src="/styles/js/jquery.min.js"></script>
+<script src="/styles/js/bootstrap.min.js"></script>
+<script src="/styles/js/holder.min.js"></script>
+<script src="/styles/js/lessismore.js"></script>
+<script src="/styles/js/application.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  </body>
+</html>
