@@ -5,8 +5,8 @@
     <description>圈多多</description>
     <link>https://sysu-swsad-team.github.io//</link>
     <atom:link href="https://sysu-swsad-team.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 28 Jun 2019 00:38:26 +0800</pubDate>
-    <lastBuildDate>Fri, 28 Jun 2019 00:38:26 +0800</lastBuildDate>
+    <pubDate>Fri, 28 Jun 2019 00:44:30 +0800</pubDate>
+    <lastBuildDate>Fri, 28 Jun 2019 00:44:30 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -639,7 +639,205 @@ git pull upstream dev
     
       <item>
         <title>7.6 技术选型理由</title>
-        <description>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#形式&quot; id=&quot;markdown-toc-形式&quot;&gt;形式&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#前端&quot; id=&quot;markdown-toc-前端&quot;&gt;前端&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#后端&quot; id=&quot;markdown-toc-后端&quot;&gt;后端&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;形式&quot;&gt;形式&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;App。App在移动端上能得到最好的用户体验，但对新用户来说安装一个新App的成本较高。&lt;/li&gt;
+  &lt;li&gt;Web。相比App来说，Web更加轻量，不需要用户安装额外的应用。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;最终选择：客户端和服务端使用Web网页形式。&lt;/p&gt;
+
+&lt;h2 id=&quot;前端&quot;&gt;前端&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;JQuery&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;缺点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;随着HTML5新的DOM标准，加入了很多原生的新的方法，并且目前主流浏览器兼容性已经大大提高，甚至连JQuery非常好用的ajax都可以被浏览器原生提供的Fetch API代替，再加上最近比较盛行的各种以数据为驱动的前端框架，JQuery的DOM元素处理方式会慢慢被模块化开发代替。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;优点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;提供了用css选择符来选择dom元素的API&lt;/li&gt;
+  &lt;li&gt;提供了浏览器检测的API&lt;/li&gt;
+  &lt;li&gt;提供了兼容的功能性API&lt;/li&gt;
+  &lt;li&gt;提供了DOM的批处理操作&lt;/li&gt;
+  &lt;li&gt;提供了DOM操作的链式操作&lt;/li&gt;
+  &lt;li&gt;提供了插件机制&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Angular&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;缺点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;验证功能错误信息显示比较薄弱，需要写很多模板标签。&lt;/li&gt;
+  &lt;li&gt;脏值检查性能较差。&lt;/li&gt;
+  &lt;li&gt;没有完美兼容低版本，升级之后可能会出现兼容性问题。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;优点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;依赖注入。将后端语言的设计模式赋予前端代码，这意味着前端的代码可以提高重用性和灵活性，未来的模式可能将大量操作放在客户端，服务端只提供数据来源和其它客户端无法完成的操作。&lt;/li&gt;
+  &lt;li&gt;双向数据绑定。数据绑定可能是AngularJS最酷最实用的特性。它能够帮助你避免书写大量的初始代码，从而节约开发时间。一个典型的Web应用可能包含了80%的代码用来处理、查询和监听DOM。数据绑定能够大大减少代码量。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Vue.js&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;缺点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;生态环境差，不如Angular。&lt;/li&gt;
+  &lt;li&gt;社区不大。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;优点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;MVVM模式，组件化开发，通过setter与getter以及VDOM提供了较好的性能。&lt;/li&gt;
+  &lt;li&gt;文档完整。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;最终选择：Vue.js&lt;/p&gt;
+
+&lt;h2 id=&quot;后端&quot;&gt;后端&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;1. C/C++&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;优点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;C语言是非常贴近操作系统的语言，能和操作系统API很好地交互。&lt;/li&gt;
+  &lt;li&gt;编译速度快。相比于其它语言的编译器，C语言编译器产生机器代码的速度非常快。C编译器可以在两秒内编译大约1000行代码。C编译器还优化了代码，从而使程序获得更快的执行速度。&lt;/li&gt;
+  &lt;li&gt;可移植。C语言是高度可移植的语言。这意味着，一台计算机编写的C程序可以在另一台计算机上轻松地运行而没有任何变化或者只有很小的变化。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;缺点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;缺乏字符串处理。Web开发最主要的就是字符串的处理，所有的一切几乎都要和字符串打交道。但是 C++ 只有 std::string 标准库提供的字符串类，缺乏方便的 UTF-8 和正则表达式匹配支持等。&lt;/li&gt;
+  &lt;li&gt;缺乏 Web 标准的支持，即语言层面上缺乏对 HTTP 协议的支持。Web 是基于 HTTP 协议和 TCP 协议产生的。而 C++ 极度缺乏这方面的支持，只能自己手工处理 Socket 通信。&lt;/li&gt;
+  &lt;li&gt;缺乏 HTTP 框架和业务代码之间的交互标准。框架就算完成了 HTTP 通信部分，也没有一个标准框架规定如何和业务代码交互。实际上 C++ 框架实现了自己的交互流程，但是缺乏规范。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;2. Java&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;优点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;语法简单。Java语言去除了C/C++语言中难以理解、容易混淆的特性，例如头指针，文件、结构、单元、运算符重载、虚拟基础类、多重继承等，使得程序更加严谨、简洁。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;面向对象。Java是一个面向对象的语言。对程序员来说，这意味着要注意应用中的数据和操作数据的方法，而不是严格地用过程来思考。在一个面向对象的系统中，类是数据和操作数据的方法集合。数据和方法一起描述对象的状态和行为。类按照一定的体系和层次结构安排，使得子类可以从超类继承属性和方法。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;平台无关。Java语言可以一次编译，到处运行。Java是解释型语言，Java编译器编译程序生成字节码，而不是通常的机器码。字节码在JVM中解释执行。Java程序可以在任何实现了Java解释程序和运行系统的系统上运行。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;提供了对Web应用开发的支持。例如，Applet、servlet和jsp可以用来开发Web应用程序；socket、rmi可以用来开发分布式应用程序的类库。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;缺点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;开发效率相对较低。&lt;/li&gt;
+  &lt;li&gt;虽然上手开发相对容易，但真正理解框架底层的运行原理相对较难，需要大量的学习和开发经验。&lt;/li&gt;
+  &lt;li&gt;Java 并没有在第一时间引入新颖的技术和语言特性。&lt;/li&gt;
+  &lt;li&gt;Java 本身的规范和不够灵活也导致了代码本身很难优化，好的代码和差的代码在一套规则的束缚下实际上性能并没有多少差距，更多的优化被交给了 JVM。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;3. PHP&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;优点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;语法简单。如果有学习过C和Perl，会很容易上手，并且跟ASP有部分类似。&lt;/li&gt;
+  &lt;li&gt;有成熟的开发工具，比如NuPHPed，Zend Studio等。&lt;/li&gt;
+  &lt;li&gt;支持很多主流技术，比如WebService、Ajax、XML等。&lt;/li&gt;
+  &lt;li&gt;有很多成熟的框架，比如支持MVC的框架：phpMVC，支持类似ASP.net的事件驱动的框架：Prado，支持类似Ruby On Rails的快速开发的框架：Cake等。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;缺点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;对多线程支持不太好，大多数时候我们只能模拟去实现。&lt;/li&gt;
+  &lt;li&gt;解释性语言，运行效率低，且无法常驻内存。&lt;/li&gt;
+  &lt;li&gt;缺乏好用的包管理和命令空间，也缺乏好用的模板系统。&lt;/li&gt;
+  &lt;li&gt;只支持Web开发，不方便做.exe文件，不方便做桌面应用程序，不方便做手机程序。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;4. Go&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;缺点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;导入的包不支持自定义版本，项目容易因为包的升级而不可用。&lt;/li&gt;
+  &lt;li&gt;垃圾回收机制仍存在一些问题。&lt;/li&gt;
+  &lt;li&gt;暂时缺乏比较完善的框架。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;优点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Golang 的设计理念很明确，就是将动态类型语言的编程容易度和静态类型语言的安全效率结合起来。&lt;/li&gt;
+  &lt;li&gt;部署简单。Go 编译生成的可执行文件无需担心包和库的依赖关系。&lt;/li&gt;
+  &lt;li&gt;并发性能好。即使是单个Go应用也能有效利用多个 CPU 核心。&lt;/li&gt;
+  &lt;li&gt;自带完善的工具链。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;5. Node.js&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;缺点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;默认单进程，单线程，只支持单核CPU，不能充分的利用多核CPU服务器资源。&lt;/li&gt;
+  &lt;li&gt;动态语言，可靠性低，调试困难。许多错误只有在运行时才能发现。&lt;/li&gt;
+  &lt;li&gt;开源组件库质量参差不齐，更新快，向下不兼容。&lt;/li&gt;
+  &lt;li&gt;不方便调试，错误没有stack trace。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;优点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;JavaScript 易上手，且有着活跃的社区和很多的第三方库。&lt;/li&gt;
+  &lt;li&gt;前端使用 JavaScript，Node.js 能做到全栈开发。&lt;/li&gt;
+  &lt;li&gt;使用 NPM 这一优秀的包管理工具。&lt;/li&gt;
+  &lt;li&gt;事件驱动。事件驱动的优势在于能够充分利用系统资源，执行代码时无须阻塞等待某些操作完成，有限的资源可以用于其它任务。事件驱动机制是通过内部单线程高效率地维护事件循环队列来实现的，没有多线程的资源占用和上下文切换。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;6. Python&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;缺点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;作为解释型语言，运行速度较慢。Python的运行速度相比C语言确实慢很多，和Java相比也要慢一些。&lt;/li&gt;
+  &lt;li&gt;包管理工具和语言升级会带来混乱，且部署工具生态混乱。&lt;/li&gt;
+  &lt;li&gt;缺少有效的性能分析和调试工具。&lt;/li&gt;
+  &lt;li&gt;线程不能利用多CPU，这是Python被人诟病最多的一个缺点。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;优点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Python的定位是“优雅”、“明确”、“简单”，所以Python程序看上去总是简单易懂，初学者学Python，不但入门容易，而且将来深入下去，可以编写非常复杂的程序。&lt;/li&gt;
+  &lt;li&gt;开发效率非常高。Python有非常强大和丰富的第三方库。&lt;/li&gt;
+  &lt;li&gt;Python在Web开发方面有很多成熟的框架。&lt;/li&gt;
+  &lt;li&gt;Python是一门高级语言，当你用Python语言编写程序的时候，你无需考虑诸如内存管理等一些底层细节。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;最终选择：Python，使用Django框架。&lt;/p&gt;
 </description>
         <pubDate>Thu, 23 May 2019 00:00:00 +0800</pubDate>
         <link>https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.6.%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E7%90%86%E7%94%B1/</link>
