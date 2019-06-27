@@ -137,7 +137,17 @@
       <li><a href="#前端文件结构" id="markdown-toc-前端文件结构">前端文件结构</a></li>
     </ul>
   </li>
-  <li><a href="#软件设计技术" id="markdown-toc-软件设计技术">软件设计技术</a></li>
+  <li><a href="#后端设计" id="markdown-toc-后端设计">后端设计</a>    <ul>
+      <li><a href="#模块划分" id="markdown-toc-模块划分">模块划分</a></li>
+      <li><a href="#软件设计技术" id="markdown-toc-软件设计技术">软件设计技术</a>        <ul>
+          <li><a href="#命令模式" id="markdown-toc-命令模式">命令模式</a></li>
+          <li><a href="#观察者模式" id="markdown-toc-观察者模式">观察者模式</a></li>
+          <li><a href="#restful-设计" id="markdown-toc-restful-设计">RESTful 设计</a></li>
+          <li><a href="#面向对象设计" id="markdown-toc-面向对象设计">面向对象设计</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ul>
 
 <h2 id="前端技术应用">前端技术应用</h2>
@@ -243,9 +253,131 @@
         store.js
 </code></pre></div></div>
 
-<h2 id="软件设计技术">软件设计技术</h2>
+<hr />
 
-<p><strong>1. 面向对象设计</strong></p>
+<h2 id="后端设计">后端设计</h2>
+
+<h3 id="模块划分">模块划分</h3>
+
+<p>后端同样使用 MVC 架构，其中 Model 可以用来与数据库交互， 具体如下：</p>
+
+<ul>
+  <li>User（Django 自建用户）</li>
+  <li>Profile （扩展的用户资料）</li>
+  <li>EmailVerify （负责存储邮箱验证码和有效期）</li>
+  <li>Task（”问卷” 或 “跑腿” 任务）</li>
+  <li>Participantship（用户参与信息）</li>
+  <li>Tag（”用户” 或 “任务” 的标签）</li>
+</ul>
+
+<p>建立好实体了，接着就需要多功能进行模块划分，划分的好处是让系统结构更加清晰，模块和模块之前相互解耦。同时对于多人协作的项目来说，可以独立分配一个模块进行开发。</p>
+
+<p>其中设计的模块有：</p>
+
+<ul>
+  <li>权限管理模块（包括用户的注册登录登出）</li>
+  <li>内容模块（包括查看个人资料和当前进行中的所有任务）</li>
+  <li>功能模块（包括 “问卷” “跑腿” “充值/提现” 三大功能）</li>
+  <li>发布模块（包括修改个人资料，创建问卷，发起委托，参与任务等）</li>
+  <li>评论模块（包括发布者取消和确认任务，参与者提出争议和评论问卷等）</li>
+</ul>
+
+<p><img src="/styles/images/7.7/django-mvt.png" alt="django-mvt" /></p>
+
+<p>后端此次没有使用模版文件代表的 View，所以没有图形显示界面，对外显示的功能体现为对前端请求的响应。当前端请求到来时，路由模块调用（Controller）提供的接口，即 url.py 中的各种访问入口，进入 views.py 中不同的处理函数，并且在其中通过 model 与数据库交互，之后响应请求返回给用户。</p>
+
+<hr />
+
+<h3 id="软件设计技术">软件设计技术</h3>
+
+<h4 id="命令模式">命令模式</h4>
+
+<p>在软件系统中，“行为请求者”与“行为实现者”通常呈现一种“紧耦合”。但在某些场合，比如要对行为进行“记录、撤销/重做、事务”等处理，这种无法抵御变化的紧耦合是不合适的。在这种情况下，如何将“行为请求者”与“行为实现者”解耦？将一组行为抽象为对象，实现二者之间的松耦合，这就是命令模式（Command Pattern）。</p>
+
+<p>在 Django 中，把 get和 post 这些请求的行为抽象成一个 HttpRequest 类，我们可以通过 request 实例的method 获取行为的类型：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">'GET'</span><span class="p">:</span>
+    <span class="n">do_something</span><span class="p">()</span>
+<span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">'POST'</span><span class="p">:</span>
+    <span class="n">do_something_else</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>此外，对于不同的数据，Django 还分别抽象了相应的类来处理。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Json数据：</span>
+from django.http import JsonResponse
+<span class="o">&gt;&gt;&gt;</span> response <span class="o">=</span> JsonResponse<span class="o">({</span><span class="s1">'foo'</span>: <span class="s1">'bar'</span><span class="o">})</span>
+<span class="o">&gt;&gt;&gt;</span> response.content
+b<span class="s1">'{"foo": "bar"}'</span>
+
+<span class="c"># File数据：</span>
+from django.http import FileResponse
+<span class="o">&gt;&gt;&gt;</span> response <span class="o">=</span> FileResponse<span class="o">(</span>open<span class="o">(</span><span class="s1">'myfile.png'</span>, <span class="s1">'rb'</span><span class="o">))</span>
+</code></pre></div></div>
+
+<hr />
+
+<h4 id="观察者模式">观察者模式</h4>
+
+<p>观察者模式（有时又被称为发布（publish）-订阅（Subscribe）模式）是软件设计模式的一种。在此种模式中，一个目标物件管理所有相依于它的观察者物件，并且在它本身的状态改变时主动发出通知。这通常透过呼叫各观察者所提供的方法来实现。此种模式通常被用来实现事件处理系统。</p>
+
+<p>Django 中，存在 Singal 与 dispatch 类，分别用来发送和接受信号，实现被观察与观察者的角色。</p>
+
+<p>定义一个观察者，接收一种特定的信号：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">django.dispatch</span>
+ 
+<span class="n">pizza_done</span> <span class="o">=</span> <span class="n">django</span><span class="o">.</span><span class="n">dispatch</span><span class="o">.</span><span class="n">Signal</span><span class="p">(</span><span class="n">providing_args</span><span class="o">=</span><span class="p">[</span><span class="s">"toppings"</span><span class="p">,</span> <span class="s">"size"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>发送信号，使观察者接收相应的信息：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">PizzaStore</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="o">...</span>
+ 
+    <span class="k">def</span> <span class="nf">send_pizza</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">toppings</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+        <span class="n">pizza_done</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">sender</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="n">toppings</span><span class="o">=</span><span class="n">toppings</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h4 id="restful-设计">RESTful 设计</h4>
+
+<p>在 Django Restframework 框架中的 APIView 类中，提供了put(), delete(), patch() 方法的支持。</p>
+
+<p>如上传一个文件，对应的 view：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">FileUploadView</span><span class="p">(</span><span class="n">views</span><span class="o">.</span><span class="n">APIView</span><span class="p">):</span>
+    <span class="n">parser_classes</span> <span class="o">=</span> <span class="p">(</span><span class="n">FileUploadParser</span><span class="p">,)</span>
+ 
+    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="n">file_obj</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s">'file'</span><span class="p">]</span>
+        <span class="c1"># ...
+</span>        <span class="c1"># do some stuff with uploaded file
+</span>        <span class="c1"># ...
+</span>        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="mi">204</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>可以针对每一个 model 定义一个 View 类，并根据不同的请求方法开发不同的处理函数。</p>
+
+<p><img src="/styles/images/7.7/restful.png" alt="django-mvt" /></p>
+
+<p>如本次的 <code class="highlighter-rouge">TaskView</code> 继承自 <code class="highlighter-rouge">ViewSet</code>，<code class="highlighter-rouge">ViewSet</code> 在最后的实例化时，会将 list, create 等方法绑定到 get, post, put, patch, delete 等 REST 操作对应的处理函数（通常由 <code class="highlighter-rouge">Router</code> 创建 URL 定义时自动绑定），最后绑定到 model-list, model-create, model-detail 等 URL。</p>
+
+<p>同样也可以手动 ViewSet 绑定到 URL：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">path</span><span class="p">(</span><span class="s">'task/&lt;pk&gt;/'</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">TaskView</span><span class="o">.</span><span class="n">as_view</span><span class="p">({</span><span class="s">'get'</span><span class="p">:</span> <span class="s">'retrieve'</span><span class="p">})),</span>
+<span class="n">path</span><span class="p">(</span><span class="s">'task/'</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">TaskView</span><span class="o">.</span><span class="n">as_view</span><span class="p">({</span>
+  <span class="s">'get'</span><span class="p">:</span> <span class="s">'get'</span><span class="p">,</span>
+  <span class="s">'post'</span><span class="p">:</span> <span class="s">'create'</span>
+  <span class="p">})),</span>
+<span class="n">path</span><span class="p">(</span><span class="s">'task/cancel/&lt;pk&gt;/'</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">TaskView</span><span class="o">.</span><span class="n">as_view</span><span class="p">({</span><span class="s">'post'</span><span class="p">:</span> <span class="s">'cancel'</span><span class="p">})),</span>
+<span class="n">path</span><span class="p">(</span><span class="s">'task/claim/&lt;pk&gt;/'</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">TaskView</span><span class="o">.</span><span class="n">as_view</span><span class="p">({</span><span class="s">'post'</span><span class="p">:</span> <span class="s">'claim'</span><span class="p">})),</span>
+</code></pre></div></div>
+
+<hr />
+
+<h4 id="面向对象设计">面向对象设计</h4>
 
 <p>面向对象程序设计是一种程序设计范型，也是一种程序开发的方法。把对象作为程序的基本单元，将程序和数据封装其中，以此来提高软件的重用性、灵活性、和扩展性。面向对象设计可以看做是一种在程序中包含各种独立而又相互调用的对象的思想，这与传统的思想不同，传统的思想更侧重于把程序看作一系列函数的集合，而面向对象设计中的每一个对象都能够接收数据、处理数据和把数据传达给其他对象。</p>
 

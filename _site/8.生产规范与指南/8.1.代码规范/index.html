@@ -185,7 +185,7 @@
 示例：
     <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">methods</span><span class="p">:</span> <span class="p">{</span>
   <span class="nx">testFunc</span> <span class="p">()</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"test function"</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">test function</span><span class="dl">"</span><span class="p">);</span>
       <span class="kd">var</span> <span class="nx">flag</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
       <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">num</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
           <span class="nx">flag</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
@@ -213,7 +213,7 @@
   </li>
   <li>二目、三目运算符的左右两边必须加一个空格。<br />
 示例：
-    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">int</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">z</span><span class="p">,</span> <span class="nx">c</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">int</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">z</span><span class="p">,</span> <span class="nx">c</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
 <span class="nx">z</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">&gt;</span> <span class="nx">b</span> <span class="p">?</span> <span class="nx">a</span> <span class="p">:</span> <span class="p">(</span><span class="nx">b</span> <span class="o">&gt;</span> <span class="nx">c</span> <span class="p">?</span> <span class="nx">b</span> <span class="p">:</span> <span class="nx">c</span><span class="p">);</span>
 </code></pre></div>    </div>
   </li>
@@ -227,7 +227,7 @@
 示例：
     <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">methods</span><span class="p">:</span> <span class="p">{</span>
   <span class="nx">testFunc</span> <span class="p">(</span><span class="nx">pra1</span><span class="p">,</span> <span class="nx">pra2</span><span class="p">,</span> <span class="nx">pra3</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"test function"</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">test function</span><span class="dl">"</span><span class="p">);</span>
       <span class="kd">var</span> <span class="nx">flag</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
       <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">num</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
           <span class="nx">flag</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
@@ -244,13 +244,13 @@
 <h4 id="组件名为多个单词">组件名为多个单词</h4>
 <p>组件名应该始终为多个单词，Vue内置组件除外。这样做可以避免和现有的以及未来的HTML元素发生冲突，因为所有HTML元素的名称都是单个单词。<br />
 示例：</p>
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Vue</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="s1">'todo-item'</span><span class="p">,</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Vue</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="dl">'</span><span class="s1">todo-item</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
   <span class="c1">// ...</span>
 <span class="p">})</span>
 </code></pre></div></div>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
-  <span class="na">name</span><span class="p">:</span> <span class="s1">'TodoItem'</span><span class="p">,</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">TodoItem</span><span class="dl">'</span><span class="p">,</span>
   <span class="c1">// ...</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -258,10 +258,10 @@
 <h4 id="组件数据">组件数据</h4>
 <p>当在组件中使用<code class="highlighter-rouge">data</code>属性的时候，它的值必须是返回一个对象的函数。<code class="highlighter-rouge">new Vue</code>除外。<br />
 示例：</p>
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Vue</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="s1">'some-comp'</span><span class="p">,</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Vue</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="dl">'</span><span class="s1">some-comp</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
   <span class="na">data</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">{</span>
-      <span class="na">foo</span><span class="p">:</span> <span class="s1">'bar'</span>
+      <span class="na">foo</span><span class="p">:</span> <span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">})</span>
@@ -276,10 +276,10 @@
     <span class="nx">required</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="nx">validator</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">return</span> <span class="p">[</span>
-        <span class="s1">'syncing'</span><span class="p">,</span>
-        <span class="s1">'synced'</span><span class="p">,</span>
-        <span class="s1">'version-conflict'</span><span class="p">,</span>
-        <span class="s1">'error'</span>
+        <span class="dl">'</span><span class="s1">syncing</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">synced</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">version-conflict</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">error</span><span class="dl">'</span>
       <span class="p">].</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span>
     <span class="p">}</span>
   <span class="p">}</span>

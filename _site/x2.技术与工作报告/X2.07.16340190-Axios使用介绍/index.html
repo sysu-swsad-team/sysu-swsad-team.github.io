@@ -186,7 +186,7 @@
   <li>执行 GET 请求</li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'/user'</span><span class="p">,</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/user</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
     <span class="na">params</span><span class="p">:</span> <span class="p">{</span>
       <span class="na">ID</span><span class="p">:</span> <span class="mi">12345</span>
     <span class="p">}</span>
@@ -200,9 +200,9 @@
   <li>执行 POST 请求</li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">'/user'</span><span class="p">,</span> <span class="p">{</span>
-    <span class="na">firstName</span><span class="p">:</span> <span class="s1">'Fred'</span><span class="p">,</span>
-    <span class="na">lastName</span><span class="p">:</span> <span class="s1">'Flintstone'</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">/user</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">firstName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Fred</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">lastName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Flintstone</span><span class="dl">'</span>
   <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
   <span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
@@ -214,10 +214,10 @@
 </ul>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getUserAccount</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'/user/12345'</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/user/12345</span><span class="dl">'</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="kd">function</span> <span class="nx">getUserPermissions</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'/user/12345/permissions'</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/user/12345/permissions</span><span class="dl">'</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="nx">axios</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span><span class="nx">getUserAccount</span><span class="p">(),</span> <span class="nx">getUserPermissions</span><span class="p">()])</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">axios</span><span class="p">.</span><span class="nx">spread</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">acct</span><span class="p">,</span> <span class="nx">perms</span><span class="p">)</span> <span class="p">{</span>
@@ -231,11 +231,11 @@
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 发送 POST 请求</span>
 <span class="nx">axios</span><span class="p">({</span>
-  <span class="na">method</span><span class="p">:</span> <span class="s1">'post'</span><span class="p">,</span>
-  <span class="na">url</span><span class="p">:</span> <span class="s1">'/user/12345'</span><span class="p">,</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">post</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/user/12345</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">firstName</span><span class="p">:</span> <span class="s1">'Fred'</span><span class="p">,</span>
-    <span class="na">lastName</span><span class="p">:</span> <span class="s1">'Flintstone'</span>
+    <span class="na">firstName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Fred</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">lastName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Flintstone</span><span class="dl">'</span>
   <span class="p">}</span>
 <span class="p">})</span>
 </code></pre></div></div>
@@ -244,7 +244,7 @@
 </ul>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 发送 GET 请求（默认的方法）</span>
-<span class="nx">axios</span><span class="p">(</span><span class="s1">'/user/12345'</span><span class="p">);</span>
+<span class="nx">axios</span><span class="p">(</span><span class="dl">'</span><span class="s1">/user/12345</span><span class="dl">'</span><span class="p">);</span>
 </code></pre></div></div>
 <ul>
   <li><strong>方法别名</strong></li>
@@ -270,9 +270,9 @@
 </ul>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">instance</span> <span class="o">=</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
-  <span class="na">baseURL</span><span class="p">:</span> <span class="s1">'https://some-domain.com/api/'</span><span class="p">,</span>
+  <span class="na">baseURL</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://some-domain.com/api/</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">timeout</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
-  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span><span class="s1">'X-Custom-Header'</span><span class="p">:</span> <span class="s1">'foobar'</span><span class="p">}</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span><span class="dl">'</span><span class="s1">X-Custom-Header</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">foobar</span><span class="dl">'</span><span class="p">}</span>
 <span class="p">})</span>
 <span class="c1">// 可用的实例方法</span>
 <span class="nx">axios</span><span class="err">#</span><span class="nx">request</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
@@ -288,14 +288,14 @@
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
 <span class="c1">// url 必须的，用于请求的服务器URL</span>
-<span class="nl">url</span><span class="p">:</span> <span class="s1">'/user'</span><span class="p">,</span>
+<span class="nl">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/user</span><span class="dl">'</span><span class="p">,</span>
 
 <span class="c1">// 创建请求时使用的方法，如果没有指定，将默认使用get</span>
-<span class="nx">method</span><span class="p">:</span> <span class="s1">'post'</span><span class="p">,</span>
+<span class="nx">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">post</span><span class="dl">'</span><span class="p">,</span>
 
 <span class="c1">// baseURL将自动加载url前，除非‘url’是一个绝对url</span>
 <span class="c1">// 可以通过设置一个‘baseURL’便于为axios实例的方法传递相对url</span>
-<span class="nx">baseURL</span><span class="p">:</span> <span class="s1">'https://baseurl.com/api/'</span><span class="p">,</span>
+<span class="nx">baseURL</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://baseurl.com/api/</span><span class="dl">'</span><span class="p">,</span>
 
 <span class="c1">// transformRequest允许在向服务器发送前，修改请求数据，只能用‘PUT’，‘POST’和</span>
 <span class="c1">// ‘PATCH’这几个请求方法。后面数组中的函数必须返回一个字符串或ArrayBuffer或Steam</span>
@@ -311,7 +311,7 @@
 <span class="p">}],</span>
 
 <span class="c1">// 即将被发送的自定义请求头</span>
-<span class="nx">headers</span><span class="p">:</span> <span class="p">{</span><span class="s1">'X-Requested-With'</span><span class="p">:</span> <span class="s1">'XMLHttpRequest'</span><span class="p">},</span>
+<span class="nx">headers</span><span class="p">:</span> <span class="p">{</span><span class="dl">'</span><span class="s1">X-Requested-With</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">XMLHttpRequest</span><span class="dl">'</span><span class="p">},</span>
 
 <span class="c1">// 即将与请求一起发送的URL参数，必须是一个无格式对象或URLSearchParams对象</span>
 <span class="nx">params</span><span class="p">:</span> <span class="p">{</span>
@@ -320,7 +320,7 @@
 
 <span class="c1">// 负责 `params` 序列化的函数</span>
   <span class="nx">paramsSerializer</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">params</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">Qs</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">params</span><span class="p">,</span> <span class="p">{</span><span class="na">arrayFormat</span><span class="p">:</span> <span class="s1">'brackets'</span><span class="p">})</span>
+    <span class="k">return</span> <span class="nx">Qs</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">params</span><span class="p">,</span> <span class="p">{</span><span class="na">arrayFormat</span><span class="p">:</span> <span class="dl">'</span><span class="s1">brackets</span><span class="dl">'</span><span class="p">})</span>
   <span class="p">},</span>
 
 <span class="c1">// 作为请求主体被发送的数据,只适用于 'PUT', 'POST', 和 'PATCH'</span>
@@ -329,7 +329,7 @@
 <span class="c1">// - 浏览器专属：FormData, File, Blob</span>
 <span class="c1">// - Node 专属： Stream</span>
 <span class="nx">data</span><span class="p">:</span> <span class="p">{</span>
-  <span class="nl">firstName</span><span class="p">:</span> <span class="s1">'Fred'</span>
+  <span class="nl">firstName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Fred</span><span class="dl">'</span>
 <span class="p">},</span>
 
 <span class="c1">// 指定请求超时的毫秒数(0 表示无超时时间), 如果请求话费了超过 `timeout` 的时间，请求将被中断</span>
@@ -346,20 +346,20 @@
 <span class="c1">// `auth` 表示应该使用 HTTP 基础验证，并提供凭据</span>
 <span class="c1">// 将设置一个 `Authorization` 头，覆写掉现有的任意使用 `headers` 设置的自定义 `Authorization`头</span>
 <span class="nx">auth</span><span class="p">:</span> <span class="p">{</span>
-  <span class="nl">username</span><span class="p">:</span> <span class="s1">'axios'</span><span class="p">,</span>
-  <span class="nx">password</span><span class="p">:</span> <span class="s1">'a1234t'</span>
+  <span class="nl">username</span><span class="p">:</span> <span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">password</span><span class="p">:</span> <span class="dl">'</span><span class="s1">a1234t</span><span class="dl">'</span>
 <span class="p">},</span>
 
 <span class="c1">// 服务器响应的数据类型，可以是 'arraybuffer', 'blob', 'document', 'json', 'text', 'stream'</span>
-<span class="nx">responseType</span><span class="p">:</span> <span class="s1">'json'</span><span class="p">,</span> <span class="c1">// default</span>
+<span class="nx">responseType</span><span class="p">:</span> <span class="dl">'</span><span class="s1">json</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// default</span>
 
-<span class="nx">responseEncoding</span><span class="p">:</span> <span class="s1">'utf8'</span><span class="p">,</span> <span class="c1">// default</span>
+<span class="nx">responseEncoding</span><span class="p">:</span> <span class="dl">'</span><span class="s1">utf8</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// default</span>
 
 <span class="c1">// `xsrfCookieName` 是用作 xsrf token 的值的cookie的名称</span>
-<span class="nx">xsrfCookieName</span><span class="p">:</span> <span class="s1">'XSRF-TOKEN'</span><span class="p">,</span> <span class="c1">// default</span>
+<span class="nx">xsrfCookieName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">XSRF-TOKEN</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// default</span>
 
 <span class="c1">// 带有xsrf的http头部的token值</span>
-<span class="nx">xsrfHeaderName</span><span class="p">:</span> <span class="s1">'X-XSRF-TOKEN'</span><span class="p">,</span> <span class="c1">// default</span>
+<span class="nx">xsrfHeaderName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">X-XSRF-TOKEN</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// default</span>
 
 <span class="c1">// 为上传处理进度事件</span>
 <span class="nx">onUploadProgress</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">progressEvent</span><span class="p">)</span> <span class="p">{</span>
@@ -392,11 +392,11 @@
 <span class="c1">// 'proxy' 定义代理服务器的主机名称和端口</span>
 <span class="c1">// `auth` 表示 HTTP 基础验证应当用于连接代理，并提供凭据</span>
 <span class="nx">proxy</span><span class="p">:</span> <span class="p">{</span>
-  <span class="nl">host</span><span class="p">:</span> <span class="s1">'127.0.0.1'</span><span class="p">,</span>
+  <span class="nl">host</span><span class="p">:</span> <span class="dl">'</span><span class="s1">127.0.0.1</span><span class="dl">'</span><span class="p">,</span>
   <span class="nx">port</span><span class="p">:</span> <span class="mi">8080</span><span class="p">,</span>
   <span class="nx">auth</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nl">username</span><span class="p">:</span> <span class="s1">'niffler'</span>
-    <span class="nx">password</span><span class="p">:</span> <span class="s1">'1234l'</span>
+    <span class="nl">username</span><span class="p">:</span> <span class="dl">'</span><span class="s1">niffler</span><span class="dl">'</span>
+    <span class="nx">password</span><span class="p">:</span> <span class="dl">'</span><span class="s1">1234l</span><span class="dl">'</span>
   <span class="p">}</span>
 <span class="p">},</span>
 
@@ -414,7 +414,7 @@
 <span class="nx">status</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
 
 <span class="c1">// 来自服务器响应的 HTTP 状态信息</span>
-<span class="nx">statusText</span><span class="p">:</span> <span class="s1">'OK'</span><span class="p">,</span>
+<span class="nx">statusText</span><span class="p">:</span> <span class="dl">'</span><span class="s1">OK</span><span class="dl">'</span><span class="p">,</span>
 
 <span class="c1">// 服务器响应的头</span>
 <span class="nx">headers</span><span class="p">:</span> <span class="p">{</span> <span class="p">},</span>
@@ -427,7 +427,7 @@
 </code></pre></div></div>
 <p>接收样例：</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'/Niffler/12345'</span><span class="p">)</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/Niffler/12345</span><span class="dl">'</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span>
@@ -441,18 +441,18 @@
   <li>全局的 axios 默认值</li>
 </ul>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">axios</span><span class="p">.</span><span class="nx">defaults</span><span class="p">.</span><span class="nx">baseURL</span> <span class="o">=</span> <span class="s1">'https://api.example.com'</span><span class="p">;</span>
-<span class="nx">axios</span><span class="p">.</span><span class="nx">defaults</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">common</span><span class="p">[</span><span class="s1">'Authorization'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">AUTH_TOKEN</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">axios</span><span class="p">.</span><span class="nx">defaults</span><span class="p">.</span><span class="nx">baseURL</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">https://api.example.com</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">axios</span><span class="p">.</span><span class="nx">defaults</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">common</span><span class="p">[</span><span class="dl">'</span><span class="s1">Authorization</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">AUTH_TOKEN</span><span class="p">;</span>
 </code></pre></div></div>
 <ul>
   <li>自定义实例默认值</li>
 </ul>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">instance</span> <span class="o">=</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
-  <span class="na">baseURL</span><span class="p">:</span> <span class="s1">'https://api.example.com'</span>
+  <span class="na">baseURL</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://api.example.com</span><span class="dl">'</span>
 <span class="p">});</span>
 
-<span class="nx">instance</span><span class="p">.</span><span class="nx">defaults</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">common</span><span class="p">[</span><span class="s1">'Authorization'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">AUTH_TOKEN</span><span class="p">;</span>
+<span class="nx">instance</span><span class="p">.</span><span class="nx">defaults</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">common</span><span class="p">[</span><span class="dl">'</span><span class="s1">Authorization</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">AUTH_TOKEN</span><span class="p">;</span>
 </code></pre></div></div>
 
 <h2 id="vue-axios基本用法">Vue-axios基本用法</h2>
@@ -462,9 +462,9 @@
 </code></pre></div></div>
 <p>在main.js页面引用：</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="s1">'vue'</span>
-<span class="k">import</span> <span class="nx">axios</span> <span class="k">from</span> <span class="s1">'axios'</span>
-<span class="k">import</span> <span class="nx">VueAxios</span> <span class="k">from</span> <span class="s1">'vue-axios'</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">axios</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">VueAxios</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue-axios</span><span class="dl">'</span>
 
 <span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">VueAxios</span><span class="p">,</span> <span class="nx">axios</span><span class="p">)</span>
 </code></pre></div></div>
@@ -504,8 +504,8 @@
 </code></pre></div></div>
 <p>然后在入口文件配置如下:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="s1">'Vue'</span>
-<span class="k">import</span> <span class="nx">VueAxiosPlugin</span> <span class="k">from</span> <span class="s1">'vue-axios-plugin'</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">Vue</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">VueAxiosPlugin</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue-axios-plugin</span><span class="dl">'</span>
 
 <span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">VueAxiosPlugin</span><span class="p">,</span> <span class="p">{</span>
   <span class="c1">// 请求拦截处理</span>
