@@ -5,8 +5,8 @@
     <description>圈多多</description>
     <link>https://sysu-swsad-team.github.io//</link>
     <atom:link href="https://sysu-swsad-team.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 28 Jun 2019 01:04:48 +0800</pubDate>
-    <lastBuildDate>Fri, 28 Jun 2019 01:04:48 +0800</lastBuildDate>
+    <pubDate>Fri, 28 Jun 2019 01:12:42 +0800</pubDate>
+    <lastBuildDate>Fri, 28 Jun 2019 01:12:42 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -912,7 +912,7 @@ git pull upstream dev
 │   main.js			&lt;span class=&quot;c&quot;&gt;# main&lt;/span&gt;
 │   utils.js
 │
-├───api				&lt;span class=&quot;c&quot;&gt;# REST api接口&lt;/span&gt;
+├───api				&lt;span class=&quot;c&quot;&gt;# axois api接口&lt;/span&gt;
 │       api.js 			
 │       index.js
 │
@@ -928,10 +928,10 @@ git pull upstream dev
 │   │       Balance.vue
 │   │
 │   ├───components	&lt;span class=&quot;c&quot;&gt;# 应用组件&lt;/span&gt;
-│   │       EditQuestionair.vue		&lt;span class=&quot;c&quot;&gt;# 编辑问卷组件&lt;/span&gt;
+│   │       EditQuestionair.vue		        &lt;span class=&quot;c&quot;&gt;# 编辑问卷组件&lt;/span&gt;
 │   │       ModuleCards.vue			&lt;span class=&quot;c&quot;&gt;# 模块卡组件&lt;/span&gt;
 │   │       PageHead.vue			&lt;span class=&quot;c&quot;&gt;# 页头组件&lt;/span&gt;
-│   │       ShowQuestionnaire.vue	&lt;span class=&quot;c&quot;&gt;# 显示问卷组件&lt;/span&gt;
+│   │       ShowQuestionnaire.vue	        &lt;span class=&quot;c&quot;&gt;# 显示问卷组件&lt;/span&gt;
 │   │
 │   ├───Errand		&lt;span class=&quot;c&quot;&gt;# 跑腿办事页面&lt;/span&gt;
 │   │       Errand.vue				&lt;span class=&quot;c&quot;&gt;# 跑腿办事主页主组件&lt;/span&gt;
@@ -944,23 +944,23 @@ git pull upstream dev
 │   │       PersonInfo.vue			&lt;span class=&quot;c&quot;&gt;# 个人信息子组件&lt;/span&gt;
 │   │
 │   ├───Login		&lt;span class=&quot;c&quot;&gt;# 登录/注册页面&lt;/span&gt;
-│   │       Login.vue				&lt;span class=&quot;c&quot;&gt;# 登录/主页页面主组件&lt;/span&gt;
+│   │       Login.vue				&lt;span class=&quot;c&quot;&gt;# 登录/注册页面主组件&lt;/span&gt;
 │   │       LoginForm.vue			&lt;span class=&quot;c&quot;&gt;# 登录表单子组件&lt;/span&gt;
-│   │       RegisterForm.vue		&lt;span class=&quot;c&quot;&gt;# 注册表单子组件&lt;/span&gt;
+│   │       RegisterForm.vue		        &lt;span class=&quot;c&quot;&gt;# 注册表单子组件&lt;/span&gt;
 │   │
 │   └───Questionnaire	&lt;span class=&quot;c&quot;&gt;# 问卷系统页面&lt;/span&gt;
-│           Questionnaire.vue		&lt;span class=&quot;c&quot;&gt;# 问卷系统主组件&lt;/span&gt;
+│           Questionnaire.vue		        &lt;span class=&quot;c&quot;&gt;# 问卷系统主组件&lt;/span&gt;
 │           Create.vue				&lt;span class=&quot;c&quot;&gt;# 创建问卷子组件&lt;/span&gt;
 │           Mine.vue				&lt;span class=&quot;c&quot;&gt;# 我的问卷子组件&lt;/span&gt;
 │
-├───router			&lt;span class=&quot;c&quot;&gt;# 路由&lt;/span&gt;
+├───router		&lt;span class=&quot;c&quot;&gt;# 路由&lt;/span&gt;
 │       index.js
 │
-├───styles			&lt;span class=&quot;c&quot;&gt;# 组件用到的样式（可复用）&lt;/span&gt;
+├───styles		&lt;span class=&quot;c&quot;&gt;# 组件用到的样式（可复用）&lt;/span&gt;
 │       pages.scss
 │       vars.scss
 │
-└───vuex			&lt;span class=&quot;c&quot;&gt;# vuex状态管理模式&lt;/span&gt;
+└───vuex		&lt;span class=&quot;c&quot;&gt;# vuex状态管理&lt;/span&gt;
         store.js
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
