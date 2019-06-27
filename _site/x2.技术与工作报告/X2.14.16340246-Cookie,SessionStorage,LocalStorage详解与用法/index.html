@@ -123,7 +123,7 @@
               <!--
                 <p class="post-meta">Mar 11, 2019 • 16340246</p>
               -->
-              <!-- <div class="meta">Posted on <span class="postdate">Mar 11, 2019</span> By <a target="_blank" href="http://localhost:4000">sysu-swsad-team</a></div> -->
+              <!-- <div class="meta">Posted on <span class="postdate">Mar 11, 2019</span> By <a target="_blank" href="https://sysu-swsad-team.github.io/">sysu-swsad-team</a></div> -->
               <div class="meta">Posted By <a target="_blank" href="https://github.com/wuzht">16340246</a></div>
               <br />
             </header>
@@ -229,12 +229,12 @@
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* get cookie value by key */</span>
 <span class="nx">getCookie</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">cookieValue</span> <span class="o">=</span> <span class="kc">null</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span> <span class="o">&amp;&amp;</span> <span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span> <span class="o">!==</span> <span class="s1">''</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">cookies</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">';'</span><span class="p">)</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span> <span class="o">&amp;&amp;</span> <span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span> <span class="o">!==</span> <span class="dl">''</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">cookies</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">'</span><span class="s1">;</span><span class="dl">'</span><span class="p">)</span>
     <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">cookies</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
       <span class="kd">var</span> <span class="nx">cookie</span> <span class="o">=</span> <span class="nx">cookies</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">trim</span><span class="p">()</span>
       <span class="c1">// Does this cookie string begin with the name we want?</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">name</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">===</span> <span class="p">(</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">'='</span><span class="p">))</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">name</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">===</span> <span class="p">(</span><span class="nx">name</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">=</span><span class="dl">'</span><span class="p">))</span> <span class="p">{</span>
         <span class="nx">cookieValue</span> <span class="o">=</span> <span class="nb">decodeURIComponent</span><span class="p">(</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="nx">name</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
       <span class="p">}</span>
     <span class="p">}</span>
@@ -253,22 +253,22 @@
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 用户信息的Object</span>
 <span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">username</span><span class="p">:</span> <span class="s1">'user1'</span><span class="p">,</span>
-    <span class="na">name</span><span class="p">:</span> <span class="s1">'Tom'</span><span class="p">,</span>
+    <span class="na">username</span><span class="p">:</span> <span class="dl">'</span><span class="s1">user1</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Tom</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">birth</span><span class="p">:</span> <span class="mi">1990</span>
 <span class="p">}</span>
 
 <span class="c1">// 通过键值对保存Object</span>
-<span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">'user'</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">user</span><span class="p">))</span>
+<span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="dl">'</span><span class="s1">user</span><span class="dl">'</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">user</span><span class="p">))</span>
 </code></pre></div></div>
 
 <p>在保存 <code class="highlighter-rouge">Object</code> 时，你需要使用 <code class="highlighter-rouge">JSON.stringify</code> 将它变成字符串。当然你也可以直接保存一个字符串：</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 要保存的String</span>
-<span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s1">'foo'</span>
+<span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">foo</span><span class="dl">'</span>
 
 <span class="c1">// 通过键值对保存String</span>
-<span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">'bar'</span><span class="p">,</span> <span class="nx">str</span><span class="p">)</span>
+<span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span><span class="p">,</span> <span class="nx">str</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h4 id="获取">获取</h4>
@@ -276,17 +276,17 @@
 <p>通过保存时的键来获取</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 获取刚才存的user</span>
-<span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">'user'</span><span class="p">));</span>
+<span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="dl">'</span><span class="s1">user</span><span class="dl">'</span><span class="p">));</span>
 
 <span class="c1">// 获取刚才存的bar</span>
-<span class="kd">var</span> <span class="nx">bar</span> <span class="o">=</span> <span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">'bar'</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">bar</span> <span class="o">=</span> <span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h4 id="删除">删除</h4>
 
 <p>可以通过键来删除某个 <code class="highlighter-rouge">item</code>：</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">removeItem</span><span class="p">(</span><span class="s1">'user'</span><span class="p">)</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">removeItem</span><span class="p">(</span><span class="dl">'</span><span class="s1">user</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>也可以使用 <code class="highlighter-rouge">clear</code> 来将所有 sessionStorage 删除：</p>
