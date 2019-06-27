@@ -68,7 +68,7 @@
 示例：
     &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;methods&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;testFunc&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;test function&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;test function&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
       &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
       &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
           &lt;span class=&quot;nx&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -96,7 +96,7 @@
   &lt;/li&gt;
   &lt;li&gt;二目、三目运算符的左右两边必须加一个空格。&lt;br /&gt;
 示例：
-    &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;z&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
@@ -110,7 +110,7 @@
 示例：
     &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;methods&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;testFunc&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pra1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pra2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pra3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;test function&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;test function&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
       &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
       &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
           &lt;span class=&quot;nx&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -127,13 +127,13 @@
 &lt;h4 id=&quot;组件名为多个单词&quot;&gt;组件名为多个单词&lt;/h4&gt;
 &lt;p&gt;组件名应该始终为多个单词，Vue内置组件除外。这样做可以避免和现有的以及未来的HTML元素发生冲突，因为所有HTML元素的名称都是单个单词。&lt;br /&gt;
 示例：&lt;/p&gt;
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;todo-item&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'todo-item'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;TodoItem&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'TodoItem'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -141,10 +141,10 @@
 &lt;h4 id=&quot;组件数据&quot;&gt;组件数据&lt;/h4&gt;
 &lt;p&gt;当在组件中使用&lt;code class=&quot;highlighter-rouge&quot;&gt;data&lt;/code&gt;属性的时候，它的值必须是返回一个对象的函数。&lt;code class=&quot;highlighter-rouge&quot;&gt;new Vue&lt;/code&gt;除外。&lt;br /&gt;
 示例：&lt;/p&gt;
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;some-comp&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'some-comp'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'bar'&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
@@ -159,10 +159,10 @@
     &lt;span class=&quot;nx&quot;&gt;required&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;validator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
       &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-        &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;syncing&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;synced&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;version-conflict&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;'syncing'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;'synced'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;'version-conflict'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;'error'&lt;/span&gt;
       &lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;indexOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -730,92 +730,15 @@ git pull upstream dev
 
 &lt;h2 id=&quot;后端&quot;&gt;后端&lt;/h2&gt;
 
-&lt;p&gt;&lt;strong&gt;1. C/C++&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. JavaScript&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;优点：&lt;/p&gt;
+&lt;p&gt;JavaScript 是一门性价比非常高的语言，与 Web 前端语言相同方便开发。在这门语言里，有两个后台 MVC 框架比较流行：&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;C语言是非常贴近操作系统的语言，能和操作系统API很好地交互。&lt;/li&gt;
-  &lt;li&gt;编译速度快。相比于其它语言的编译器，C语言编译器产生机器代码的速度非常快。C编译器可以在两秒内编译大约1000行代码。C编译器还优化了代码，从而使程序获得更快的执行速度。&lt;/li&gt;
-  &lt;li&gt;可移植。C语言是高度可移植的语言。这意味着，一台计算机编写的C程序可以在另一台计算机上轻松地运行而没有任何变化或者只有很小的变化。&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Express，是在Node.js上最早的 MVC 框架，它由 Ruby 上的轻量级框架 Sinatra 启发而来的。其框架本身封装了大量实用的功能，核心特性是使用中间件来处理 HTTP 请求。&lt;/p&gt;
 
-&lt;p&gt;缺点：&lt;/p&gt;
+&lt;p&gt;Koa，是由 Express 的核心开发者基于 ES6 新特性打造的新框架。与 Express 相比去除了一些框架自带的功能，更加轻量级，可以让开发者有更多的选择——当然，这也意味着你需要自己去搭建这些环境。&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;缺乏字符串处理。Web开发最主要的就是字符串的处理，所有的一切几乎都要和字符串打交道。但是 C++ 只有 std::string 标准库提供的字符串类，缺乏方便的 UTF-8 和正则表达式匹配支持等。&lt;/li&gt;
-  &lt;li&gt;缺乏 Web 标准的支持，即语言层面上缺乏对 HTTP 协议的支持。Web 是基于 HTTP 协议和 TCP 协议产生的。而 C++ 极度缺乏这方面的支持，只能自己手工处理 Socket 通信。&lt;/li&gt;
-  &lt;li&gt;缺乏 HTTP 框架和业务代码之间的交互标准。框架就算完成了 HTTP 通信部分，也没有一个标准框架规定如何和业务代码交互。实际上 C++ 框架实现了自己的交互流程，但是缺乏规范。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;2. Java&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;优点：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;语法简单。Java语言去除了C/C++语言中难以理解、容易混淆的特性，例如头指针，文件、结构、单元、运算符重载、虚拟基础类、多重继承等，使得程序更加严谨、简洁。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;面向对象。Java是一个面向对象的语言。对程序员来说，这意味着要注意应用中的数据和操作数据的方法，而不是严格地用过程来思考。在一个面向对象的系统中，类是数据和操作数据的方法集合。数据和方法一起描述对象的状态和行为。类按照一定的体系和层次结构安排，使得子类可以从超类继承属性和方法。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;平台无关。Java语言可以一次编译，到处运行。Java是解释型语言，Java编译器编译程序生成字节码，而不是通常的机器码。字节码在JVM中解释执行。Java程序可以在任何实现了Java解释程序和运行系统的系统上运行。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;提供了对Web应用开发的支持。例如，Applet、servlet和jsp可以用来开发Web应用程序；socket、rmi可以用来开发分布式应用程序的类库。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;缺点：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;开发效率相对较低。&lt;/li&gt;
-  &lt;li&gt;虽然上手开发相对容易，但真正理解框架底层的运行原理相对较难，需要大量的学习和开发经验。&lt;/li&gt;
-  &lt;li&gt;Java 并没有在第一时间引入新颖的技术和语言特性。&lt;/li&gt;
-  &lt;li&gt;Java 本身的规范和不够灵活也导致了代码本身很难优化，好的代码和差的代码在一套规则的束缚下实际上性能并没有多少差距，更多的优化被交给了 JVM。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;3. PHP&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;优点：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;语法简单。如果有学习过C和Perl，会很容易上手，并且跟ASP有部分类似。&lt;/li&gt;
-  &lt;li&gt;有成熟的开发工具，比如NuPHPed，Zend Studio等。&lt;/li&gt;
-  &lt;li&gt;支持很多主流技术，比如WebService、Ajax、XML等。&lt;/li&gt;
-  &lt;li&gt;有很多成熟的框架，比如支持MVC的框架：phpMVC，支持类似ASP.net的事件驱动的框架：Prado，支持类似Ruby On Rails的快速开发的框架：Cake等。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;缺点：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;对多线程支持不太好，大多数时候我们只能模拟去实现。&lt;/li&gt;
-  &lt;li&gt;解释性语言，运行效率低，且无法常驻内存。&lt;/li&gt;
-  &lt;li&gt;缺乏好用的包管理和命令空间，也缺乏好用的模板系统。&lt;/li&gt;
-  &lt;li&gt;只支持Web开发，不方便做.exe文件，不方便做桌面应用程序，不方便做手机程序。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;4. Go&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;缺点：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;导入的包不支持自定义版本，项目容易因为包的升级而不可用。&lt;/li&gt;
-  &lt;li&gt;垃圾回收机制仍存在一些问题。&lt;/li&gt;
-  &lt;li&gt;暂时缺乏比较完善的框架。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;优点：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Golang 的设计理念很明确，就是将动态类型语言的编程容易度和静态类型语言的安全效率结合起来。&lt;/li&gt;
-  &lt;li&gt;部署简单。Go 编译生成的可执行文件无需担心包和库的依赖关系。&lt;/li&gt;
-  &lt;li&gt;并发性能好。即使是单个Go应用也能有效利用多个 CPU 核心。&lt;/li&gt;
-  &lt;li&gt;自带完善的工具链。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;5. Node.js&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;简单的对比一个两者，Express 发展得比较早，其生态系统比较丰富——很容易找到所需要的插件。Koa 则基于 ES6 语言带来一些新的特性，实时解决旧语言的一些问题，如回调等等。&lt;/p&gt;
 
 &lt;p&gt;缺点：&lt;/p&gt;
 
@@ -835,7 +758,71 @@ git pull upstream dev
   &lt;li&gt;事件驱动。事件驱动的优势在于能够充分利用系统资源，执行代码时无须阻塞等待某些操作完成，有限的资源可以用于其它任务。事件驱动机制是通过内部单线程高效率地维护事件循环队列来实现的，没有多线程的资源占用和上下文切换。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;6. Python&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. Java&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Java 在今天看来仍然相当的受企业欢迎，除了在企业级 Web 系统开发上，它还在 Android 应用的开发上绽放光彩。&lt;/p&gt;
+
+&lt;p&gt;Java 有一个框架 Spring。&lt;/p&gt;
+
+&lt;p&gt;Spring MVC，是由 Spring 框架提供的构建 Web 应用程序的全功能 MVC 模块。由于框架本身高度可配置，即可以直接使用编写 XML 而不是 Java 来实现功能。它是一个典型的 MVC 框架，并且也是一个纯正的servlet系统。&lt;/p&gt;
+
+&lt;p&gt;Spring Boot，其作用在于创建和启动新的基于 Spring 框架的项目。系统本身做好了对不同框架的配置与集成，我们只需要对其配置，并编写少量的代码即可。&lt;/p&gt;
+
+&lt;p&gt;缺点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;开发效率相对较低。&lt;/li&gt;
+  &lt;li&gt;虽然上手开发相对容易，但真正理解框架底层的运行原理相对较难，需要大量的学习和开发经验。&lt;/li&gt;
+  &lt;li&gt;Java 并没有在第一时间引入新颖的技术和语言特性。&lt;/li&gt;
+  &lt;li&gt;Java 本身的规范和不够灵活也导致了代码本身很难优化，好的代码和差的代码在一套规则的束缚下实际上性能并没有多少差距，更多的优化被交给了 JVM。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;优点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;语法简单。Java语言去除了C/C++语言中难以理解、容易混淆的特性，例如头指针，文件、结构、单元、运算符重载、虚拟基础类、多重继承等，使得程序更加严谨、简洁。&lt;/li&gt;
+  &lt;li&gt;面向对象。Java是一个面向对象的语言。对程序员来说，这意味着要注意应用中的数据和操作数据的方法，而不是严格地用过程来思考。在一个面向对象的系统中，类是数据和操作数据的方法集合。数据和方法一起描述对象的状态和行为。类按照一定的体系和层次结构安排，使得子类可以从超类继承属性和方法。&lt;/li&gt;
+  &lt;li&gt;平台无关。Java语言可以一次编译，到处运行。Java是解释型语言，Java编译器编译程序生成字节码，而不是通常的机器码。字节码在JVM中解释执行。Java程序可以在任何实现了Java解释程序和运行系统的系统上运行。&lt;/li&gt;
+  &lt;li&gt;提供了对Web应用开发的支持。例如，Applet、servlet和jsp可以用来开发Web应用程序；socket、rmi可以用来开发分布式应用程序的类库。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;3. PHP&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;PHP是一门很容易上手的语言，由于其容易上手，并且发展得比较成熟。有相多个人网站使用它作为开发语言，除此还有诸如 Facebook 这样大流量的网站也在使用它。除此不得不提及的是 WordPress 已经占领了 CMS 市场超过一半的份额，并且它也占领了全球网站的四分之一。&lt;/p&gt;
+
+&lt;p&gt;WordPress原生是为博客系统而创建的开源框架，由于博客系统和内容管理系统在功能上很多是相似的，也因此它成为了最具知名度的内容管理系统（CMS，content management system）。&lt;/p&gt;
+
+&lt;p&gt;PHP在框架方面有比较多的选择，其中一种是 Laravel，它是在PHP 5.3之后开发的新框架，类似于Ruby on Rail，为 PHP 程序员提供快速开发的机制，提供快速开发的工具集，如生成代码、数据迁移、ORM等等。&lt;/p&gt;
+
+&lt;p&gt;缺点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;对多线程支持不太好，大多数时候我们只能模拟去实现。&lt;/li&gt;
+  &lt;li&gt;解释性语言，运行效率低，且无法常驻内存。&lt;/li&gt;
+  &lt;li&gt;缺乏好用的包管理和命令空间，也缺乏好用的模板系统。&lt;/li&gt;
+  &lt;li&gt;只支持Web开发，不方便做.exe文件，不方便做桌面应用程序，不方便做手机程序。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;优点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;语法简单。如果有学习过C和Perl，会很容易上手，并且跟ASP有部分类似。&lt;/li&gt;
+  &lt;li&gt;有成熟的开发工具，比如NuPHPed，Zend Studio等。&lt;/li&gt;
+  &lt;li&gt;支持很多主流技术，比如WebService、Ajax、XML等。&lt;/li&gt;
+  &lt;li&gt;有很多成熟的框架，比如支持MVC的框架：phpMVC，支持类似ASP.net的事件驱动的框架：Prado，支持类似Ruby On Rails的快速开发的框架：Cake等。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;4. Python&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Python 诞生得比较早，其语言特性——做事情只有一件方法，也决定了这门语言很简单。与 JavaScript 相比，它仍是一门性价比非常高的语言，除了它不能在前端运行，带来了一点劣势。&lt;/p&gt;
+
+&lt;p&gt;在 Web 开发领域他也有广泛的应用，除了正常的 Web 开发，还在网络爬虫中饱受欢迎。&lt;/p&gt;
+
+&lt;p&gt;Python 有两个不错的框架可以选择，其中的 Django 是重量级框架，Flask 则是轻量级框架。&lt;/p&gt;
+
+&lt;p&gt;Django，最早是被应用于内容管理系统而开发的，其框架里自带了相当多的组件：ORM、表单序列化及验证系统、后台系统、缓存框架、中间件支持等等。在其官网上宣称是：The Web framework for perfectionists with deadlines，它即可以满足完美主义者，又可以在截止期限前交付软件。&lt;/p&gt;
+
+&lt;p&gt;Flask，则是一个轻量级的框架，它只有简单的核心部分。换句话来说，你可以按自己的需要添加ORM、用户认证、文件上传等等的功能。在今天来看，它的生态系统也相当的丰富，可以完成绝大部分的功能。&lt;/p&gt;
 
 &lt;p&gt;缺点：&lt;/p&gt;
 
@@ -855,7 +842,7 @@ git pull upstream dev
   &lt;li&gt;Python是一门高级语言，当你用Python语言编写程序的时候，你无需考虑诸如内存管理等一些底层细节。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;最终选择：Python，使用Django框架。&lt;/p&gt;
+&lt;p&gt;最终选择：Python，使用Django框架，主要原因是，它适合作为 CMS 框架，并且提供了丰富的组件功能，如我们所需要的用户权限管理、自带后台管理系统、ORM等等。&lt;/p&gt;
 </description>
         <pubDate>Thu, 23 May 2019 00:00:00 +0800</pubDate>
         <link>https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.6.%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E7%90%86%E7%94%B1/</link>
