@@ -5,8 +5,8 @@
     <description>圈多多</description>
     <link>https://sysu-swsad-team.github.io//</link>
     <atom:link href="https://sysu-swsad-team.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 27 Jun 2019 23:45:32 +0800</pubDate>
-    <lastBuildDate>Thu, 27 Jun 2019 23:45:32 +0800</lastBuildDate>
+    <pubDate>Thu, 27 Jun 2019 23:49:49 +0800</pubDate>
+    <lastBuildDate>Thu, 27 Jun 2019 23:49:49 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -223,23 +223,105 @@
       <item>
         <title>7.1 UI design（界面设计）</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#主页&quot; id=&quot;markdown-toc-主页&quot;&gt;主页&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#发布任务&quot; id=&quot;markdown-toc-发布任务&quot;&gt;发布任务&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#钱包充值&quot; id=&quot;markdown-toc-钱包充值&quot;&gt;钱包充值&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-总体设计&quot; id=&quot;markdown-toc-1-总体设计&quot;&gt;1 总体设计&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-登录与注册界面&quot; id=&quot;markdown-toc-2-登录与注册界面&quot;&gt;2 登录与注册界面&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#登录&quot; id=&quot;markdown-toc-登录&quot;&gt;登录&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#注册&quot; id=&quot;markdown-toc-注册&quot;&gt;注册&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-主页&quot; id=&quot;markdown-toc-3-主页&quot;&gt;3 主页&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#header&quot; id=&quot;markdown-toc-header&quot;&gt;Header&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#个人信息&quot; id=&quot;markdown-toc-个人信息&quot;&gt;个人信息&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#设置个人信息&quot; id=&quot;markdown-toc-设置个人信息&quot;&gt;设置个人信息&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4-问卷系统&quot; id=&quot;markdown-toc-4-问卷系统&quot;&gt;4 问卷系统&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#问卷列表&quot; id=&quot;markdown-toc-问卷列表&quot;&gt;问卷列表&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#创建问卷&quot; id=&quot;markdown-toc-创建问卷&quot;&gt;创建问卷&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#我的问卷&quot; id=&quot;markdown-toc-我的问卷&quot;&gt;我的问卷&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5-跑腿办事&quot; id=&quot;markdown-toc-5-跑腿办事&quot;&gt;5 跑腿办事&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#活动列表&quot; id=&quot;markdown-toc-活动列表&quot;&gt;活动列表&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#创建任务&quot; id=&quot;markdown-toc-创建任务&quot;&gt;创建任务&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#我的任务&quot; id=&quot;markdown-toc-我的任务&quot;&gt;我的任务&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;主页&quot;&gt;主页&lt;/h2&gt;
-&lt;p&gt;主页界面最上方是板块分区，各个板块中包含对应类别的调差问卷。主页界面底部为功能按钮，仿照微博app的设计。&lt;/p&gt;
+&lt;h2 id=&quot;1-总体设计&quot;&gt;1 总体设计&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;/styles/images/7.1/home.jpg&quot; alt=&quot;主页&quot; height=&quot;50%&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;发布任务&quot;&gt;发布任务&lt;/h2&gt;
-&lt;p&gt;发布任务时可以设置问卷的参数，点击最下方按钮提交。&lt;/p&gt;
+&lt;p&gt;主题颜色为 &lt;code class=&quot;highlighter-rouge&quot;&gt;#1D365D&lt;/code&gt;，使用 &lt;a href=&quot;https://element.eleme.cn/#/zh-CN&quot;&gt;Element-UI&lt;/a&gt; 生成配色方案：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/styles/images/7.1/task.jpg&quot; alt=&quot;发布任务&quot; height=&quot;50%&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;钱包充值&quot;&gt;钱包充值&lt;/h2&gt;
-&lt;p&gt;钱包充值只能支持特定数额的充值，支持三种支付方式。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/styles/images/7.1/color.png&quot; alt=&quot;color&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/styles/images/7.1/wallet.jpg&quot; alt=&quot;钱包充值&quot; height=&quot;50%&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2-登录与注册界面&quot;&gt;2 登录与注册界面&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/styles/images/7.1/sigin.gif&quot; alt=&quot;sigin&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;登录&quot;&gt;登录&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/styles/images/7.1/signin.png&quot; alt=&quot;signin&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;注册&quot;&gt;注册&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/styles/images/7.1/signup.png&quot; alt=&quot;signup&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3-主页&quot;&gt;3 主页&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/styles/images/7.1/home.png&quot; alt=&quot;home&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;header&quot;&gt;Header&lt;/h3&gt;
+
+&lt;p&gt;功能模块&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/styles/images/7.1/header_card.png&quot; alt=&quot;header_card&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;用户头像与菜单&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/styles/images/7.1/header_ava.png&quot; alt=&quot;header_ava&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;个人信息&quot;&gt;个人信息&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/styles/images/7.1/profile.png&quot; alt=&quot;profile&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;设置个人信息&quot;&gt;设置个人信息&lt;/h3&gt;
+
+&lt;p&gt;更改头照片&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/styles/images/7.1/setAva.png&quot; alt=&quot;setAva&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;更改其他&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/styles/images/7.1/setBirth.png&quot; alt=&quot;setBirth&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;4-问卷系统&quot;&gt;4 问卷系统&lt;/h2&gt;
+
+&lt;h3 id=&quot;问卷列表&quot;&gt;问卷列表&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/styles/images/7.1/qn.png&quot; alt=&quot;qn&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;创建问卷&quot;&gt;创建问卷&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/styles/images/7.1/createqn.png&quot; alt=&quot;createqn&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;我的问卷&quot;&gt;我的问卷&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/styles/images/7.1/myqn.png&quot; alt=&quot;myqn&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;5-跑腿办事&quot;&gt;5 跑腿办事&lt;/h2&gt;
+
+&lt;h3 id=&quot;活动列表&quot;&gt;活动列表&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/styles/images/7.1/errand.png&quot; alt=&quot;errand&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;创建任务&quot;&gt;创建任务&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/styles/images/7.1/createEr.png&quot; alt=&quot;createEr&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;我的任务&quot;&gt;我的任务&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/styles/images/7.1/myEr.png&quot; alt=&quot;myEr&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 28 May 2019 00:00:00 +0800</pubDate>
         <link>https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.1.%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/</link>
@@ -556,205 +638,28 @@ git pull upstream dev
       </item>
     
       <item>
-        <title>6.1 Usecase Diagram（用例图）</title>
+        <title>7.6 技术选型理由</title>
         <description>
-&lt;p&gt;&lt;img src=&quot;https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/UML/用例图.jpg&quot; alt=&quot;用例图&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Sun, 12 May 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.1.%E7%94%A8%E4%BE%8B%E5%9B%BE/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.1.%E7%94%A8%E4%BE%8B%E5%9B%BE/</guid>
+        <pubDate>Thu, 23 May 2019 00:00:00 +0800</pubDate>
+        <link>https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.6.%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E7%90%86%E7%94%B1/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.6.%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E7%90%86%E7%94%B1/</guid>
         
         
-        <category>6.需求规格说明书</category>
+        <category>7.设计说明书</category>
         
       </item>
     
       <item>
-        <title>6.2 Use Cases（用例与活动图）</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#详述用例&quot; id=&quot;markdown-toc-详述用例&quot;&gt;详述用例&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#非正式用例&quot; id=&quot;markdown-toc-非正式用例&quot;&gt;非正式用例&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#摘要用例&quot; id=&quot;markdown-toc-摘要用例&quot;&gt;摘要用例&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;详述用例&quot;&gt;详述用例&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;用例UC1：做任务&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;范围&lt;/strong&gt;：圈多多（Niffler）应用&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;级别&lt;/strong&gt;：用户目标&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;主要参与者&lt;/strong&gt;：大学生&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;涉众及其关注点&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;大学生：希望能够准确地筛选感兴趣的任务。希望能够便捷、清晰地查询任务描述和任务薪酬。希望能够在完成任务后，及时、准确地获得相应数额的“闲钱币”。&lt;/li&gt;
-  &lt;li&gt;任务发布者：希望发布的任务能够得到有效的完成。希望能够快速审核已完成任务并进行确认。&lt;/li&gt;
-  &lt;li&gt;圈多多团队：希望能够准确地记录任务完成信息。希望在任务发布者确认任务已完成后，自动、快速、准确地将“闲钱币”放入相应账号的钱包中。希望有一定的容错性和可恢复性。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;前置条件&lt;/strong&gt;：大学生必须登录账号。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;成功保证（或后置条件）&lt;/strong&gt;：记录任务完成相关信息。更新财务信息。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;主成功场景（或基本流程）&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;用户打开圈多多应用，此时已默认登录上一次登录的账号。&lt;/li&gt;
-  &lt;li&gt;系统进入任务类型界面（做任务或发布任务）。&lt;/li&gt;
-  &lt;li&gt;用户选择做任务功能。&lt;/li&gt;
-  &lt;li&gt;系统进入做任务可选项界面（问卷调查任务或跑腿任务）。&lt;/li&gt;
-  &lt;li&gt;用户选择问卷调查任务或跑腿任务。&lt;/li&gt;
-  &lt;li&gt;系统按照账号初始标签显示任务列表。&lt;/li&gt;
-  &lt;li&gt;用户通过标签、薪酬、最新、最热等进一步筛选任务列表。&lt;/li&gt;
-  &lt;li&gt;用户查看自己感兴趣的任务。&lt;/li&gt;
-  &lt;li&gt;系统显示任务详情。任务详情包括任务描述、任务薪酬、任务剩余次数、任务过期时间、是否可重复等。&lt;/li&gt;
-  &lt;li&gt;用户选择接受任务。&lt;/li&gt;
-  &lt;li&gt;系统将任务添加到待完成任务列表。&lt;/li&gt;
-  &lt;li&gt;用户查看待完成任务列表。&lt;/li&gt;
-  &lt;li&gt;用户选择完成任务。&lt;/li&gt;
-  &lt;li&gt;问卷调查任务由系统自动确认已完成任务；跑腿任务由任务发布者确认已完成任务。&lt;/li&gt;
-  &lt;li&gt;系统为相应账号的钱包增加相应数额的“闲钱币”。&lt;/li&gt;
-  &lt;li&gt;系统记录完整的任务完成相关信息，并更新财务信息。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;扩展（或替代流程）&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;*a. 系统在任意时刻失败：
-    &lt;ol&gt;
-      &lt;li&gt;系统保存意外退出时的账号状态。&lt;/li&gt;
-      &lt;li&gt;用户重启系统，请求恢复上次状态。&lt;/li&gt;
-      &lt;li&gt;系统重建上次状态，恢复意外退出时的界面信息。
-        &lt;ul&gt;
-          &lt;li&gt;3a. 系统在恢复过程中检测到异常：
-            &lt;ol&gt;
-              &lt;li&gt;系统向用户提示错误，并记录此错误。&lt;/li&gt;
-              &lt;li&gt;系统进入一个初始状态（即进入任务类型界面）。&lt;/li&gt;
-            &lt;/ol&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;4-9a. 用户需要重新选择问卷调查任务或跑腿任务：
-    &lt;ol&gt;
-      &lt;li&gt;用户选择返回功能。&lt;/li&gt;
-      &lt;li&gt;系统进入做任务可选项界面。&lt;/li&gt;
-      &lt;li&gt;用户重新选择问卷调查任务或跑腿任务。&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;7a. 用户需要重置任务列表：
-    &lt;ol&gt;
-      &lt;li&gt;用户选择重置功能。&lt;/li&gt;
-      &lt;li&gt;系统按照账户初始标签显示任务列表。&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;10-13a. 用户需要放弃任务：
-    &lt;ol&gt;
-      &lt;li&gt;用户选择放弃任务功能。&lt;/li&gt;
-      &lt;li&gt;相应任务更新信息，例如，剩余次数加一。&lt;/li&gt;
-      &lt;li&gt;系统记录放弃任务相关信息。&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;10-13b. 任务超时：
-    &lt;ol&gt;
-      &lt;li&gt;系统提示用户任务超时。&lt;/li&gt;
-      &lt;li&gt;系统将任务从待完成列表移除。&lt;/li&gt;
-      &lt;li&gt;系统记录任务超时相关信息，并更新财务信息。&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;10-13c. 任务发布者提前终止任务：
-    &lt;ol&gt;
-      &lt;li&gt;系统提示用户任务发布者提前终止任务。&lt;/li&gt;
-      &lt;li&gt;系统将任务从待完成列表移除。&lt;/li&gt;
-      &lt;li&gt;系统记录提前终止相关信息，并更新财务信息。&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;14a. 对于跑腿任务，任务发布者未在规定时间内确认用户已完成任务：
-    &lt;ol&gt;
-      &lt;li&gt;系统自动确认用户已完成任务。&lt;/li&gt;
-      &lt;li&gt;系统提示任务发布者已自动确认任务完成。&lt;/li&gt;
-      &lt;li&gt;系统记录自动确认任务完成相关信息。&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;特殊需求&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;由于某些原因，我们希望在访问远程服务（如财务系统）失败的情况下具有比较强的恢复功能。&lt;/li&gt;
-  &lt;li&gt;支持文本显示的语言国际化。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;技术与数据变元表&lt;/strong&gt;：暂无。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;发生频率&lt;/strong&gt;：可能会不断地发生。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;未决问题&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;研究远程服务的恢复问题。&lt;/li&gt;
-  &lt;li&gt;对于跑腿任务，如果任务发布者否认已完成任务，该怎样进行协调。&lt;/li&gt;
-  &lt;li&gt;任务剩余次数为0后，系统将此任务从任务显示列表移除。如果之后存在用户放弃任务的行为发生，此任务将重新出现在任务显示列表。是否应该提升此任务优先级。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;活动图&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/UML/活动图_做任务.jpg&quot; alt=&quot;活动图_做任务&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;非正式用例&quot;&gt;非正式用例&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;用例UC2：发布任务&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;主成功场景&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;p&gt;发布者打开圈多多应用，系统进入任务类型界面（做任务或发布任务）。发布者选择发布任务功能，系统进入发布任务可选项界面（问卷调查任务或跑腿任务）。系统进入任务描述界面。发布者填写任务描述。发布者进一步填写任务最大数量、单价、超时时间等信息。系统自动计算总价。发布者使用“闲钱币”进行支付，系统提示任务发布成功。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;交替场景&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;p&gt;任务发布者选择发布任务功能后，如果希望放弃发布任务，选择放弃发布任务功能，系统记录相关信息并进入发布任务可选项界面。&lt;/p&gt;
-
-&lt;p&gt;任务发布者发布任务成功后，如果希望提前终止任务，选择提前终止任务功能，系统自动计算“闲钱币”返还数额并返还至相应账户的钱包。&lt;/p&gt;
-
-&lt;p&gt;任务发布者发布任务成功后，如果任务过期，系统提示发布者任务已过期。系统自动计算“闲钱币”返还数额并返还至相应账户的钱包。&lt;/p&gt;
-
-&lt;p&gt;任务发布者在支付过程中，如果发现“闲钱币”余额不足，可以选择微信、支付宝等方式进行“闲钱币”充值。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;活动图&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/sysu-swsad-team/sysu-swsad-team.github.io/raw/master/_posts/images/UML/活动图_发布任务.jpg&quot; alt=&quot;活动图_发布任务&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;摘要用例&quot;&gt;摘要用例&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;用例UC3.1：注册/登录&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;用户打开圈多多应用。如果没有注册，选择注册功能，填写姓名、学号、年龄、性别、年级和专业等信息，并上传学生证正面照片进行验证。验证成功后，可以设置昵称、头像，选择感兴趣的标签，并绑定邮箱或手机号。如果已经注册，选择登录功能，用户通过邮箱或手机号进行登录。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;用例UC3.2：提现“闲钱币”&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;用户选择提现功能，账户得到验证之后，将“闲钱币”可用余额转入到第三方支付系统。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;用例UC3.3：举报任务&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;用户发现不恰当任务，可以选择举报任务功能。任务被举报次数达到阈值后，将交由管理员进行审核。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;用例UC3.4：审核任务&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;管理员定期对被举报次数达到阈值的任务进行审核。如果审核结果为任务不恰当，将下架此任务，并扣除任务发布者一定比例“闲钱币”作为惩罚。否则将被举报次数清零。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;用例UC3.5：评价用户&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;任务发布者可以对完成跑腿任务的用户进行评价。评价结果对其它用户可见。&lt;/p&gt;
+        <title>7.7 模块划分与软件设计技术</title>
+        <description>
 </description>
-        <pubDate>Sat, 11 May 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.2.%E7%94%A8%E4%BE%8B%E4%B8%8E%E6%B4%BB%E5%8A%A8%E5%9B%BE/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//6.%E9%9C%80%E6%B1%82%E8%A7%84%E6%A0%BC%E8%AF%B4%E6%98%8E%E4%B9%A6/6.2.%E7%94%A8%E4%BE%8B%E4%B8%8E%E6%B4%BB%E5%8A%A8%E5%9B%BE/</guid>
+        <pubDate>Wed, 22 May 2019 00:00:00 +0800</pubDate>
+        <link>https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.7.%E6%A8%A1%E5%9D%97%E5%88%92%E5%88%86%E4%B8%8E%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.7.%E6%A8%A1%E5%9D%97%E5%88%92%E5%88%86%E4%B8%8E%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF/</guid>
         
         
-        <category>6.需求规格说明书</category>
+        <category>7.设计说明书</category>
         
       </item>
     
