@@ -3,10 +3,10 @@
   <channel>
     <title></title>
     <description>圈多多</description>
-    <link>https://sysu-swsad-team.github.io//</link>
-    <atom:link href="https://sysu-swsad-team.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 28 Jun 2019 01:49:19 +0800</pubDate>
-    <lastBuildDate>Fri, 28 Jun 2019 01:49:19 +0800</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 28 Jun 2019 02:42:52 +0800</pubDate>
+    <lastBuildDate>Fri, 28 Jun 2019 02:42:52 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -212,8 +212,8 @@
 &lt;a href=&quot;https://www.jianshu.com/p/bfc0650f0033&quot;&gt;命名规范和排版规范&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 28 May 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.1.%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.1.%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</guid>
+        <link>http://localhost:4000/8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.1.%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</link>
+        <guid isPermaLink="true">http://localhost:4000/8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.1.%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</guid>
         
         
         <category>8.生产规范与指南</category>
@@ -324,8 +324,8 @@
 &lt;p&gt;&lt;img src=&quot;/styles/images/7.1/myEr.png&quot; alt=&quot;myEr&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 28 May 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.1.%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.1.%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/</guid>
+        <link>http://localhost:4000/7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.1.%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/</link>
+        <guid isPermaLink="true">http://localhost:4000/7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.1.%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/</guid>
         
         
         <category>7.设计说明书</category>
@@ -432,8 +432,8 @@
 &lt;/ul&gt;
 </description>
         <pubDate>Mon, 27 May 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.2.REST-API-%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.2.REST-API-%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/</guid>
+        <link>http://localhost:4000/8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.2.REST-API-%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/</link>
+        <guid isPermaLink="true">http://localhost:4000/8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.2.REST-API-%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/</guid>
         
         
         <category>8.生产规范与指南</category>
@@ -447,8 +447,8 @@
 &lt;img src=&quot;/styles/images/7.2/auth-system.jpg&quot; alt=&quot;数据库设计&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 27 May 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.2.%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.2.%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/</guid>
+        <link>http://localhost:4000/7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.2.%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/</link>
+        <guid isPermaLink="true">http://localhost:4000/7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.2.%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/</guid>
         
         
         <category>7.设计说明书</category>
@@ -549,8 +549,8 @@ git pull upstream dev
 &lt;p&gt;严禁通过其他做法拉取更新（例如在GitHub网站上通过网页操作进行更新然后在本地pull origin dev），以免造成不必要的合并冲突以及多余的commit。&lt;/p&gt;
 </description>
         <pubDate>Sun, 26 May 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.3.%E5%8D%8F%E4%BD%9C%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.3.%E5%8D%8F%E4%BD%9C%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/</guid>
+        <link>http://localhost:4000/8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.3.%E5%8D%8F%E4%BD%9C%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/</link>
+        <guid isPermaLink="true">http://localhost:4000/8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.3.%E5%8D%8F%E4%BD%9C%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/</guid>
         
         
         <category>8.生产规范与指南</category>
@@ -567,8 +567,8 @@ git pull upstream dev
 &lt;p&gt;&lt;img src=&quot;/styles/images/7.3/api_doc.png&quot; alt=&quot;api文档&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 26 May 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.3.%E6%8E%A5%E5%8F%A3API%E8%AE%BE%E8%AE%A1/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.3.%E6%8E%A5%E5%8F%A3API%E8%AE%BE%E8%AE%A1/</guid>
+        <link>http://localhost:4000/7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.3.%E6%8E%A5%E5%8F%A3API%E8%AE%BE%E8%AE%A1/</link>
+        <guid isPermaLink="true">http://localhost:4000/7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.3.%E6%8E%A5%E5%8F%A3API%E8%AE%BE%E8%AE%A1/</guid>
         
         
         <category>7.设计说明书</category>
@@ -615,8 +615,8 @@ git pull upstream dev
 &lt;/blockquote&gt;
 </description>
         <pubDate>Sat, 25 May 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.4.%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.4.%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/</guid>
+        <link>http://localhost:4000/7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.4.%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/</link>
+        <guid isPermaLink="true">http://localhost:4000/7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.4.%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/</guid>
         
         
         <category>7.设计说明书</category>
@@ -629,8 +629,8 @@ git pull upstream dev
 &lt;p&gt;&lt;a href=&quot;https://sysu-swsad.github.io/swad-guide/12-usecase-realization&quot;&gt;详细设计 - 使用交互图和设计类图实现用例&lt;/a&gt; 团队作业&lt;/p&gt;
 </description>
         <pubDate>Fri, 24 May 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.5.%E7%94%A8%E4%BE%8B%E8%AE%BE%E8%AE%A1/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.5.%E7%94%A8%E4%BE%8B%E8%AE%BE%E8%AE%A1/</guid>
+        <link>http://localhost:4000/7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.5.%E7%94%A8%E4%BE%8B%E8%AE%BE%E8%AE%A1/</link>
+        <guid isPermaLink="true">http://localhost:4000/7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.5.%E7%94%A8%E4%BE%8B%E8%AE%BE%E8%AE%A1/</guid>
         
         
         <category>7.设计说明书</category>
@@ -827,8 +827,8 @@ git pull upstream dev
 &lt;p&gt;最终选择：Python，使用Django框架，主要原因是，它适合作为 CMS 框架，并且提供了丰富的组件功能，如我们所需要的用户权限管理、自带后台管理系统、ORM等等。&lt;/p&gt;
 </description>
         <pubDate>Thu, 23 May 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.6.%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E7%90%86%E7%94%B1/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.6.%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E7%90%86%E7%94%B1/</guid>
+        <link>http://localhost:4000/7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.6.%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E7%90%86%E7%94%B1/</link>
+        <guid isPermaLink="true">http://localhost:4000/7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.6.%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E7%90%86%E7%94%B1/</guid>
         
         
         <category>7.设计说明书</category>
@@ -846,6 +846,7 @@ git pull upstream dev
       &lt;li&gt;&lt;a href=&quot;#前端文件结构&quot; id=&quot;markdown-toc-前端文件结构&quot;&gt;前端文件结构&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#软件设计技术&quot; id=&quot;markdown-toc-软件设计技术&quot;&gt;软件设计技术&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;前端技术应用&quot;&gt;前端技术应用&lt;/h2&gt;
@@ -950,10 +951,22 @@ git pull upstream dev
 └───vuex		&lt;span class=&quot;c&quot;&gt;# vuex状态管理&lt;/span&gt;
         store.js
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;软件设计技术&quot;&gt;软件设计技术&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;1. 面向对象设计&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;面向对象程序设计是一种程序设计范型，也是一种程序开发的方法。把对象作为程序的基本单元，将程序和数据封装其中，以此来提高软件的重用性、灵活性、和扩展性。面向对象设计可以看做是一种在程序中包含各种独立而又相互调用的对象的思想，这与传统的思想不同，传统的思想更侧重于把程序看作一系列函数的集合，而面向对象设计中的每一个对象都能够接收数据、处理数据和把数据传达给其他对象。&lt;/p&gt;
+
+&lt;p&gt;在后端开发中，我们使用了ORM，ORM全称是Object Relational Mapping（对象关系映射)，它在编程中把面向对象的概念跟数据库中表的概念对应起来，定义一个对象，就对应着一张表，这个对象的实例，就对应着表中的一条记录。ORM封装了底层的数据库操作，降低了编程难度，提高了代码的可读性和易维护性。&lt;/p&gt;
+
+&lt;p&gt;在模型&lt;a href=&quot;https://github.com/sysu-swsad-team/niffler-backend/blob/master/niffler/questionnaire/models.py&quot;&gt;niffler-backend/niffler/questionnaire/models.py&lt;/a&gt;中，我们定义了EmailVerify、Profile、Task等等几个类，这些类继承了django.db.models.Model，这些类定义了数据库的行为，每个类在数据库中都有一张表，我们在类中定义了一些属性，这些属性对应了表的不同字段，同时我们也在类中定义一些方法，让这些类不仅有数据库的存储和查询功能，还能进行一些计算，比如&lt;a href=&quot;https://github.com/sysu-swsad-team/niffler-backend/blob/master/niffler/questionnaire/models.py#L142&quot;&gt;Task.status&lt;/a&gt;这种计算属性，使得这个计算行为只存在模型中，而对视图和控制器是透明的，很好地揭藕，有利于扩展、移植和维护。&lt;/p&gt;
+
+&lt;p&gt;在视图&lt;a href=&quot;https://github.com/sysu-swsad-team/niffler-backend/blob/master/niffler/questionnaire/views.py&quot;&gt;niffler-backend/niffler/questionnaire/views.py&lt;/a&gt;中，我们根据&lt;a href=&quot;https://github.com/sysu-swsad-team/niffler-backend/blob/master/niffler/questionnaire/models.py&quot;&gt;niffler-backend/niffler/questionnaire/models.py&lt;/a&gt;的类定义相应的视图集（也是一个类，继承了rest_framework.viewsets.ViewSet），比如&lt;a href=&quot;https://github.com/sysu-swsad-team/niffler-backend/blob/master/niffler/questionnaire/views.py#L740&quot;&gt;ProfileView&lt;/a&gt;。对于一个视图集，我们可以重载rest_framework.viewsets.ViewSet的一些属性，如用于验证的&lt;a href=&quot;https://github.com/sysu-swsad-team/niffler-backend/blob/master/niffler/questionnaire/views.py#L741&quot;&gt;authentication_classes&lt;/a&gt;，我们也定义了一些方法，比如&lt;a href=&quot;https://github.com/sysu-swsad-team/niffler-backend/blob/master/niffler/questionnaire/views.py#L745&quot;&gt;retrieve()&lt;/a&gt;，&lt;a href=&quot;https://github.com/sysu-swsad-team/niffler-backend/blob/master/niffler/questionnaire/views.py#L764&quot;&gt;get()&lt;/a&gt;，&lt;a href=&quot;https://github.com/sysu-swsad-team/niffler-backend/blob/master/niffler/questionnaire/views.py#L785&quot;&gt;post()&lt;/a&gt;，对应不同的服务操作，而模型的不同类都会有retrieve、get、post这种相似的操作，相比将所有操作写成并列的视图函数这种做法，面向对象使得编程结构更加简洁和清晰，代码更具可读性，增删方法也更加灵活，也能够复用类似authentication_classes的相同属性，增加内聚性。&lt;/p&gt;
 </description>
         <pubDate>Wed, 22 May 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.7.%E6%A8%A1%E5%9D%97%E5%88%92%E5%88%86%E4%B8%8E%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.7.%E6%A8%A1%E5%9D%97%E5%88%92%E5%88%86%E4%B8%8E%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF/</guid>
+        <link>http://localhost:4000/7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.7.%E6%A8%A1%E5%9D%97%E5%88%92%E5%88%86%E4%B8%8E%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF/</link>
+        <guid isPermaLink="true">http://localhost:4000/7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.7.%E6%A8%A1%E5%9D%97%E5%88%92%E5%88%86%E4%B8%8E%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF/</guid>
         
         
         <category>7.设计说明书</category>
