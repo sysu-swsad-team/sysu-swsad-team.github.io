@@ -130,11 +130,94 @@
             <article class="post-content">
               <ul id="markdown-toc">
   <li><a href="#1-包图" id="markdown-toc-1-包图">1. 包图</a></li>
+  <li><a href="#2-目录" id="markdown-toc-2-目录">2. 目录</a>    <ul>
+      <li><a href="#21-前端" id="markdown-toc-21-前端">2.1 前端</a></li>
+      <li><a href="#22-后端" id="markdown-toc-22-后端">2.2 后端</a></li>
+    </ul>
+  </li>
+  <li><a href="#3-映射指南" id="markdown-toc-3-映射指南">3. 映射指南</a></li>
 </ul>
 
 <h2 id="1-包图">1. 包图</h2>
 
 <p><img src="/styles/images/7.5/包图.jpg" alt="包图" /></p>
+
+<h2 id="2-目录">2. 目录</h2>
+
+<h3 id="21-前端">2.1 前端</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>┌── api
+│   ├── api.js
+│   └── index.js
+├── assets
+│   └── ...
+├── mock
+│   ├── data
+│   │   └── user.js
+│   ├── index.js
+├── page
+│   ├── Balance
+│   │   └── Balance.vue
+│   ├── Errand
+│   │   ├── Create.vue
+│   │   ├── Errand.vue
+│   │   └── Mine.vue
+│   ├── Home
+│   │   ├── Home.vue
+│   │   ├── Message.vue
+│   │   └── PersonInfo.vue
+│   ├── Login
+│   │   ├── Login.vue
+│   │   ├── LoginForm.vue
+│   │   └── RegisterForm.vue
+│   ├── Questionnaire
+│   │   ├── Create.vue
+│   │   ├── Mine.vue
+│   │   └── Questionnaire.vue
+│   ├── compoments
+│   │   ├── EditQuestionair.vue
+│   │   ├── ModuleCards.vue
+│   │   ├── OageHead.vue
+│   │   └── ShowQuestionnaire.vue
+│   ├── 404.vue
+│   └── Root.vue
+├── router
+│   └── index.js
+├── styles
+│   └── ...
+├── vuex
+│   └── store.js
+├── App.vue
+├── main.js
+└── utils.js
+</code></pre></div></div>
+
+<h3 id="22-后端">2.2 后端</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>┌── niffler
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── questionnaire
+│   ├── migrations
+│   │   └── ...
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── serializers.py
+│   ├── swagger_schema.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── db.sqlite3
+├── log.txt
+├── manage.py
+└── requirements.txt
+</code></pre></div></div>
+
+<h2 id="3-映射指南">3. 映射指南</h2>
+
+<p>项目框架使用了MVC框架，即model, view, controller。前端框架使用了Vue.js，后端框架使用了Django，数据库使用了SQLite3。view对应前端page目录下的各个组件，例如HomePage使用Home目录下的组件，QuestionnairePage使用Questionnaire目录下的组件。controller对应后端的数据处理逻辑，model对应后端与数据库相关的实体，用于承载系统数据。</p>
 
             </article>
         </div>

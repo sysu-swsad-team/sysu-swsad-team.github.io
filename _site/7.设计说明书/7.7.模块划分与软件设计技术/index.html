@@ -197,8 +197,8 @@
 <span class="nt">&lt;/template&gt;</span>
 
 <span class="nt">&lt;</span><span class="k">script</span><span class="nt">&gt;</span>
-<span class="k">import</span> <span class="nx">LoginForm</span> <span class="k">from</span> <span class="s1">'./LoginForm'</span>
-<span class="k">import</span> <span class="nx">RegisterForm</span> <span class="k">from</span> <span class="s1">'./RegisterForm'</span>
+<span class="k">import</span> <span class="nx">LoginForm</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./LoginForm</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">RegisterForm</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./RegisterForm</span><span class="dl">'</span>
 <span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
   <span class="nx">data</span> <span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">{</span>
@@ -234,10 +234,10 @@
 
 <p>在 src/vuex/store.js 中：</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="s1">'vue'</span>
-<span class="k">import</span> <span class="nx">Vuex</span> <span class="k">from</span> <span class="s1">'vuex'</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">Vuex</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vuex</span><span class="dl">'</span>
 
-<span class="k">import</span> <span class="nx">logo</span> <span class="k">from</span> <span class="s1">'@/assets/images/niffler-logo.png'</span>
+<span class="k">import</span> <span class="nx">logo</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@/assets/images/niffler-logo.png</span><span class="dl">'</span>
 
 <span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">Vuex</span><span class="p">)</span>
 
@@ -245,7 +245,7 @@
 <span class="kd">const</span> <span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
   <span class="c1">// 要设置的初始属性值</span>
   <span class="na">isCollapse</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="na">sysname</span><span class="p">:</span> <span class="s1">'NIFFLER'</span><span class="p">,</span>
+  <span class="na">sysname</span><span class="p">:</span> <span class="dl">'</span><span class="s1">NIFFLER</span><span class="dl">'</span><span class="p">,</span>
   <span class="p">...</span>
 <span class="p">}</span>
 
@@ -269,7 +269,7 @@
 <span class="c1">// actions: 对数据的异步更改</span>
 <span class="kd">const</span> <span class="nx">actions</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">changeSideBar</span> <span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">context</span><span class="p">.</span><span class="nx">commit</span><span class="p">(</span><span class="s1">'mutationsChangeSideBar'</span><span class="p">)</span>
+    <span class="nx">context</span><span class="p">.</span><span class="nx">commit</span><span class="p">(</span><span class="dl">'</span><span class="s1">mutationsChangeSideBar</span><span class="dl">'</span><span class="p">)</span>
   <span class="p">},</span>
   <span class="p">...</span>
 <span class="p">}</span>
