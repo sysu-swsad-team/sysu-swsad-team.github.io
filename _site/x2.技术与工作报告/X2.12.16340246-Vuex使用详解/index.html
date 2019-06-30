@@ -168,8 +168,8 @@
 
 <p>在 <code class="highlighter-rouge">src</code> 文件夹下创建一个 <code class="highlighter-rouge">vuex</code> 文件夹，并在 <code class="highlighter-rouge">src/vuex</code> 文件夹里新建一个 <code class="highlighter-rouge">store.js</code>，内容如下：</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="s1">'vue'</span>
-<span class="k">import</span> <span class="nx">Vuex</span> <span class="k">from</span> <span class="s1">'vuex'</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">Vuex</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vuex</span><span class="dl">'</span>
 <span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">Vuex</span><span class="p">)</span>
 
 <span class="kd">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vuex</span><span class="p">.</span><span class="nx">Store</span><span class="p">()</span>
@@ -179,10 +179,10 @@
 
 <p>在 <code class="highlighter-rouge">main.js</code> 中，通过在根实例中注册 <code class="highlighter-rouge">store</code> 选项，该 store 实例会注入到根组件下的所有子组件中，且子组件能通过 <code class="highlighter-rouge">this.$store</code> 访问到。</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">store</span> <span class="k">from</span> <span class="s1">'./vuex/store'</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">store</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./vuex/store</span><span class="dl">'</span>
 
 <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
-  <span class="na">el</span><span class="p">:</span> <span class="s1">'#app'</span><span class="p">,</span>
+  <span class="na">el</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#app</span><span class="dl">'</span><span class="p">,</span>
   <span class="nx">router</span><span class="p">,</span>
   <span class="nx">store</span><span class="p">,</span>	<span class="c1">// 使用store</span>
   <span class="na">render</span><span class="p">:</span> <span class="nx">h</span> <span class="o">=&gt;</span> <span class="nx">h</span><span class="p">(</span><span class="nx">App</span><span class="p">)</span>
@@ -198,15 +198,15 @@
 <p>设置一个全局访问的 <code class="highlighter-rouge">state</code> 对象，并把它放到 <code class="highlighter-rouge">store</code> 里面</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="s1">'vue'</span>
-<span class="k">import</span> <span class="nx">Vuex</span> <span class="k">from</span> <span class="s1">'vuex'</span>
+<span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">Vuex</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vuex</span><span class="dl">'</span>
 <span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">Vuex</span><span class="p">)</span>
 
 <span class="c1">// 储存全局变量</span>
 <span class="kd">const</span> <span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
   <span class="c1">// 要使用的全局变量初始值</span>
   <span class="na">isCollapse</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="na">name</span><span class="p">:</span> <span class="s1">'no one'</span><span class="p">,</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">no one</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">num</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 
@@ -223,15 +223,15 @@
 
 <p>定义 <code class="highlighter-rouge">getters</code>，并把它放到 <code class="highlighter-rouge">store</code> 里面</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="s1">'vue'</span>
-<span class="k">import</span> <span class="nx">Vuex</span> <span class="k">from</span> <span class="s1">'vuex'</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">Vuex</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vuex</span><span class="dl">'</span>
 <span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">Vuex</span><span class="p">)</span>
 
 <span class="c1">// 储存全局变量</span>
 <span class="kd">const</span> <span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
   <span class="c1">// 要使用的全局变量初始值</span>
   <span class="na">isCollapse</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="na">name</span><span class="p">:</span> <span class="s1">'no one'</span><span class="p">,</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">no one</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">num</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 
@@ -262,15 +262,15 @@
 
 <p>更改 Vuex 的 <code class="highlighter-rouge">store</code> 中的状态的唯一方法是提交 mutation。如下定义好 <code class="highlighter-rouge">mutations</code>，并把它放进 <code class="highlighter-rouge">store</code> 里面。</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="s1">'vue'</span>
-<span class="k">import</span> <span class="nx">Vuex</span> <span class="k">from</span> <span class="s1">'vuex'</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">Vuex</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vuex</span><span class="dl">'</span>
 <span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">Vuex</span><span class="p">)</span>
 
 <span class="c1">// 储存全局变量</span>
 <span class="kd">const</span> <span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
   <span class="c1">// 要使用的全局变量初始值</span>
   <span class="na">isCollapse</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="na">name</span><span class="p">:</span> <span class="s1">'no one'</span><span class="p">,</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">no one</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">num</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 
@@ -311,13 +311,13 @@
 
 <p>现在你可以使用 <code class="highlighter-rouge">this.$store.commit</code> 方法来修改 store 的数据：</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">commit</span><span class="p">(</span><span class="s1">'mutationsIsCollapse'</span><span class="p">)</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">commit</span><span class="p">(</span><span class="dl">'</span><span class="s1">mutationsIsCollapse</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>注意到你可以向 <code class="highlighter-rouge">store.commit</code> 传入额外的参数，即 mutation 的 <strong>载荷（payload）</strong>。比如你要修改 <code class="highlighter-rouge">num</code>，你可以直接传递一个数字，但我们通常不会这么做，大多数情况下，<code class="highlighter-rouge">payload</code> 应该是一个对象：</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">commit</span><span class="p">(</span><span class="s1">'mutationsIsCollapse'</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">key</span><span class="p">:</span> <span class="s1">'num'</span><span class="p">,</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">commit</span><span class="p">(</span><span class="dl">'</span><span class="s1">mutationsIsCollapse</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">key</span><span class="p">:</span> <span class="dl">'</span><span class="s1">num</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">value</span><span class="p">:</span> <span class="mi">5</span>
 <span class="p">})</span>
 </code></pre></div></div>
@@ -343,15 +343,15 @@
 
 <p>让我们定义 <code class="highlighter-rouge">actions</code> 对象并把它放进 <code class="highlighter-rouge">store</code> 里：</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="s1">'vue'</span>
-<span class="k">import</span> <span class="nx">Vuex</span> <span class="k">from</span> <span class="s1">'vuex'</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vue</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">Vuex</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">vuex</span><span class="dl">'</span>
 <span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">Vuex</span><span class="p">)</span>
 
 <span class="c1">// 储存全局变量</span>
 <span class="kd">const</span> <span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
   <span class="c1">// 要使用的全局变量初始值</span>
   <span class="na">isCollapse</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="na">name</span><span class="p">:</span> <span class="s1">'no one'</span><span class="p">,</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">no one</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">num</span><span class="p">:</span> <span class="mi">1</span>
 <span class="p">}</span>
 
@@ -384,13 +384,13 @@
 <span class="c1">// actions: 对数据的异步更改</span>
 <span class="kd">const</span> <span class="nx">actions</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">changeIsCollapse</span> <span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">context</span><span class="p">.</span><span class="nx">commit</span><span class="p">(</span><span class="s1">'mutationsIsCollapse'</span><span class="p">)</span>
+    <span class="nx">context</span><span class="p">.</span><span class="nx">commit</span><span class="p">(</span><span class="dl">'</span><span class="s1">mutationsIsCollapse</span><span class="dl">'</span><span class="p">)</span>
   <span class="p">},</span>
   <span class="nx">setName</span> <span class="p">(</span><span class="nx">context</span><span class="p">,</span> <span class="nx">payload</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">context</span><span class="p">.</span><span class="nx">commit</span><span class="p">(</span><span class="s1">'mutationsName'</span><span class="p">,</span> <span class="nx">payload</span><span class="p">)</span>
+    <span class="nx">context</span><span class="p">.</span><span class="nx">commit</span><span class="p">(</span><span class="dl">'</span><span class="s1">mutationsName</span><span class="dl">'</span><span class="p">,</span> <span class="nx">payload</span><span class="p">)</span>
   <span class="p">},</span>
   <span class="nx">setNum</span> <span class="p">(</span><span class="nx">context</span><span class="p">,</span> <span class="nx">payload</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">context</span><span class="p">.</span><span class="nx">commit</span><span class="p">(</span><span class="s1">'mutationsNum'</span><span class="p">,</span> <span class="nx">payload</span><span class="p">)</span>
+    <span class="nx">context</span><span class="p">.</span><span class="nx">commit</span><span class="p">(</span><span class="dl">'</span><span class="s1">mutationsNum</span><span class="dl">'</span><span class="p">,</span> <span class="nx">payload</span><span class="p">)</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
@@ -406,13 +406,13 @@
 
 <p><code class="highlighter-rouge">actions</code> 通过<code class="highlighter-rouge">this.$store.dispatch</code> 方法触发：</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="s1">'changeIsCollapse'</span><span class="p">)</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="s1">'setName'</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">key</span><span class="p">:</span> <span class="s1">'name'</span><span class="p">,</span>
-  <span class="na">value</span><span class="p">:</span> <span class="s1">'someone'</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="dl">'</span><span class="s1">changeIsCollapse</span><span class="dl">'</span><span class="p">)</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="dl">'</span><span class="s1">setName</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">key</span><span class="p">:</span> <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">value</span><span class="p">:</span> <span class="dl">'</span><span class="s1">someone</span><span class="dl">'</span>
 <span class="p">})</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="s1">'setNum'</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">key</span><span class="p">:</span> <span class="s1">'num'</span><span class="p">,</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="dl">'</span><span class="s1">setNum</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">key</span><span class="p">:</span> <span class="dl">'</span><span class="s1">num</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">value</span><span class="p">:</span> <span class="mi">5</span>
 <span class="p">})</span>
 </code></pre></div></div>
