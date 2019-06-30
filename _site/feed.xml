@@ -5,8 +5,8 @@
     <description>圈多多</description>
     <link>https://sysu-swsad-team.github.io//</link>
     <atom:link href="https://sysu-swsad-team.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 30 Jun 2019 17:10:23 +0800</pubDate>
-    <lastBuildDate>Sun, 30 Jun 2019 17:10:23 +0800</lastBuildDate>
+    <pubDate>Sun, 30 Jun 2019 17:33:46 +0800</pubDate>
+    <lastBuildDate>Sun, 30 Jun 2019 17:33:46 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -593,6 +593,19 @@ git pull upstream dev
       </item>
     
       <item>
+        <title>8.4 架构设计、详细设计（BCE方法）到应用程序框架映射指南</title>
+        <description>
+</description>
+        <pubDate>Sat, 25 May 2019 00:00:00 +0800</pubDate>
+        <link>https://sysu-swsad-team.github.io//8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.4.%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1-%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1-BCE%E6%96%B9%E6%B3%95-%E5%88%B0%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E6%98%A0%E5%B0%84%E6%8C%87%E5%8D%97/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.4.%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1-%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1-BCE%E6%96%B9%E6%B3%95-%E5%88%B0%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E6%98%A0%E5%B0%84%E6%8C%87%E5%8D%97/</guid>
+        
+        
+        <category>8.生产规范与指南</category>
+        
+      </item>
+    
+      <item>
         <title>7.4 Architecture design（架构设计）</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#架构问题&quot; id=&quot;markdown-toc-架构问题&quot;&gt;架构问题&lt;/a&gt;&lt;/li&gt;
@@ -641,220 +654,33 @@ git pull upstream dev
       </item>
     
       <item>
-        <title>7.5 Usecase design（用例设计）</title>
-        <description>
-&lt;p&gt;&lt;a href=&quot;https://sysu-swsad.github.io/swad-guide/12-usecase-realization&quot;&gt;详细设计 - 使用交互图和设计类图实现用例&lt;/a&gt; 团队作业&lt;/p&gt;
+        <title>8.5 部署说明</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#安装部署说明&quot; id=&quot;markdown-toc-安装部署说明&quot;&gt;安装部署说明&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#前端项目部署&quot; id=&quot;markdown-toc-前端项目部署&quot;&gt;前端项目部署&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#后端项目部署&quot; id=&quot;markdown-toc-后端项目部署&quot;&gt;后端项目部署&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;安装部署说明&quot;&gt;安装部署说明&lt;/h2&gt;
+
+&lt;p&gt;本项目是一个 web 应用，无需用户安装部署。&lt;/p&gt;
+
+&lt;p&gt;项目已经部署到服务器，在浏览器打开：&lt;a href=&quot;http://129.204.53.183&quot;&gt;http://129.204.53.183&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;前端项目部署&quot;&gt;前端项目部署&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sysu-swsad-team/niffler-client&quot;&gt;前端项目部署README&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;后端项目部署&quot;&gt;后端项目部署&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sysu-swsad-team/niffler-client&quot;&gt;后端项目部署README&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 24 May 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.5.%E7%94%A8%E4%BE%8B%E8%AE%BE%E8%AE%A1/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.5.%E7%94%A8%E4%BE%8B%E8%AE%BE%E8%AE%A1/</guid>
+        <link>https://sysu-swsad-team.github.io//8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.5.%E9%83%A8%E7%BD%B2%E8%AF%B4%E6%98%8E/</link>
+        <guid isPermaLink="true">https://sysu-swsad-team.github.io//8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.5.%E9%83%A8%E7%BD%B2%E8%AF%B4%E6%98%8E/</guid>
         
         
-        <category>7.设计说明书</category>
-        
-      </item>
-    
-      <item>
-        <title>7.6 技术选型理由</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#形式&quot; id=&quot;markdown-toc-形式&quot;&gt;形式&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#前端&quot; id=&quot;markdown-toc-前端&quot;&gt;前端&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#后端&quot; id=&quot;markdown-toc-后端&quot;&gt;后端&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;形式&quot;&gt;形式&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;App。App在移动端上能得到最好的用户体验，但对新用户来说安装一个新App的成本较高。&lt;/li&gt;
-  &lt;li&gt;Web。相比App来说，Web更加轻量，不需要用户安装额外的应用。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;最终选择：客户端和服务端使用Web网页形式。&lt;/p&gt;
-
-&lt;h2 id=&quot;前端&quot;&gt;前端&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;1. JQuery&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;缺点：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;不能向后兼容。每一个新版本不能兼容早期的版本。举例来说，有些JQuery新版本只是简单的移除某些选择器，不再支持，这可能会影响到开发者已经编写好的代码或插件。&lt;/li&gt;
-  &lt;li&gt;多个插件冲突。在同一页面上使用多个插件时，很容易产生冲突，尤其在这些插件依赖相同事件或选择器时。这虽然不是JQuery自身的问题，但确实是一个难以调试和解决的问题。&lt;/li&gt;
-  &lt;li&gt;对动画和特效的支持相对较差。在大型框架中，JQuery核心代码库对动画和特效的支持相对较差。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;优点：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;提供了用css选择符来选择dom元素的API。&lt;/li&gt;
-  &lt;li&gt;提供了浏览器检测的API。&lt;/li&gt;
-  &lt;li&gt;提供了兼容的功能性API。&lt;/li&gt;
-  &lt;li&gt;提供了DOM的批处理操作。&lt;/li&gt;
-  &lt;li&gt;提供了DOM的链式操作。&lt;/li&gt;
-  &lt;li&gt;提供了插件机制。基于JQuery开发的插件目前已经有大约数千个。开发者可使用插件来进行表单确认、字段提示等。&lt;/li&gt;
-  &lt;li&gt;实现了脚本与页面的分离。JQuery使得JavaScript代码从HTML代码中分离出来。&lt;/li&gt;
-  &lt;li&gt;实现了用最少的代码做最多的事情。通过使用JQuery的高级选择器，开发者只需编写几行代码就能实现令人惊奇的效果。开发者无需过于担忧浏览器差异。完全支持Ajax。拥有许多提高开发者编程效率的其它抽象概念。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;2. Angular&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;缺点：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;验证功能错误信息显示比较薄弱，需要写很多模板标签。&lt;/li&gt;
-  &lt;li&gt;没有完美兼容低版本，升级之后可能会出现兼容性问题。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;优点：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;依赖注入。将后端语言的设计模式赋予前端代码，这意味着前端的代码可以提高重用性和灵活性，未来的模式可能将大量操作放在客户端，服务端只提供数据来源和其它客户端无法完成的操作。&lt;/li&gt;
-  &lt;li&gt;双向数据绑定。数据绑定可能是AngularJS最酷最实用的特性。它能够帮助你避免书写大量的初始代码，从而节约开发时间。一个典型的Web应用可能包含了80%的代码用来处理、查询和监听DOM。数据绑定能够大大减少代码量。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;3. Vue.js&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;缺点：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;缺乏高级教程和文档。&lt;/li&gt;
-  &lt;li&gt;不支持IE8。&lt;/li&gt;
-  &lt;li&gt;生态环境差，不如Angular和React。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;优点：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;双向数据绑定，即响应式数据绑定。Vue.js会自动响应数据的变化情况，并且根据用户在代码中预先写好的绑定关系，对所有绑定在一起的数据和视图内容都进行修改。通过MVVM思想实现数据的双向绑定，开发者不用再操作DOM对象，从而有更多的时间去思考业务逻辑。&lt;/li&gt;
-  &lt;li&gt;组件化开发。Vue.js通过组件把一个单页应用中的各种模块拆分到一个一个单独的组件中。开发者只需要先在父级应用中写好各种组件标签，并且在组件标签中写好要传入组件的参数，然后再分别写好各种组件的实现。&lt;/li&gt;
-  &lt;li&gt;虚拟DOM。在传统开发中，使用JQuery或者原生JavaScript的DOM操作函数对DOM进行频繁操作的时候，浏览器需要不停地渲染DOM树，导致页面看起来非常卡顿。虚拟DOM预先通过JavaScript计算最终的DOM操作，完成计算后才真正提交DOM操作，将DOM操作的变化反映到DOM树上。&lt;/li&gt;
-  &lt;li&gt;轻量高效。Vue.js通过简洁的API提供高效的数据绑定和灵活的组件系统。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;最终选择：Vue.js&lt;/p&gt;
-
-&lt;h2 id=&quot;后端&quot;&gt;后端&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;1. JavaScript&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;JavaScript 是一门性价比非常高的语言，与 Web 前端语言相同方便开发。在这门语言里，有两个后台 MVC 框架比较流行：&lt;/p&gt;
-
-&lt;p&gt;Express，是在Node.js上最早的 MVC 框架，它由 Ruby 上的轻量级框架 Sinatra 启发而来的。其框架本身封装了大量实用的功能，核心特性是使用中间件来处理 HTTP 请求。&lt;/p&gt;
-
-&lt;p&gt;Koa，是由 Express 的核心开发者基于 ES6 新特性打造的新框架。与 Express 相比去除了一些框架自带的功能，更加轻量级，可以让开发者有更多的选择——当然，这也意味着你需要自己去搭建这些环境。&lt;/p&gt;
-
-&lt;p&gt;简单的对比一个两者，Express 发展得比较早，其生态系统比较丰富——很容易找到所需要的插件。Koa 则基于 ES6 语言带来一些新的特性，实时解决旧语言的一些问题，如回调等等。&lt;/p&gt;
-
-&lt;p&gt;缺点：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;默认单进程，单线程，只支持单核CPU，不能充分的利用多核CPU服务器资源。&lt;/li&gt;
-  &lt;li&gt;动态语言，可靠性低，调试困难。许多错误只有在运行时才能发现。&lt;/li&gt;
-  &lt;li&gt;开源组件库质量参差不齐，更新快，向下不兼容。&lt;/li&gt;
-  &lt;li&gt;不方便调试，错误没有stack trace。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;优点：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;JavaScript 易上手，且有着活跃的社区和很多的第三方库。&lt;/li&gt;
-  &lt;li&gt;前端使用 JavaScript，Node.js 能做到全栈开发。&lt;/li&gt;
-  &lt;li&gt;使用 NPM 这一优秀的包管理工具。&lt;/li&gt;
-  &lt;li&gt;事件驱动。事件驱动的优势在于能够充分利用系统资源，执行代码时无须阻塞等待某些操作完成，有限的资源可以用于其它任务。事件驱动机制是通过内部单线程高效率地维护事件循环队列来实现的，没有多线程的资源占用和上下文切换。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;2. Java&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Java 在今天看来仍然相当的受企业欢迎，除了在企业级 Web 系统开发上，它还在 Android 应用的开发上绽放光彩。&lt;/p&gt;
-
-&lt;p&gt;Java 有一个框架 Spring。&lt;/p&gt;
-
-&lt;p&gt;Spring MVC，是由 Spring 框架提供的构建 Web 应用程序的全功能 MVC 模块。由于框架本身高度可配置，即可以直接使用编写 XML 而不是 Java 来实现功能。它是一个典型的 MVC 框架，并且也是一个纯正的servlet系统。&lt;/p&gt;
-
-&lt;p&gt;Spring Boot，其作用在于创建和启动新的基于 Spring 框架的项目。系统本身做好了对不同框架的配置与集成，我们只需要对其配置，并编写少量的代码即可。&lt;/p&gt;
-
-&lt;p&gt;缺点：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;开发效率相对较低。&lt;/li&gt;
-  &lt;li&gt;虽然上手开发相对容易，但真正理解框架底层的运行原理相对较难，需要大量的学习和开发经验。&lt;/li&gt;
-  &lt;li&gt;Java 并没有在第一时间引入新颖的技术和语言特性。&lt;/li&gt;
-  &lt;li&gt;Java 本身的规范和不够灵活也导致了代码本身很难优化，好的代码和差的代码在一套规则的束缚下实际上性能并没有多少差距，更多的优化被交给了 JVM。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;优点：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;语法简单。Java语言去除了C/C++语言中难以理解、容易混淆的特性，例如头指针，文件、结构、单元、运算符重载、虚拟基础类、多重继承等，使得程序更加严谨、简洁。&lt;/li&gt;
-  &lt;li&gt;面向对象。Java是一个面向对象的语言。对程序员来说，这意味着要注意应用中的数据和操作数据的方法，而不是严格地用过程来思考。在一个面向对象的系统中，类是数据和操作数据的方法集合。数据和方法一起描述对象的状态和行为。类按照一定的体系和层次结构安排，使得子类可以从超类继承属性和方法。&lt;/li&gt;
-  &lt;li&gt;平台无关。Java语言可以一次编译，到处运行。Java是解释型语言，Java编译器编译程序生成字节码，而不是通常的机器码。字节码在JVM中解释执行。Java程序可以在任何实现了Java解释程序和运行系统的系统上运行。&lt;/li&gt;
-  &lt;li&gt;提供了对Web应用开发的支持。例如，Applet、servlet和jsp可以用来开发Web应用程序；socket、rmi可以用来开发分布式应用程序的类库。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;3. PHP&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;PHP是一门很容易上手的语言，由于其容易上手，并且发展得比较成熟。有相多个人网站使用它作为开发语言，除此还有诸如 Facebook 这样大流量的网站也在使用它。除此不得不提及的是 WordPress 已经占领了 CMS 市场超过一半的份额，并且它也占领了全球网站的四分之一。&lt;/p&gt;
-
-&lt;p&gt;WordPress原生是为博客系统而创建的开源框架，由于博客系统和内容管理系统在功能上很多是相似的，也因此它成为了最具知名度的内容管理系统（CMS，content management system）。&lt;/p&gt;
-
-&lt;p&gt;PHP在框架方面有比较多的选择，其中一种是 Laravel，它是在PHP 5.3之后开发的新框架，类似于Ruby on Rail，为 PHP 程序员提供快速开发的机制，提供快速开发的工具集，如生成代码、数据迁移、ORM等等。&lt;/p&gt;
-
-&lt;p&gt;缺点：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;对多线程支持不太好，大多数时候我们只能模拟去实现。&lt;/li&gt;
-  &lt;li&gt;解释性语言，运行效率低，且无法常驻内存。&lt;/li&gt;
-  &lt;li&gt;缺乏好用的包管理和命令空间，也缺乏好用的模板系统。&lt;/li&gt;
-  &lt;li&gt;只支持Web开发，不方便做.exe文件，不方便做桌面应用程序，不方便做手机程序。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;优点：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;语法简单。如果有学习过C和Perl，会很容易上手，并且跟ASP有部分类似。&lt;/li&gt;
-  &lt;li&gt;有成熟的开发工具，比如NuPHPed，Zend Studio等。&lt;/li&gt;
-  &lt;li&gt;支持很多主流技术，比如WebService、Ajax、XML等。&lt;/li&gt;
-  &lt;li&gt;有很多成熟的框架，比如支持MVC的框架：phpMVC，支持类似ASP.net的事件驱动的框架：Prado，支持类似Ruby On Rails的快速开发的框架：Cake等。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;4. Python&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Python 诞生得比较早，其语言特性——做事情只有一件方法，也决定了这门语言很简单。与 JavaScript 相比，它仍是一门性价比非常高的语言，除了它不能在前端运行，带来了一点劣势。&lt;/p&gt;
-
-&lt;p&gt;在 Web 开发领域他也有广泛的应用，除了正常的 Web 开发，还在网络爬虫中饱受欢迎。&lt;/p&gt;
-
-&lt;p&gt;Python 有两个不错的框架可以选择，其中的 Django 是重量级框架，Flask 则是轻量级框架。&lt;/p&gt;
-
-&lt;p&gt;Django，最早是被应用于内容管理系统而开发的，其框架里自带了相当多的组件：ORM、表单序列化及验证系统、后台系统、缓存框架、中间件支持等等。在其官网上宣称是：The Web framework for perfectionists with deadlines，它即可以满足完美主义者，又可以在截止期限前交付软件。&lt;/p&gt;
-
-&lt;p&gt;Flask，则是一个轻量级的框架，它只有简单的核心部分。换句话来说，你可以按自己的需要添加ORM、用户认证、文件上传等等的功能。在今天来看，它的生态系统也相当的丰富，可以完成绝大部分的功能。&lt;/p&gt;
-
-&lt;p&gt;缺点：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;作为解释型语言，运行速度较慢。Python的运行速度相比C语言确实慢很多，和Java相比也要慢一些。&lt;/li&gt;
-  &lt;li&gt;包管理工具和语言升级会带来混乱，且部署工具生态混乱。&lt;/li&gt;
-  &lt;li&gt;缺少有效的性能分析和调试工具。&lt;/li&gt;
-  &lt;li&gt;线程不能利用多CPU，这是Python被人诟病最多的一个缺点。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;优点：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Python的定位是“优雅”、“明确”、“简单”，所以Python程序看上去总是简单易懂，初学者学Python，不但入门容易，而且将来深入下去，可以编写非常复杂的程序。&lt;/li&gt;
-  &lt;li&gt;开发效率非常高。Python有非常强大和丰富的第三方库。&lt;/li&gt;
-  &lt;li&gt;Python在Web开发方面有很多成熟的框架。&lt;/li&gt;
-  &lt;li&gt;Python是一门高级语言，当你用Python语言编写程序的时候，你无需考虑诸如内存管理等一些底层细节。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;最终选择：Python，使用Django框架，主要原因是，它适合作为 CMS 框架，并且提供了丰富的组件功能，如我们所需要的用户权限管理、自带后台管理系统、ORM等等。&lt;/p&gt;
-</description>
-        <pubDate>Thu, 23 May 2019 00:00:00 +0800</pubDate>
-        <link>https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.6.%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E7%90%86%E7%94%B1/</link>
-        <guid isPermaLink="true">https://sysu-swsad-team.github.io//7.%E8%AE%BE%E8%AE%A1%E8%AF%B4%E6%98%8E%E4%B9%A6/7.6.%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E7%90%86%E7%94%B1/</guid>
-        
-        
-        <category>7.设计说明书</category>
+        <category>8.生产规范与指南</category>
         
       </item>
     
