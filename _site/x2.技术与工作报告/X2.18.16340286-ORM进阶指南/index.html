@@ -306,10 +306,10 @@
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 忌
-</span><span class="n">count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="nb">all</span><span class="p">())</span>
+</span><span class="n">exists</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span>
 
 <span class="c1"># 宜
-</span><span class="n">count</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</span><span class="n">exists</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
 </code></pre></div></div>
 
 <h2 id="使用deleteupdate或bulk_create进行批量操作">使用<code class="highlighter-rouge">delete()</code>、<code class="highlighter-rouge">update()</code>或<code class="highlighter-rouge">bulk_create()</code>进行批量操作</h2>
