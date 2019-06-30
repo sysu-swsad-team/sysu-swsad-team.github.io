@@ -5,8 +5,8 @@
     <description>圈多多</description>
     <link>https://sysu-swsad-team.github.io//</link>
     <atom:link href="https://sysu-swsad-team.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 30 Jun 2019 17:33:46 +0800</pubDate>
-    <lastBuildDate>Sun, 30 Jun 2019 17:33:46 +0800</lastBuildDate>
+    <pubDate>Sun, 30 Jun 2019 17:36:05 +0800</pubDate>
+    <lastBuildDate>Sun, 30 Jun 2019 17:36:05 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -673,7 +673,7 @@ git pull upstream dev
 
 &lt;h2 id=&quot;后端项目部署&quot;&gt;后端项目部署&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/sysu-swsad-team/niffler-client&quot;&gt;后端项目部署README&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/sysu-swsad-team/niffler-backend&quot;&gt;后端项目部署README&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 24 May 2019 00:00:00 +0800</pubDate>
         <link>https://sysu-swsad-team.github.io//8.%E7%94%9F%E4%BA%A7%E8%A7%84%E8%8C%83%E4%B8%8E%E6%8C%87%E5%8D%97/8.5.%E9%83%A8%E7%BD%B2%E8%AF%B4%E6%98%8E/</link>
