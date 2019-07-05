@@ -187,11 +187,11 @@ npm <span class="nb">install </span>axios-mock-adapter <span class="nt">--save-d
 
 <p>首先我们使用 axois 定义好 api，<code class="highlighter-rouge">api/api.js</code> 的内容如下：</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">axios</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span>
-<span class="nx">axios</span><span class="p">.</span><span class="nx">defaults</span><span class="p">.</span><span class="nx">baseURL</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">http://127.0.0.1:8080</span><span class="dl">'</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">axios</span> <span class="k">from</span> <span class="s1">'axios'</span>
+<span class="nx">axios</span><span class="p">.</span><span class="nx">defaults</span><span class="p">.</span><span class="nx">baseURL</span> <span class="o">=</span> <span class="s1">'http://127.0.0.1:8080'</span>
 
 <span class="k">export</span> <span class="kd">const</span> <span class="nx">postLogin</span> <span class="o">=</span> <span class="nx">params</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">/login</span><span class="dl">'</span><span class="p">,</span> <span class="nx">params</span><span class="p">)</span>
+  <span class="k">return</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">'/login'</span><span class="p">,</span> <span class="nx">params</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -201,22 +201,22 @@ npm <span class="nb">install </span>axios-mock-adapter <span class="nt">--save-d
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">users</span> <span class="o">=</span> <span class="p">[</span>
   <span class="p">{</span>
-    <span class="na">email</span><span class="p">:</span> <span class="dl">'</span><span class="s1">user1@123.com</span><span class="dl">'</span><span class="p">,</span>
-    <span class="na">password</span><span class="p">:</span> <span class="dl">'</span><span class="s1">123456</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">email</span><span class="p">:</span> <span class="s1">'user1@123.com'</span><span class="p">,</span>
+    <span class="na">password</span><span class="p">:</span> <span class="s1">'123456'</span><span class="p">,</span>
     <span class="na">balance</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
-    <span class="na">birth</span><span class="p">:</span> <span class="dl">'</span><span class="s1">1990-01</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">birth</span><span class="p">:</span> <span class="s1">'1990-01'</span><span class="p">,</span>
   <span class="p">},</span>
   <span class="p">{</span>
-    <span class="na">email</span><span class="p">:</span> <span class="dl">'</span><span class="s1">user2@123.com</span><span class="dl">'</span><span class="p">,</span>
-    <span class="na">password</span><span class="p">:</span> <span class="dl">'</span><span class="s1">123456</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">email</span><span class="p">:</span> <span class="s1">'user2@123.com'</span><span class="p">,</span>
+    <span class="na">password</span><span class="p">:</span> <span class="s1">'123456'</span><span class="p">,</span>
     <span class="na">balance</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
-    <span class="na">birth</span><span class="p">:</span> <span class="dl">'</span><span class="s1">1991-01</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">birth</span><span class="p">:</span> <span class="s1">'1991-01'</span><span class="p">,</span>
   <span class="p">},</span>
   <span class="p">{</span>
-    <span class="na">email</span><span class="p">:</span> <span class="dl">'</span><span class="s1">user3@123.com</span><span class="dl">'</span><span class="p">,</span>
-    <span class="na">password</span><span class="p">:</span> <span class="dl">'</span><span class="s1">123456</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">email</span><span class="p">:</span> <span class="s1">'user3@123.com'</span><span class="p">,</span>
+    <span class="na">password</span><span class="p">:</span> <span class="s1">'123456'</span><span class="p">,</span>
     <span class="na">balance</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
-    <span class="na">birth</span><span class="p">:</span> <span class="dl">'</span><span class="s1">1992-01</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">birth</span><span class="p">:</span> <span class="s1">'1992-01'</span><span class="p">,</span>
   <span class="p">}</span>
 <span class="p">]</span>
 
@@ -226,28 +226,28 @@ npm <span class="nb">install </span>axios-mock-adapter <span class="nt">--save-d
 <p><code class="highlighter-rouge">mock/index.js</code> 内容如下：</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* 通过axios-mock-adapter生成代理api地址 */</span>
-<span class="k">import</span> <span class="nx">axios</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span>
-<span class="k">import</span> <span class="nx">MockAdapter</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">axios-mock-adapter</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">axios</span> <span class="k">from</span> <span class="s1">'axios'</span>
+<span class="k">import</span> <span class="nx">MockAdapter</span> <span class="k">from</span> <span class="s1">'axios-mock-adapter'</span>
 
-<span class="k">import</span> <span class="p">{</span> <span class="nx">users</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./data/user</span><span class="dl">'</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">users</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./data/user'</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
   <span class="nx">init</span> <span class="p">()</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nx">mock</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MockAdapter</span><span class="p">(</span><span class="nx">axios</span><span class="p">)</span>
 
     <span class="c1">// mock success request  模拟成功请求</span>
-    <span class="nx">mock</span><span class="p">.</span><span class="nx">onGet</span><span class="p">(</span><span class="dl">'</span><span class="s1">/success</span><span class="dl">'</span><span class="p">).</span><span class="nx">reply</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="p">{</span>
-      <span class="na">msg</span><span class="p">:</span> <span class="dl">'</span><span class="s1">success</span><span class="dl">'</span>
+    <span class="nx">mock</span><span class="p">.</span><span class="nx">onGet</span><span class="p">(</span><span class="s1">'/success'</span><span class="p">).</span><span class="nx">reply</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">msg</span><span class="p">:</span> <span class="s1">'success'</span>
     <span class="p">})</span>
 
     <span class="c1">// mock error request  模拟失败请求</span>
-    <span class="nx">mock</span><span class="p">.</span><span class="nx">onGet</span><span class="p">(</span><span class="dl">'</span><span class="s1">/error</span><span class="dl">'</span><span class="p">).</span><span class="nx">reply</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="p">{</span>
-      <span class="na">msg</span><span class="p">:</span> <span class="dl">'</span><span class="s1">failure</span><span class="dl">'</span>
+    <span class="nx">mock</span><span class="p">.</span><span class="nx">onGet</span><span class="p">(</span><span class="s1">'/error'</span><span class="p">).</span><span class="nx">reply</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">msg</span><span class="p">:</span> <span class="s1">'failure'</span>
     <span class="p">})</span>
 
     <span class="c1">// login 模拟登录接口</span>
-    <span class="nx">mock</span><span class="p">.</span><span class="nx">onPost</span><span class="p">(</span><span class="dl">'</span><span class="s1">/login</span><span class="dl">'</span><span class="p">).</span><span class="nx">reply</span><span class="p">(</span><span class="nx">config</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">mock.onPost</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">mock</span><span class="p">.</span><span class="nx">onPost</span><span class="p">(</span><span class="s1">'/login'</span><span class="p">).</span><span class="nx">reply</span><span class="p">(</span><span class="nx">config</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'mock.onPost'</span><span class="p">)</span>
       <span class="c1">// 解析axios传过来的数据</span>
       <span class="kd">let</span> <span class="p">{</span> <span class="nx">email</span><span class="p">,</span> <span class="nx">password</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span>
       <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -269,9 +269,9 @@ npm <span class="nb">install </span>axios-mock-adapter <span class="nt">--save-d
           <span class="p">})</span>
           <span class="c1">// 如果有这个账号</span>
           <span class="k">if</span> <span class="p">(</span><span class="nx">hasUser</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">resolve</span><span class="p">([</span><span class="mi">200</span><span class="p">,</span> <span class="p">{</span><span class="na">msg</span><span class="p">:</span> <span class="dl">'</span><span class="s1">登录成功</span><span class="dl">'</span><span class="p">,</span> <span class="na">user</span><span class="p">:</span> <span class="nx">user</span><span class="p">}])</span>
+            <span class="nx">resolve</span><span class="p">([</span><span class="mi">200</span><span class="p">,</span> <span class="p">{</span><span class="na">msg</span><span class="p">:</span> <span class="s1">'登录成功'</span><span class="p">,</span> <span class="na">user</span><span class="p">:</span> <span class="nx">user</span><span class="p">}])</span>
           <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="nx">resolve</span><span class="p">([</span><span class="mi">201</span><span class="p">,</span> <span class="p">{</span><span class="na">msg</span><span class="p">:</span> <span class="dl">'</span><span class="s1">账号或密码错误</span><span class="dl">'</span><span class="p">,</span> <span class="na">user</span><span class="p">:</span> <span class="kc">null</span><span class="p">}])</span>
+            <span class="nx">resolve</span><span class="p">([</span><span class="mi">201</span><span class="p">,</span> <span class="p">{</span><span class="na">msg</span><span class="p">:</span> <span class="s1">'账号或密码错误'</span><span class="p">,</span> <span class="na">user</span><span class="p">:</span> <span class="kc">null</span><span class="p">}])</span>
           <span class="p">}</span>
         <span class="p">},</span> <span class="mi">1000</span><span class="p">)</span>
       <span class="p">})</span>
@@ -286,7 +286,7 @@ npm <span class="nb">install </span>axios-mock-adapter <span class="nt">--save-d
 
 <p>注意：当您需要使用 mock 来模拟与后端交互时，需要加入下面代码；当后端开发完成并且您需要与真实的后端接口进行交互时，只需将下面代码删除即可，并且相应地在 <code class="highlighter-rouge">api.js</code> 中修改 <code class="highlighter-rouge">axios.defaults.baseURL</code>。</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Mock</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./mock/index</span><span class="dl">'</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Mock</span> <span class="k">from</span> <span class="s1">'./mock/index'</span>
 <span class="nx">Mock</span><span class="p">.</span><span class="nx">init</span><span class="p">()</span>
 </code></pre></div></div>
 
@@ -310,29 +310,29 @@ npm <span class="nb">install </span>axios-mock-adapter <span class="nt">--save-d
         <span class="kd">let</span> <span class="p">{</span> <span class="nx">msg</span><span class="p">,</span> <span class="nx">user</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">res</span><span class="p">.</span><span class="nx">data</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
           <span class="c1">// 登录成功，在sessionStorage保存用户信息</span>
-          <span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="dl">'</span><span class="s1">user</span><span class="dl">'</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">user</span><span class="p">))</span>
+          <span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">'user'</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">user</span><span class="p">))</span>
           <span class="c1">// 在vuex中存放用户信息</span>
-          <span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="dl">'</span><span class="s1">setUser</span><span class="dl">'</span><span class="p">,</span> <span class="nx">user</span><span class="p">)</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="s1">'setUser'</span><span class="p">,</span> <span class="nx">user</span><span class="p">)</span>
           <span class="c1">// 跳转至主页面</span>
-          <span class="k">this</span><span class="p">.</span><span class="nx">$router</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span> <span class="na">path</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/</span><span class="dl">'</span> <span class="p">})</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">$router</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span> <span class="na">path</span><span class="p">:</span> <span class="s1">'/'</span> <span class="p">})</span>
         <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
           <span class="k">this</span><span class="p">.</span><span class="nx">$message</span><span class="p">({</span>
             <span class="na">message</span><span class="p">:</span> <span class="nx">msg</span><span class="p">,</span>
-            <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">error</span><span class="dl">'</span>
+            <span class="na">type</span><span class="p">:</span> <span class="s1">'error'</span>
           <span class="p">})</span>
         <span class="p">}</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">logining</span> <span class="o">=</span> <span class="kc">false</span>
       <span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">logining</span> <span class="o">=</span> <span class="kc">false</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">postLogin catch err:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'postLogin catch err:'</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">$message</span><span class="p">({</span>
           <span class="na">message</span><span class="p">:</span> <span class="nx">err</span><span class="p">,</span>
-          <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">error</span><span class="dl">'</span>
+          <span class="na">type</span><span class="p">:</span> <span class="s1">'error'</span>
         <span class="p">})</span>
         <span class="k">return</span> <span class="kc">false</span>
       <span class="p">})</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error submit!</span><span class="dl">'</span><span class="p">)</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'error submit!'</span><span class="p">)</span>
       <span class="k">return</span> <span class="kc">false</span>
     <span class="p">}</span>
   <span class="p">})</span>
